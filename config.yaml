@@ -1,0 +1,31 @@
+proyecto:
+  nombre: "Análisis de mercado de motos en Cuba"
+  version: "1.0"
+  autor: "Dagmary"
+
+rutas:
+  raw: "data/raw"
+  processed: "data/processed"
+  exports: "data/exports"
+  reports: "reports"
+  graphs: "reports/graphs"
+  cache_listado: "data/raw/revolico/cache_html"
+  cache_detalle: "data/raw/revolico/cache_detalle"
+
+scraping:
+  user_agent: "MiProyectoInvestigacion/1.0 (Dagmaryy; dagmary2222008@gmail.com)"
+  delay_segundos: 3
+  delay_429_segundos: 60
+  max_peticiones: 150
+  max_paginas_por_url: 10
+  timeout_segundos: 30
+
+economia:
+  tasa_cup_por_usd: 350
+  fecha_tasa: "2026-10-05"
+
+analisis:
+  max_anuncios_por_tipo: 30
+  clustering:
+    n_clusters: 6
+    random_state: 42

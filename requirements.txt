@@ -1,0 +1,27 @@
+# Scraping
+httpx
+beautifulsoup4
+lxml
+
+# Validación y limpieza
+pydantic
+pandas
+numpy
+
+# Clustering
+scikit-learn
+
+# Visualización
+matplotlib
+seaborn
+plotly
+
+# NLP
+spacy
+
+# YAML
+pyyaml
+
+# Jupyter
+jupyter
+notebook
