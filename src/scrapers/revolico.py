@@ -847,6 +847,16 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
     if coincidencia:
         tiempo_carga_horas = int(float(coincidencia.group(1)))
 
+    garantia_dias = None
+    if re.search(r"garant[ií]a", texto):
+        coincidencia = re.search(r"garant[ií]a.{0,20}?(\d{1,3})\s*mes(?:es)?", texto)
+        if coincidencia:
+            garantia_dias = int(coincidencia.group(1)) * 30
+        else:
+            coincidencia = re.search(r"garant[ií]a.{0,20}?(\d{1,4})\s*d[ií]as?", texto)
+            if coincidencia:
+                garantia_dias = int(coincidencia.group(1))
+
     peso_kg = None
     coincidencia = re.search(r"peso\s*[:]?\s*(\d{2,4})\s*kg\b", texto)
     if coincidencia:
@@ -891,6 +901,7 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
         "papeles": papeles,
         "estado": estado,
         "tiempo_carga_horas": tiempo_carga_horas,
+        "garantia_dias": garantia_dias,
         "peso_kg": peso_kg,
         "tipo_frenos": tipo_frenos,
         "tamano_rueda_pulgadas": tamano_rueda_pulgadas,
@@ -974,6 +985,14 @@ def _extraer_marca_modelo(texto: str) -> tuple:
     return marca, modelo
 
 
+def _vendedor_id(nombre) -> str:
+    """Hash anónimo del vendedor: SHA-256 truncado a 10 caracteres. Nunca el nombre real."""
+    if not nombre:
+        return None
+    clave = _clave_normalizada(nombre)
+    return hashlib.sha256(clave.encode("utf-8")).hexdigest()[:10]
+
+
 def construir_anuncio_segun_esquema(
     detalle: dict, tecnicos: dict, categoria: str
 ) -> dict:
@@ -1011,6 +1030,7 @@ def construir_anuncio_segun_esquema(
         "autonomia_km": tecnicos.get("autonomia_km"),
         "velocidad_max_kmh": tecnicos.get("velocidad_max_kmh"),
         "tiempo_carga_horas": tecnicos.get("tiempo_carga_horas"),
+        "garantia_dias": tecnicos.get("garantia_dias"),
         "peso_kg": tecnicos.get("peso_kg"),
         "tamano_rueda_pulgadas": tecnicos.get("tamano_rueda_pulgadas"),
         "tipo_frenos": tecnicos.get("tipo_frenos"),
@@ -1021,6 +1041,7 @@ def construir_anuncio_segun_esquema(
         "municipio": detalle.get("municipalityId"),
         "descripcion": limpiar_emojis(detalle.get("descripcion")),
         "url_anuncio": detalle.get("url_anuncio"),
+        "vendedor_id": _vendedor_id(detalle.get("vendedor")),
         "transporte_incluido": tecnicos.get("transporte_incluido"),
     }
 
@@ -1028,8 +1049,7 @@ def construir_anuncio_segun_esquema(
     for clave in campos:
         if clave == "accesorios":
             valor = mapeo.get("accesorios") or []
-        elif clave in ("precio_cup", "plegable", "kilometraje", "ubicacion",
-                       "tipo_moto", "licencia_requerida"):
+        elif clave in ("plegable", "ubicacion"):
             valor = None
         else:
             valor = mapeo.get(clave, None)
