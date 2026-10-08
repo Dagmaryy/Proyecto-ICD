@@ -34,8 +34,7 @@ No modificar campos sin consultar.
 4. Nunca modifiques `data/raw/`.
 5. Usa httpx, no requests.
 6. El foco es motos; bicis y patinetes son secundarios.
-7. Documenta cada decisión en `methodology.md`.
-8. Registra prompts de IA en `prompts/sessions.md`.
+7. Registra prompts de IA en `prompts/sessions.md`.
 
 ## Scraping (ético)
 - User-Agent honesto (estudiante con contacto).

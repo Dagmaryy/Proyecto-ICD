@@ -12,30 +12,38 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Datos crudos (no subir HTML ni audios pesados)
+# Cachés de scraping (se regeneran, pesan mucho)
 data/raw/web/Revolico/cache_html/
 data/raw/web/Revolico/cache_detalle/
 data/raw/web/Revolico/pruebas/
 data/raw/revolico/*.html
 data/raw/revolico/*.htm
+
+# Audios de entrevistas (pesados)
 data/raw/interviews/usuarios/*.m4a
 data/raw/interviews/usuarios/*.mp3
 data/raw/interviews/usuarios/*.wav
 
-# Datos generados (no subir a Git)
-data/processed/*.json
-data/exports/*.csv
-reports/graphs/*.png
-
-# Salidas temporales
+# Backups y temporales
+*.bak
 *.log
 *.tmp
 .DS_Store
+Thumbs.db
+
+# Secretos
+.env
+.env.*
+!.env.example
 
 # IDE
 .vscode/
 .idea/
+*.swp
