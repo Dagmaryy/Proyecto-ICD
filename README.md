@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 Investigación mixta: cuantitativa (scraping y clustering) + cualitativa (entrevistas).
 
-### Población y muestra
+### Población y muestra mínima
 
 - **Anuncios:** 30 motos, bicicletas y patinetes eléctricos de Revolico.
 - **Entrevistas:** 30 usuarios del mercado.
