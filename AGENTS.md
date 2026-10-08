@@ -34,13 +34,13 @@ No modificar campos sin consultar.
 4. Nunca modifiques `data/raw/`.
 5. Usa httpx, no requests.
 6. El foco es motos; bicis y patinetes son secundarios.
-7. Registra prompts de IA en `prompts/sessions.md`.
+
 
 ## Scraping (ético)
 - User-Agent honesto (estudiante con contacto).
 - Delay mínimo 3 s entre peticiones.
 - Máximo 150 peticiones por sesión.
-- Cachear HTML en `data/raw/revolico/cache_*`.
+- Cachear HTML en `data/raw/revolico/cache_html*`.
 - Si error 429, esperar 60 s.
 
 ## Notas

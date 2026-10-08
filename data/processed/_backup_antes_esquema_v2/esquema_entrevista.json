@@ -1,0 +1,64 @@
+{
+  "tipo_entrevista": "usuario",
+  "total_entrevistas": 0,
+  "entrevistas": [
+    {
+      "id_entrevista": "user_001",
+      "fecha_entrevista": null,
+      "consentimiento_informado": null,
+      "permite_grabacion": null,
+
+      "perfil": {
+        "relacion_mercado": [],
+        "municipio": null
+      },
+
+      "experiencia_compraventa": {
+        "num_motos_5_anios": null,
+        "transacciones": [
+          {
+            "marca": null,
+            "modelo": null,
+            "anio": null,
+            "potencia_cc_o_w": null,
+            "es_electrica": null,
+            "nueva_o_usada": null,
+            "anio_transaccion": null,
+            "precio": null,
+            "moneda": null,
+            "precio_negociado_o_fijo": null,
+            "canal_compra": null
+          }
+        ]
+      },
+
+      "uso_contexto": {
+        "uso_principal": [],
+        "km_diarios": null,
+        "unico_medio_transporte": null,
+        "gasto_mensual_combustible_electricidad": null,
+        "gasto_mensual_mantenimiento": null,
+        "tiempo_conseguir_repuesto_dias": null,
+        "considero_electrica": null,
+        "razon_electrica_si_no": null
+      },
+
+      "experiencia_electrica": {
+        "tiempo_carga_horas": null,
+        "fallos_tecnicos": null,
+        "autonomia_real_vs_anunciada": null,
+        "problemas_carga_apagones": null,
+        "prefiere_electrica_o_gasolina": null
+      },
+
+      "satisfaccion": {
+        "le_gusta_mas": null,
+        "le_gusta_menos": null,
+        "recomendaria_comprar_moto_cuba": null
+      },
+
+      "transcripcion_url": "data/raw/interviews/usuarios/user_001_transcripcion.md",
+      "audio_url": null
+    }
+  ]
+}

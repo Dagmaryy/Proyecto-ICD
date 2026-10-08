@@ -11,7 +11,7 @@
 
 ## Descripción
 
-Proyecto de investigación que combina **scraping web** (Revolico), **entrevistas a usuarios** y **datos de stakeholders** (tiendas, importadoras, talleres e instituciones) para analizar el mercado de motos eléctricas en Cuba. Se incluyen también bicicletas eléctricas y patinetes como categorías complementarias del mismo mercado de movilidad eléctrica.
+Proyecto de investigación que combina **scraping web** (Revolico), **entrevistas a usuarios** y **datos de stakeholders** (tiendas, importadoras, talleres e instituciones) para analizar el mercado de motos eléctricas en La Habana. Se incluyen también bicicletas eléctricas y patinetes como categorías complementarias del mismo mercado de movilidad eléctrica.
 
 El objetivo final es un informe de análisis de mercado, no un software.
 
