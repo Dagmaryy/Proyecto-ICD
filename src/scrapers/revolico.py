@@ -44,11 +44,29 @@ def _ruta_cache(url: str, categoria: str) -> Path:
     return CACHE_DIR / categoria / f"listado_{clave}.html"
 
 
-def descargar_listado(url: str, categoria: str, usar_cache: bool = True) -> str:
-    """Descarga el HTML de un listado en la subcarpeta de `categoria`."""
+def descargar_listado(
+    url: str,
+    categoria: str,
+    usar_cache: bool = True,
+    etiqueta: str | None = None,
+) -> str:
+    """Descarga el HTML de un listado en la subcarpeta de `categoria`.
+
+    Con `etiqueta` (p. ej. el término de búsqueda) el archivo se guarda como
+    `busqueda_<etiqueta>_p<N>.html`; sin ella se usa el nombre hash por defecto.
+    """
     global _contador_peticiones
 
-    ruta_cache = _ruta_cache(url, categoria)
+    if etiqueta:
+        coincidencia_pagina = re.search(r"[?&]page=(\d+)", url)
+        pagina = coincidencia_pagina.group(1) if coincidencia_pagina else "1"
+        ruta_cache = (
+            CACHE_DIR
+            / categoria
+            / f"busqueda_{etiqueta.replace(' ', '_')}_p{pagina}.html"
+        )
+    else:
+        ruta_cache = _ruta_cache(url, categoria)
 
     if usar_cache and ruta_cache.exists():
         print(f"[CACHE] {url}")
@@ -80,6 +98,7 @@ def descargar_listado(url: str, categoria: str, usar_cache: bool = True) -> str:
 
     _contador_peticiones += 1
     html = respuesta.text
+    ruta_cache.parent.mkdir(parents=True, exist_ok=True)
     ruta_cache.write_text(html, encoding="utf-8")
     print(f"[OK] {url} (petición #{_contador_peticiones})")
     return html
