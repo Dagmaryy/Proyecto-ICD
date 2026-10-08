@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 
 CONFIG = yaml.safe_load((BASE_DIR / "config.yaml").read_text(encoding="utf-8"))
 
-CACHE_DIR = BASE_DIR / "data/raw/web/Revolico/cache_html"
+CACHE_DIR = BASE_DIR / "data/raw/web/revolico/cache_html"
 CATEGORIAS = ("motos", "bicis", "patinetes")
 
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
@@ -97,7 +97,7 @@ def descargar_detalle(url: str, categoria: str) -> str:
     anuncio_id = url.rstrip("/").rsplit("-", 1)[-1]
     ruta_cache = (
         BASE_DIR
-        / "data/raw/web/Revolico/cache_detalle"
+        / "data/raw/web/revolico/cache_detalle"
         / categoria
         / f"detalle_{anuncio_id}.html"
     )
@@ -1003,7 +1003,7 @@ def construir_anuncio_segun_esquema(
         "bici": "esquema_bici_electrica.json",
         "patinete": "esquema_patinete_electrico.json",
     }.get(singular, f"esquema_{singular}_electrica.json")
-    ruta_esquema = BASE_DIR / "data/processed" / nombre_esquema
+    ruta_esquema = BASE_DIR / "docs/schemas" / nombre_esquema
 
     with open(ruta_esquema, encoding="utf-8") as f:
         esquema = json.load(f)

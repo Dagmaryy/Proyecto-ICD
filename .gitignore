@@ -20,9 +20,9 @@ dist/
 .ipynb_checkpoints/
 
 # Cachés de scraping (se regeneran, pesan mucho)
-data/raw/web/Revolico/cache_html/
-data/raw/web/Revolico/cache_detalle/
-data/raw/web/Revolico/pruebas/
+data/raw/web/revolico/cache_html/
+data/raw/web/revolico/cache_detalle/
+data/raw/web/revolico/pruebas/
 data/raw/revolico/*.html
 data/raw/revolico/*.htm
 

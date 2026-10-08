@@ -9,8 +9,8 @@ rutas:
   exports: "data/exports"
   reports: "reports"
   graphs: "reports/graphs"
-  cache_listado: "data/raw/web/Revolico/cache_html"
-  cache_detalle: "data/raw/web/Revolico/cache_detalle"
+  cache_listado: "data/raw/web/revolico/cache_html"
+  cache_detalle: "data/raw/web/revolico/cache_detalle"
 
 scraping:
   user_agent: "MiProyectoInvestigacion/1.0 (Dagmaryy; dagmary2222008@gmail.com)"
