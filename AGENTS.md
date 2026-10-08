@@ -5,7 +5,7 @@
 Análisis de mercado de motos eléctricas en Cuba (ICD). Combina scraping de Revolico, 30 entrevistas a usuarios y registro de stakeholders (tiendas, importadoras, talleres).
 
 ## Fuentes de datos
-- `data/raw/revolico/` → anuncios scrapeados
+- `data/raw/web/Revolico/` → anuncios scrapeados
 - `data/raw/stakeholders/` → tiendas, importadoras, talleres
 - `data/raw/interviews/usuarios/` → transcripciones
 - `data/raw/web/` → redes sociales (complementario)
@@ -14,7 +14,7 @@ Análisis de mercado de motos eléctricas en Cuba (ICD). Combina scraping de Rev
 - `esquema_moto_electrica.json` 
 - `esquema_bici_electrica.json`
 - `esquema_patinete_electrico.json`
-- `esquema_entrevista_usuario.json`
+- `esquema_entrevista.json`
 - `esquema_talleres.json`
 - `esquema_importadoras.json`
 

@@ -17,8 +17,9 @@ dist/
 .ipynb_checkpoints/
 
 # Datos crudos (no subir HTML ni audios pesados)
-data/raw/revolico/cache_html/
-data/raw/revolico/cache_detalle/
+data/raw/web/Revolico/cache_html/
+data/raw/web/Revolico/cache_detalle/
+data/raw/web/Revolico/pruebas/
 data/raw/revolico/*.html
 data/raw/revolico/*.htm
 data/raw/interviews/usuarios/*.m4a

@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import re
 
 
-def extraer_anuncio_ruta(ruta_archivo="data/raw/revolico/moto_prueba.htm"):
+def extraer_anuncio_ruta(ruta_archivo="data/raw/revolico/motoprueba.html"):
     """
     Lee un archivo HTML de un anuncio de Revolico y extrae 4 campos:
     titulo, precio_usd, descripcion y url_anuncio.

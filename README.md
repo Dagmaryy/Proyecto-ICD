@@ -58,3 +58,5 @@ Consideraciones éticas
 · Consentimiento informado en entrevistas.
 · User-Agent honesto en scraping.
 · Delay de 3 segundos entre peticiones.
+
+Nota importante: Revolico no expone la fecha original de publicación, solo la de última actualización. Las fechas de los anuncios scrapeados se concentran entre el 24 de septiembre y el 8 de octubre de 2026, porque la plataforma solo muestra anuncios recientes. No es posible hacer análisis temporal mensual."
