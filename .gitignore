@@ -47,3 +47,4 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+data/processed/_backup_antes_esquema_v2/
