@@ -44,7 +44,9 @@ Thumbs.db
 !.env.example
 
 # IDE
+.opencode/
 .vscode/
 .idea/
 *.swp
 data/processed/_backup_antes_esquema_v2/
+.opencode/

@@ -13,7 +13,7 @@ rutas:
   cache_detalle: "data/raw/web/revolico/cache_detalle"
 
 scraping:
-  user_agent: "MiProyectoInvestigacion/1.0 (Dagmaryy; dagmary2222008@gmail.com)"
+  user_agent: "Proyecto-ICD (Dagmary)"
   delay_segundos: 3
   delay_429_segundos: 60
   max_peticiones: 150

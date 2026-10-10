@@ -25,3 +25,7 @@ pyyaml
 # Jupyter
 jupyter
 notebook
+
+# Tests
+pytest
+pytest
