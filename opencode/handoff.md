@@ -37,7 +37,7 @@ Pista de marca para el título de la historia: «El Verdadero Costo de Moverse»
 
 ## Config que rige (config.yaml)
 
-- Scraping: UA honesto «MiProyectoInvestigacion/1.0 (Dagmaryy; dagmary2222008@gmail.com)», `delay_segundos: 3`, `delay_429_segundos: 60`, `max_peticiones: 150`, `max_paginas_por_url: 10`.
+- Scraping: UA honesto «Proyecto-ICD (Dagmary)», `delay_segundos: 3`, `delay_429_segundos: 60`, `max_peticiones: 150`, `max_paginas_por_url: 10`.
 - Economía: `tasa_cup_por_usd: 350` (fecha 2026-10-05).
 - Análisis: `max_anuncios_por_tipo: 30`, clustering `n_clusters: 6`, `random_state: 42`.
 - Rutas: `raw: data/raw`, `processed: data/processed`, `graphs: storytelling/graphs`, `cache_listado/detalle` bajo `data/raw/web/revolico/`.
