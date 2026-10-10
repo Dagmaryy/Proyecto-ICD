@@ -1,4 +1,4 @@
-# Journal — El Verdadero Costo de Moverse
+# Journal — Mercado de motos eléctricas en La Habana
 
 Registro cronológico del desarrollo del proyecto (análisis del mercado de vehículos eléctricos en La Habana). Reconstruido a partir del historial de git (`git log`), del sistema de archivos (mtime de los datos y la caché) y de los logs de scraping. Período cubierto: 17 de septiembre – 10 de octubre de 2026.
 
@@ -38,7 +38,7 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 **Qué hice:** Guardé una página real de listado de Revolico y escribí un parser de prueba (96 líneas) para ensayar la extracción de campos del listado. En ningún momento inventé selectores: los fijé contra el HTML guardado.
 
-**Evidencia:** `data/raw/web/revolico/pruebas/motoprueba.html` (186 líneas, luego movido) y `codigo/scrapers/parser_prueba.py`. Commit `015d89b`.
+**Evidencia:** `data/raw/web/revolico/pruebas/motoprueba.html` (186 líneas, luego movido) y `src/scrapers/parser_prueba.py`. Commit `015d89b`.
 
 **Qué aprendí:** Que sin un fragmento HTML real no se puede escribir un selector fiable. De ahí en adelante pedí siempre el HTML antes de tocar el parser.
 
@@ -134,9 +134,9 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 ## 2026-10-09 (día) — Rutas, gráficos y outline de la historia
 
-**Qué hice:** Regeneré los limpios definitivos (motos 966, bicis 2050, patinetes 314). Escribí `codigo/scripts/verificar_rutas.py` para cazar referencias rotas, actualicé `config.yaml`, añadí el notebook `05_graficos_motos`, documenté la carpeta de gráficos, corregí un fallo del glob de muestras en `revolico.py` y redacté el outline inicial de la historia.
+**Qué hice:** Regeneré los limpios definitivos (motos 966, bicis 2050, patinetes 314). Escribí `src/scripts/verificar_rutas.py` para cazar referencias rotas, actualicé `config.yaml`, añadí el notebook `05_graficos_motos`, documenté la carpeta de gráficos, corregí un fallo del glob de muestras en `revolico.py` y redacté el outline inicial de la historia.
 
-**Evidencia:** commit `529c3ae`; `data/processed/final/{motos,bicis,patinetes}_final_limpio.json` (966 / 2050 / 314); `codigo/scripts/verificar_rutas.py`; `notebooks/05_graficos_motos.ipynb`; `storytelling/outline.md`; `opencode/handoff.md`.
+**Evidencia:** commit `529c3ae`; `data/processed/final/{motos,bicis,patinetes}_final_limpio.json` (966 / 2050 / 314); `src/scripts/verificar_rutas.py`; `notebooks/05_graficos_motos.ipynb`; `storytelling/outline.md`; `opencode/handoff.md`.
 
 **Qué aprendí:** Que las referencias a `src/scrapers` y `reports/graphs` seguían rotas tras la reorganización; un verificador de rutas ahorra tiempo.
 
@@ -148,7 +148,7 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 ## 2026-10-09 (noche) — Reorganización final, tests y journal
 
-**Qué hice:** Cerré la reorganización (`src/` → `codigo/`, `reports/` → `storytelling/`, esquemas a `docs/schemas/`, previos aparte) y escribí 4 tests de humo: procesar detalles de motos, existencia de los limpios, campos/esquema de los limpios y carga de los esquemas. Todos pasan en menos de 0,1 s.
+**Qué hice:** Cerré la reorganización (`src/` → `src/`, `reports/` → `storytelling/`, esquemas a `docs/schemas/`, previos aparte) y escribí 4 tests de humo: procesar detalles de motos, existencia de los limpios, campos/esquema de los limpios y carga de los esquemas. Todos pasan en menos de 0,1 s.
 
 **Evidencia:** commit `529c3ae`; `tests/test_smoke.py`; `python -m pytest tests/ -v` → 4 passed; `opencode/journal.md`.
 
@@ -190,12 +190,12 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 ## 2026-10-10 (noche) — Limpieza de anomalías y pipeline reproducible (tareas 2 y 3)
 
-**Qué hice:** Eliminé de `bicis_final_limpio.json` la única anomalía real de los tres finales: la bici «🚲 Bicicleta Eléctrica de Alta Gama‼️‼️9» con `precio_usd 650000` (un CUP colado como USD), pasando de 2050 a **2049** registros (motos 966 y patinetes 314 intactos). Luego escribí `codigo/scripts/limpiar_finales.py`, el limpiador reproducible: reproduce el **v2 exacto** desde el caché (1198 / 2861 / 373, aborta en `exit 2` si difiere), aplica reglas deterministas documentadas (moneda USD, rango de precio 100–5000, dedup por título emoji-limpio + precio + municipio, dedup por tokens + bucket de $50 + municipio, ruido por palabras) y calibra con una **tabla de excepciones** (`previos/limpio_excepciones.json`) que preserva las decisiones manuales de la limpieza histórica. Tiene `--verificar` (compara y deja `data/processed/verificacion_limpio.json`; `exit 1` si difiere) y `--aplicar` (escribe finales + excepciones).
+**Qué hice:** Eliminé de `bicis_final_limpio.json` la única anomalía real de los tres finales: la bici «🚲 Bicicleta Eléctrica de Alta Gama‼️‼️9» con `precio_usd 650000` (un CUP colado como USD), pasando de 2050 a **2049** registros (motos 966 y patinetes 314 intactos). Luego escribí `src/scripts/limpiar_finales.py`, el limpiador reproducible: reproduce el **v2 exacto** desde el caché (1198 / 2861 / 373, aborta en `exit 2` si difiere), aplica reglas deterministas documentadas (moneda USD, rango de precio 100–5000, dedup por título emoji-limpio + precio + municipio, dedup por tokens + bucket de $50 + municipio, ruido por palabras) y calibra con una **tabla de excepciones** (`previos/limpio_excepciones.json`) que preserva las decisiones manuales de la limpieza histórica. Tiene `--verificar` (compara y deja `data/processed/verificacion_limpio.json`; `exit 1` si difiere) y `--aplicar` (escribe finales + excepciones).
 
-**Evidencia:** borrado del outlier (tarjeta `56237039`); `codigo/scripts/limpiar_finales.py`; `data/processed/previos/limpio_excepciones.json`; `data/processed/verificacion_limpio.json`; `--aplicar` → reglas 921/2058/316 y aplicado + excepciones = objetivo 966/2049/314 con **0 faltan / 0 sobran / 0 campos diferentes**; `python -m pytest tests/ -v` → 4 passed.
+**Evidencia:** borrado del outlier (tarjeta `56237039`); `src/scripts/limpiar_finales.py`; `data/processed/previos/limpio_excepciones.json`; `data/processed/verificacion_limpio.json`; `--aplicar` → reglas 921/2058/316 y aplicado + excepciones = objetivo 966/2049/314 con **0 faltan / 0 sobran / 0 campos diferentes**; `python -m pytest tests/ -v` → 4 passed.
 
 **Qué aprendí:** (1) La limpieza histórica v3→limpio no era reproducible por reglas puras: hizo falta una tabla de excepciones con 328 entradas (127 motos: 86 keep + 41 drop; 185 bicis: 88 + 97; 16 patinetes: 7 + 9), sobre todo por duplicados por tokens/bucket (250) y ruido (56), más 10 ajustes manuales. (2) Hay **3 registros de motos** cuyo `precio_usd` histórico difiere del caché (750→650, 2900→290, 1590→1620); los preservo como «precio_historico» en la tabla en vez de introducir cambios silenciosos; el 290 parece errata a revisar. (3) El primer `--aplicar` escribió registros de 7 campos (olvidé convertir con `a_final`); el reporte no lo detectó porque solo comparaba URLs. Añadí paridad **a nivel de registro** y ahora el reporte lista campos diferentes. (4) El contenido regenerado era idéntico pero el **orden** de registros no; resturé motos/patinetes a HEAD (contenido ya verificado idéntico) y dejé bicis = HEAD menos el outlier, para un diff limpio de solo 10 líneas.
 
 **Qué me costó:** Conseguir reproducibilidad exacta (v2 desde caché) y decidir que el orden de los registros no es parte del contrato: lo que garantiza el script es igualdad de URLs y de campos por registro.
 
-**Próximo paso:** Acordar el commit de lo pendiente (`opencode/`, `tests/`, `requirements.txt` con `pytest` duplicado, `codigo/scripts/limpiar_finales.py`, `data/processed/previos/limpio_excepciones.json`, `data/processed/final/bicis_final_limpio.json`) con mensaje que lo describa; revisar a mano los 3 precios de motos marcados como `precio_historico`; decidir si `verificacion_limpio.json` se versiona o queda como reporte.
+**Próximo paso:** Acordar el commit de lo pendiente (`opencode/`, `tests/`, `requirements.txt` con `pytest` duplicado, `src/scripts/limpiar_finales.py`, `data/processed/previos/limpio_excepciones.json`, `data/processed/final/bicis_final_limpio.json`) con mensaje que lo describa; revisar a mano los 3 precios de motos marcados como `precio_historico`; decidir si `verificacion_limpio.json` se versiona o queda como reporte.
