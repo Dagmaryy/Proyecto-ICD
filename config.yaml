@@ -8,7 +8,7 @@ rutas:
   processed: "data/processed"
   exports: "data/exports"
   reports: "reports"
-  graphs: "reports/graphs"
+  graphs: "storytelling/graphs"
   cache_listado: "data/raw/web/revolico/cache_html"
   cache_detalle: "data/raw/web/revolico/cache_detalle"
 

@@ -1118,7 +1118,15 @@ def validar_anuncio_parcial(anuncio: dict) -> tuple[bool, list]:
 
 def procesar_detalles(categoria: str, max_anuncios: int = None, ruta_muestra: str = None) -> dict:
     """Procesa los detalles cacheados de una muestra y los valida por categoría."""
-    ruta_muestra = ruta_muestra or f"{categoria}_muestra_300.json"
+    if ruta_muestra is None:
+        carpeta_muestras = BASE_DIR / "data/processed/muestras"
+        candidatos = sorted(carpeta_muestras.glob(f"{categoria}_muestra_*.json"))
+        if not candidatos:
+            raise FileNotFoundError(
+                f"No hay ninguna muestra para '{categoria}' en {carpeta_muestras} "
+                f"(patrón buscado: {categoria}_muestra_*.json)"
+            )
+        ruta_muestra = candidatos[0]
     ruta = Path(ruta_muestra)
     if not ruta.is_absolute():
         if ruta.parent == Path("."):

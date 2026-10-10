@@ -40,9 +40,38 @@ No modificar campos sin consultar.
 - User-Agent honesto (estudiante con contacto).
 - Delay mínimo 3 s entre peticiones.
 - Máximo 150 peticiones por sesión.
-- Cachear HTML en `data/raw/revolico/cache_html*`.
+- Cachear HTML en `data/raw/web/revolico/cache_html*`.
 - Si error 429, esperar 60 s.
 
 ## Notas
 Proyecto académico, no producto. Objetivo: informe de análisis de mercado.
 La trazabilidad importa más que la elegancia.
+
+## Estructura
+- storytelling/: historia en Markdown (historia.md), metodología, limitaciones, fuentes y gráficos
+- codigo/: todos los scripts (scrapers/) y notebooks/
+- data/: JSON, esquemas (esquemas/) y evidencias. datos/raw no se modifica
+- opencode/: journal.md y handoff.md
+
+## Flujo con OpenCode
+1. Al empezar: leer opencode/handoff.md y la última entrada de opencode/journal.md.
+2. Trabajar por partes y detenerse al final de cada una para que Dagmary confirme.
+3. Al terminar: añadir una entrada a opencode/journal.md.
+4. 4. Cuando el contexto pase del ~80% (o notes que releyendo archivos ya no recuerdas su contenido): actualizar opencode/handoff.md antes de seguir.
+5. No hacer commits sin que Dagmary lo pida; proponer el mensaje.
+
+## Historia
+- Formato Markdown, en historia/historia.md.
+- Estructura: título y cabecera; introducción (contexto, pregunta, motivación); desarrollo por bloques; conclusión o cierre; metodología; proceso de los datos; fecha y autor.
+- Primero se propone el outline y se espera su aprobación; no redactar sin outline aprobado.
+- No interpretar ni sacar conclusiones de los datos: la interpretación la escribe Dagmary. OpenCode solo prepara datos, tablas, gráficos y outlines.
+
+## Commits
+- Un commit por punto del proyecto, con formato "tipo: qué cambió".
+- Tipos: datos, codigo, historia, opencode, docs, estructura.
+- Nunca incluir caché HTML, audios ni carpetas de respaldo.
+
+## Entrevistas
+- Audios fuera del repo; transcribir con Whisper en local.
+- Transcripciones solo con códigos (user_001), sin nombres.
+- Anonimizar teléfonos de vendedores en los datos procesados.
