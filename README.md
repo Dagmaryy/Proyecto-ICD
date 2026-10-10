@@ -51,17 +51,6 @@ Investigación mixta: cuantitativa (scraping y clustering) + cualitativa (entrev
 2. Clustering (K-Means sobre TF-IDF + variables numéricas).
 3. Visualización (Matplotlib, Seaborn, Plotly).
 4. Triangulación de fuentes.
-
----
-
-## Limitaciones
-
-- Reposteos en Revolico.
-- Precios mixtos (USD/CUP).
-- Sesgo de la fuente (solo anuncios publicados).
-
----
-
 ## Consideraciones éticas
 
 - Consentimiento informado en entrevistas.
