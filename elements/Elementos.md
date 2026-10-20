@@ -14,7 +14,7 @@ Mercado de motos eléctricas en **La Habana**, con bicicletas y patinetes eléct
 
 | # | Pregunta | Fuente | Variables |
 |---|---|---|---|
-| 1 | ¿Qué marcas y modelos se anuncian en La Habana y con qué frecuencia? | A | marca, modelo |
+| 1 | ¿Qué marcas y modelos se anuncian en La Habana? | A | marca, modelo |
 | 2 | ¿Cuál es el precio mediano pedido de cada tipo de vehículo (moto, bici, patinete)? | A | precio_usd, tipo_vehiculo |
 | 3 | ¿Cómo varía el precio pedido según la marca? | A | precio_usd, marca |
 | 4 | ¿Cómo varía el precio pedido entre municipios de La Habana? | A | precio_usd, municipio |
@@ -29,16 +29,16 @@ Mercado de motos eléctricas en **La Habana**, con bicicletas y patinetes eléct
 
 | # | Pregunta | Fuente |
 |---|---|---|
-| 11 | ¿Cuál es el perfil del comprador en La Habana (edad, ocupación, municipio)? | E |
-| 12 | ¿Cuál es su motivación principal de compra (ahorro, apagones, transporte, negocio)? | E |
-| 13 | ¿Qué porcentaje usa el vehículo para trabajo o negocio? | E |
-| 14 | ¿Por qué eligió moto, bici o patinete y no otro tipo? | E |
-| 15 | ¿En qué canal compró (Revolico, tienda, importadora, equipaje, conocido) y por qué? | E |
-| 16 | ¿Cuánto pagó en total, incluyendo papeles, envío y accesorios? | E |
-| 17 | ¿Cómo influyó la garantía o la postventa en su decisión? | E |
-| 18 | ¿Dónde y cuánto tiempo carga el vehículo, y cómo le afectan los apagones? | E |
-| 19 | ¿Qué gastos ha tenido en baterías, repuestos y mantenimiento? | E |
-| 20 | ¿Qué hace con las baterías usadas y a qué precio revendería el vehículo? | E |
+| 11 | ¿Qué edad tienes, a qué te dedicas y en qué municipio vives?  | E |
+| 12 | Para qué usas tu vehículo (trabajo, transporte personal, mensajería, ocio) | E |
+| 13 | ¿Por qué elegiste uno eléctrico y de este tipo (moto, bici o patinete)? ¿Qué pesó más: precio, motor, autonomía o marca? | E |
+| 14 | ¿Dónde lo compraste (Revolico, Telegram, importadora, conocido) y por qué ahí? | E |
+| 15 | ¿Cuánto pagaste en total, con extras y en qué moneda? | E |
+| 16 | ¿Cada cuánto lo cargas, cuánto demora y dónde? ¿Has tenido problemas en días de apagón? | E |
+| 17 | ¿La autonomía real coincide con la que anunció el vendedor, y ha bajado con el tiempo? ¿Has tenido fallos técnicos?  | E |
+| 18 | ¿Cuánto has gastado en baterías, repuestos y mantenimiento? | E |
+| 19 | ¿Qué hiciste con las baterías usadas y a cuánto revenderías el vehículo? | E |
+| 20 | Si tuvieras que elegir hoy entre eléctrica y gasolina, ¿cuál preferirías y por qué? | E |
 
 ## 3. Canal formal, normativa y servicios (S, D)
 

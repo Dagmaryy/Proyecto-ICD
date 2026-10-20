@@ -28,4 +28,3 @@ notebook
 
 # Tests
 pytest
-pytest

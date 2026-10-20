@@ -26,7 +26,7 @@ CATEGORIAS = ("motos", "bicis", "patinetes")
 
 
 def test_procesar_detalles_motos():
-    from codigo.scrapers.revolico import procesar_detalles
+    from src.scrapers.revolico import procesar_detalles
 
     resultado = procesar_detalles("motos", max_anuncios=5)
     assert len(resultado["validos_completos"]) == 3

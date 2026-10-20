@@ -108,11 +108,11 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 **Qué hice:** Pasé las carpetas `Revolico/STT` a minúsculas y moví los esquemas a `docs/schemas/`. Añadí el parámetro `etiqueta` a `descargar_listado` y lancé **42 páginas de búsquedas ampliadas** (archivos `busqueda_*.html`). Cerré el día con una limpieza conservadora: reclasificación v2, deduplicación v3 y los ficheros limpios por categoría.
 
-**Evidencia:** commits `fdadf3d`, `1b37e11`, `2aafc02`; `data/raw/web/revolico/cache_html/*/busqueda_*.html` (13 motos + 34 bicis + 11 patinetes); `data/processed/previos/*_final_v2.json`, `*_final_v3.json`.
+**Evidencia:** commits `fdadf3d`, `1b37e11`, `2aafc02`; `data/raw/web/revolico/cache_html/*/busqueda_*.html` (13 motos + 34 bicis + 11 patinetes); `data/processed/versiones/*_final_v2.json`, `*_final_v3.json`.
 
 **Qué aprendí (hallazgo metodológico):** que las categorías oficiales de Revolico **infravaloraban la oferta**: la subcategoría oficial de bicis tenía ~151 anuncios frente a 2.050 encontrados por búsqueda de texto; el mismo patrón apareció en motos y patinetes. Buscar por texto, no por categoría, fue decisivo.
 
-**Qué me costó:** Diseñar los criterios de deduplicación sin borrar trazas: tuve que conservar las versiones agresivas como evidencia en `previos/`.
+**Qué me costó:** Diseñar los criterios de deduplicación sin borrar trazas: tuve que conservar las versiones agresivas como evidencia en `versiones/`.
 
 **Próximo paso:** Fijar el alcance (La Habana), documentar decisiones y dejar los limpios definitivos.
 
@@ -138,7 +138,7 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 **Evidencia:** commit `529c3ae`; `data/processed/final/{motos,bicis,patinetes}_final_limpio.json` (966 / 2050 / 314); `src/scripts/verificar_rutas.py`; `notebooks/05_graficos_motos.ipynb`; `storytelling/outline.md`; `opencode/handoff.md`.
 
-**Qué aprendí:** Que las referencias a `src/scrapers` y `reports/graphs` seguían rotas tras la reorganización; un verificador de rutas ahorra tiempo.
+**Qué aprendí:** Que las referencias a las rutas de scripts y gráficos seguían rotas tras la reorganización (hoy son `src/` y `storytelling/graphs`); un verificador de rutas ahorra tiempo.
 
 **Qué me costó:** Cuadrar los conteos de cada etapa del embudo con los limpios finales.
 
@@ -190,12 +190,26 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 ## 2026-10-10 (noche) — Limpieza de anomalías y pipeline reproducible (tareas 2 y 3)
 
-**Qué hice:** Eliminé de `bicis_final_limpio.json` la única anomalía real de los tres finales: la bici «🚲 Bicicleta Eléctrica de Alta Gama‼️‼️9» con `precio_usd 650000` (un CUP colado como USD), pasando de 2050 a **2049** registros (motos 966 y patinetes 314 intactos). Luego escribí `src/scripts/limpiar_finales.py`, el limpiador reproducible: reproduce el **v2 exacto** desde el caché (1198 / 2861 / 373, aborta en `exit 2` si difiere), aplica reglas deterministas documentadas (moneda USD, rango de precio 100–5000, dedup por título emoji-limpio + precio + municipio, dedup por tokens + bucket de $50 + municipio, ruido por palabras) y calibra con una **tabla de excepciones** (`previos/limpio_excepciones.json`) que preserva las decisiones manuales de la limpieza histórica. Tiene `--verificar` (compara y deja `data/processed/verificacion_limpio.json`; `exit 1` si difiere) y `--aplicar` (escribe finales + excepciones).
+**Qué hice:** Eliminé de `bicis_final_limpio.json` la única anomalía real de los tres finales: la bici «🚲 Bicicleta Eléctrica de Alta Gama‼️‼️9» con `precio_usd 650000` (un CUP colado como USD), pasando de 2050 a **2049** registros (motos 966 y patinetes 314 intactos). Luego escribí `src/scripts/limpiar_finales.py`, el limpiador reproducible: reproduce el **v2 exacto** desde el caché (1198 / 2861 / 373, aborta en `exit 2` si difiere), aplica reglas deterministas documentadas (moneda USD, rango de precio 100–5000, dedup por título emoji-limpio + precio + municipio, dedup por tokens + bucket de $50 + municipio, ruido por palabras) y calibra con una **tabla de excepciones** (`versiones/limpio_excepciones.json`) que preserva las decisiones manuales de la limpieza histórica. Tiene `--verificar` (compara y deja `data/processed/verificacion_limpio.json`; `exit 1` si difiere) y `--aplicar` (escribe finales + excepciones).
 
-**Evidencia:** borrado del outlier (tarjeta `56237039`); `src/scripts/limpiar_finales.py`; `data/processed/previos/limpio_excepciones.json`; `data/processed/verificacion_limpio.json`; `--aplicar` → reglas 921/2058/316 y aplicado + excepciones = objetivo 966/2049/314 con **0 faltan / 0 sobran / 0 campos diferentes**; `python -m pytest tests/ -v` → 4 passed.
+**Evidencia:** borrado del outlier (tarjeta `56237039`); `src/scripts/limpiar_finales.py`; `data/processed/versiones/limpio_excepciones.json`; `data/processed/verificacion_limpio.json`; `--aplicar` → reglas 921/2058/316 y aplicado + excepciones = objetivo 966/2049/314 con **0 faltan / 0 sobran / 0 campos diferentes**; `python -m pytest tests/ -v` → 4 passed.
 
 **Qué aprendí:** (1) La limpieza histórica v3→limpio no era reproducible por reglas puras: hizo falta una tabla de excepciones con 328 entradas (127 motos: 86 keep + 41 drop; 185 bicis: 88 + 97; 16 patinetes: 7 + 9), sobre todo por duplicados por tokens/bucket (250) y ruido (56), más 10 ajustes manuales. (2) Hay **3 registros de motos** cuyo `precio_usd` histórico difiere del caché (750→650, 2900→290, 1590→1620); los preservo como «precio_historico» en la tabla en vez de introducir cambios silenciosos; el 290 parece errata a revisar. (3) El primer `--aplicar` escribió registros de 7 campos (olvidé convertir con `a_final`); el reporte no lo detectó porque solo comparaba URLs. Añadí paridad **a nivel de registro** y ahora el reporte lista campos diferentes. (4) El contenido regenerado era idéntico pero el **orden** de registros no; resturé motos/patinetes a HEAD (contenido ya verificado idéntico) y dejé bicis = HEAD menos el outlier, para un diff limpio de solo 10 líneas.
 
 **Qué me costó:** Conseguir reproducibilidad exacta (v2 desde caché) y decidir que el orden de los registros no es parte del contrato: lo que garantiza el script es igualdad de URLs y de campos por registro.
 
-**Próximo paso:** Acordar el commit de lo pendiente (`opencode/`, `tests/`, `requirements.txt` con `pytest` duplicado, `src/scripts/limpiar_finales.py`, `data/processed/previos/limpio_excepciones.json`, `data/processed/final/bicis_final_limpio.json`) con mensaje que lo describa; revisar a mano los 3 precios de motos marcados como `precio_historico`; decidir si `verificacion_limpio.json` se versiona o queda como reporte.
+**Próximo paso:** Acordar el commit de lo pendiente (`opencode/`, `tests/`, `requirements.txt` con `pytest` duplicado, `src/scripts/limpiar_finales.py`, `data/processed/versiones/limpio_excepciones.json`, `data/processed/final/bicis_final_limpio.json`) con mensaje que lo describa; revisar a mano los 3 precios de motos marcados como `precio_historico`; decidir si `verificacion_limpio.json` se versiona o queda como reporte.
+
+---
+
+## 2026-10-20 — Reestructuración por partes, fuentes oficiales, READMEs y Makefile
+
+**Qué hice:** Reestructuré el proyecto en cinco partes controladas. (1) Renombré `previos/` → `versiones/` en `data/processed/` con `git mv` (18 archivos) y actualicé sus referencias. (2) Corregí rutas: los notebooks 02, 04 y 05 pasan de `motos_final.json` a `motos_final_limpio.json`, y el 05 usa `storytelling/graphs`; limpié `AGENTS.md` (quité los dos esquemas de talleres/importadoras inexistentes, normalicé las rutas a `data/raw` y `storytelling/historia.md`, y corregí el typo «4. 4.»). (3) Escribí `data/README.md` (mapa y embudo), `data/processed/README.md` (vigentes + flujo) y `data/processed/versiones/README.md` (histórico). (4) Creé `Makefile` (`test`/`rutas`/`limpiar`) y `.githooks/{commit-msg,pre-commit}` ejecutables, sin activar `core.hooksPath`; añadí la sección «Comandos» a `AGENTS.md`. (5) Actualicé este journal y `opencode/handoff.md`. Aparte, descargué 6 fuentes oficiales a `data/raw/stakeholders/institucionales/` (5 OK; MITRANS falló por SSL y no reintenté, según la regla) y creé `_fuentes.md`.
+
+**Evidencia:** `git mv` de 18 archivos (`previos/`→`versiones/`); notebooks 02/04/05 con `motos_final_limpio.json`; `data/README.md`, `data/processed/README.md`, `data/processed/versiones/README.md`; `Makefile`; `.githooks/commit-msg` y `.githooks/pre-commit` (chmod +x, `core.hooksPath` sin configurar; probados: asunto inválido→1, válido→0, `Merge`→0; pre-commit en repo temporal: caché→1, normal→0, `.env`→1); `make test` → 4 passed; `verificar_rutas.py` → de 17 a **6** rutas rotas (ninguna nueva); fuentes `decreto_163_2026.html`, `resolucion_175_2026.html`, `aduana_portada.html`, `mindus_marco.html`, `mfp_portada.html` + `_fuentes.md`.
+
+**Qué aprendí:** (1) `verificar_rutas.py` devuelve `exit 1`, así que `make rutas` «falla» mientras existan rutas rotas; es comportamiento correcto, no un error del Makefile. (2) El embudo no es una cadena anidada: los elegibles v2 (4.432) superan los crudos únicos (3.265) porque cada tipo se filtra por separado y un anuncio puede contar en varios; lo documenté con `[pendiente]` en vez de forzar cifras. (3) La skill `journal-del-dia` dice insertar arriba, pero el propio journal (línea 5) y `AGENTS.md` dicen «al final»; mantuve el orden cronológico.
+
+**Qué me costó:** Cuadrar las cifras del embudo sin que aniden y clasificar las rutas rotas restantes entre reales (config), futuras (entrevistas) e históricas/notación (journal). También el fallo SSL de MITRANS, que no reintenté por la regla.
+
+**Próximo paso:** Decidir si se limpian las 6 rutas restantes o se dejan como traza; revisar los 3 `precio_historico`; aprobar el outline; y acordar el commit de todo lo pendiente cuando Dagmary lo pida.

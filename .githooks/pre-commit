@@ -1,0 +1,29 @@
+#!/bin/sh
+# Bloquea en el staging: caché HTML, audios, secretos, entornos y respaldos.
+
+bad=0
+
+while IFS= read -r f; do
+    [ -z "$f" ] && continue
+    case "$f" in
+        */cache_html/*|cache_html/*|*/cache_detalle/*|cache_detalle/*)
+            echo "pre-commit: caché HTML no permitida: $f" >&2; bad=1 ;;
+        *.mp3|*.wav|*.m4a|*.ogg|*.flac|*.aac|*.opus)
+            echo "pre-commit: audio no permitido (va fuera del repo): $f" >&2; bad=1 ;;
+        .env|*/.env)
+            echo "pre-commit: secreto no permitido: $f" >&2; bad=1 ;;
+        venv/*|*/venv/*|*/__pycache__/*|*.pyc|.pytest_cache/*|*/.pytest_cache/*)
+            echo "pre-commit: entorno/caché Python no permitido: $f" >&2; bad=1 ;;
+        */_backup/*|_backup/*|*/backups/*|backups/*|*/backup/*|*.bak)
+            echo "pre-commit: respaldo no permitido: $f" >&2; bad=1 ;;
+    esac
+done <<EOF
+$(git diff --cached --name-only --diff-filter=ACM)
+EOF
+
+if [ "$bad" -ne 0 ]; then
+    echo "pre-commit: quita esos archivos del staging antes de commitear." >&2
+    exit 1
+fi
+
+exit 0

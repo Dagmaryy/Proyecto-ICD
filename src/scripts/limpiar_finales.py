@@ -5,8 +5,8 @@ aplica reglas deterministas documentadas más una tabla de excepciones que
 preserva las decisiones manuales de la limpieza histórica.
 
 Uso:
-    python codigo/scripts/limpiar_finales.py --verificar   # compara y reporta
-    python codigo/scripts/limpiar_finales.py --aplicar     # escribe finales y excepciones
+    python src/scripts/limpiar_finales.py --verificar   # compara y reporta
+    python src/scripts/limpiar_finales.py --aplicar     # escribe finales y excepciones
 
 Códigos de salida: 0 = salida igual al objetivo, 1 = difiere, 2 = v2 no reproducido.
 """
@@ -19,13 +19,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from codigo.scrapers import revolico as rv
+from src.scrapers import revolico as rv
 
 CATEGORIAS = rv.CATEGORIAS
 FINAL_DIR = rv.BASE_DIR / "data/processed/final"
-PREVIOS_DIR = rv.BASE_DIR / "data/processed/previos"
+VERSIONES_DIR = rv.BASE_DIR / "data/processed/versiones"
 REPORTE = rv.BASE_DIR / "data/processed/verificacion_limpio.json"
-EXCEPCIONES = PREVIOS_DIR / "limpio_excepciones.json"
+EXCEPCIONES = VERSIONES_DIR / "limpio_excepciones.json"
 
 PRECIO_MIN, PRECIO_MAX = 100, 5000
 BUCKET_USD = 50
@@ -124,7 +124,7 @@ def reproducir_v2() -> dict:
 
 def v2_esperado() -> dict:
     return {
-        c: len(json.load(open(PREVIOS_DIR / f"{c}_final_v2.json", encoding="utf-8")))
+        c: len(json.load(open(VERSIONES_DIR / f"{c}_final_v2.json", encoding="utf-8")))
         for c in CATEGORIAS
     }
 
