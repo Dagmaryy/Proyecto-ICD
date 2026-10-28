@@ -1,0 +1,41 @@
+   
+{
+  "vehiculo": "moto_combustion",
+  "total_anuncios_validos": 0,
+  "fecha_scraping": null,
+  "anuncios": [
+    {
+      "id_anuncio": "moto_comb_001",
+      "titulo": "",
+      "precio_usd": null,
+      "fecha_publicacion": null,
+      "marca": null,
+      "modelo": null,
+      "tipo_vehiculo": "moto_combustion",
+      "cilindrada_cc": null,
+      "tipo_motor": null,
+      "combustible": null,
+      "consumo_l_100km": null,
+      "capacidad_tanque_l": null,
+      "transmision": null,
+      "tipo_arranque": null,
+      "anio_fabricacion": null,
+      "kilometraje_km": null,
+      "velocidad_max_kmh": null,
+      "garantia_dias": null,
+      "peso_kg": null,
+      "tipo_frenos": null,
+      "suspension": null,
+      "estado": null,
+      "papeles": null,
+      "accesorios": [],
+      "ubicacion": "",
+      "municipio": null,
+      "descripcion": "",
+      "url_anuncio": "",
+      "vendedor_id": null,
+      "transporte_incluido": null
+    }
+  ]
+}
+      

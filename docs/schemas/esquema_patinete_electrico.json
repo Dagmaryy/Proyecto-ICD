@@ -30,9 +30,10 @@
       "ubicacion": "",
       "municipio": null,
       "descripcion": "",
-      "url_anuncio": "",
-      "vendedor_id": null,
-      "transporte_incluido": null
-    }
-  ]
+   "url_anuncio": "",
+   "vendedor_id": null,
+   "transporte_incluido": null,
+   "kilometraje_km": null
+  }
+ ]
 }

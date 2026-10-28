@@ -364,9 +364,19 @@ def procesar_categoria(categoria: str) -> dict:
     }
 
 
+def normalizar_guiones(texto: str) -> str:
+    """Convierte cualquier guion Unicode (categoría Pd) o signo menos en espacio."""
+    return "".join(
+        " "
+        if unicodedata.category(caracter) == "Pd" or caracter == "\u2212"
+        else caracter
+        for caracter in (texto or "")
+    )
+
+
 def _normalizar_titulo(texto: str) -> str:
-    """Minúsculas, sin acentos y espacios colapsados."""
-    plano = unicodedata.normalize("NFKD", (texto or "").lower())
+    """Minúsculas, sin acentos, guiones como espacios y espacios colapsados."""
+    plano = unicodedata.normalize("NFKD", normalizar_guiones(texto).lower())
     plano = plano.encode("ascii", "ignore").decode("ascii")
     plano = re.sub(r"[^a-z0-9]+", " ", plano)
     return re.sub(r"\s+", " ", plano).strip()
@@ -763,10 +773,16 @@ def extraer_detalle(html: str) -> dict:
     }
 
 
-def extraer_campos_tecnicos(descripcion: str) -> dict:
+def extraer_campos_tecnicos(descripcion: str, titulo: str = "") -> dict:
     """Extrae los campos técnicos de la descripción vía regex. Se normaliza antes."""
     texto = _normalizar_titulo(descripcion)
+    texto_plegable = _normalizar_titulo(f"{titulo or ''} {descripcion or ''}")
     crudo = descripcion or ""
+    texto_punt = (
+        unicodedata.normalize("NFKD", crudo.lower())
+        .encode("ascii", "ignore")
+        .decode("ascii")
+    )
 
     def _primero(patron, convertir=int):
         coincidencia = re.search(patron, texto)
@@ -781,34 +797,101 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
             return int(limpio.replace(".", ""))
         return int(round(float(limpio)))
 
-    motor = _primero(r"\b(\d{1,4})\s*w(?:atts)?\b")
-    voltaje = _primero(r"\b(\d{1,3})\s*v\b")
+    def _a_float(numero_txt):
+        limpio = numero_txt.strip().replace(" ", "")
+        if "," in limpio and "." in limpio:
+            limpio = limpio.replace(",", "")
+        elif re.fullmatch(r"\d{1,3}(?:,\d{3})+", limpio):
+            limpio = limpio.replace(",", "")
+        else:
+            limpio = limpio.replace(",", ".")
+        return float(limpio)
+
+    def _numero(numero_txt):
+        valor = _a_float(numero_txt)
+        return int(valor) if valor.is_integer() else round(valor, 2)
+
+    motor = _primero(r"\b(\d{1,4})\s*(?:w(?:at{1,2}s?)?)\b")
+    voltaje = _primero(r"\b(\d{1,3})\s*(?:v(?:olt(?:ios|s)?)?)\b")
 
     amperaje = None
-    coincidencia = re.search(r"\b(\d{1,3}(?:\.\d+)?)\s*ah\b", crudo, re.I)
+    coincidencia = re.search(
+        r"\b(\d{1,3}(?:[.,]\d+)?)\s*(?:ah|amp(?:erios|eres?|s)?)\b", texto_punt
+    )
     if coincidencia:
-        amperaje = int(float(coincidencia.group(1)))
+        amperaje = _numero(coincidencia.group(1))
 
     autonomia = None
-    for patron_contexto in (
-        r"autonomia\D{0,15}?(\d{1,4})\s*km",
-        r"(\d{1,4})\s*km\s*(?:de\s+)?(?:autonomia|recorrido|alcance)",
-    ):
-        coincidencia = re.search(patron_contexto, texto)
-        if coincidencia:
-            valor = int(coincidencia.group(1))
-            if valor >= 10:
-                autonomia = valor
+    rango_km = r"(\d{1,4})(?:\s*(?:-|–|—|‒|―|－|−|a|al)\s*(\d{1,4}))?"
+    unidad_km = r"\s*(?:km|kilometros?)\b(?!\s*(?:/|x|por)?\s*h(?:ora)?s?\b)"
+
+    def _autonomia_de(coincidencia):
+        valores = [
+            int(valor)
+            for valor in (coincidencia.group(1), coincidencia.group(2))
+            if valor
+        ]
+        valor = max(valores)
+        return valor if 10 <= valor <= 1000 else None
+
+    def _distancia(candidato, palabra):
+        if candidato.end() <= palabra.start():
+            return palabra.start() - candidato.end()
+        if palabra.end() <= candidato.start():
+            return candidato.start() - palabra.end()
+        return 0
+
+    candidatos = [
+        coincidencia
+        for coincidencia in re.finditer(rango_km + unidad_km, texto_punt)
+        if _autonomia_de(coincidencia) is not None
+    ]
+    if candidatos:
+        for palabra in re.finditer(r"autonomia|recorrido|alcance", texto_punt):
+            candidato = min(
+                candidatos,
+                key=lambda c: (
+                    _distancia(c, palabra),
+                    0 if c.start() >= palabra.end() else 1,
+                ),
+            )
+            if _distancia(candidato, palabra) <= 80:
+                autonomia = _autonomia_de(candidato)
                 break
+        if autonomia is None:
+            autonomia = _autonomia_de(candidatos[0])
     if autonomia is None:
-        for coincidencia in re.finditer(r"(?<![\d,.])(\d{1,4})\s*km\b(?!\s*h)", texto):
+        for patron_contexto in (
+            r"autonomia\D{0,15}?(\d{1,4})\s*km",
+            r"(\d{1,4})\s*km\s*(?:de\s+)?(?:autonomia|recorrido|alcance)",
+        ):
+            coincidencia = re.search(patron_contexto, texto)
+            if coincidencia:
+                valor = int(coincidencia.group(1))
+                if 10 <= valor <= 1000:
+                    autonomia = valor
+                    break
+    if autonomia is None:
+        for coincidencia in re.finditer(
+            r"(?<![\d,.])(\d{1,4})\s*km\b(?!\s*(?:/|x|por)?\s*h)", texto
+        ):
             valor = int(coincidencia.group(1))
-            if valor >= 10:
+            if 10 <= valor <= 1000:
                 autonomia = valor
                 break
 
     velocidad = None
-    coincidencia = re.search(r"(\d{1,3})\s*km\s*h\b", texto)
+    patron_velocidad = (
+        r"(\d{1,3})\s*(?:km\s*(?:/|x|por)\s*h(?:ora)?s?|kmh|"
+        r"kil[oó]metros?\s*(?:/|x|por)\s*hora)"
+    )
+    coincidencia = re.search(patron_velocidad, crudo, re.I)
+    if not coincidencia:
+        coincidencia = re.search(
+            r"(\d{1,3})\s*(?:km\s+h(?:ora)?s?|kmh|"
+            r"kilometros?\s+(?:por|x)\s+hora)",
+            texto,
+        )
     if coincidencia:
         velocidad = int(coincidencia.group(1))
 
@@ -826,7 +909,11 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
         if voltaje is None:
             voltaje = int(motor_v.group(2))
 
-    if re.search(r"lit(?:io|ium|hium|ihum)|\bli\s?ion\b", texto):
+    if re.search(r"lifepo4|life\s*po4|fosfato\s+de\s+hierro", texto):
+        tipo_bateria = "lifepo4"
+    elif re.search(r"\bgel\b", texto):
+        tipo_bateria = "gel"
+    elif re.search(r"lit(?:io|ium|hium|ihum)|\bli\s?ion\b", texto):
         tipo_bateria = "litio"
     elif "plomo" in texto or "lead acid" in texto:
         tipo_bateria = "plomo"
@@ -849,14 +936,22 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
         texto,
     ))
 
-    papeles = "en regla" if re.search(r"papeles (en regla|al dia)|con papeles", texto) else None
+    papeles = (
+        "en regla"
+        if re.search(
+            r"papeles (?:en regla|al dia)|con papeles|documentacion al dia|"
+            r"titulo de propiedad",
+            texto,
+        )
+        else None
+    )
 
     estado = None
-    if re.search(r"\b0\s*km\b|\bnueva\b|\bnuevas\b", texto):
-        estado = "Nueva"
-    elif "seminueva" in texto or "semi nueva" in texto:
+    if re.search(r"seminueva|semi nueva", texto):
         estado = "Seminueva"
-    elif re.search(r"\busada\b|\busado\b|segunda mano|primera mano", texto):
+    elif re.search(r"\b0\s*kms?\b|\bnueva\b|\bnuevas\b", texto):
+        estado = "Nueva"
+    elif re.search(r"meses de uso|\busada\b|\busado\b|segunda mano|primera mano", texto):
         estado = "Usada"
 
     tiempo_carga_horas = None
@@ -877,9 +972,19 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
                 garantia_dias = int(coincidencia.group(1))
 
     peso_kg = None
-    coincidencia = re.search(r"peso\s*[:]?\s*(\d{2,4})\s*kg\b", texto)
+    coincidencia = re.search(
+        r"(?:peso(?:\s+total)?|carga\s+maxima|soporta\s+hasta)\D{0,30}?"
+        r"(\d{1,4}(?:[.,]\d+)?)\s*(kgs?|kilogramos?|lbs?|libras?)\b",
+        texto_punt,
+        re.I,
+    )
     if coincidencia:
-        peso_kg = int(coincidencia.group(1))
+        valor_peso = _a_float(coincidencia.group(1))
+        unidad = coincidencia.group(2).lower()
+        if unidad.startswith("lb") or unidad.startswith("libra"):
+            peso_kg = int(round(valor_peso / 2.204))
+        else:
+            peso_kg = int(round(valor_peso))
 
     tipo_frenos = None
     if re.search(r"freno", texto):
@@ -900,6 +1005,8 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
     suspension = None
     if re.search(r"suspen[cs]ion|amortiguador", texto):
         suspension = True
+
+    plegable = bool(re.search(r"\bplegables?\b", texto_plegable))
 
     accesorios = []
     for palabra in ("casco", "guantes", "mochila", "candado", "alarma",
@@ -925,6 +1032,7 @@ def extraer_campos_tecnicos(descripcion: str) -> dict:
         "tipo_frenos": tipo_frenos,
         "tamano_rueda_pulgadas": tamano_rueda_pulgadas,
         "suspension": suspension,
+        "plegable": plegable,
         "accesorios": accesorios,
     }
 
@@ -1054,6 +1162,7 @@ def construir_anuncio_segun_esquema(
         "tamano_rueda_pulgadas": tecnicos.get("tamano_rueda_pulgadas"),
         "tipo_frenos": tecnicos.get("tipo_frenos"),
         "suspension": tecnicos.get("suspension"),
+        "plegable": tecnicos.get("plegable"),
         "estado": tecnicos.get("estado"),
         "papeles": tecnicos.get("papeles"),
         "accesorios": tecnicos.get("accesorios") or [],
@@ -1068,7 +1177,7 @@ def construir_anuncio_segun_esquema(
     for clave in campos:
         if clave == "accesorios":
             valor = mapeo.get("accesorios") or []
-        elif clave in ("plegable", "ubicacion"):
+        elif clave == "ubicacion":
             valor = None
         else:
             valor = mapeo.get(clave, None)
@@ -1157,7 +1266,9 @@ def procesar_detalles(categoria: str, max_anuncios: int = None, ruta_muestra: st
         try:
             html = ruta.read_text(encoding="utf-8")
             detalle = extraer_detalle(html)
-            tecnicos = extraer_campos_tecnicos(detalle["descripcion"])
+            tecnicos = extraer_campos_tecnicos(
+                detalle["descripcion"], detalle.get("titulo", "")
+            )
             anuncio = construir_anuncio_segun_esquema(detalle, tecnicos, categoria)
             provincia, municipio = resolver_ubicacion(
                 detalle["provinceId"], detalle["municipalityId"], catalogos
