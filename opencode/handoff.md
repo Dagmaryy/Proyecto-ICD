@@ -3,7 +3,7 @@
 > Notas para retomar sin releer nada. Al empezar: leer ESTO + la última entrada de `journal.md`.
 > Actualizar cuando el contexto pase del ~80% o cuando releyendo archivos ya no recuerde su contenido.
 
-**Escrito/actualizado:** 2026-10-20 · **Rama:** `main` · **Último commit:** `2ca457b` (opencode: corrige el título del journal)
+**Escrito/actualizado:** 2026-10-26 · **Rama:** `main` · **Último commit:** `2ca457b` (opencode: corrige el título del journal)
 **Repo:** https://github.com/Dagmaryy/Proyecto-ICD.git · **Raíz:** `/home/dagmary/Escritorio/Proyecto ICD`
 
 ---
@@ -19,7 +19,7 @@ Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian A
 - El código es **namespace package** (sin `__init__.py`): `from src.scrapers.revolico import procesar_detalles`.
 - `revolico.py` define raíz con `BASE_DIR = Path(__file__).resolve().parents[2]`.
 - **httpx, nunca requests.** **Nunca tocar `data/raw/`** (excepción: añadir fuentes nuevas pedidas explícitamente, p. ej. `data/raw/stakeholders/institucionales/`). Nunca versionar caché HTML ni audios.
-- Tests: `python -m pytest tests/ -v` → 4 passed (o `make test`).
+- Tests: `python -m pytest tests/ -v` → 5 passed (o `make test`).
 - Diagnóstico de rutas: `python3 src/scripts/verificar_rutas.py` (o `make rutas`; devuelve `exit 1` si hay rutas rotas).
 - Limpiador: `python src/scripts/limpiar_finales.py --verificar` / `--aplicar` (o `make limpiar`).
 
@@ -45,6 +45,14 @@ Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian A
 - Rutas: `raw: data/raw`, `processed: data/processed`, `graphs: storytelling/graphs`, `cache_listado/detalle` bajo `data/raw/web/revolico/`.
 
 ## Datos: qué hay y cuánto (verificado 2026-10-10)
+
+### Actualización 2026-10-26 (combustión, bicis y patinetes)
+
+- **Motos de combustión (La Habana):** `final/motos_combustion_procesadas.json` → **325** válidos, 30 campos del esquema de combustión, `tipo_vehiculo = "moto_combustion"`, `combustible = "gasolina"`, precios **500–4200 USD**. `motos_combustion_outliers.json` → **9** motos reales con precio inválido (`57302018` a 8500 USD y ocho a 1 USD). `motos_combustion_descartados.json` → **191**. Candidatos: **694**; caché de detalle: **882** HTML. Objetivo de **300 superado**; no hacen falta más peticiones.
+- **Fase de combustión:** `src/scrapers/moto_combustion.py` (detalle, `--max N`, `--reprocesar-cache`, `--limpiar`) + `src/scrapers/refrescar_combustion.py` (búsquedas por término, 694 candidatos). En la última continuación se hicieron **150 peticiones nuevas** (75 + 75), además de las 150 anteriores; la caché quedó en 882 HTML. El filtro rechaza piezas (`_TITULO_PARTE`, `_TITULO_INICIO_PARTE`) e inmuebles (`_TITULO_INMUEBLE`), y ahora también aceites, retenes, milleros, cables, correas, bujes, tapas y kits. Los 325 procesados pasan el filtro; los 3 outliers de piezas se movieron a descartados.
+- **Bicis:** `final/bicis_procesados.json` → **414**; `final/bicis_descartados.json` → **184**. **Patinetes:** `final/patinetes_procesados.json` → **335**; `final/patinetes_descartados.json` → **110**; `final/patinetes_candidatos.json` → **482**.
+- **Ojo:** los apartados antiguos de «Detalles descargados» y «Procesados de motos» (350/326) se refieren a **motos eléctricas**; no mezclar con combustión. El archivo eléctrico vigente es `final/motos_electricas_procesadas.json` (326, 30 campos), renombrado desde `motos_procesados.json`.
+- **Calidad combustión:** 257 sin `marca` (79 %), 30 sin `cilindrada_cc` (9 %), 304 sin `kilometraje_km`; 27 títulos repetidos (108 registros), en su mayoría anuncios distintos de dealer. No se deduplicaron. Sigue el outlier de kilometraje `58026629` (`240280 km`).
 
 Embudo, de arriba abajo:
 
@@ -96,15 +104,17 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 - La antigua `data/processed/_backup_antes_esquema_v2/` se movió a `versiones/` y se ignora (resuelto).
 - **Embudo no anidado:** los elegibles v2 (4.432) superan los crudos únicos (3.265) porque cada tipo se filtra de forma independiente y un anuncio puede contar en varios; la reconciliación exacta queda `[pendiente]` (documentado en `data/README.md`).
 
-## Estado de git ahora mismo
+## Estado de git ahora mismo (2026-10-26)
 
-- Renombrados (staged, `git mv`): `previos/` → `versiones/` en `data/processed/` (18 archivos).
-- Modificados: `AGENTS.md`, `notebooks/{02,04,05}`, `opencode/{handoff,journal}.md`, `elements/Elementos.md` (previo), `requirements.txt`, `src/scripts/limpiar_finales.py`, `tests/test_smoke.py`.
-- Nuevos sin trackear: `Makefile`, `.githooks/{commit-msg,pre-commit}`, `data/README.md`, `data/processed/README.md`, `data/processed/versiones/README.md`, y las fuentes `data/raw/stakeholders/institucionales/{decreto_163_2026,resolucion_175_2026,aduana_portada,mindus_marco,mfp_portada}.html` + `_fuentes.md`.
-- Ignorados: `venv/`, `.pytest_cache/`, `__pycache__/`, `data/raw/web/revolico/`.
-- `git status` debe quedar **sin caché HTML ni audios**. No se ha hecho commit.
+- **Renombrado (staged):** `final/motos_procesados.json` → `final/motos_electricas_procesadas.json`.
+- **Modificados:** `data/processed/README.md`, `opencode/journal.md`, `opencode/handoff.md`; también venían modificados `data/raw/interviews/{preguntas,registro,transcripciones}.md` y los 3 esquemas eléctricos/bici/patinete.
+- **Nuevos sin trackear:** `final/{motos_combustion_procesadas,outliers,descartados,candidatos_cache}.json`, `final/{bicis,patinetes}_{procesados,descartados}.json`, `final/patinetes_candidatos.json`, `docs/schemas/esquema_moto_combustion.json`, `src/scrapers/{bici,moto_combustion,patinete,refrescar_combustion,refrescar_patinetes}.py`, `transcribir.py`, `opencode/diagnostico.md` y `data/raw/interviews/{transcripciones,usuarios}/`.
+- **Ignorados:** `venv/`, `.pytest_cache/`, `__pycache__/`, `data/raw/web/revolico/`.
+- **No se ha hecho commit.** `git status` debe quedar sin caché HTML ni audios.
 
 ## Pendientes, por prioridad
+
+**Inmediato (combustión):** el objetivo está cumplido: **325** válidos (300 pedidos) + **9** outliers de precio. No hace falta seguir descargando. Revisar a mano los 9 outliers y el `kilometraje_km=240280` de `58026629`; decidir si se corrige el `modelo` nulo y los demás defectos de parseo antes del informe.
 
 1. **Acordar el commit** (tipos `datos`+`codigo`+`docs`+`estructura`+`opencode`): renombrado `versiones/`, READMEs, `Makefile`, `.githooks/`, notebooks, `AGENTS.md`, `src/scripts/limpiar_finales.py`, `tests/`, fuentes institucionales.
 2. **Revisar a mano** los 3 precios de motos marcados `precio_historico` (jmd 650, el 290 sospechoso, vedca 1620).
@@ -117,7 +127,7 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 
 ## Cómo comprobar que todo sigue bien
 
-- `make test` → 4 passed (procesar_detalles motos da 3 completos con max 5; limpios existen y tienen los 8 campos; esquemas cargan).
+- `make test` → 5 passed (procesar_detalles motos da 3 completos con max 5; limpios existen y tienen los 8 campos; esquemas cargan; normalización de guiones no fusiona rangos).
 - `procesar_detalles('motos')` → 83 completos / 243 parciales / 24 descartados.
 - `python src/scripts/limpiar_finales.py --verificar` → `exit 0` con paridad total (v2 1198/2861/373 + reglas + excepciones = 966/2049/314).
 - `make rutas` → 6 rutas rotas conocidas (config/registro/notación/histórico); sin nuevas.
