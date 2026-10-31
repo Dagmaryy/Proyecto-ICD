@@ -17,7 +17,6 @@ Este registro solo contiene **códigos**, nunca nombres, teléfonos ni direccion
 
 **Leyenda**
 - **Relación:** `eléctrico` (usa o compró uno eléctrico) · `combustión` (usa moto de gasolina) · `comprando` (en proceso de compra) · `vendedor`
-- **Vehículo:** `moto` · `bici` · `patinete`
 - **Consent. / Grab.:** `sí` / `no`
 - **Transcrip. / En JSON:** `sí` / `no` (vacío = pendiente)
 
@@ -69,7 +68,6 @@ Este registro solo contiene **códigos**, nunca nombres, teléfonos ni direccion
 | Transcritas | 0 | 30 |
 | Pasadas al JSON | 0 | 30 |
 | Municipios distintos | 0 | variedad |
-| Tipos de vehículo cubiertos (moto / bici / patinete) | 0 | los 3 |
 | Canales de compra distintos | 0 | variedad |
 
 ---

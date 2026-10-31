@@ -1,7 +1,7 @@
 # Guía de entrevista a usuarios
 
 **Proyecto ICD: mercado de motos eléctricas en La Habana**
-**Tipo:** semiestructurada · **Duración:** 20 a 30 minutos · **Muestra:** 30 usuarios
+**Tipo:** semiestructurada· **Muestra:** 30 usuarios
 
 ---
 
@@ -19,8 +19,7 @@ Si no cumple los tres, se agradece y no se continúa.
 
 > Hola, soy Dagmary, estudiante de Ciencia de Datos de la Universidad de La Habana. Estoy haciendo un trabajo de la asignatura Introducción a la Ciencia de Datos sobre el mercado de vehículos eléctricos de dos ruedas en La Habana.
 >
-> Te voy a hacer unas preguntas sobre cómo compraste y usas tu vehículo. Dura unos 20 a 30 minutos.
->
+> Te voy a hacer unas preguntas sobre cómo compraste y usas tu vehículo.
 > - Tu participación es **voluntaria**. Puedes saltarte cualquier pregunta o parar cuando quieras.
 > - Tus respuestas son **anónimas**. No voy a escribir tu nombre, solo un código (por ejemplo E07).
 > - Los datos se usan **solo para este trabajo académico**.

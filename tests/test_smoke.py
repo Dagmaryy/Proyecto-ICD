@@ -52,3 +52,51 @@ def test_esquemas_cargan():
     for ruta in sorted(SCHEMAS_DIR.glob("*.json")):
         with open(ruta, encoding="utf-8") as f:
             json.load(f)
+
+
+def test_extraer_campos_tecnicos_regex():
+    from src.scrapers.revolico import extraer_campos_tecnicos
+
+    tecnicos = extraer_campos_tecnicos(
+        "Motor 500 Wats, 72 Voltios, 20 Amperios, batería LiFePO4, "
+        "autonomía 125-140 KM, velocidad 45 km/h, peso 187.00 lb. "
+        "Seminueva, papeles en regla.",
+        "Bici plegable",
+    )
+    assert tecnicos["motor_w"] == 500
+    assert tecnicos["voltaje_v"] == 72
+    assert tecnicos["amperaje_ah"] == 20
+    assert tecnicos["tipo_bateria"] == "lifepo4"
+    assert tecnicos["autonomia_km"] == 140
+    assert tecnicos["velocidad_max_kmh"] == 45
+    assert tecnicos["peso_kg"] == 85
+    assert tecnicos["estado"] == "Seminueva"
+    assert tecnicos["papeles"] == "en regla"
+    assert tecnicos["plegable"] is True
+
+    tecnicos = extraer_campos_tecnicos("Moto 0km, 3 meses de uso", "Moto")
+    assert tecnicos["estado"] == "Nueva"
+    assert tecnicos["plegable"] is False
+
+    tecnicos = extraer_campos_tecnicos("Autonomía 35-50 km, 30 km x hora", "Patinete")
+    assert tecnicos["autonomia_km"] == 50
+    assert tecnicos["velocidad_max_kmh"] == 30
+
+
+def test_normalizacion_guiones_no_fusiona_rangos():
+    from src.scrapers.moto_combustion import _normalizar
+    from src.scrapers.revolico import _normalizar_titulo
+
+    casos = {
+        "70–80 km": "70 80 km",
+        "6–8 horas": "6 8 horas",
+        "10‑20": "10 20",
+        "4—5": "4 5",
+        "1‒2": "1 2",
+        "3―4": "3 4",
+        "5－6": "5 6",
+        "−5": "5",
+    }
+    for texto, esperado in casos.items():
+        assert _normalizar_titulo(texto) == esperado
+        assert _normalizar(texto) == esperado

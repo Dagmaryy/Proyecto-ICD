@@ -1,0 +1,1836 @@
+[
+  {
+    "url_detalle": "https://www.revolico.com/item/venta-de-motos-56869292",
+    "id": "56869292",
+    "titulo": "Venta de motos",
+    "precio_usd": 1150,
+    "motivo": "expirado",
+    "fecha_intento": "2026-10-25T18:10:10.264955+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/venta-de-motos-56853366",
+    "id": "56853366",
+    "titulo": "Venta de motos",
+    "precio_usd": 900,
+    "motivo": "expirado",
+    "fecha_intento": "2026-10-25T18:10:14.568696+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-b1-son-pocasss-56836567",
+    "id": "56836567",
+    "titulo": "Moto b1 son pocasss",
+    "precio_usd": 900,
+    "motivo": "expirado",
+    "fecha_intento": "2026-10-25T18:10:48.258020+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-midha-57228743",
+    "id": "57228743",
+    "titulo": "Moto MIDHA",
+    "precio_usd": 1020,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:13:17.258581+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-challenger-corleone-57957589",
+    "id": "57957589",
+    "titulo": "MOTO CHALLENGER CORLEONE*",
+    "precio_usd": 800,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:15:49.220575+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-halcon-raser-mountain-57975898",
+    "id": "57975898",
+    "titulo": "💥💥MOTO HALCÓN RASER MOUNTAIN💥💥",
+    "precio_usd": 3080,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:16:40.831469+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-topmac-evolution-57943923",
+    "id": "57943923",
+    "titulo": "Motos Topmac Evolution",
+    "precio_usd": 1850,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:18:37.428946+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-vedca-n3-56441042",
+    "id": "56441042",
+    "titulo": "Moto vedca N3",
+    "precio_usd": 1700,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:19:30.004567+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-bucati-f3-57815736",
+    "id": "57815736",
+    "titulo": "MOTO BUCATI F3",
+    "precio_usd": 2730,
+    "motivo": "error_descarga",
+    "fecha_intento": "2026-10-25T18:21:03.693119+00:00",
+    "error": "Error de red al descargar https://www.revolico.com/item/moto-bucati-f3-57815736: [Errno 104] Connection reset by peer"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-57726547",
+    "id": "57726547",
+    "titulo": "Moto",
+    "precio_usd": 1770,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:23:08.707402+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-maf-eagle-57958309",
+    "id": "57958309",
+    "titulo": "Moto MAF EAGLE",
+    "precio_usd": 1120,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:23:19.361259+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-kvitova-57958233",
+    "id": "57958233",
+    "titulo": "Motos KVITOVA",
+    "precio_usd": 1420,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:23:28.580831+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-vorta-x-57958159",
+    "id": "57958159",
+    "titulo": "Moto VORTA X",
+    "precio_usd": 1700,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:23:34.373938+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-mountain-aguila-57961570",
+    "id": "57961570",
+    "titulo": "Moto MOUNTAIN Aguila",
+    "precio_usd": 2600,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:24:09.134279+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-halcon-mountain-57961510",
+    "id": "57961510",
+    "titulo": "Moto HALCON Mountain",
+    "precio_usd": 3000,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:24:22.053626+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-maf-eagle-57762532",
+    "id": "57762532",
+    "titulo": "🏍️*MOTO MAF EAGLE*🏍️",
+    "precio_usd": 1120,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:27:37.651271+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-kvitova-57073091",
+    "id": "57073091",
+    "titulo": "MOTOS KVITOVA",
+    "precio_usd": 1500,
+    "motivo": "error_descarga",
+    "fecha_intento": "2026-10-25T18:30:02.639066+00:00",
+    "error": "Error de red al descargar https://www.revolico.com/item/motos-kvitova-57073091: [Errno 101] Network is unreachable"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-chanllenger-corleone-56589325",
+    "id": "56589325",
+    "titulo": "Moto CHANLLENGER CORLEONE",
+    "precio_usd": 900,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-25T18:32:28.821955+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-automatica-yamaki-57960459",
+    "id": "57960459",
+    "titulo": "Moto automática Yamaki",
+    "precio_usd": 2250,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-25T18:41:06.075964+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-yoazaky-super-tank-56833414",
+    "id": "56833414",
+    "titulo": "MOTO YOAZAKY SUPER TANK",
+    "precio_usd": 3050,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.440390+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-maf-eagle-57303970",
+    "id": "57303970",
+    "titulo": "Moto Maf Eagle",
+    "precio_usd": 1120,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.440558+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-raly-tres-ruedas-57443307",
+    "id": "57443307",
+    "titulo": "Moto Raly tres ruedas",
+    "precio_usd": 1500,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.442965+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/aproveche-moto-kiwitowa-en-oferta-precio-1580-usd-57604636",
+    "id": "57604636",
+    "titulo": "‼ APROVECHE MOTO KIWITOWA EN OFERTA , PRECIO 1 ⃣5 ⃣8 ⃣0 ⃣ USD ‼",
+    "precio_usd": 1580,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.443939+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-topmaq-f3-57815685",
+    "id": "57815685",
+    "titulo": "MOTO TOPMAQ F3",
+    "precio_usd": 2630,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.444049+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-topmaq-aguila-0km-56531752",
+    "id": "56531752",
+    "titulo": "MOTOS TOPMAQ F3 0km",
+    "precio_usd": 2500,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.445903+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-yoazaky-thank-56575459",
+    "id": "56575459",
+    "titulo": "MOTOS YOAZAKY THANK",
+    "precio_usd": 2950,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.445995+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-callenger-corleone-56964566",
+    "id": "56964566",
+    "titulo": "Moto Callenger Corleone",
+    "precio_usd": 780,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.446470+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-57103954",
+    "id": "57103954",
+    "titulo": "Motos",
+    "precio_usd": 850,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.446667+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-challenger-57123156",
+    "id": "57123156",
+    "titulo": "Moto challenger",
+    "precio_usd": 840,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.446878+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/ofertas-de-motos-57408642",
+    "id": "57408642",
+    "titulo": "OFERTAS DE MOTOS",
+    "precio_usd": 2750,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.448908+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-nuevaaa-toda-la-inf-en-la-foto-57464700",
+    "id": "57464700",
+    "titulo": "ME AJUSTO CON DINERO EN MANO Moto Nuevaaa TODA LA INF EN LA FOTO",
+    "precio_usd": 1000,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.449128+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-challenger-corleone-57523227",
+    "id": "57523227",
+    "titulo": "‼ MOTO CHALLENGER PRONTEZZA‼",
+    "precio_usd": 800,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.449241+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-maf-2026-57523345",
+    "id": "57523345",
+    "titulo": "‼ MOTO MAF 2026‼",
+    "precio_usd": 750,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.449586+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-challenger-57663928",
+    "id": "57663928",
+    "titulo": "MOTO CHALLENGER",
+    "precio_usd": 800,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.450292+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-maf-2026-57705659",
+    "id": "57705659",
+    "titulo": "Moto MAF 2026",
+    "precio_usd": 780,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.452130+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-mikazuki-57819343",
+    "id": "57819343",
+    "titulo": "Moto MIKAZUKI",
+    "precio_usd": 1020,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.453087+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-vortax-680-bateria-como-nueva-57907201",
+    "id": "57907201",
+    "titulo": "Moto electrica vortax 680 2025 bateria como nueva bateria 90-100km",
+    "precio_usd": 1350,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.453360+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-mikazuki-2026-57936648",
+    "id": "57936648",
+    "titulo": "Moto Mikazuki 2026",
+    "precio_usd": 1000,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.453463+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-57946245",
+    "id": "57946245",
+    "titulo": "Motos de",
+    "precio_usd": 1700,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.454136+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-vgca-57948447",
+    "id": "57948447",
+    "titulo": "Moto VGCA",
+    "precio_usd": 2550,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.454580+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-topmaq-f3-57951474",
+    "id": "57951474",
+    "titulo": "Motos Topmaq F3",
+    "precio_usd": 2500,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.454979+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-tres-ruedas-marca-isuki-57969426",
+    "id": "57969426",
+    "titulo": "Moto de tres ruedas Marca ISUKI",
+    "precio_usd": 2600,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.455893+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-3-ruedas-57976107",
+    "id": "57976107",
+    "titulo": "*Moto de 3 ruedas*",
+    "precio_usd": 2560,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:01:22.457126+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-3-ruedas-57805756",
+    "id": "57805756",
+    "titulo": "Motos de 3 ruedas",
+    "precio_usd": 2600,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-26T16:07:27.430063+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-fly-eagle-57959370",
+    "id": "57959370",
+    "titulo": "Moto Fly EAGLE",
+    "precio_usd": 1980,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-26T16:07:35.313210+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-panda-nx-57959321",
+    "id": "57959321",
+    "titulo": "Moto Panda NX",
+    "precio_usd": 2180,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-26T16:08:09.314209+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-fly-racing-57959248",
+    "id": "57959248",
+    "titulo": "Moto Fly Racing",
+    "precio_usd": 2420,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-26T16:08:13.613330+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-topmaq-e4-57959203",
+    "id": "57959203",
+    "titulo": "Moto TOPMAQ E4",
+    "precio_usd": 2500,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-26T16:08:17.542635+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-topmaq-f3-57959095",
+    "id": "57959095",
+    "titulo": "Moto TOPMAQ F3",
+    "precio_usd": 2700,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-26T16:09:01.958476+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-bucatti-f3-57959027",
+    "id": "57959027",
+    "titulo": "Moto BUCATTI F3",
+    "precio_usd": 2700,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-26T16:09:36.461766+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-topmaq-e4-56102635",
+    "id": "56102635",
+    "titulo": "` MOTOS TOPMAQ E4 `",
+    "precio_usd": 2480,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.664308+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/yoazaky-707-tank-super-57409292",
+    "id": "57409292",
+    "titulo": "Moto Yoazaky 707 TANK SUPER",
+    "precio_usd": 2950,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.664431+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-topmaq-f3-57952628",
+    "id": "57952628",
+    "titulo": "MOTO TOPMAQ F3",
+    "precio_usd": 2650,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.666661+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-electrica-topmaq-shikra-2026-55995147",
+    "id": "55995147",
+    "titulo": "Moto Eléctrica Mishozuki Buho Ultra $3600",
+    "precio_usd": 3600,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.666835+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-vedca-n3-57874431",
+    "id": "57874431",
+    "titulo": "〽 *MOTOS VEDCA N3*〽",
+    "precio_usd": 1830,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.668300+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-uso-mishozuki-57959756",
+    "id": "57959756",
+    "titulo": "Moto de USO Mishozuki",
+    "precio_usd": 1400,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.668531+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/en-venta-moto-forza-1-lata-de-pintura-plasticos-de-reserva-tenedor-y-balancin-de-reserva-y-su-capa-para-la-lluvia-57653349",
+    "id": "57653349",
+    "titulo": "En venta moto forza , 1 lata de pintura, plasticos de reserva, tenedor y balancin de reserva y su capa para la lluvia.",
+    "precio_usd": 200,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.668615+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-raimbow-oferta-57513015",
+    "id": "57513015",
+    "titulo": "Moto RAIMBOW- Oferta",
+    "precio_usd": 1200,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.668695+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-marca-bucatti-57857121",
+    "id": "57857121",
+    "titulo": "MOTO MARCA BUCATTI",
+    "precio_usd": 1500,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.669172+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/se-vende-moto-57398779",
+    "id": "57398779",
+    "titulo": "Se vende Moto",
+    "precio_usd": 1300,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.669771+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-tres-ruedas-isuki-57826325",
+    "id": "57826325",
+    "titulo": "#Motos de tres #Ruedas #ISUKI *",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T16:09:42.670909+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-250cc-56086455",
+    "id": "56086455",
+    "titulo": "Moto de gasolina 250cc . Se acepta pago x Zelle",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T17:10:55.890121+00:00",
+    "campos_faltantes": [
+      "precio_usd",
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-150-cc-marca-seiko-56199235",
+    "id": "56199235",
+    "titulo": "Moto de gasolina 150 cc marca Seiko",
+    "precio_usd": 1950,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T17:10:55.890220+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-souka-125-cc-precio-2050-usd-57393914",
+    "id": "57393914",
+    "titulo": "Moto de gasolina SOUKA 125 CC  Precio: 2050 USD",
+    "precio_usd": 2050,
+    "motivo": "error_descarga",
+    "fecha_intento": "2026-10-26T17:25:25.007992+00:00",
+    "error": "Error de red al descargar https://www.revolico.com/item/moto-de-gasolina-souka-125-cc-precio-2050-usd-57393914: [Errno 104] Connection reset by peer"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-katzu-250-cc-precio-2980-usd-57393880",
+    "id": "57393880",
+    "titulo": "Moto de gasolina KATZU 250 CC Precio: 2980 USD",
+    "precio_usd": 2980,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T17:31:05.848407+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-huawin-150cc-precio-2380-usd-57393899",
+    "id": "57393899",
+    "titulo": "Moto de gasolina HUAWIN 150CC Precio: 2380 USD",
+    "precio_usd": 2380,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T17:31:05.848441+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-wys-150-cc-58132559",
+    "id": "58132559",
+    "titulo": "Moto de gasolina WYS 150 CC",
+    "precio_usd": 1950,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-26T17:42:53.510738+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-gn-175cc-58364978",
+    "id": "58364978",
+    "titulo": "Moto de gasolina GN 175cc",
+    "precio_usd": 2120,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T01:52:07.343642+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/3-kit-juego-de-filtro-de-gasolina-con-mangueras-universal-51415194",
+    "id": "51415194",
+    "titulo": "3 Kit Juego De Filtro De Gasolina Con Mangueras Universal",
+    "precio_usd": 10,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983033+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/manguera-para-motocicleta-trenzado-freno-embrague-manguera-aceite-tuberia-embrague-acelerador-linea-de-gasolina-53391504",
+    "id": "53391504",
+    "titulo": "manguera para motocicleta trenzado freno embrague manguera aceite tubería embrague acelerador línea de gasolina",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983060+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/vendo-filtros-de-gasolina-para-moto-53628408",
+    "id": "53628408",
+    "titulo": "Vendo filtros de gasolina para Moto",
+    "precio_usd": 300,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983067+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/separa-el-agua-de-la-gasolina-con-nuestro-embudo-de-cuatro-filtros-54671815",
+    "id": "54671815",
+    "titulo": "separa el agua de la gasolina con nuestro embudo de cuatro filtros",
+    "precio_usd": 30,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983072+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/baterias-de-alta-calidad-12v-9ah-para-ups-backups-factura-y-garantia-incluidas-54764497",
+    "id": "54764497",
+    "titulo": "PRIMERA MANO VENTAS MAYORISTAS!! Baterías de Alta Calidad 12V9Ah para Motos de gasolina Factura y garantía incluidas",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983075+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/filtro-de-gasolina-para-moto-con-iman-para-residuos-54992590",
+    "id": "54992590",
+    "titulo": "FILTRO DE GASOLINA PARA MOTO CON IMÁN PARA RESIDUOS.",
+    "precio_usd": 1,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983078+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/filtro-de-aire-lateral-200cc-moto-automatica-4t-mas-piezas-57371048",
+    "id": "57371048",
+    "titulo": "Filtro de aire lateral 200cc moto automática 4t, más piezas",
+    "precio_usd": 60,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983086+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/ciguenal-150cc-moto-automatica-4t-mas-piezas-57371110",
+    "id": "57371110",
+    "titulo": "Cigüeñal 150cc moto automática 4T más piezas",
+    "precio_usd": 90,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983089+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/compresion-57mm-para-moto-automatica-4t-150cc-incluye-todo-de-la-fotojunta-piston-aros-57371247",
+    "id": "57371247",
+    "titulo": "Compresión 57mm para moto automática 4T 150cc incluye todo de la foto(junta, Piston aros)",
+    "precio_usd": 55,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983093+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tornilleria-del-motor-completo-49cc-moto-automatica-4t-57371278",
+    "id": "57371278",
+    "titulo": "Tornillería del motor completo 49cc moto automática 4T",
+    "precio_usd": 60,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983096+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tapa-de-valvula-47mm-cortas-y-largas-49cc-moto-automatica-4t-57371334",
+    "id": "57371334",
+    "titulo": "Tapa de válvula 47mm (cortas y largas) 49cc moto automática 4t",
+    "precio_usd": 60,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983099+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/caballitos-49cc-y-150cc-moto-automatica-4t-mas-piezas-57371390",
+    "id": "57371390",
+    "titulo": "Caballitos 49cc y 150cc moto automática 4t, más piezas",
+    "precio_usd": 25,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983102+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/spra-reforzado-montado-en-caja-de-bola-original-150cc-175-cc-moto-automatica-4tmas-piezas-57371441",
+    "id": "57371441",
+    "titulo": "Spra reforzado montado en caja de bola original 150cc /175 cc moto automática 4T,más piezas",
+    "precio_usd": 55,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983105+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/ciguenal-150cc-de-moto-automatica-4t-mas-piezas-al-pv-57371622",
+    "id": "57371622",
+    "titulo": "Cigüeñal 150cc de moto automática 4T, más piezas al PV",
+    "precio_usd": 90,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983107+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/caballitos-y-valvula-cortas-y-largas-para-moto-automatica-4t-49cc-y-150cc-57371738",
+    "id": "57371738",
+    "titulo": "Caballitos y valvula (cortas y largas) para moto automática 4T 49cc y 150cc",
+    "precio_usd": 25,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983110+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/kit-de-rodamientos-del-diferencial-150-cc-moto-automatica-4t-57371784",
+    "id": "57371784",
+    "titulo": "Kit de rodamientos del diferencial 150 cc moto automática 4t",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983113+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bolanta-de-moto-automatica-4t-150cc-mas-piezas-57374172",
+    "id": "57374172",
+    "titulo": "Bolanta de moto automática 4t 150cc. Más piezas",
+    "precio_usd": 40,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983116+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/guitarra-para-moto-automatica-4t-150cc-57374227",
+    "id": "57374227",
+    "titulo": "Guitarra para moto automática 4T 150cc",
+    "precio_usd": 75,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983119+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/manifor-negro-de-goma-para-moto-automatica-4t-49cc-y-150cc-57374312",
+    "id": "57374312",
+    "titulo": "Manifor negro de goma para moto automática 4T 49cc y 150cc",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983121+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tapa-valvula-57-mm-para-moto-automatica-4t-150cc-57374534",
+    "id": "57374534",
+    "titulo": "Tapa valvula 57 mm para moto automática 4T 150cc",
+    "precio_usd": 60,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983124+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/compresion-47mm-para-moto-automatica-4t-49cc-todo-lo-que-esta-en-la-foto-aro-piston-junta-57374577",
+    "id": "57374577",
+    "titulo": "Compresión 47mm para moto automática 4T 49cc (todo lo que esta en la foto) aro Piston junta",
+    "precio_usd": 55,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983127+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/arbol-de-levas-150cc-para-moto-automatica-4t-57374922",
+    "id": "57374922",
+    "titulo": "Arbol de levas 150cc para moto automática 4T",
+    "precio_usd": 25,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983130+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motor-de-arranque-150cc-nuevo-para-moto-automatica-4t-57375857",
+    "id": "57375857",
+    "titulo": "Motor de arranque 150cc NUEVO para moto automática 4T",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983133+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/vareador-racing-150-cc-para-moto-automatica-4t-57375877",
+    "id": "57375877",
+    "titulo": "Vareador RACING 150 cc para moto automática 4T",
+    "precio_usd": 85,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983135+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/cloche-150cc-para-moto-automatica-4t-57376162",
+    "id": "57376162",
+    "titulo": "Cloche 150cc para moto automática 4T",
+    "precio_usd": 90,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983138+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tapa-de-aceite-150cc-moto-automatica-4t-57376206",
+    "id": "57376206",
+    "titulo": "Tapa de aceite 150cc moto automática 4T",
+    "precio_usd": 80,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983141+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tapa-del-diferencial-150cc-para-moto-automatica-4t-57376243",
+    "id": "57376243",
+    "titulo": "Tapa del diferencial 150cc para moto automática 4T",
+    "precio_usd": 40,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983143+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/vareador-150cc-para-moto-automatica-4t-57376354",
+    "id": "57376354",
+    "titulo": "Vareador 150cc para moto automática 4T",
+    "precio_usd": 55,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983146+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tornilleria-completa-para-moto-automatico-150cc-4t-57376549",
+    "id": "57376549",
+    "titulo": "Tornillería completa para moto automático 150cc 4t",
+    "precio_usd": 60,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983149+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tensor-de-cadena-para-moto-automatica-4t-200cc-57376677",
+    "id": "57376677",
+    "titulo": "Tensor de cadena para moto automática 4T 200cc",
+    "precio_usd": 17,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983152+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/medidor-de-aceite-para-la-moto-automatica-4t-200cc-57376708",
+    "id": "57376708",
+    "titulo": "Medidor de aceite para la moto automática 4T 200cc",
+    "precio_usd": 10,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983155+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motor-de-arranque-200cc-moto-automatica-4t-57380451",
+    "id": "57380451",
+    "titulo": "Motor de arranque 200cc moto automática 4t",
+    "precio_usd": 150,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983158+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/compresion-del-200cc-moto-automatica-4t-flamingo-y-otros-57380679",
+    "id": "57380679",
+    "titulo": "Compresión del 200cc moto automática 4t Flamingo y otros",
+    "precio_usd": 170,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983160+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/ciguenal-200cc-moto-automatica-4t-flamingo-y-otros-modelos-57380794",
+    "id": "57380794",
+    "titulo": "Cigüeñal 200cc moto automática 4t Flamingo y otros modelos",
+    "precio_usd": 140,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983163+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/valvulas-200cc-moto-automatica-4t-flamingo-y-otros-modelos-57380815",
+    "id": "57380815",
+    "titulo": "Válvulas 200cc moto automática 4t Flamingo y otros modelos",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983165+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/patines-200cc-moto-automatica-4t-flamingo-y-otros-modelos-57380827",
+    "id": "57380827",
+    "titulo": "Patines 200cc moto automática 4t Flamingo y otros modelos",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983168+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/encendido-para-moto-automatica-4t-200cc-flamingo-y-otros-modelos-57380920",
+    "id": "57380920",
+    "titulo": "Encendido para moto automática 4T 200cc Flamingo y otros modelos",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983171+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/cadena-distribucion-200cc-moto-automatica-4t-flamingo-y-otros-modelos-57380943",
+    "id": "57380943",
+    "titulo": "Cadena distribución 200cc moto automática 4t Flamingo y otros modelos",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983174+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tapa-lateral-de-cloche-200cc-moto-automatica-4t-57381026",
+    "id": "57381026",
+    "titulo": "Tapa lateral de cloche 200cc moto automática 4t",
+    "precio_usd": 75,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983177+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/vendi-49cc-para-moto-automatica-4t-57381098",
+    "id": "57381098",
+    "titulo": "Vendi 49cc para moto automática 4T",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983179+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/kit-de-junta-150cc-moto-automatica-4t-de-las-verdes-57381110",
+    "id": "57381110",
+    "titulo": "Kit de junta 150cc moto automática 4T (de Las verdes)",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983182+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tensor-de-cadena-49cc-moto-automatica-4t-57381133",
+    "id": "57381133",
+    "titulo": "Tensor de cadena 49cc moto automática 4t",
+    "precio_usd": 13,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983184+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/hago-mensajerias-y-carreras-moto-de-gasolina-suzuki-ax100-soy-de-10-de-octubre-llamen-los-verdaderos-interesados-57741213",
+    "id": "57741213",
+    "titulo": "Hago mensajerías y CARRERAS (MOTO DE GASOLINA) Suzuki ax100, soy de 10 de octubre, llamen los verdaderos interesados",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983193+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/torre-completa-sistema-de-compresion-todooo-moto-automatica-4t-200cc-58148629",
+    "id": "58148629",
+    "titulo": "Torre completa sistema de Compresión todooo moto automática 4T 200cc",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983203+00:00",
+    "campos_faltantes": [
+      "no_es_moto_combustion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/cambio-moto-de-combustion-125cc-modelo-f-gn-125-por-eletrica-nueva-o-vendo-58382224",
+    "id": "58382224",
+    "titulo": "cambio moto de combustion 125cc modelo f gn 125 por eletrica nueva o vendo",
+    "precio_usd": 1,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:00:48.983206+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/extractor-de-combustible-con-manguera-de-1-metro-56044047",
+    "id": "56044047",
+    "titulo": "Extractor de combustible con manguera de 1 metro",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:03:28.037100+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/arrancador-de-bateriaarrancador-de-coches-portatil-para-vehiculos-gasolina-o-diesel-56403522",
+    "id": "56403522",
+    "titulo": "Arrancador de bateria.Arrancador de coches portátil para vehículos gasolina o diésel",
+    "precio_usd": 70,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:05:03.502072+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/baterias-para-motos-de-gasolina-56849102",
+    "id": "56849102",
+    "titulo": "BATERIAS PARA MOTOS DE GASOLINA",
+    "precio_usd": 27,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:08:31.347808+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bateria-para-motos-de-gasolina-56849109",
+    "id": "56849109",
+    "titulo": "BATERIA PARA MOTOS DE GASOLINA",
+    "precio_usd": 22,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:08:31.355600+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/embudo-combustible-embudo-con-4-filtros-57279350",
+    "id": "57279350",
+    "titulo": "Embudo combustible/ Embudo con 4 filtros",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:15:38.111990+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-57322049",
+    "id": "57322049",
+    "titulo": "Moto de gasolina",
+    "precio_usd": 1650,
+    "motivo": "borrado",
+    "fecha_intento": "2026-10-27T03:15:47.217374+00:00"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/filtro-de-gasolina-moto-deportiva-57346783",
+    "id": "57346783",
+    "titulo": "Filtro de gasolina moto deportiva",
+    "precio_usd": 6,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:15:51.075979+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bateria-de-baku-o-moto-gasolina-de-uso-12-volts-9-amp-57444445",
+    "id": "57444445",
+    "titulo": "Batería de baku o moto gasolina de uso 12 volts 9 amp.",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:18:25.171825+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bateria-de-baku-o-moto-gasolina-12-volts-9-amp-57550468",
+    "id": "57550468",
+    "titulo": "Batería de baku o moto gasolina 12 volts 9 amp.",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.214979+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-yoazaky-ahorro-gasolina-55335765",
+    "id": "55335765",
+    "titulo": "Moto Yoazaky ahorro gasolina",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449077+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-jin-de-gasolina-55562348",
+    "id": "55562348",
+    "titulo": "Moto jin de gasolina",
+    "precio_usd": 1890,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449106+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-yoazaky-707-tank-55602092",
+    "id": "55602092",
+    "titulo": "Moto de gasolina Yoazaky 707 Tank",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449114+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-gasolina-56204180",
+    "id": "56204180",
+    "titulo": "Motos de gasolina",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449119+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-combustion-yoazaky-a-2100-usd-56538464",
+    "id": "56538464",
+    "titulo": "MOTO DE COMBUSTIÓN YOAZAKY a 2100 usd",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449123+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tengo-disponible-para-rentar-moto-sym-2025-de-gasolina-56541456",
+    "id": "56541456",
+    "titulo": "Tengo disponible para rentar moto Sym 2025 de gasolina",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449128+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/velocimetro-digital-universal-para-moto-de-gasolina-56871756",
+    "id": "56871756",
+    "titulo": "Velocímetro Digital Universal para Moto de gasolina",
+    "precio_usd": 125,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449132+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-57381341",
+    "id": "57381341",
+    "titulo": "Moto de gasolina",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449137+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-gasolina-57468864",
+    "id": "57468864",
+    "titulo": "Motos de gasolina",
+    "precio_usd": 1,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449142+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/filtro-gasolina-moto52819170-57506050",
+    "id": "57506050",
+    "titulo": "Filtro gasolina Moto,52819170",
+    "precio_usd": 450,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:21:30.449146+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/velocimetro-digital-universal-para-moto-de-gasolina-56097007",
+    "id": "56097007",
+    "titulo": "Velocímetro Digital Universal para Moto de gasolina",
+    "precio_usd": 125,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:22:29.822477+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tanque-de-gasolina-tanque-para-combustible-de-5l-en-12-usd-de-10-l-en-20-usd-fabricado-en-material-resistente-56056938",
+    "id": "56056938",
+    "titulo": "Tanque de gasolina/ Tanque para Combustible. De 5L en 12 usd De 10 L en 20 usd Fabricado en material resistente",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.656088+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tanque-para-combustible-56118709",
+    "id": "56118709",
+    "titulo": "Tanque para combustible",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.656286+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/super-oferta-tanques-de-gasolina-originales-56434492",
+    "id": "56434492",
+    "titulo": "Súper oferta tanques de gasolina originales",
+    "precio_usd": 12,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.656794+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tanque-de-gasolina-tanque-para-combustible-56440014",
+    "id": "56440014",
+    "titulo": "Tanque de gasolina/ Tanque para Combustible.",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.656969+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bomba-manual-de-combustible-extractor-57053046",
+    "id": "57053046",
+    "titulo": "Bomba manual de combustible extractor",
+    "precio_usd": 10,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.657801+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bomba-manual-para-extraer-combustible-ideal-para-traspasar-gasolina-o-diesel-de-un-tanque-a-otro-sistema-de-succio-57054333",
+    "id": "57054333",
+    "titulo": "Bomba manual para extraer combustible • Ideal para traspasar gasolina o diésel de un tanque a otro • Sistema de succió",
+    "precio_usd": 10,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.658031+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tanques-para-gasolina-12l-y-20l-57104319",
+    "id": "57104319",
+    "titulo": "Tanques para gasolina 12L y 20L",
+    "precio_usd": 12,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.658213+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bomba-manual-para-extraer-combustible-57118533",
+    "id": "57118533",
+    "titulo": "Bomba manual para extraer combustible",
+    "precio_usd": 10,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.658398+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bombeta-manual-para-gasolina-57174356",
+    "id": "57174356",
+    "titulo": "Bombeta Manual para Gasolina",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.658466+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/apt-en-interior-en-el-vedado1er-piso24se-incluye-una-moto-de-gasolina-0-km22000-usd-57207143",
+    "id": "57207143",
+    "titulo": "APT EN INTERIOR EN EL VEDADO,1ER PISO,2/4,SE INCLUYE UNA MOTO DE GASOLINA 0 KM,22000 USD",
+    "precio_usd": 22000,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.658645+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/se-vende-apto-en-el-vedadointerior-1er-piso-de-24-se-incluye-moto-de-gasolina-0-km-en-el-precio-57207335",
+    "id": "57207335",
+    "titulo": "SE VENDE APTO EN EL VEDADO‼ INTERIOR 1ER PISO DE 2/4, SE INCLUYE MOTO DE GASOLINA 0 KM EN EL PRECIO.",
+    "precio_usd": 22000,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.658845+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tanque-de-gasolina-tanque-para-combustible-de-5-l-12-usd-y-de-20-l-35-usd-57242148",
+    "id": "57242148",
+    "titulo": "Tanque de gasolina/ Tanque para Combustible de 5 L 12 usd y de 20 L 35 usd",
+    "precio_usd": 12,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.659113+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gasolina-super-especial-y-aceite-de-motor-en-playa-57362626",
+    "id": "57362626",
+    "titulo": "GASOLINA SUPER ESPECIAL Y ACEITE DE MOTOR EN PLAYA",
+    "precio_usd": 2.9,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.659268+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/12500usd-en-venta-casa-puerta-de-calle-con-todo-dentro-incluyendo-una-moto-de-gasolina-4-tiempo-y-un-negocio-en-luy-57499877",
+    "id": "57499877",
+    "titulo": "*$12.500usd. En venta casa puerta de calle con todo dentro, incluyendo una moto de gasolina 4 tiempo y un negocio en Luy",
+    "precio_usd": 12500,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:29.659519+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tanques-de-5l-para-combustible-56899186",
+    "id": "56899186",
+    "titulo": "Tanques de 5L para combustible",
+    "precio_usd": 17,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:23:59.960259+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tanque-de-gasolina-moto-gn-con-su-lleve-de-gasolina-tiene-1-saliderito-57715521",
+    "id": "57715521",
+    "titulo": "Tanque de gasolina, moto gn, con su lleve de gasolina, tiene 1 saliderito.",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:33:04.598498+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bomba-manual-para-extraer-combustible-57749330",
+    "id": "57749330",
+    "titulo": "Bomba manual para extraer combustible",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:35:01.350636+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/extractor-de-combustible-con-manguera-de-1-metro-57762881",
+    "id": "57762881",
+    "titulo": "EXTRACTOR DE COMBUSTIBLE CON MANGUERA DE 1 METRO",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:35:35.130133+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/extractor-de-combustible-57878425",
+    "id": "57878425",
+    "titulo": "Extractor de Combustible",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:35:43.442495+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bateria-de-12-volts-9-smpde-moto-gasolina-onbaku-57948154",
+    "id": "57948154",
+    "titulo": "Batería de 12 volts 9 smp.de moto gasolina onbaku.",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:37:37.510203+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gomas-para-motos-de-gasolina-57585855",
+    "id": "57585855",
+    "titulo": "GOMAS PARA MOTOS DE GASOLINA",
+    "precio_usd": 35,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076036+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gomas-para-motos-de-gasolina-11070-17-57677634",
+    "id": "57677634",
+    "titulo": "Gomas para motos de gasolina 110/70-17",
+    "precio_usd": 50,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076134+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gomas-para-motos-de-gasolina-14070-17-57677675",
+    "id": "57677675",
+    "titulo": "Gomas para motos de gasolina 140/70-17",
+    "precio_usd": 55,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076204+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/focos-para-moto-de-gasolina-25-usd-57969321",
+    "id": "57969321",
+    "titulo": "Focos para moto de gasolina 25 USD",
+    "precio_usd": 25,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076308+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gomas-1109016-para-motos-de-gasolina-57978344",
+    "id": "57978344",
+    "titulo": "GOMAS 110/90/16 para MOTOS DE GASOLINA",
+    "precio_usd": 30,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076403+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gomas-27518-para-motos-de-gasolina-57978408",
+    "id": "57978408",
+    "titulo": "GOMAS 275/18 PARA MOTOS DE GASOLINA",
+    "precio_usd": 26,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076482+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gomas-30018-para-motos-de-gasolina-57978437",
+    "id": "57978437",
+    "titulo": "GOMAS 300/18 PARA MOTOS DE GASOLINA",
+    "precio_usd": 28,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076546+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/gomas-de-motos-de-gasolina-58024513",
+    "id": "58024513",
+    "titulo": "Gomas de motos de gasolina",
+    "precio_usd": 35,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076593+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/renta-de-moto-automatica-de-gasolina-58052813",
+    "id": "58052813",
+    "titulo": "Renta de moto automática de gasolina",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076695+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/renta-o-alquiler-de-moto-automatica-de-gasolina-58053341",
+    "id": "58053341",
+    "titulo": "Renta o alquiler de moto automática de gasolina",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:48:21.076811+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/se-vende-apto-en-regla-se-deja-moto-de-gasolina-58283389",
+    "id": "58283389",
+    "titulo": "Se vende apto en regla se deja moto de gasolina",
+    "precio_usd": 8500,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:52:30.351755+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bomba-para-combustible-58290148",
+    "id": "58290148",
+    "titulo": "Bomba para Combustible",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:52:34.233482+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/filtro-de-gasolina-para-moto-58372818",
+    "id": "58372818",
+    "titulo": "Filtro de gasolina para moto",
+    "precio_usd": 2,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T03:55:30.875084+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/chucho-de-aguila-solo-moto-automatica-4t-mas-piezas-57371134",
+    "id": "57371134",
+    "titulo": "Chucho de Aguila solo moto automática 4T, más piezas",
+    "precio_usd": 30,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.665617+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/chucho-pasillo-largo-para-moto-automatica-4t-avispon-y-otros-modelos-mas-piezas-al-pv-57371165",
+    "id": "57371165",
+    "titulo": "Chucho pasillo largo para moto automática 4T (avispon y otros modelos) más piezas al pv",
+    "precio_usd": 60,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.682803+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/tapa-de-cloche-lateral-para-moto-automatica-4t-57371514",
+    "id": "57371514",
+    "titulo": "Tapa de cloche lateral para moto automática 4T",
+    "precio_usd": 60,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.697759+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/correas-todas-las-medidas-para-moto-automatica-4t-729-835-842-669-743-788-powerlink-y-bando-57371676",
+    "id": "57371676",
+    "titulo": "Correas todas las medidas para moto automática 4T (729 / 835/ 842/ 669/ 743/ 788) Powerlink y Bando",
+    "precio_usd": 28,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.714364+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/sistema-de-tapon-de-aceite-para-moto-automaticas-4t-57374207",
+    "id": "57374207",
+    "titulo": "Sistema de tapón de aceite para moto automáticas 4T",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.729678+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/cable-cachimba-y-bobina-para-moto-automatica-4t-57374293",
+    "id": "57374293",
+    "titulo": "Cable cachimba y bobina para moto automática 4T",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.747771+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/encendido-trifasico-nuevo-para-moto-automatica-4t-57374726",
+    "id": "57374726",
+    "titulo": "Encendido trifasico NUEVO para moto automática 4T",
+    "precio_usd": 35,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.764053+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/sistema-trasero-stop-ciudadintermitentes-chapa-todo-original-nuevo-soques-para-moto-automatica-4t-57375001",
+    "id": "57375001",
+    "titulo": "Sistema trasero stop ciudadintermitentes chapa (todo original nuevo) soques para moto automática 4T",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.780739+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/bujes-de-maquina-y-de-balancin-cada-juego-15-usd-57375033",
+    "id": "57375033",
+    "titulo": "Bujes de MÁQUINA y de BALANCIN cada juego 15 usd para moto automática 4T",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.795751+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/encendido-bifasico-nuevo-para-moto-automatica-4t-57375080",
+    "id": "57375080",
+    "titulo": "Encendido bifasico NUEVO para moto automática 4T",
+    "precio_usd": 30,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.810192+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/conmutadores-para-moto-automatica-4t-57375553",
+    "id": "57375553",
+    "titulo": "Conmutadores para moto automática 4T",
+    "precio_usd": 30,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.821403+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/flotante-base-redonda-para-moto-automatica-4t-57375583",
+    "id": "57375583",
+    "titulo": "Flotante base redonda para moto automática 4T",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.838714+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/transmision-racing-15x37-para-moto-automatica-4t-57375611",
+    "id": "57375611",
+    "titulo": "Transmisión RACING 15x37 para moto automática 4T",
+    "precio_usd": 50,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.854663+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/flotante-base-cuadrada-para-moto-automatica-4t-57376602",
+    "id": "57376602",
+    "titulo": "Flotante base cuadrada para moto automática 4T",
+    "precio_usd": 20,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.868025+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/kit-anilla-del-escape-y-esparragos-para-moto-automatica-4t-57376659",
+    "id": "57376659",
+    "titulo": "Kit anilla del escape y esparragos para moto automática 4T",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:28.885044+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/caja-reguladora-trifasica-y-bifasica-para-moto-automatica-4t-57381123",
+    "id": "57381123",
+    "titulo": "Caja reguladora trifasica  y bifasica para moto automática 4T",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:01:36.430329+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-combustion-gasolina-disponibles-0kms-58123641",
+    "id": "58123641",
+    "titulo": "MOTOS DE COMBUSTIÓN (GASOLINA) DISPONIBLES (0KMS)",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:02:52.112901+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-de-gasolina-58305011",
+    "id": "58305011",
+    "titulo": "Moto de gasolina",
+    "precio_usd": 5000,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:02:52.112929+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-gn-gasolina-58306464",
+    "id": "58306464",
+    "titulo": "Moto GN gasolina",
+    "precio_usd": 2260,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:02:52.112937+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-gasolina-58310925",
+    "id": "58310925",
+    "titulo": "Motos de gasolina",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:02:52.112943+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/motos-de-gasolina-58341142",
+    "id": "58341142",
+    "titulo": "Motos de gasolina",
+    "precio_usd": null,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:02:52.112949+00:00",
+    "campos_faltantes": [
+      "precio_usd"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/moto-halcon-gn-125cc-57057601",
+    "id": "57057601",
+    "titulo": "Moto Halcón GN 125cc",
+    "precio_usd": 1930,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:02:52.112955+00:00",
+    "campos_faltantes": [
+      "descripcion"
+    ]
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/aceites-2t-51963848",
+    "id": "51963848",
+    "titulo": "Aceites 2T",
+    "precio_usd": 1,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:04:21.458007+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/retenes-del-motor-conpleto-moto-automatica-4t-de-los-carmelitas-57380983",
+    "id": "57380983",
+    "titulo": "Retenes del motor conpleto moto automática 4T (de los carmelitas)",
+    "precio_usd": 15,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:04:21.458467+00:00",
+    "detalle": "no_es_moto_combustion"
+  },
+  {
+    "url_detalle": "https://www.revolico.com/item/milleros-para-varios-modelos-de-moto-automatica-4t-57381051",
+    "id": "57381051",
+    "titulo": "Milleros para varios modelos de moto automática 4T",
+    "precio_usd": 16,
+    "motivo": "detalle_invalido",
+    "fecha_intento": "2026-10-27T04:04:21.458985+00:00",
+    "detalle": "no_es_moto_combustion"
+  }
+]

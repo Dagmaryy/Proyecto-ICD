@@ -1,43 +1,60 @@
-# Proyecto ICD — Análisis del Mercado de Motos
+# Proyecto ICD — Análisis del Mercado de Motos Eléctricas en Cuba
 
 | | |
 |---|---|
 | **Asignatura** | Introducción a la Ciencia de Datos |
 | **Profesor** | Yudivian Almeida |
-| **Mercado** | Motos |
 | **Estudiante** | Dagmary Pérez Aguiar |
 
 ---
 
-## Descripción
+## Objetivo
 
-Proyecto de investigación que combina **scraping web** (Revolico), **entrevistas a usuarios** y **datos de stakeholders** (tiendas, importadoras, talleres e instituciones) para analizar el mercado de motos eléctricas en La Habana. Se incluyen también bicicletas eléctricas y patinetes como categorías complementarias del mismo mercado de movilidad eléctrica.
-
-El objetivo final es un informe de análisis de mercado, no un software.
+Análisis del mercado de vehículos ligeros en La Habana (motos eléctricas, motos de combustión, bicicletas y patinetes) combinando scraping de Revolico, entrevistas a usuarios y datos de stakeholders. El entregable es un informe de análisis de mercado.
 
 ---
 
-## Instalación
+## Datos y muestra
+
+- **Fuente principal:** Revolico (scraping).
+- **Cobertura geográfica:** La Habana.
+- **Ventana temporal:** Los datos provienen de varias tandas de scraping entre septiembre y octubre de 2026. Revolico solo muestra anuncios recientes, por lo que no es posible hacer un análisis temporal continuo.
+- **Muestra final:** 4 datasets de 300 registros cada uno.
+
+---
+
+## Estructura del repositorio
+
+- `src/` — Scrapers y scripts de procesamiento.
+- `data/raw/` — Datos crudos (no se versionan).
+- `data/processed/final/` — Los 4 datasets de 300 registros.
+- `docs/` — Documentación, esquemas JSON y journal.
+- `reports/` — Informe final y gráficos.
+- `opencode/` — Handoff para el flujo con IA.
+- `tests/` — Tests de integridad.
+
+---
+
+## Instalación y requisitos
 
 ```bash
-# 1. Crear y activar el entorno virtual
 python3 -m venv venv
 source venv/bin/activate
-
-# 2. Instalar dependencias
 pip install -r requirements.txt
 ```
 
 ---
 
+## Reproducibilidad
+
+- Para verificar la integridad: `make test`.
+- Para verificar rutas: `python src/scripts/verificar_rutas.py`.
+
+---
+
 ## Metodología
 
-Investigación mixta: cuantitativa (scraping y clustering) + cualitativa (entrevistas).
-
-### Población y muestra mínima
-
-- **Anuncios:** 30 motos, bicicletas y patinetes eléctricos de Revolico.
-- **Entrevistas:** 30 usuarios del mercado.
+Investigación mixta: cuantitativa (scraping) + cualitativa (entrevistas).
 
 ### Técnicas de recolección
 
@@ -47,16 +64,37 @@ Investigación mixta: cuantitativa (scraping y clustering) + cualitativa (entrev
 
 ### Técnicas de análisis
 
-1. Limpieza y normalización (regex, tasa CUP/USD).
-2. Clustering (K-Means sobre TF-IDF + variables numéricas).
-3. Visualización (Matplotlib, Seaborn, Plotly).
-4. Triangulación de fuentes.
-## Consideraciones éticas
-
-- Consentimiento informado en entrevistas.
-- User-Agent honesto en scraping.
-- Delay de 3 segundos entre peticiones.
+1. Limpieza y normalización.
+2. Estadísticas descriptivas.
+3. Triangulación de fuentes.
 
 ---
 
-> **Nota importante:** Revolico no expone la fecha original de publicación, solo la de última actualización. Las fechas de los anuncios scrapeados se concentran entre el 24 de septiembre y el 8 de octubre de 2026, porque la plataforma solo muestra anuncios recientes. No es posible hacer análisis temporal mensual.
+## Datasets finales
+
+| Archivo | Registros | Descripción |
+|---|---|---|
+| `motos_electricas_300.json` | 300 | Motos eléctricas |
+| `motos_combustion_300.json` | 300 | Motos de combustión |
+| `bicis_300.json` | 300 | Bicicletas eléctricas |
+| `patinetes_300.json` | 300 | Patinetes eléctricos |
+
+---
+
+## Consideraciones éticas y limitaciones
+
+- **Ética:** consentimiento informado, User-Agent honesto, delay >=3s, máx. 150 peticiones por sesión.
+- **Limitaciones:** 100% La Habana, múltiples ventanas de scraping (no serie temporal continua), ~60% de anuncios sin todos los campos técnicos, canal formal con información fragmentaria.
+
+---
+
+## Documentación
+
+- `docs/outline.md` — Estructura del informe.
+- `docs/final_report.md` — Informe final.
+- `docs/elements.md` — Preguntas de investigación.
+- `docs/schemas/` — Esquemas JSON.
+- `docs/methodology.md`, `docs/decisions.md`, `docs/sources.md`, `docs/limitaciones.md` (si existen).
+- `docs/journal.md` — Bitácora de trabajo.
+
+

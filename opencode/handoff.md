@@ -30,19 +30,19 @@ Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian A
 - `src/scripts/verificar_rutas.py` → busca referencias de rutas rotas.
 - `src/scripts/limpiar_finales.py` → **limpiador reproducible** de los finales (ver abajo).
 - `config.yaml` → parámetros (ver abajo).
-- `elements/Elementos.md` → **las 30 preguntas del estudio** (fuentes A/E/S/D).
+- `docs/Elementos.md` → **las 30 preguntas del estudio** (fuentes A/E/S/D).
 - `Makefile` → `make test`, `make rutas`, `make limpiar`.
 - `.githooks/commit-msg` y `.githooks/pre-commit` → validan el asunto y bloquean caché/audios/secretos. No están activos (falta `git config core.hooksPath .githooks`).
 - `data/README.md` → mapa y embudo; `data/processed/README.md` → vigentes + flujo; `data/processed/versiones/README.md` → histórico de versiones.
-- `storytelling/outline.md` → outline propuesto de la historia (**sin aprobar**).
-- `notebooks/` (01–05) → EDA y gráficos (01_eda_motos, 02_eda_listado_motos, 03_analisis_precios_motos, 04_eda_motos_final, 05_graficos_motos).
+- `docs/outline.md` → outline propuesto de la historia (**sin aprobar**).
+- `` (01–05) → EDA y gráficos (01_eda_motos, 02_eda_listado_motos, 03_analisis_precios_motos, 04_eda_motos_final, 05_graficos_motos).
 
 ## Config que rige (config.yaml)
 
 - Scraping: UA honesto «Proyecto-ICD (Dagmary)», `delay_segundos: 3`, `delay_429_segundos: 60`, `max_peticiones: 150`, `max_paginas_por_url: 10`.
 - Economía: `tasa_cup_por_usd: 350` (fecha 2026-10-05).
 - Análisis: `max_anuncios_por_tipo: 30`, clustering `n_clusters: 6`, `random_state: 42`.
-- Rutas: `raw: data/raw`, `processed: data/processed`, `graphs: storytelling/graphs`, `cache_listado/detalle` bajo `data/raw/web/revolico/`.
+- Rutas: `raw: data/raw`, `processed: data/processed`, `graphs: `, `cache_listado/detalle` bajo `data/raw/web/revolico/`.
 
 ## Datos: qué hay y cuánto (verificado 2026-10-10)
 
@@ -70,7 +70,7 @@ Embudo, de arriba abajo:
   - **El orden de los registros NO es contrato**; el script garantiza igualdad de URLs y de campos por registro. Para diffs limpios en git, los finales se han dejado = HEAD menos el cambio real (bicis 10 líneas quitadas).
 - **`versiones/`** (`data/processed/`, antigua `previos/`): v1/v2/v3 de las 3 categorías + `bicis_final_limpio_agresivo.json` (1202, estructura antigua) + muestras viejas + descartados/extra. Es histórico: **no borrar, no usar para el informe**.
 - **Caché HTML** (ignorada por git): `cache_html/` motos 30 listado + 13 búsqueda · bicis 30 + 34 · patinetes 30 + 11; `cache_detalle/motos/` 350.
-- **Gráficos**: `storytelling/graphs/preliminar/` (12 PNG) → hechos con `motos_final.json` (538) y `motos_procesados.json` (300). Son preliminares; los definitivos van con los `*_final_limpio.json`.
+- **Gráficos**: `/preliminar/` (12 PNG) → hechos con `motos_final.json` (538) y `motos_procesados.json` (300). Son preliminares; los definitivos van con los `*_final_limpio.json`.
 
 Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revolico infravaloraban la oferta** (subcategoría oficial de bicis ~151 anuncios vs **2.050** por búsqueda de texto; igual en motos y patinetes). Por eso busqué por texto, no por categoría.
 
@@ -107,7 +107,7 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 ## Estado de git ahora mismo (2026-10-26)
 
 - **Renombrado (staged):** `final/motos_procesados.json` → `final/motos_electricas_procesadas.json`.
-- **Modificados:** `data/processed/README.md`, `opencode/journal.md`, `opencode/handoff.md`; también venían modificados `data/raw/interviews/{preguntas,registro,transcripciones}.md` y los 3 esquemas eléctricos/bici/patinete.
+- **Modificados:** `data/processed/README.md`, `docs/journal.md`, `opencode/handoff.md`; también venían modificados `data/raw/interviews/{preguntas,registro,transcripciones}.md` y los 3 esquemas eléctricos/bici/patinete.
 - **Nuevos sin trackear:** `final/{motos_combustion_procesadas,outliers,descartados,candidatos_cache}.json`, `final/{bicis,patinetes}_{procesados,descartados}.json`, `final/patinetes_candidatos.json`, `docs/schemas/esquema_moto_combustion.json`, `src/scrapers/{bici,moto_combustion,patinete,refrescar_combustion,refrescar_patinetes}.py`, `transcribir.py`, `opencode/diagnostico.md` y `data/raw/interviews/{transcripciones,usuarios}/`.
 - **Ignorados:** `venv/`, `.pytest_cache/`, `__pycache__/`, `data/raw/web/revolico/`.
 - **No se ha hecho commit.** `git status` debe quedar sin caché HTML ni audios.
@@ -119,7 +119,7 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 1. **Acordar el commit** (tipos `datos`+`codigo`+`docs`+`estructura`+`opencode`): renombrado `versiones/`, READMEs, `Makefile`, `.githooks/`, notebooks, `AGENTS.md`, `src/scripts/limpiar_finales.py`, `tests/`, fuentes institucionales.
 2. **Revisar a mano** los 3 precios de motos marcados `precio_historico` (jmd 650, el 290 sospechoso, vedca 1620).
 3. **Decidir** si se limpian las rutas rotas restantes (clave `exports` de `config.yaml`, `registro.md` futuro, notación e histórico del journal) o se dejan como traza.
-4. **Aprobar el outline** de `storytelling/outline.md`.
+4. **Aprobar el outline** de `docs/outline.md`.
 5. Preparar tablas y **gráficos definitivos** con los `*_final_limpio.json`.
 6. **Ampliar `_MARCAS`/`_MODELOS`** (bicis/patinetes) y regenerar limpios con `limpiar_finales.py --aplicar`.
 7. **Entrevistas**: ejecutar 30 (semana del 12-oct), volcar a `entrevistas_usuarios.json` (en `data/processed/`).
@@ -135,6 +135,6 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 
 ## Fuentes y enlaces
 
-- Preguntas del estudio: `elements/Elementos.md`. Guía de entrevista: `data/raw/interviews/preguntas.md`. Registro: `data/raw/interviews/registro.md` (0/30).
+- Preguntas del estudio: `docs/Elementos.md`. Guía de entrevista: `data/raw/interviews/preguntas.md`. Registro: `data/raw/interviews/registro.md` (0/30).
 - Institucionales: 5 fuentes oficiales descargadas (`decreto_163_2026`, `resolucion_175_2026`, `aduana_portada`, `mindus_marco`, `mfp_portada`) + `_fuentes.md`; MITRANS falló por SSL (sin reintento). Antiguas vacías: `ONCUBA.md`, `Postdata.club.md`. Redes: `data/raw/web/{Telegram,Facebook}.md`.
 - `ARCHIVO`/`versiones` son histórico; el informe sale de los limpios + entrevistas + stakeholders.

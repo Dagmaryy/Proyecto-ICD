@@ -259,7 +259,7 @@ Cobertura: **0/30 entrevistas**; faltan 30. El registro preveía empezar la sema
 2. `data/raw/interviews/registro.md:16` → `data/processed/entrevistas_usuarios.json` (no existe).
 3. `opencode/journal.md:25` → `prompts/sessions.md` (ruta antigua).
 4. `opencode/journal.md:53` → `data/raw/institutional/` (nombre antiguo; la carpeta actual es `data/raw/stakeholders/institucionales/`).
-5. `opencode/journal.md:97` → `notebooks/02–04` (guion largo y nombre antiguo).
+5. `opencode/journal.md:97` → `02–04` (guion largo y nombre antiguo).
 6. `opencode/journal.md:97` → `data/processed/final/motos_` (ruta truncada).
 
 ### 16. Teléfonos en JSON
@@ -283,7 +283,7 @@ Solo se usan 4 claves de `scraping` (`revolico.py:23-26`): `user_agent`, `delay_
 | Clave | ¿Se usa? | Observación |
 |---|---|---|
 | `proyecto.*` | No | Metadatos sin consumo por el código. |
-| `rutas.*` | No | Las rutas están hardcodeadas en `revolico.py`. `exports` apunta a `data/exports` (no existe); `reports` apunta a `reports/` (la real es `storytelling/reports/`); `graphs` tampoco se usa. |
+| `rutas.*` | No | Las rutas están hardcodeadas en `revolico.py`. `exports` apunta a `data/exports` (no existe); `reports` apunta a `reports/` (la real es `docs/`); `graphs` tampoco se usa. |
 | `max_paginas_por_url: 10` | No | Hay 30 páginas por listado oficial en caché. |
 | `timeout_segundos: 30` | No | El timeout está hardcodeado como `30` (`revolico.py:74`). |
 | `economia.tasa_cup_por_usd` / `fecha_tasa` | No | No hay conversión CUP/USD en el pipeline. |
@@ -308,7 +308,7 @@ La configuración describe un pipeline distinto del que existe: promete 10 pági
 | `AGENTS.md:11` | `data/raw/web/` → redes sociales | `Facebook.md` 1 byte y `Telegram.md` 0 bytes. |
 | `AGENTS.md:19` | Campos compartidos: `precio`, `moneda`, `tipo_vehiculo`, `es_electrica`, `uso_principal`, `canal_compra` | El final tiene 8 campos y usa `precio_usd`; no existen `moneda`, `tipo_vehiculo`, `es_electrica`, `uso_principal` ni `canal_compra`. |
 | `AGENTS.md:55` y `:68` | `storytelling/historia.md` | No existe; hay `outline.md` y `reports/final_report.md` (0 bytes). |
-| `AGENTS.md:56` | “`src/`: … y notebooks/” | Los notebooks están en `notebooks/` en la raíz, no en `src/`. |
+| `AGENTS.md:56` | “`src/`: … y ” | Los notebooks están en `` en la raíz, no en `src/`. |
 | `AGENTS.md:57` | Esquemas en `data/esquemas/` | Están en `docs/schemas/`. |
 | `AGENTS.md:81` | Anonimizar teléfonos en datos procesados | 32 JSON, incluidos los finales, conservan teléfonos. |
 | `data/README.md:21` | “Crudos (únicos) … 3265” | Suma 3265; unión global 3256 (9 URLs en más de una categoría). |
@@ -321,7 +321,7 @@ La configuración describe un pipeline distinto del que existe: promete 10 pági
 
 | Archivo | Tamaño | Estado |
 |---|---:|---|
-| `storytelling/reports/final_report.md` | 0 B | vacío |
+| `docs/final_report.md` | 0 B | vacío |
 | `data/raw/web/Telegram.md` | 0 B | vacío |
 | `data/raw/stakeholders/institucionales/ONCUBA.md` | 0 B | vacío |
 | `data/raw/stakeholders/institucionales/Postdata.club.md` | 0 B | vacío |
@@ -332,7 +332,7 @@ La configuración describe un pipeline distinto del que existe: promete 10 pági
 | `docs/methodology.md` | 193 B | título + una frase |
 | `docs/sources.md` | 142 B | título + una frase |
 
-También están vacíos los directorios `data/raw/stakeholders/{tiendas,importadoras,talleres}/`. No existe `storytelling/historia.md`. En cambio, `storytelling/graphs/preliminar/` sí tiene 12 PNG y `docs/schemas/` tiene 4 esquemas válidos.
+También están vacíos los directorios `data/raw/stakeholders/{tiendas,importadoras,talleres}/`. No existe `storytelling/historia.md`. En cambio, `/preliminar/` sí tiene 12 PNG y `docs/schemas/` tiene 4 esquemas válidos.
 
 ### 20. `git status` y último commit
 

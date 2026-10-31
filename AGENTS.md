@@ -23,7 +23,7 @@ No modificar campos sin consultar.
 - Python 3, venv en `venv/`
 - httpx (no requests), BeautifulSoup + lxml
 - pandas, pydantic, scikit-learn, matplotlib
-- Scripts en `src/`, notebooks para explorar
+- Scripts en `src/`.
 
 ## Comandos
 - `make test` → tests de humo (`pytest`).
@@ -52,15 +52,15 @@ Proyecto académico, no producto. Objetivo: informe de análisis de mercado.
 La trazabilidad importa más que la elegancia.
 
 ## Estructura
-- storytelling/: historia en Markdown (historia.md), metodología, limitaciones, fuentes y gráficos
-- src/: todos los scripts (scrapers/) y notebooks/
+- docs/: documentación del proyecto (esquemas, outline, informe, elementos, etc.).
+- src/: todos los scripts (scrapers/).
 - data/: JSON, esquemas (esquemas/) y evidencias. data/raw no se modifica
 - opencode/: journal.md y handoff.md
 
 ## Flujo con OpenCode
-1. Al empezar: leer opencode/handoff.md y la última entrada de opencode/journal.md.
+1. Al empezar: leer opencode/handoff.md y la última entrada de docs/journal.md.
 2. Trabajar por partes y detenerse al final de cada una para que Dagmary confirme.
-3. Al terminar: añadir una entrada a opencode/journal.md.
+3. Al terminar: añadir una entrada a docs/journal.md.
 4. Cuando el contexto pase del ~80% (o notes que releyendo archivos ya no recuerdas su contenido): actualizar opencode/handoff.md antes de seguir.
 5. No hacer commits sin que Dagmary lo pida; proponer el mensaje.
 

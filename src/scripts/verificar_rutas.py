@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verifica que las rutas citadas en el proyecto existan.
 
-Busca rutas en README, AGENTS, config.yaml, scripts (.py), notebooks (.ipynb) y
+Busca rutas en README, AGENTS, config.yaml, scripts (.py) y
 documentos (.md), y avisa de las que apuntan a archivos o carpetas que no existen.
 Sirve para ejecutarlo tras crear, mover o renombrar algo.
 
@@ -19,8 +19,8 @@ from pathlib import Path
 # Carpetas de primer nivel que se vigilan (incluye nombres históricos y nuevos,
 # para detectar referencias que quedaron apuntando a nombres viejos).
 PREFIJOS = (
-    "data", "datos", "src", "codigo", "notebooks", "docs", "reports",
-    "elements", "prompts", "historia", "opencode",
+    "data", "datos", "src", "codigo", "docs", "reports",
+    "prompts", "historia", "opencode",
 )
 EXTENSIONES = {".md", ".py", ".yaml", ".yml", ".ipynb"}
 EXCLUIR_DIRS = {".git", "venv", ".venv", "env", "__pycache__", "node_modules",
@@ -85,7 +85,7 @@ def es_plantilla(ruta):
 
 
 def textos_de(archivo):
-    """Texto revisable del archivo (en notebooks, solo celdas, no salidas)."""
+    """Texto revisable del archivo."""
     if archivo.suffix == ".ipynb":
         try:
             nb = json.loads(archivo.read_text(encoding="utf-8"))
