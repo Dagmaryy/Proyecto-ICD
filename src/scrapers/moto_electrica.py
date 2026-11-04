@@ -1,7 +1,7 @@
 """Descarga y procesa detalles de motos eléctricas de La Habana desde Revolico.
 
 Reutiliza `revolico.py` sin modificarlo. Toma los candidatos de
-`data/processed/final/motos_electricas_final_limpio.json` (filtrados a La Habana),
+`data/processed/final/motos_final_limpio.json` (filtrados a La Habana),
 descarga sus detalles en `cache_detalle/motos_electricas/`, descarta los anuncios
 borrados/expirados/ilegibles y procesa los válidos con `procesar_detalles`.
 
@@ -27,14 +27,15 @@ from scrapers.revolico import (
     procesar_detalles,
     _extraer_json_next,
 )
+from scrapers.reglas_limpieza import generar_limpios_500
 
 CATEGORIA = "motos_electricas"
 PROVINCIA_LA_HABANA = "1"
-MAX_VALIDOS = 300
+MAX_VALIDOS = 500
 
 CACHE_DETALLE = BASE_DIR / "data/raw/web/revolico/cache_detalle" / CATEGORIA
 
-RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/motos_electricas_final_limpio.json"
+RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/motos_final_limpio.json"
 RUTA_PROCESADOS = BASE_DIR / "data/processed/final/motos_electricas_procesadas.json"
 RUTA_DESCARTADOS = BASE_DIR / "data/processed/final/motos_electricas_descartados.json"
 
@@ -283,6 +284,11 @@ def main() -> int:
         return 0
 
     procesar_y_guardar(validos_detalle, descartados)
+    resumen = generar_limpios_500(categorias=(CATEGORIA,))
+    print(
+        f"[LIMPIO] {CATEGORIA}: {resumen.get(CATEGORIA, 0)} registros "
+        f"en {CATEGORIA}_500_limpio.json"
+    )
     return 0
 
 

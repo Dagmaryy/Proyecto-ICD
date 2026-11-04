@@ -27,10 +27,11 @@ from scrapers.revolico import (
     procesar_detalles,
     _extraer_json_next,
 )
+from scrapers.reglas_limpieza import generar_limpios_500
 
 CATEGORIA = "bicis"
 PROVINCIA_LA_HABANA = "1"
-MAX_VALIDOS = 300
+MAX_VALIDOS = 500
 
 CACHE_DETALLE = BASE_DIR / "data/raw/web/revolico/cache_detalle" / CATEGORIA
 
@@ -97,6 +98,14 @@ def _guardar_json(ruta: Path, datos) -> None:
     with open(temporal, "w", encoding="utf-8") as f:
         json.dump(datos, f, ensure_ascii=False, indent=2)
     temporal.replace(ruta)
+
+
+def _generar_limpio_500() -> None:
+    resumen = generar_limpios_500(categorias=(CATEGORIA,))
+    print(
+        f"[LIMPIO] {CATEGORIA}: {resumen.get(CATEGORIA, 0)} registros "
+        f"en {CATEGORIA}_500_limpio.json"
+    )
 
 
 def _crear_descartado(registro: dict, motivo: str, extra: dict = None) -> dict:
@@ -336,6 +345,7 @@ def reprocesar_cache() -> int:
         _guardar_json(RUTA_PROCESADOS, list(existentes.values()))
         _volcar_progreso([], descartados, RUTA_DESCARTADOS)
         print(f"[TOTAL] válidos acumulados: {len(existentes)}")
+        _generar_limpio_500()
         return 0
 
     with tempfile.NamedTemporaryFile(
@@ -381,6 +391,7 @@ def reprocesar_cache() -> int:
         f"(completos={len(resultado['validos_completos'])}, "
         f"parciales={len(resultado['validos_parciales'])})"
     )
+    _generar_limpio_500()
     return 0
 
 
@@ -422,6 +433,7 @@ def main(argv: list[str] | None = None) -> int:
     procesar_validos(validos, descartados)
     existentes = _cargar_procesados_existentes()
     print(f"[FINAL] procesados={len(existentes)} faltan={max(0, MAX_VALIDOS-len(existentes))}")
+    _generar_limpio_500()
     return 0
 
 

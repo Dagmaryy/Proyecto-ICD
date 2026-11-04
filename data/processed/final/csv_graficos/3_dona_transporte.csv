@@ -1,0 +1,9 @@
+﻿tipo_vehiculo,transporte_incluido,cantidad
+Bicis,False,224
+Bicis,True,76
+Combustión,False,172
+Combustión,True,128
+Eléctricas,False,123
+Eléctricas,True,177
+Patinetes,False,153
+Patinetes,True,147

@@ -3,8 +3,8 @@
 > Notas para retomar sin releer nada. Al empezar: leer ESTO + la última entrada de `journal.md`.
 > Actualizar cuando el contexto pase del ~80% o cuando releyendo archivos ya no recuerde su contenido.
 
-**Escrito/actualizado:** 2026-10-26 · **Rama:** `main` · **Último commit:** `2ca457b` (opencode: corrige el título del journal)
-**Repo:** https://github.com/Dagmaryy/Proyecto-ICD.git · **Raíz:** `/home/dagmary/Escritorio/Proyecto ICD`
+**Escrito/actualizado:** 2026-11-04 (base 2026-10-26) · **Rama:** `main` · **Último commit:** `2ca457b` (opencode: corrige el título del journal)
+**Repo:** https://github.com/Dagmaryy/Proyecto-ICD.git · **Raíz actual:** `/home/dagmary/Desktop/Proyecto-ICD`
 
 ---
 
@@ -12,6 +12,17 @@
 
 Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian Almeida). Analizo el **mercado de vehículos eléctricos de dos ruedas en La Habana** (motos sobre todo; bicis/bicimotos y patinetes como categorías complementarias). Junto **scraping de Revolico + 30 entrevistas a usuarios + stakeholders** (tiendas, importadoras, talleres, instituciones). Entrego un **informe**, no software. La interpretación la escribe Dagmary; yo preparo datos, tablas, gráficos y outlines.
 
+
+## Actualización 2026-11-04 (estado vigente)
+
+- **Ruta actual:** `/home/dagmary/Desktop/Proyecto-ICD/`. La carpeta anterior `~/Proyecto-ICD/` fue eliminada.
+- **Entorno:** venv local + Ollama con `qwen2.5:3b` en `http://localhost:11434`.
+- **`src/scripts/enriquecer.py`:** fusión segura ya implementada (nunca sobrescribe un valor original no nulo). Ahora procesa las 4 muestras de 300 por categoría y guarda un `_enriquecido.json` por archivo.
+- **Campos técnicos:** eléctricas (motor, voltaje, amperaje, batería, autonomía, velocidad, carga, peso); combustión (cilindrada, tipo de motor, consumo, tanque, transmisión, arranque, año, kilometraje, velocidad, peso); bicis/patinetes (los eléctricos + tamaño de rueda). No se tocan estado, papeles, garantía, frenos ni suspensión.
+- **Entrevistas:** 30 transcripciones `.md` estandarizadas en `data/raw/interviews/transcripciones/`, listas para convertirse a JSON según `docs/schemas/esquema_entrevista.json`.
+- **Muestras de entrada** (300 cada una): `final/motos_electricas_300.json`, `final/motos_combustion_300.json`, `final/bicis_300.json`, `final/patinetes_300.json`.
+- **Salidas nuevas:** `final/motos_electricas_300_enriquecido.json`, `final/motos_combustion_300_enriquecido.json`, `final/bicis_300_enriquecido.json`, `final/patinetes_300_enriquecido.json`.
+- **Nota:** las secciones de datos y git de abajo son históricas (2026-10-10/26); la última entrada del journal (2026-10-27) tiene el estado de datos más reciente. Contraste siempre antes de usarlas.
 
 ## Cómo me muevo por el repo (no olvidar)
 
@@ -104,7 +115,7 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 - La antigua `data/processed/_backup_antes_esquema_v2/` se movió a `versiones/` y se ignora (resuelto).
 - **Embudo no anidado:** los elegibles v2 (4.432) superan los crudos únicos (3.265) porque cada tipo se filtra de forma independiente y un anuncio puede contar en varios; la reconciliación exacta queda `[pendiente]` (documentado en `data/README.md`).
 
-## Estado de git ahora mismo (2026-10-26)
+## Estado de git al 2026-10-26 (histórico)
 
 - **Renombrado (staged):** `final/motos_procesados.json` → `final/motos_electricas_procesadas.json`.
 - **Modificados:** `data/processed/README.md`, `docs/journal.md`, `opencode/handoff.md`; también venían modificados `data/raw/interviews/{preguntas,registro,transcripciones}.md` y los 3 esquemas eléctricos/bici/patinete.

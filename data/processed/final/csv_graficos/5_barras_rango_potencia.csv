@@ -1,0 +1,5 @@
+﻿rango_potencia,precio_mediano,cantidad_anuncios
+< 1000W,1200.0,57
+1000W - 2000W,1950.0,42
+2000W - 3000W,2660.0,109
+> 3000W,3100.0,27
