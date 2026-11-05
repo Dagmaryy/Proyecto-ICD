@@ -52,7 +52,10 @@ Las motos eléctricas en el mercado informal presentan un estándar técnico bas
 En términos de valor, el precio mediano de $2,500 USD dividido entre estas características arroja un costo aproximado de **$0.83 USD por cada vatio** de potencia, y de **$20.83 USD por cada kilómetro** de autonomía.
 
 ### 2.5. Formalidad y Logística (Preguntas 7, 8 y 9)
-Un hallazgo crítico es la falta de información legal. El **83.2% de los anuncios no especifica** si el vehículo es nuevo o usado, y el **77.8% no menciona** si cuenta con papeles en regla. Esto evidencia la alta informalidad y el riesgo del mercado.
+Un hallazgo crítico es la falta de información legal. Considerando los 1,200 anuncios en su conjunto, el **83.2% no especifica** si el vehículo es nuevo o usado, y el **77.8% no menciona** si cuenta con papeles en regla. 
+
+Al desagregar por categoría, se observa una opacidad transversal: el **40.0% de las motos eléctricas** no menciona papeles, seguido por el **56.3% de los patinetes**, el **69.7% de las motos de combustión** y un alarmante **84.7% en el caso de las bicicletas**. Esto evidencia que la informalidad y el riesgo legal son mayores en los vehículos de menor costo.
+
 En cuanto a la logística, el **44% de los anuncios sí incluye transporte** o entrega en La Habana. Finalmente, el mercado está atomizado: existen **580 vendedores únicos**, y el mayor intermediario o revendedor solo concentra **27 anuncios**.
 
 ### 2.6. Segmentación de la oferta mediante Clustering (Pregunta 10)
@@ -63,6 +66,8 @@ Para comprender la estructura del mercado, se aplicó un algoritmo de agrupamien
 3.  **Gama Alta (32 anuncios):** Vehículos premium o de altas prestaciones. El precio promedio asciende a **$3,104 USD**, ofreciendo motores de **4,140 W** y una autonomía de **176 km**. Son adquiridos por usuarios que requieren máxima potencia y recorridos largos.
 
 *Este análisis confirma que el mercado informal no es homogéneo, sino que está estratificado en capas socioeconómicas bien definidas.*
+
+La validez estadística de estos tres segmentos fue confirmada mediante un análisis de **Silhouette Score de 0.548** (un valor superior a 0.5 indica una separación clara y robusta entre los grupos) y una prueba **ANOVA sobre los precios que arrojó un p-valor de 0.00000** (demostrando que las diferencias de precio entre los tres clústeres son estadísticamente significativas y no producto del azar).
 
 ## 3. Perfil del Usuario y Entrevistas (Preguntas 11 a 20)
 
@@ -161,11 +166,13 @@ El cruce de los datos extraídos de Revolico con las fuentes documentales permit
 ## 6. Limitaciones del Estudio
 Este estudio presenta las siguientes limitaciones metodológicas:
 
-1.  **Incidente de disco y recuperación forense:** Un fallo crítico en la partición del sistema operativo (Linux) durante el desarrollo obligó a detener el proyecto. Utilizando la herramienta forense TestDisk, se logró rescatar exitosamente el 100% de los 1,200 JSONs procesados, las transcripciones y los scripts de análisis. La caché HTML cruda (que se encontraba en riesgo) fue recuperada desde un respaldo externo en Windows y reinsertada en el proyecto. La única pérdida material fue la base de datos de la herramienta OpenCode (utilizada para NLP), la cual se corrompió irreversiblemente, aunque el trabajo quedó documentado en registros forenses de texto plano.
-2.  **Informalidad del mercado:** El alto porcentaje de nulos en los campos de "estado" y "papeles" (más del 75%) impidió generar un análisis concluyente sobre la legalidad de los vehículos en el mercado informal.
-3.  **Filtrado de fuentes normativas:** Las 30 fuentes documentales fueron filtradas, extrayendo exclusivamente los artículos referentes a motos, bicicletas y patinetes, descartando normativas de otros vehículos (autos, remolques).
-4.  **Cobertura del canal informal:** La muestra se limita a los anuncios publicados en la plataforma Revolico. El mercado informal de La Habana también opera a través de otros canales cerrados (grupos de Telegram, WhatsApp, Facebook) que no fueron capturados en este scraping, lo que significa que los datos representan una muestra significativa, pero no la totalidad del mercado.
-5.  **Sesgo temporal:** Revolico muestra principalmente anuncios activos de los últimos 14 días. Por lo tanto, los precios reflejan una "instantánea" del mercado en septiembre-octubre de 2026, y no una evolución histórica a largo plazo.
+1.  **Incidente de disco y recuperación forense:** Un fallo crítico en la partición del sistema operativo (Linux) durante el desarrollo obligó a detener el proyecto. Utilizando la herramienta forense TestDisk, se logró rescatar exitosamente el 100% de los 1,200 JSONs procesados, las transcripciones y los scripts. La caché HTML cruda fue recuperada desde un respaldo externo y reinsertada en el proyecto, garantizando la reproducibilidad. La única pérdida material fue la base de datos de la herramienta OpenCode, aunque el trabajo quedó documentado en registros forenses.
+2.  **Informalidad del mercado:** El alto porcentaje de nulos en los campos de "estado" y "papeles" (más del 75% en promedio) impidió generar un análisis concluyente sobre la legalidad de los vehículos.
+3.  **Filtrado de fuentes normativas:** Las 44 fuentes documentales fueron filtradas, extrayendo exclusivamente los artículos referentes a motos, bicicletas y patinetes, descartando normativas de otros vehículos.
+4.  **Cobertura del canal informal:** La muestra se limita a los anuncios publicados en la plataforma Revolico. El mercado informal también opera a través de canales cerrados (Telegram, WhatsApp) que no fueron capturados.
+5.  **Sesgo temporal:** Los precios reflejan una "instantánea" del mercado en septiembre-octubre de 2026, no una evolución histórica a largo plazo.
+6.  **Precios pedidos vs. transacciones:** El estudio analiza los precios publicados (pedidos), no los precios de cierre finales de las negociaciones, los cuales suelen ser menores.
+7.  **Validación de Clústeres:** Aunque se aplicaron pruebas estadísticas (Silhouette y ANOVA) que validaron la separación de los grupos, el clustering se realizó sobre una muestra de 231 motos (las que tenían datos completos), lo que representa el 77% de la categoría.
 
 ## 7. Referencias y Fuentes Documentales
 
