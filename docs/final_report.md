@@ -7,22 +7,24 @@ Los hallazgos principales revelan un mercado fuertemente centralizado en los mun
 
 Asimismo, se identificó una profunda brecha entre la normativa estatal, que regula estrictamente los márgenes comerciales y establece incentivos fiscales para la movilidad eléctrica, y la realidad de un mercado informal caracterizado por la falta de garantías y la opacidad documental. Finalmente, el estudio concluye que la adopción masiva de vehículos eléctricos en La Habana no responde a una conciencia ecológica, sino a una estrategia de resiliencia y supervivencia económica de la población frente a la crisis del transporte público y el alto costo de los combustibles fósiles.
 
-## 1. Introducción y Metodología
+## 1. Introducción
 
-El presente estudio analiza el mercado de vehículos ligeros en La Habana (motos eléctricas, motos de combustión, bicicletas y patinetes), abarcando tanto la oferta del mercado informal como la percepción de los usuarios y el marco regulatorio vigente. La elección de este objeto de estudio responde al creciente papel de estos vehículos como alternativa de movilidad ante las limitaciones del transporte público y la crisis energética del país. 
+### 1.1. Justificación y Objetivos
+La movilidad urbana en Cuba atraviesa una de sus peores crisis, marcada por el déficit de transporte público y el encarecimiento de los combustibles fósiles. En este contexto, los vehículos ligeros (eléctricos y de combustión) han emergido como la principal solución de transporte para miles de habaneros. El objetivo general de este estudio es caracterizar la estructura de este mercado en La Habana. Los objetivos específicos son: (1) Analizar la oferta y los precios del mercado informal; (2) Identificar el perfil y las motivaciones del consumidor; y (3) Evaluar el impacto del marco regulatorio actual (Decreto 163/2026) en la dinámica del mercado.
 
-Para abordar esta problemática, se empleó una metodología mixta (cuantitativa y cualitativa) que integró tres fuentes de información fundamentales:
-1.  **Mercado informal:** Extracción y análisis de un corpus de 1,200 anuncios publicados en la plataforma Revolico (300 por cada categoría: motos eléctricas, combustión, bicicletas y patinetes).
-2.  **Usuarios:** Realización de 30 entrevistas semiestructuradas a residentes en La Habana para comprender las motivaciones de compra, hábitos de uso y principales problemáticas.
-3.  **Marco normativo y canal formal:** Revisión documental de más de 30 fuentes oficiales (Gacetas Oficiales, resoluciones de la Aduana, prensa oficial) y catálogos de tiendas estatales (VEDCA) y Mipymes (iTENCEL).
+### 1.2. Pipeline Técnico y Fases de Procesamiento
+Para abordar esta problemática, se empleó una metodología mixta con tres fuentes de información (anuncios, entrevistas y fuentes normativas). Todo el procesamiento técnico se ejecutó en Python estructurado en cuatro fases principales:
 
-Para garantizar el rigor y la reproducibilidad técnica del análisis, el procesamiento de datos se ejecutó en Python, estructurado en cuatro fases principales:
-*   **Fase 1 (Scraping):** Extracción automatizada de los anuncios mediante la librería `BeautifulSoup` y `httpx`, respetando los tiempos de espera éticos de la plataforma.
-*   **Fase 2 (Limpieza):** Estandarización de variables (precios, municipios, tipos de vehículos) y eliminación de registros duplicados o inconsistentes.
-*   **Fase 3 (Enriquecimiento):** Uso de expresiones regulares (Regex) para extraer marcas y estado legal directamente de los textos de los anuncios, llenando los vacíos de información de la base de datos original.
-*   **Fase 4 (Análisis Estadístico):** Aplicación de estadística descriptiva (medianas, conteos) y algoritmos de *Machine Learning* (K-Means) para la segmentación de la oferta. 
+*   **Fase 1 (Scraping en dos etapas):** Extracción automatizada mediante `httpx` y `BeautifulSoup`. El proceso constó de una fase de listado (capturando 148 páginas HTML de búsquedas) y una fase de detalle para extraer la información completa de los vehículos (350 detalles de motos y 882 de combustión). Se implementó un sistema de caché local, reintentos automáticos, un límite ético de 150 peticiones por sesión y pausas de 3 segundos (60 segundos ante errores HTTP 429).
+*   **Fase 2 (Limpieza y Embudo de Datos):** A partir de un universo bruto de 3,329 anuncios, se aplicó un riguroso filtro: deduplicación por título y tokens, normalización de moneda a USD, eliminación de valores atípicos (precios fuera del rango de $100 a $5,000), eliminación de ruido y agrupación en *buckets* de precios ($50). Tras descartar 38 registros por inconsistencias, el embudo arrojó un total de 4,432 anuncios elegibles, de los cuales se extrajo la muestra final de 1,200 (300 por categoría).
+*   **Fase 3 (Enriquecimiento con Regex):** Uso intensivo de expresiones regulares para extraer campos técnicos (motor, voltaje, amperaje, autonomía, peso, etc.) y de estado legal (papeles, factura) desde el texto libre de las descripciones. El enriquecimiento se aplicó exclusivamente sobre los campos nulos, alcanzando una cobertura técnica del 44% al 50% en variables clave.
+*   **Fase 4 (Machine Learning):** Aplicación de estadística descriptiva y del algoritmo K-Means para la segmentación de la oferta. Los datos fueron estandarizados con `StandardScaler`, fijando una semilla aleatoria (`random_state=42`) y `n_init=10`. El modelo se entrenó sobre las 231 motos eléctricas (de 300) que contaban con datos completos de precio, potencia y autonomía.
 
-Paralelamente, las 30 entrevistas de audio fueron transcritas de forma local utilizando modelos de IA (Whisper) y posteriormente procesadas con modelos de lenguaje locales (Ollama) para su estructuración en formato JSON, garantizando la privacidad de los datos. Finalmente, se realizó una validación manual de dichas entrevistas para asegurar la fidelidad de las citas y evitar sesgos o alucinaciones del modelo.
+### 1.3. Procesamiento de Entrevistas
+Paralelamente, las 30 entrevistas de audio fueron transcritas de forma local utilizando el modelo `faster-whisper` (tamaño *medium*, ejecutado en CPU con precisión `int8` y calibrado para español). Posteriormente, los textos fueron procesados con modelos de lenguaje locales (Ollama, `qwen2.5:3b`) para su estructuración en un archivo JSON. Finalmente, se realizó una validación y anonimización manual de las 30 entrevistas para asegurar la fidelidad de las citas y mitigar cualquier alucinación del modelo.
+
+### 1.4. Trazabilidad y Reproducibilidad
+Para garantizar la auditoría del estudio, todos los artefactos técnicos se encuentran versionados en el repositorio. Los scripts de extracción están en `src/scrapers/`, los scripts de análisis en `src/analysis/` y los datos finales en `data/processed/final/`. Tras un incidente de hardware, la caché HTML cruda fue recuperada desde un respaldo de seguridad y restaurada en `data/raw/web/revolico/`, lo que garantiza que el pipeline completo es 100% reproducible a partir de los datos originales.
 
 ## 2. Resultados de la Oferta (Anuncios)
 
@@ -159,18 +161,23 @@ El cruce de los datos extraídos de Revolico con las fuentes documentales permit
 ## 6. Limitaciones del Estudio
 Este estudio presenta las siguientes limitaciones metodológicas:
 
-1.  **Pérdida de datos por fallo técnico:** Un fallo en el disco duro requirió una reinstalación del sistema. Aunque los datos de los anuncios fueron recuperados exitosamente mediante herramientas forenses, la base de datos de la herramienta OpenCode se corrompió.
+1.  **Incidente de disco y recuperación forense:** Un fallo crítico en la partición del sistema operativo (Linux) durante el desarrollo obligó a detener el proyecto. Utilizando la herramienta forense TestDisk, se logró rescatar exitosamente el 100% de los 1,200 JSONs procesados, las transcripciones y los scripts de análisis. La caché HTML cruda (que se encontraba en riesgo) fue recuperada desde un respaldo externo en Windows y reinsertada en el proyecto. La única pérdida material fue la base de datos de la herramienta OpenCode (utilizada para NLP), la cual se corrompió irreversiblemente, aunque el trabajo quedó documentado en registros forenses de texto plano.
 2.  **Informalidad del mercado:** El alto porcentaje de nulos en los campos de "estado" y "papeles" (más del 75%) impidió generar un análisis concluyente sobre la legalidad de los vehículos en el mercado informal.
 3.  **Filtrado de fuentes normativas:** Las 30 fuentes documentales fueron filtradas, extrayendo exclusivamente los artículos referentes a motos, bicicletas y patinetes, descartando normativas de otros vehículos (autos, remolques).
 4.  **Cobertura del canal informal:** La muestra se limita a los anuncios publicados en la plataforma Revolico. El mercado informal de La Habana también opera a través de otros canales cerrados (grupos de Telegram, WhatsApp, Facebook) que no fueron capturados en este scraping, lo que significa que los datos representan una muestra significativa, pero no la totalidad del mercado.
 5.  **Sesgo temporal:** Revolico muestra principalmente anuncios activos de los últimos 14 días. Por lo tanto, los precios reflejan una "instantánea" del mercado en septiembre-octubre de 2026, y no una evolución histórica a largo plazo.
 
-## 7. Referencias
-*   Gaceta Oficial de la República de Cuba. (2026). *Decreto 163/2026* y *Gaceta No. 65 y 83*.
-*   Aduana General de la República. (2026). *Resoluciones y aranceles aduaneros*.
-*   VEDCA. (2026). *Catálogo de productos y precios*.
-*   Cibercuba. (2025). *Noticias sobre precios de motos en CIMEX y Tiendas Caribe*.
-*   Datos primarios extraídos de Revolico (septiembre-octubre 2026) y 30 entrevistas a usuarios en La Habana.
+## 7. Referencias y Fuentes Documentales
+
+El listado completo, detallado y categorizado de las **44 fuentes oficiales, normativas, institucionales y de prensa** utilizadas en este estudio se encuentra documentado en el archivo `docs/sources.md` dentro del repositorio del proyecto. 
+
+Dichas fuentes incluyen:
+*   **Normativa legal:** Gacetas Oficiales de la República (Decretos 163/2026, 119/2024, Resoluciones 104, 174, 175, 312, 340, entre otras).
+*   **Datos macroestadísticos:** Anuario Estadístico de Cuba 2025 (ONEI) - Capítulo 13: Transporte y Seguridad Vial.
+*   **Catálogos del Canal Formal:** Fichas técnicas de VEDCA, reportes de precios de CIMEX e iTENCEL.
+*   **Prensa Oficial y Cobertura Noticiosa:** Artículos de Cubadebate, Granma, Juventud Rebelde y Cibercuba.
+*   **Datos Primarios:** Corpus de 1,200 anuncios extraídos de Revolico (septiembre-octubre 2026) y 30 entrevistas semiestructuradas realizadas en La Habana.
+
 
 ## 8. Conclusiones
 El mercado de vehículos ligeros en La Habana se caracteriza por una alta informalidad, concentración geográfica en Centro Habana y Playa, y una paridad de precios entre el canal formal (VEDCA, CIMEX) y el informal (Revolico). A pesar de las flexibilizaciones legales del Decreto 163/2026, el mercado informal sigue dominando el volumen de oferta, aunque carece de garantías y trazabilidad legal para el comprador.
