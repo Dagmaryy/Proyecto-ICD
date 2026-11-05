@@ -353,3 +353,29 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 **Qué me costó:** Decidir un único motivo para `57233797`, que era a la vez precio placeholder y “bici moto”; se priorizó `precio_placeholder` porque el precio inválido es el defecto que impide usarlo. También cuidar que los 300 no arrastraran ningún ID recién descartado.
 
 **Próximo paso:** Revisar la semántica de `peso_kg` (peso del vehículo vs. carga máxima) antes de usarlo en el informe y decidir si los 300 son la base definitiva del análisis o solo una muestra de trabajo.
+
+---
+
+## 2026-11-04 — Enriquecimiento masivo por reglas sobre los 4 archivos de 300
+
+**Qué hice:** Creé `src/scripts/enriquecer_masivo.py` para rellenar por regex y pandas los campos `marca`, `modelo`, `papeles`, `estado`, `tipo_bateria`, `accesorios` y `garantia_dias` de los cuatro JSON de `data/processed/final/`. El script solo escribe cuando el valor original está `null`, vacío o es una lista vacía; conserva intactos los valores no nulos y no toca `precio_usd`, `motor_w`, `voltaje_v`, `autonomia_km`, `cilindrada_cc` ni `municipio`. Genera `*_enriquecido.json` junto a cada original.
+
+**Evidencia:** Rellenos nuevos (marca / modelo / papeles / estado / tipo_bateria / accesorios / garantia_dias): eléctricas **48 / 8 / 43 / 16 / 1 / 0 / 31**; combustión **140 / 21 / 82 / 49 / — / 1 / 31**; bicis **92 / 49 / 17 / 24 / 1 / 0 / 37**; patinetes **133 / 55 / 39 / 41 / 0 / 0 / 36**. `motos_combustion_300.json` no tiene `tipo_bateria`, así que se omite en ese archivo en vez de añadir un campo. Verifiqué 300 registros por salida, mismos `id_anuncio`, cero cambios en columnas protegidas, cero sobrescrituras de valores no nulos y cero cambios fuera de los 7 campos objetivo. `make test` → **5 passed / 1 failed** en `test_procesar_detalles_motos` (fallo ajeno a este script: devuelve 0 completos con la caché actual).
+
+**Qué aprendí:** Hay que distinguir campo ausente de campo nulo: añadir `tipo_bateria` a combustión habría roto el esquema. También que los valores existentes de `papeles` son texto (`"en regla"`); los nuevos se rellenan como booleanos `True`/`False` según lo pedido, así que la columna queda mixta hasta que se decida normalizarla.
+
+**Qué me costó:** Evitar falsos positivos en `marca` y `modelo`: palabras genéricas (`MOTOR`, `SPORT`, `REBAJAS`, `SCOOTER`, etc.), precios sueltos, años y unidades (`72V`, `500W`, `125cc`) se confunden con marcas o códigos. Añadí listas de exclusión, límites de palabra y contexto de unidades/precio; el resultado sigue siendo heurístico y requiere revisión manual antes del informe.
+
+**Próximo paso:** Decidir si `papeles` se normaliza a un único tipo (booleano o texto) y revisar a mano una muestra de marcas/modelos dudosos antes de usar las salidas en el análisis.
+
+---
+
+## 2026-11-04 — Descarga de la evidencia PDF de fuentes oficiales
+
+**Qué hice:** Creé `src/scripts/descargar_pdfs.py`, que lee `docs/sources.md`, extrae las 38 URLs y filtra los PDF directos. Descarga con User-Agent de navegador, `verify=False`, timeout y 3 s entre peticiones, valida la cabecera `%PDF` y guarda en `data/raw/stakeholders/pdfs_oficiales/` con nombres descriptivos. Usé `httpx` (regla del repo) en lugar de `requests`.
+
+**Evidencia:** 3 PDFs detectados y descargados, 0 fallos: `gaceta_65_2026.pdf` (514 032 bytes, 21 páginas), `gaceta_83_2026.pdf` (354 625 bytes, 9 páginas) y `onei_transporte_2025.pdf` (816 168 bytes). `file` confirma que los tres son PDF válidos y no quedaron archivos `.part`.
+
+**Qué aprendí:** Además de los dos PDFs de la Gaceta, el anuario de la ONEI también es PDF directo; las páginas de la Gaceta con resoluciones son HTML y no deben descargarse como si fueran PDF. Validar la cabecera evita guardar páginas de error con extensión `.pdf`.
+
+**Próximo paso:** Si se quieren conservar también las resoluciones de la Gaceta que están en HTML, habría que abrir cada página y buscar su enlace de descarga PDF; no se hizo porque el pedido era filtrar PDFs directos.

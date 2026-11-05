@@ -1,3 +1,5 @@
+cd ~/Desktop/Proyecto-ICD
+cat > data/raw/interviews/preguntas.md << 'EOF'
 # Guía de entrevista a usuarios
 
 **Proyecto ICD: mercado de motos eléctricas en La Habana**
@@ -127,4 +129,3 @@ Agradecer y preguntar si conoce a alguien más que cumpla los criterios y quiera
 | 16–17 | 19 |
 | 18–20 | 20 |
 | 21–23 | datos técnicos (peso, carga, rueda, autonomía real) |
-

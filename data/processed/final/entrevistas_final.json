@@ -1,0 +1,1536 @@
+{
+  "tipo_entrevista": "usuario",
+  "total_entrevistas": 30,
+  "entrevistas": [
+    {
+      "id_entrevista": "user_001",
+      "perfil": {
+        "edad": 54,
+        "ocupacion": "Médico",
+        "municipio": "Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Trabajo y transporte personal",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Era más económica que la de combustión y no requería licencia",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Revolico (vía importación por familiar)",
+        "razon_canal": null,
+        "precio_total": 400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Frecuente",
+        "tiempo_carga_horas": 6,
+        "problemas_apagones": null,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "No coincide, siempre se queda por debajo de lo anunciado",
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Problemas con la batería"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 800,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Las desechó",
+        "precio_reventa_estimado": "Mucho menos, unos 800 USD"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": null
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "El precio de la gasolina está muy elevado"
+      }
+    },
+    {
+      "id_entrevista": "user_002",
+      "perfil": {
+        "edad": 28,
+        "ocupacion": "Profesor universitario",
+        "municipio": "San Miguel del Padrón"
+      },
+      "uso": {
+        "uso_principal": "Transporte al trabajo",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto de combustión",
+        "razon_compra": "Precio en aquel entonces y modelo vistoso",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Importador / Revolico",
+        "razon_canal": null,
+        "precio_total": 2000,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": "El CUP (antes) y revendedores (después)",
+        "dificultad_obtener_combustible": true
+      },
+      "rendimiento": {
+        "autonomia_real": null,
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno grave, mantenimiento normal"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 50,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1200
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": "Moto con chapa y circulación. Él usa su licencia de auto y se arriesga.",
+        "amonestaciones": null,
+        "metodo_proteccion": null
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Costo de la gasolina y facilidad de carga en solineras (paneles solares)"
+      }
+    },
+    {
+      "id_entrevista": "user_003",
+      "perfil": {
+        "edad": 54,
+        "ocupacion": "Secretaria",
+        "municipio": "Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Trabajo y compras de fin de semana",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Precio del combustible muy elevado y ser más asequible en el mercado",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Conocido importador (traída de Panamá)",
+        "razon_canal": null,
+        "precio_total": 1500,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria",
+        "tiempo_carga_horas": null,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "50 km (inferior a los 80 km anunciados)",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "1000 CUP en parches para gomas",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Aún conserva la batería",
+        "precio_reventa_estimado": "No la vendería"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": null
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Más fácil de cargar en casa y el combustible es muy caro/escaso"
+      }
+    },
+    {
+      "id_entrevista": "user_004",
+      "perfil": {
+        "edad": 19,
+        "ocupacion": "Estudiante",
+        "municipio": "Diez de Octubre"
+      },
+      "uso": {
+        "uso_principal": "Transporte a la universidad y otros",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Precio más económico y misma autonomía que las motos grandes",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Familiar en Artemisa",
+        "razon_canal": "Tiene un familiar en Artemisa que las vende",
+        "precio_total": 1400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Una vez a la semana",
+        "tiempo_carga_horas": 12,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "120 km (superior a los 100 km anunciados)",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 0,
+        "gasto_mantenimiento": 0,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1500
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Garaje en casa, alarma y candado"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "La gasolina es más cara, aunque le gusta más la de gasolina por ser más rápida"
+      }
+    },
+    {
+      "id_entrevista": "user_005",
+      "perfil": {
+        "edad": 30,
+        "ocupacion": "Funcionario de la Cancillería Cubana",
+        "municipio": "Arroyo Naranjo"
+      },
+      "uso": {
+        "uso_principal": "Trabajo, estudio (maestría) y mandados",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (marca Camarón)",
+        "razon_compra": "Crisis del transporte, precio asequible y ventaja ante la crisis de combustible",
+        "factor_principal": "Precio y disponibilidad"
+      },
+      "compra": {
+        "canal_compra": "Desconocido (comprada por un familiar en Cuba)",
+        "razon_canal": null,
+        "precio_total": 1100,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria",
+        "tiempo_carga_horas": 7,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "Ninguno técnico, solo mecánicos por accidentes"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "10000 CUP",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 900
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": "Tiene licencia, no chapa (es bicimoto)",
+        "amonestaciones": "Multa de 30 CUP por llevar pasajero sin casco",
+        "metodo_proteccion": "Alarma, candado y garaje"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Disponibilidad y alto precio de la gasolina (1900-2000 CUP/L)"
+      }
+    },
+    {
+      "id_entrevista": "user_006",
+      "perfil": {
+        "edad": 19,
+        "ocupacion": "Estudiante de Ciencia de la Computación",
+        "municipio": "Playa"
+      },
+      "uso": {
+        "uso_principal": "Universidad y salir con amigos",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (marca Beca)",
+        "razon_compra": "Buena autonomía y precio conveniente",
+        "factor_principal": "Precio y autonomía"
+      },
+      "compra": {
+        "canal_compra": "Cien y Buyer (probablemente CIMEX)",
+        "razon_canal": "Donde vendían ese tipo de moto",
+        "precio_total": 1400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria",
+        "tiempo_carga_horas": 7,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide si va solo, disminuye con acompañante o a alta velocidad",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "30,000 CUP en parches; 20 USD en una goma",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1000
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": true,
+        "amonestaciones": true,
+        "metodo_proteccion": "Casa, alarma y candado"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica (aceptaría gasolina si tuviera dinero)",
+        "razon_preferencia": "Condiciones del país y alto precio de la gasolina"
+      }
+    },
+    {
+      "id_entrevista": "user_007",
+      "perfil": {
+        "edad": 18,
+        "ocupacion": "Estudiante",
+        "municipio": "Playa"
+      },
+      "uso": {
+        "uso_principal": "Universidad",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Buen precio y buena autonomía (100 km) para el costo",
+        "factor_principal": "Precio y autonomía"
+      },
+      "compra": {
+        "canal_compra": "Importada desde Panamá",
+        "razon_canal": "Es más barato importarla que comprarla en Cuba",
+        "precio_total": 1000,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Una vez a la semana",
+        "tiempo_carga_horas": 7,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "80 km (inicialmente 100 km)",
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 0,
+        "gasto_mantenimiento": 0,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 800
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Candado con alarma y garaje en la casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Es mucho más accesible cargar la batería que comprar combustible"
+      }
+    },
+    {
+      "id_entrevista": "user_008",
+      "perfil": {
+        "edad": 18,
+        "ocupacion": "Estudiante de Ciencia de la Computación",
+        "municipio": "Marianao"
+      },
+      "uso": {
+        "uso_principal": "Universidad, mandados y visitas",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto de combustión",
+        "razon_compra": "Mejor motor a largo plazo, buen rendimiento y durabilidad",
+        "factor_principal": "Motor"
+      },
+      "compra": {
+        "canal_compra": "Gasolinera (Tercera y 74)",
+        "razon_canal": null,
+        "precio_total": 1645,
+        "moneda": "USD",
+        "incluyo_extras": false
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": "Gasolineras (con dificultad)",
+        "dificultad_obtener_combustible": true
+      },
+      "rendimiento": {
+        "autonomia_real": null,
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "45-50 USD cada 2000 km",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": "Entre 1200 y 2100 USD"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": "Tiene chapa, licencia en trámite",
+        "amonestaciones": false,
+        "metodo_proteccion": "Candado, alarma incorporada y garaje"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Combustión",
+        "razon_preferencia": "Mayor utilidad a largo plazo. Tuvo una eléctrica antes y la perdió, compró combustión por falta de opciones"
+      }
+    },
+    {
+      "id_entrevista": "user_009",
+      "perfil": {
+        "edad": 20,
+        "ocupacion": "Estudiante de Ciencia de la Computación",
+        "municipio": "Guanabacoa"
+      },
+      "uso": {
+        "uso_principal": "Universidad",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Facilita el transporte y el precio fue conveniente",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Revolico",
+        "razon_canal": "Encontró la oferta allí",
+        "precio_total": 1000,
+        "moneda": "CUP (equivalente a USD en ese momento)",
+        "incluyo_extras": false
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria",
+        "tiempo_carga_horas": 5,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada, no ha bajado",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "Sí, fallos mecánicos menores (bujías)"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "1000-2000 CUP en mantenimiento",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1500
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": true,
+        "amonestaciones": false,
+        "metodo_proteccion": "La guarda en su casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Tema económico, el litro de gasolina cuesta 2500 CUP y se agota rápido"
+      }
+    },
+    {
+      "id_entrevista": "user_010",
+      "perfil": {
+        "edad": 63,
+        "ocupacion": "Especialista de calidad y auditora de sistema de gestión",
+        "municipio": "Plaza"
+      },
+      "uso": {
+        "uso_principal": "Traslado al trabajo del esposo y mandados",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Bicimoto eléctrica (modelo 911)",
+        "razon_compra": "Problemas con el combustible y el precio",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Firma china Nihao 53",
+        "razon_canal": "Mayor seguridad al comprar a través de la compañía",
+        "precio_total": 1000,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Frecuente, según necesidad",
+        "tiempo_carga_horas": null,
+        "problemas_apagones": false,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": null,
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno (vehículo reciente)"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 0,
+        "gasto_mantenimiento": 0,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": null
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": true,
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma, candado y garaje en casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Situación del combustible en Cuba y economía para el bolsillo"
+      }
+    },
+    {
+      "id_entrevista": "user_011",
+      "perfil": {
+        "edad": 19,
+        "ocupacion": "Estudiante de Estomatología",
+        "municipio": "Playa"
+      },
+      "uso": {
+        "uso_principal": "Escuela (estudio)",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Bicimoto eléctrica",
+        "razon_compra": "Buen precio para el mercado actual y buena autonomía",
+        "factor_principal": "Precio y autonomía"
+      },
+      "compra": {
+        "canal_compra": "Mipyme en El Vedado",
+        "razon_canal": "Mejor precio con características similares a otras más caras",
+        "precio_total": 1300,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Parcial (cuando baja una o cuatro rayitas)",
+        "tiempo_carga_horas": 10,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada, no ha bajado",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "Solo candado y cascos",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1200
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": "Su novio recibió multa por no llevar casco",
+        "metodo_proteccion": "Alarma, candado y la guarda en su casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Le ha resuelto la movilidad y no se imagina lidiando con una de combustión"
+      }
+    },
+    {
+      "id_entrevista": "user_012",
+      "perfil": {
+        "edad": 20,
+        "ocupacion": "Estudiante",
+        "municipio": "Boyeros"
+      },
+      "uso": {
+        "uso_principal": "Transporte general",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (marca Ayla 2016)",
+        "razon_compra": "No especificada (compra realizada por sus padres)",
+        "factor_principal": null
+      },
+      "compra": {
+        "canal_compra": "Comprada a un amigo",
+        "razon_canal": null,
+        "precio_total": 1500,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Cada 90-100 km",
+        "tiempo_carga_horas": null,
+        "problemas_apagones": false,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "100 km",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Cambio de batería (duró 5 años) y de caja controladora"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "Batería: $800 USD, Caja controladora: $60 USD, Llantas: $10,000 CUP",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": null
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": "No tiene licencia, pero tiene permiso (aprobó el teórico)",
+        "amonestaciones": false,
+        "metodo_proteccion": "Candado y la guarda en su casa (cochera)"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Combustión",
+        "razon_preferencia": "Curiosidad por probarla, aunque reconoce que la eléctrica es mejor por la dificultad de la gasolina"
+      }
+    },
+    {
+      "id_entrevista": "user_013",
+      "perfil": {
+        "edad": 45,
+        "ocupacion": "Profesor universitario (Facultad de Matemática y Computación)",
+        "municipio": "Marianao"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal (trabajo y visitar amigos), a menudo lleva a un acompañante",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica con pedales (Michiozuki, modelo Grillo, 2000W, 48V)",
+        "razon_compra": "Necesidad de resolver el transporte en zona de difícil acceso, potencia para dos personas y buena autonomía",
+        "factor_principal": "Potencia y autonomía"
+      },
+      "compra": {
+        "canal_compra": "Importadora / intermediario (vía anuncios)",
+        "razon_canal": "Confianza previa con el vendedor",
+        "precio_total": 500,
+        "moneda": "USD",
+        "incluyo_extras": false
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria (antes en casa, ahora en la universidad)",
+        "tiempo_carga_horas": null,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada y se ha mantenido",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "Desbalanceo de celdas de la batería al año y medio, requirió compra de nueva"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 500,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Conserva la batería vieja esperando repararla para tener dos",
+        "precio_reventa_estimado": "No piensa venderla (tiene plan de comprar un carro eléctrico y quedarse con la moto)"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "En casa la guarda dentro (planta baja). En la calle: alarma, dos candados y le quita la batería"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Ahorro económico frente a la gasolina. Un litro cuesta 2.5 USD, lo que eleva el costo mensual de transporte a 25 USD"
+      }
+    },
+    {
+      "id_entrevista": "user_014",
+      "perfil": {
+        "edad": 24,
+        "ocupacion": "Cuentapropista / Vendedor",
+        "municipio": "La Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Precio, autonomía y alto costo de la gasolina",
+        "factor_principal": "Autonomía"
+      },
+      "compra": {
+        "canal_compra": "Importadora RTC (Panamá)",
+        "razon_canal": "El envío costaba menos",
+        "precio_total": 1700,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Regular",
+        "tiempo_carga_horas": 5,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincidía al principio, pero ha bajado por desgaste de la batería",
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 100,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 2000
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": true,
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma y GPS. La guarda en su casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "La gasolina está muy cara, es más fácil cargar en casa y no tiene que buscar combustible"
+      }
+    },
+    {
+      "id_entrevista": "user_015",
+      "perfil": {
+        "edad": 17,
+        "ocupacion": "Estudiante de Matemática",
+        "municipio": "Diez de Octubre"
+      },
+      "uso": {
+        "uso_principal": "Escuela y visitas a amigos",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Posibilidad que tuvo la familia, destacando autonomía y motor",
+        "factor_principal": "Autonomía"
+      },
+      "compra": {
+        "canal_compra": "Traída de Estados Unidos (regalo del padre)",
+        "razon_canal": null,
+        "precio_total": 1400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Cuando le queda una raya de carga",
+        "tiempo_carga_horas": 7,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "Solo un parche por pinchazo",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1200
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Candado, guardada en su casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "A pesar de los problemas energéticos, tiene familiares donde puede cargarla"
+      }
+    },
+    {
+      "id_entrevista": "user_016",
+      "perfil": {
+        "edad": 18,
+        "ocupacion": "Estudiante de Microbiología",
+        "municipio": "Marianao"
+      },
+      "uso": {
+        "uso_principal": "Universidad",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (marca Ishubi)",
+        "razon_compra": "Precio y buena autonomía",
+        "factor_principal": "Autonomía y precio"
+      },
+      "compra": {
+        "canal_compra": "Agencia de importación desde China (Cuba Max)",
+        "razon_canal": "Sale más barato y son agencias confiables",
+        "precio_total": 1400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Cuando hay corriente",
+        "tiempo_carga_horas": 7,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "Se rompió la caja reguladora (mala calidad de la marca)"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 60,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1100
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma, dos candados y guardada en casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "El problema principal es la gasolina y la dificultad para conseguirla"
+      }
+    },
+    {
+      "id_entrevista": "user_017",
+      "perfil": {
+        "edad": 24,
+        "ocupacion": "Estudiante de Ciencia de la Computación / Freelancer",
+        "municipio": "Arroyo Naranjo"
+      },
+      "uso": {
+        "uso_principal": "Transporte en general (estudio y traslados)",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto de combustión (Vera GBR200, 200cc)",
+        "razon_compra": "Dureza, confiabilidad y durabilidad de la marca (30 años en el mercado)",
+        "factor_principal": "Marca y confiabilidad"
+      },
+      "compra": {
+        "canal_compra": "Importación desde Venezuela (por un amigo)",
+        "razon_canal": "En Cuba no se importa ni se vende ese modelo",
+        "precio_total": 2100,
+        "moneda": "USD",
+        "incluyo_extras": "Herramientas, guante y casco"
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": "Cupés (con tarjeta clásica)",
+        "dificultad_obtener_combustible": "Dificultad para recargar la tarjeta, no por falta de combustible"
+      },
+      "rendimiento": {
+        "autonomia_real": null,
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno (moto nueva)"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 0,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": "Entre 2000 y 2500 USD (depende del kilometraje)"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": true,
+        "amonestaciones": "Lo pararon una vez sin licencia, pero no le quitaron la moto",
+        "metodo_proteccion": "Alarma con GPS oculto, candado de disco, tranca de timón y garaje"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Combustión (idealmente tener ambas)",
+        "razon_preferencia": "Mayor solidez y confianza; las baterías de las eléctricas mueren en 1-2 años"
+      }
+    },
+    {
+      "id_entrevista": "user_018",
+      "perfil": {
+        "edad": 44,
+        "ocupacion": "Profesor universitario (Facultad de Matemática y Computación)",
+        "municipio": "Plaza"
+      },
+      "uso": {
+        "uso_principal": "Trabajo",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (Mikiozuki, modelo New Big Shark LTD)",
+        "razon_compra": "No la compró, se la dejó un primo que se fue del país",
+        "factor_principal": null
+      },
+      "compra": {
+        "canal_compra": "Herencia familiar (comprada en EE.UU. por un tío)",
+        "razon_canal": null,
+        "precio_total": 2000,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Un día sí y un día no",
+        "tiempo_carga_horas": 6,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": null,
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Batería dañada a los 3 años (parada 1 año), problemas de frenos y cargador. Pinchazos."
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 1000,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Las conserva en casa, busca donde venderlas o reciclarlas",
+        "precio_reventa_estimado": 1000
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": true,
+        "amonestaciones": "Multa de 20 CUP antes de tener la licencia (fue honesto con el oficial)",
+        "metodo_proteccion": "Candado y capa para la lluvia (la alarma está rota). La guarda en casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "No depende del combustible ni de estar llevándola al mecánico; las de combustión dan más problemas"
+      }
+    },
+    {
+      "id_entrevista": "user_019",
+      "perfil": {
+        "edad": 18,
+        "ocupacion": "Estudiante de Ciencia de la Computación",
+        "municipio": "Playa"
+      },
+      "uso": {
+        "uso_principal": "Universidad y transporte en general",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (Bucatti Ultra)",
+        "razon_compra": "Relación entre el precio y la autonomía",
+        "factor_principal": "Precio y autonomía"
+      },
+      "compra": {
+        "canal_compra": "Facebook (Marketplace)",
+        "razon_canal": "Su papá encontró el anuncio allí",
+        "precio_total": 1200,
+        "moneda": "EUR",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Un día sí, un día no",
+        "tiempo_carga_horas": 6,
+        "problemas_apagones": false,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "La pantalla dejó de prender, le puso un voltímetro"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 20,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 700
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": "Sí, multa por no usar casco",
+        "metodo_proteccion": "Dos candados, alarma, la guarda en su casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "La gasolina es cara y escasa; con planificación, los apagones no son problema"
+      }
+    },
+    {
+      "id_entrevista": "user_020",
+      "perfil": {
+        "edad": 19,
+        "ocupacion": "Estudiante y vendedor de materiales de construcción",
+        "municipio": "Arroyo Naranjo"
+      },
+      "uso": {
+        "uso_principal": "Transporte y hobby (carreras de motos)",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto de combustión (GN150)",
+        "razon_compra": "Gusto personal, buena relación calidad-precio, confort y marca",
+        "factor_principal": "Marca y modelo"
+      },
+      "compra": {
+        "canal_compra": "Tienda SASA",
+        "razon_canal": "Mejores precios actualmente",
+        "precio_total": 1500,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": "Mipymes (revendedores informales)",
+        "dificultad_obtener_combustible": true
+      },
+      "rendimiento": {
+        "autonomia_real": null,
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Sí, gastó alrededor de 15,000 CUP en fallas"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "15000 CUP en fallas",
+        "gasto_mantenimiento": "Aproximadamente 200 USD en gasolina",
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": "Entre 1400 y 1800 USD"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": "Sí, multa y carta de advertencia",
+        "metodo_proteccion": "Candado de timón, garaje y el cuidado de un amigo"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Es más práctica y rápida de usar ('como un teléfono, la cargas rápido y listo') dada la situación del país"
+      }
+    },
+    {
+      "id_entrevista": "user_021",
+      "perfil": {
+        "edad": 19,
+        "ocupacion": "Estudiante de Automática (CUJAE) y comerciante",
+        "municipio": "Arroyo Naranjo"
+      },
+      "uso": {
+        "uso_principal": "Carreras (hobby) y mensajería (con la eléctrica)",
+        "uso_comercial": true
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto de combustión (GN 125cc)",
+        "razon_compra": "Pasión por las motos, el sonido del motor y la economía de combustible",
+        "factor_principal": "Gusto / Pasión"
+      },
+      "compra": {
+        "canal_compra": "Tienda SASA",
+        "razon_canal": "Se la recomendaron",
+        "precio_total": 1500,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": "Gasolineras (con dificultad)",
+        "dificultad_obtener_combustible": true
+      },
+      "rendimiento": {
+        "autonomia_real": null,
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": "Ninguno técnico, solo reparaciones de estética (8000 CUP)"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "8000 CUP",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1400
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Candado y tranca de timón"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Combustión",
+        "razon_preferencia": "Es su pasión y le da satisfacción personal"
+      }
+    },
+    {
+      "id_entrevista": "user_022",
+      "perfil": {
+        "edad": 17,
+        "ocupacion": "Estudiante de Contabilidad",
+        "municipio": "San Miguel del Padrón"
+      },
+      "uso": {
+        "uso_principal": "Transporte general",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (Bucatti)",
+        "razon_compra": "Buena autonomía en el momento de la compra, precio y marca",
+        "factor_principal": "Autonomía"
+      },
+      "compra": {
+        "canal_compra": "Traída del extranjero (por familiares/amistades)",
+        "razon_canal": "Tenía familiares y conocidos que las vendían",
+        "precio_total": 1200,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria (cuando hay corriente)",
+        "tiempo_carga_horas": null,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Ha bajado con el tiempo",
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Problema con el acelerador (se cambió)"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 20,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 900
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Candado y alarma. La guarda en su casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "No especificado",
+        "razon_preferencia": "Le gustan los carros y los vehículos en general"
+      }
+    },
+    {
+      "id_entrevista": "user_023",
+      "perfil": {
+        "edad": 21,
+        "ocupacion": "Estudiante de Ciencia de la Computación",
+        "municipio": "Diez de Octubre"
+      },
+      "uso": {
+        "uso_principal": "Transporte general",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Bicimoto (Dogmak Evolution)",
+        "razon_compra": "Le gustan las motos, pero eran caras. Buscaba autonomía similar a una moto",
+        "factor_principal": "Autonomía y precio"
+      },
+      "compra": {
+        "canal_compra": "Mipyme",
+        "razon_canal": "Confianza",
+        "precio_total": 1300,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria o cada vez que haya corriente",
+        "tiempo_carga_horas": 8,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "90-100 km (inferior a los 120 anunciados)",
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Pinchazos y rotura de un reposapiés"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "Hasta 15000 CUP (reposapiés)",
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 900
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": "Licencia en proceso, sin chapa (es bicimoto)",
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma, GPS y la guarda en su casa (candado pendiente)"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "La gasolina es complicada. Preferiría combustión solo si tuviera mucho dinero"
+      }
+    },
+    {
+      "id_entrevista": "user_024",
+      "perfil": {
+        "edad": 24,
+        "ocupacion": "Barbero",
+        "municipio": "Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (Bucati)",
+        "razon_compra": "Precio económico",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Importación directa de Panamá",
+        "razon_canal": "Es más económico y tiene posibilidad de viajar",
+        "precio_total": 1400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": "Diaria (mientras haya electricidad)",
+        "tiempo_carga_horas": 8,
+        "problemas_apagones": true,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide (depende de la conducción), pero ha bajado con el tiempo",
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 0,
+        "gasto_mantenimiento": 0,
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1200
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": true,
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma, guardada en garaje"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "La combustión gasta mucho en gasolina; la eléctrica se puede guardar si no hay luz"
+      }
+    },
+    {
+      "id_entrevista": "user_025",
+      "perfil": {
+        "edad": 39,
+        "ocupacion": "Barbero",
+        "municipio": "La Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica (Grillo)",
+        "razon_compra": "Buen kilometraje y autonomía (dependiendo del uso)",
+        "factor_principal": "Autonomía"
+      },
+      "compra": {
+        "canal_compra": "Facebook",
+        "razon_canal": "Vio el anuncio de venta y la compró",
+        "precio_total": 750,
+        "moneda": "USD",
+        "incluyo_extras": "No, venía sin frenos y en mal estado"
+      },
+      "operacion": {
+        "frecuencia_carga": "Cada 3 o 4 días",
+        "tiempo_carga_horas": 5,
+        "problemas_apagones": null,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": true,
+        "fallos_tecnicos": "Se rompió el cable del freno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": "100 USD en modificaciones",
+        "gasto_mantenimiento": "Pendiente (cable de freno)",
+        "destino_baterias_usadas": null,
+        "precio_reventa_estimado": 1200
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": "No (es bicimoto)",
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma, tranca de timón y la guarda en su casa"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Combustión",
+        "razon_preferencia": "Mayor utilidad y resultados que una batería; la eléctrica requiere recarga constante y protección contra la lluvia"
+      }
+    },
+    {
+      "id_entrevista": "user_026",
+      "perfil": {
+        "edad": null,
+        "ocupacion": "Primer operador del Cuerpo de Bomberos",
+        "municipio": "Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Aunque tienen poca autonomía, resuelven mejor el problema por el alto costo del combustible",
+        "factor_principal": "Precio / Economía"
+      },
+      "compra": {
+        "canal_compra": "Conocido del barrio",
+        "razon_canal": null,
+        "precio_total": 1400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada (moto casi nueva)",
+        "ha_bajado_autonomia": false,
+        "fallos_tecnicos": "Ninguno"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": null,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Las conserva en casa por si tienen reparación",
+        "precio_reventa_estimado": 800
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": "Tiene licencia, no tiene chapa",
+        "amonestaciones": false,
+        "metodo_proteccion": "Candado"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "El alto precio de la gasolina y la facilidad de cargar la batería"
+      }
+    },
+    {
+      "id_entrevista": "user_027",
+      "perfil": {
+        "edad": 17,
+        "ocupacion": "Estudiante",
+        "municipio": "Guanabacoa"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Buena autonomía para lo que necesitaba",
+        "factor_principal": "Autonomía"
+      },
+      "compra": {
+        "canal_compra": "Revolico",
+        "razon_canal": null,
+        "precio_total": 1800,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": null
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": null,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Las conserva",
+        "precio_reventa_estimado": 1200
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma y candado"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "El precio de la gasolina y la inestabilidad del combustible"
+      }
+    },
+    {
+      "id_entrevista": "user_028",
+      "perfil": {
+        "edad": 16,
+        "ocupacion": "Trabajador / Mensajero",
+        "municipio": "La Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Trabajo y mensajería",
+        "uso_comercial": true
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "El precio y el motor",
+        "factor_principal": "Precio y motor"
+      },
+      "compra": {
+        "canal_compra": "Envío / Importación",
+        "razon_canal": null,
+        "precio_total": 1600,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": null
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": null,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Las botó (le daban fallos)",
+        "precio_reventa_estimado": "Entre 500 y 700 USD"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": null
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Es más barata"
+      }
+    },
+    {
+      "id_entrevista": "user_029",
+      "perfil": {
+        "edad": 18,
+        "ocupacion": "Servicio militar / Mensajero",
+        "municipio": "La Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal y mensajería",
+        "uso_comercial": true
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Precio más barato que las de motor y no requiere licencia",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Conocido del barrio",
+        "razon_canal": null,
+        "precio_total": 1500,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Menos de la anunciada",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": null
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": null,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Se deshizo de ellas (estaban gastadas)",
+        "precio_reventa_estimado": "Entre 700 y 800 USD"
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Precio más barato, gasolina muy cara y no requiere licencia"
+      }
+    },
+    {
+      "id_entrevista": "user_030",
+      "perfil": {
+        "edad": 44,
+        "ocupacion": "Cocinera",
+        "municipio": "Guanabacoa"
+      },
+      "uso": {
+        "uso_principal": "Transporte personal y traslado al trabajo",
+        "uso_comercial": false
+      },
+      "eleccion": {
+        "tipo_vehiculo": "Moto eléctrica",
+        "razon_compra": "Precio más barato y económico",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Conocido",
+        "razon_canal": null,
+        "precio_total": 1400,
+        "moneda": "USD",
+        "incluyo_extras": null
+      },
+      "operacion": {
+        "frecuencia_carga": null,
+        "tiempo_carga_horas": null,
+        "problemas_apagones": null,
+        "lugar_combustible": null,
+        "dificultad_obtener_combustible": null
+      },
+      "rendimiento": {
+        "autonomia_real": "Coincide con la anunciada",
+        "ha_bajado_autonomia": null,
+        "fallos_tecnicos": null
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": null,
+        "gasto_mantenimiento": null,
+        "destino_baterias_usadas": "Las guardó",
+        "precio_reventa_estimado": 800
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": false,
+        "metodo_proteccion": "Alarma"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "Es más económica"
+      }
+    }
+  ]
+}

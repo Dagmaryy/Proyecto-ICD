@@ -1,0 +1,13 @@
+﻿tipo_vehiculo,papeles,cantidad
+Bicis,True,17
+Bicis,No especificado,254
+Bicis,en regla,29
+Combustión,True,82
+Combustión,No especificado,209
+Combustión,en regla,9
+Eléctricas,True,43
+Eléctricas,No especificado,120
+Eléctricas,en regla,137
+Patinetes,True,39
+Patinetes,No especificado,169
+Patinetes,en regla,92
