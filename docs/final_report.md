@@ -41,6 +41,11 @@ En el segmento de motos eléctricas, el mercado está dominado por cinco marcas 
 | Mountain | 22 | $2,800 |
 | Yoazaki | 18 | $2,950 |
 | Izuki | 17 | $2,800 |
+| Bucatti | 11 | $2,660 |
+| Fly | 11 | $2,500 |
+| Kvitova | 8 | $1,675 |
+| Maf | 7 | $1,400 |
+| CHALLENGER | 7 | $820 |
 
 Se observa que, aunque Topmaq lidera en volumen de oferta, Yoazaki ostenta el precio mediano más alto, lo que sugiere una percepción de mayor calidad o exclusividad en el mercado.
 
@@ -119,36 +124,42 @@ La Resolución 340 establece los valores de referencia en aduana (base imponible
 *   Batería de litio: **$60.00 USD**.
 
 **Entidades autorizadas (P23):**
-La Resolución 104 del MINCEX autoriza explícitamente a **SOLIMPORT S.U.R.L.** la importación de ciclomotores y motocicletas. Asimismo, la Resolución 17 del MINCIN autoriza a **DIVSE** e **IMPLUS** (del Grupo PALCO) la comercialización de estos vehículos en USD.
+La Resolución 104 del MINCEX autoriza explícitamente a 17 entidades para la importación y comercialización, destacando a **SOLIMPORT S.U.R.L.** (importación de ciclomotores) y a **DIVSE** e **IMPLUS** (del Grupo PALCO) para la comercialización en USD.
 
-### 4.2. Comparación de precios: Formal vs. Informal (Pregunta 24)
+### 4.2. El Canal Formal y la Opacidad de Precios (Pregunta 24)
 
-Existe una diferencia clara entre los precios del canal formal y el informal. En el canal formal, **VEDCA** vende motos eléctricas entre **$1,300 USD** y **$2,115 USD**, mientras que **CIMEX** comercializa modelos (como la Moto Diana) por casi **$3,000 USD**, y los marketplaces de Mipymes como **iTENCEL** ofrecen modelos (ej. Topmaq F3) por **$2,700 USD**.
+A pesar de que el Estado autoriza a 17 entidades para la venta de vehículos, la investigación documental reveló que **el canal formal carece de transparencia de precios pública**. La mayoría de estas entidades no publican catálogos web accesibles, lo que dificulta la comparación directa para el consumidor.
 
-Al comparar con la mediana del mercado informal (Revolico) de **$2,500 USD**, se concluye que **el mercado informal no es más barato**. Los precios se equiparan, e incluso superan a las tiendas formales en algunos modelos. 
+La única oferta con precio y ficha técnica verificable en el sitio web oficial es la de **VEDCA (Moto 4202)**, comercializada a **$1,300 USD**. La ficha técnica oficial especifica batería de litio de 60V/30Ah. Su garantía oficial es de **180 días** para batería y motor, **90 días** para frenos, componentes eléctricos y cargador, y **7 días** para ajustes generales.
 
-La siguiente tabla resume las diferencias estructurales entre ambos canales:
+A continuación, se presenta una tabla comparativa que contrasta los datos verificados del canal formal frente a los datos extraídos del mercado informal:
 
 | Característica | Canal Formal (VEDCA / CIMEX) | Canal Informal (Revolico) |
 | :--- | :--- | :--- |
-| **Precio Promedio** | $1,300 - $2,115 USD (VEDCA) | $2,500 USD (Mediana) |
-| **Garantía** | 6 meses (VEDCA) | Inexistente o de palabra |
-| **Disponibilidad** | Limitada por stock estatal | Inmediata |
-| **Legalidad (Papeles)** | 100% legalizado y facturado | 77.8% no menciona papeles |
-| **Riesgo de Estafa** | Nulo | Documentado (ej. caso de $1,200 USD) |
+| **Precio de entrada** | **$1,300 USD** (VEDCA 4202, verificado en web oficial) | **$2,500 USD** (Mediana de 1,200 anuncios) |
+| **Precios de gama alta** | $2,115 USD (VEDCA 4206) a $3,000 USD (CIMEX) *(datos de prensa)* | Hasta $4,200 USD (Valor máximo en el dataset) |
+| **Garantía** | **180 días** (motor/batería) y **90 días** (eléctricos) en VEDCA | Inexistente o "de palabra" (basado en entrevistas) |
+| **Disponibilidad** | Limitada por stock estatal (modalidad "llave en mano") | Inmediata (el anuncio está activo) |
+| **Legalidad (Papeles)** | 100% legalizado y facturado | **77.8% no menciona** si tiene papeles |
+| **Riesgo de Estafa** | Nulo | Documentado en prensa (caso de $1,200 USD) |
 
-Esta paridad de precios indica que los compradores pagan una prima por la inmediatez y la disponibilidad en el mercado informal, no por un ahorro real frente a las tiendas estatales o las Mipymes autorizadas.
+*(Nota: Aunque la prensa independiente reportó en 2025 una oferta de VEDCA 4206 a $2,115 USD y la Moto Diana de CIMEX cerca de $3,000 USD, no se pudo verificar el precio actual de estas ofertas en los sitios web oficiales al momento del cierre de este informe).*
 
-### 4.3. Garantías y postventa (Preguntas 25 y 26)
-El canal formal ofrece garantías reales (VEDCA ofrece **6 meses**), mientras que en Revolico la garantía es inexistente o de palabra, lo que constituye el principal riesgo. El stock en tiendas formales está limitado por la capacidad de importación, mientras que el mercado informal ofrece disponibilidad inmediata.
+Al comparar el precio verificado del canal formal (VEDCA: **$1,300 USD**) con la mediana del mercado informal en Revolico (**$2,500 USD**), se concluye que **el mercado informal aplica un sobreprecio de casi el 100%** sobre el precio de tienda. Los compradores pagan esta "prima" no por un mejor producto, sino por la **inmediatez** y la falta de stock en las tiendas estatales, asumiendo además el riesgo legal (sin papeles) y la falta de garantías.
+
+### 4.3. Garantías y Postventa (Preguntas 25 y 26)
+
+El análisis de las fichas técnicas oficiales revela que el canal formal ofrece garantías estructuradas. En el caso de **VEDCA (modelo 4202)**, la cobertura oficial es de **180 días** para batería y motor, **90 días** para frenos, componentes eléctricos y cargador, y **7 días** para ajustes generales. 
+
+Por el contrario, en el mercado informal (Revolico), la garantía es inexistente o se limita a la "palabra del vendedor". La única protección real que tiene el comprador informal es la prueba de funcionamiento al momento de la compra. Esta diferencia es el principal argumento de valor del canal formal frente al informal.
 
 **Sobre el stock y los tiempos de entrega (P26):**
 Según la información oficial de VEDCA, el proceso de compra opera bajo la modalidad de "llave en mano": el cliente compra en la tienda (42 y 23, Playa), realiza el pago bancario, y la orden se procesa en aproximadamente **24 horas** para que el cliente retire el vehículo en la propia fábrica. Aunque las fuentes oficiales no documentan la existencia de "listas de espera" o colas públicas, la limitada capacidad de importación del país y la alta demanda (evidenciada en las entrevistas) sugieren que el acceso a estos vehículos formales puede estar sujeto a la disponibilidad de inventario en el momento de la compra.
 
 ### 4.4. Talleres, Repuestos y Capacidad de Actores (Preguntas 27 a 30)
 
-*   **P27 y P28 (Talleres y Repuestos):** La normativa oficial (Gaceta Oficial No. 65) establece la autorización para la "comercialización de piezas de repuesto, agregados y accesorios". En cuanto a la infraestructura de reparación, se documentan dos talleres principales en La Habana: el **Taller Oficial de VEDCA**, ubicado en Avenida Independencia (Boyeros), que brinda asistencia técnica directa para sus modelos, y el **Taller E-Motors** (privado), ubicado en Juan Delgado #224, Diez de Octubre, que se especializa en la reparación de motos eléctricas y de combustión. Aunque las fuentes oficiales no desglosan un listado de las fallas mecánicas más comunes, los usuarios en las entrevistas mencionaron recurrentemente problemas con el desgaste de las baterías, los frenos y los controladores.
-*   **P29 (Margen comercial):** El Decreto 163/2026 establece explícitamente un **margen comercial de hasta el tres por ciento (3%)** en dólares para la comercialización formal, un control estricto que contrasta con el mercado informal.
+*   **P27 y P28 (Talleres y Repuestos):** La normativa oficial (Gaceta Oficial No. 65) establece la autorización para la "comercialización de piezas de repuesto, agregados y accesorios". En cuanto a la infraestructura de reparación, se documentan dos talleres principales en La Habana: el **Taller Oficial de VEDCA**, ubicado en Avenida Independencia (Boyeros), que brinda asistencia técnica directa para sus modelos, y el **Taller E-Motors** (privado), ubicado en Juan Delgado #224, Diez de Octubre, que se especializa en la reparación de motos eléctricas y de combustión. Las fallas más comunes reportadas por los usuarios incluyen el desgaste de baterías, frenos y controladores.
+*   **P29 (Margen comercial):** El Decreto 163/2026 establece explícitamente un **margen comercial de hasta el tres por ciento (3%)** en dólares para la comercialización formal. Este control estricto explica por qué los precios en tiendas como VEDCA son tan competitivos frente al mercado informal.
 *   **P30 (Actores no estatales):** La Gaceta 65/2026 autoriza a las personas jurídicas no estatales (Mipymes) a realizar el ensamblaje o fabricación de ciclomotores y motos. Esta capacidad, sumada a la importación de piezas con aranceles preferenciales, representa un canal semi-formal en crecimiento.
 
 ### 4.5. Contexto de Seguridad Vial (Datos ONEI 2025)
@@ -156,12 +167,17 @@ Según la información oficial de VEDCA, el proceso de compra opera bajo la moda
 Para dimensionar el impacto de los vehículos ligeros (motos y bicicletas) en el entorno urbano, se consultó el Anuario Estadístico de Cuba 2025 (Capítulo 13: Transporte y Seguridad Vial) de la ONEI. 
 
 Aunque el parque automotor de cuatro ruedas sigue siendo el principal involucrado en siniestros, los datos oficiales revelan la vulnerabilidad de los conductores de ciclos (motos y bicicletas). En 2025, las **"violaciones de los conductores de ciclos"** provocaron **31 accidentes**, dejando **5 fallecidos** y **31 lesionados** en todo el país. 
-A nivel macro, La Habana es la provincia con mayor siniestralidad del país (2,590 accidentes en 2025), lo que correlaciona con la alta densidad de vehículos ligeros y la congestión del tráfico que los usuarios mencionaron en las entrevistas. Este contexto refuerza el hallazgo cualitativo de que el mercado informal opera en un entorno de alto riesgo, no solo legal (por la falta de papeles y licencias), sino también físico para los conductores.
+A nivel macro, La Habana es la provincia con mayor siniestralidad del país (2,590 accidentes en 2025), lo que correlaciona con la alta densidad de vehículos ligeros y la congestión del tráfico. Este contexto refuerza el hallazgo de que el mercado informal opera en un entorno de alto riesgo, no solo legal, sino también físico para los conductores.
 
 ## 5. Discusión: La brecha entre la ley y el mercado
-El cruce de los datos extraídos de Revolico con las fuentes documentales permite identificar una distorsión entre lo que dicta la ley y la realidad. La Gaceta Oficial No. 65/2026 establece un margen comercial de hasta el **3%** para la comercialización formal, lo que permite a VEDCA ofrecer motos desde **$1,925 USD**. Sin embargo, en Revolico, la mediana es de **$2,500 USD**. Esta diferencia de más de $500 USD sugiere que los importadores informales aplican un margen de intermediación mucho más agresivo (estimado entre un 20% y 40%), aprovechando la inmediatez y la falta de stock en las tiendas estatales.
 
-"Esta realidad es confirmada por los usuarios en las entrevistas: el 76% prefiere la moto eléctrica, a pesar de pagar sobreprecios en el mercado informal, porque la gasolina representa un gasto inasumible. Así, el sobreprecio del mercado informal es, en realidad, el costo de la supervivencia."
+El cruce de los datos extraídos de Revolico con las fuentes documentales permite identificar una distorsión entre lo que dicta la ley y la realidad. La Gaceta Oficial No. 65/2026 establece un margen comercial de hasta el **3%** para la comercialización formal, lo que permite a VEDCA ofrecer su modelo 4202 a un precio oficial de **$1,300 USD**. Sin embargo, en Revolico, la mediana del mercado informal es de **$2,500 USD**. 
+
+Esta diferencia de **$1,200 USD (casi un 100% de sobreprecio)** sugiere que los importadores informales aplican un margen de intermediación mucho más agresivo, aprovechando la inmediatez y la falta de stock en las tiendas estatales. 
+
+Esta realidad es confirmada por los usuarios en las entrevistas: el **76% prefiere la moto eléctrica** a pesar de pagar estos sobreprecios en el mercado informal, porque la gasolina representa un gasto inasumible para su economía. Así, el sobreprecio del mercado informal es, en realidad, **el costo de la supervivencia**. 
+
+Un hallazgo inesperado de esta investigación es la opacidad del propio canal formal. Mientras el Estado autoriza a 17 entidades para vender vehículos, solo VEDCA publica precios accesibles en su sitio web. Esta falta de transparencia oficial no solo limita el derecho del consumidor a comparar, sino que alimenta indirectamente el mercado informal, donde el comprador prefiere pagar un sobreprecio a cambio de obtener el producto en el acto, sin listas de espera ni catálogos inaccesibles.
 
 ## 6. Limitaciones del Estudio
 Este estudio presenta las siguientes limitaciones metodológicas:
@@ -187,4 +203,6 @@ Dichas fuentes incluyen:
 
 
 ## 8. Conclusiones
-El mercado de vehículos ligeros en La Habana se caracteriza por una alta informalidad, concentración geográfica en Centro Habana y Playa, y una paridad de precios entre el canal formal (VEDCA, CIMEX) y el informal (Revolico). A pesar de las flexibilizaciones legales del Decreto 163/2026, el mercado informal sigue dominando el volumen de oferta, aunque carece de garantías y trazabilidad legal para el comprador.
+El mercado de vehículos ligeros en La Habana se caracteriza por una alta informalidad, una fuerte concentración geográfica en los municipios de Centro Habana y Playa, y un **sobreprecio significativo** en el canal informal frente al formal. A pesar de las flexibilizaciones legales del Decreto 163/2026 (que permiten importar hasta dos motos y ofrecen incentivos fiscales), el mercado informal (Revolico) sigue dominando el volumen de oferta. 
+
+Los compradores asumen este sobreprecio (que puede llegar al 100% frente al precio de tienda) y el riesgo legal (el 77.8% de los anuncios no menciona papeles) impulsados por la inmediatez y la escasez de inventario estatal. Finalmente, la opacidad del propio canal formal (solo VEDCA publica precios) y la falta de una infraestructura de carga adecuada (evidenciada por los apagones) son los principales desafíos que enfrenta este mercado en su camino hacia la formalización y la sostenibilidad.
