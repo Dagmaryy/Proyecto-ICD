@@ -6,7 +6,7 @@ Este documento resume las decisiones metodológicas del proyecto. El desarrollo 
 Se empleó una metodología mixta con tres fuentes de datos:
 *   **Oferta (Cuantitativa):** 1,200 anuncios de Revolico (300 por categoría: motos eléctricas, combustión, bicicletas y patinetes).
 *   **Demanda (Cualitativa):** 30 entrevistas semiestructuradas a usuarios en La Habana.
-*   **Normativa (Documental):** Revisión de 44 fuentes oficiales (Gacetas, Aduana, ONEI, VEDCA).
+*   **Normativa (Documental):** Revisión de 49 fuentes oficiales (Gacetas, Aduana, ONEI, VEDCA).
 
 ## 2. Pipeline de Datos en Python
 El procesamiento técnico constó de las siguientes fases:
