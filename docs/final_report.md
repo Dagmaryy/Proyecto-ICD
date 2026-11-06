@@ -173,7 +173,7 @@ Finalmente, al agrupar los 1,200 anuncios únicamente por su poder adquisitivo (
 
 ## 3. Entorno Normativo y Canal Formal (Institucional)
 
-### 3.1. Marco legal, límites de importación y aranceles (Preguntas 21, 22 y 23)
+### 3.1. Marco legal, límites de importación y aranceles (Preguntas 21, 22)
 
 El marco legal vigente está definido por el **Decreto 163/2026** y la **Resolución 340/2026 de la Aduana**, publicadas en las Gacetas Oficiales No. 65 y 83.
 
@@ -278,7 +278,7 @@ En cuanto a la distribución geográfica, la muestra se concentró principalment
 > *"Soy especialista de calidad de una empresa y auditora de sistemas de gestión."* (E10)
 
 ### 4.2. Uso y Contexto (P12)
-El uso del vehículo es fundamentalmente un **transporte personal (27 de 30 entrevistados)**. Los usuarios lo utilizan para trasladarse a sus centros de estudio o trabajo, hacer mandados y visitar amistades. Solo un pequeño grupo de **3 entrevistados (10%)** declaró utilizar el vehículo para fines comerciales, específicamente para servicios de mensajería o entregas, compaginándolo con sus actividades principales.
+El uso del vehículo es fundamentalmente un **transporte personal (26 de 30 entrevistados)**. Los usuarios lo utilizan para trasladarse a sus centros de estudio o trabajo, hacer mandados y visitar amistades. Solo un pequeño grupo de **4 entrevistados (13.3%)** declaró utilizar el vehículo para fines comerciales, específicamente para servicios de mensajería o entregas, compaginándolo con sus actividades principales.
 
 > *"Puede ser para moverte y resolver tu problema, o es como un hobby. Me gusta hacer carreras de motos y eso."* (E20)
 
@@ -313,13 +313,13 @@ La crisis energética es un factor determinante en la experiencia del usuario. *
 
 > *"Ahora ya hay estaciones que se llaman solineras, que son paneles solares y tienen puestas sus estaciones de carga para uno cargar."* (E2)
 
-Respecto al rendimiento, **8 de 30 usuarios reportaron que la autonomía real ha disminuido con el tiempo**, debido al desgaste natural de las celdas de la batería (especialmente en modelos con más de 3 años de uso).
+Respecto al rendimiento, **7 de los 16 entrevistados que respondieron (43.8%) reportaron que la autonomía real ha disminuido con el tiempo**, debido al desgaste natural de las celdas de la batería (especialmente en modelos con más de 3 años de uso).
 
-La frecuencia de carga revela una dependencia eléctrica intensiva: **8 de los 19 entrevistados que respondieron (42.1%) cargan su vehículo a diario**, y varios de ellos condicionan explícitamente esa rutina a la disponibilidad de corriente ("diaria, cuando hay corriente", "diaria mientras haya electricidad"). Un 26.3% adicional carga cada 2-3 días, un 21.1% lo hace según el nivel de carga (cuando baja a una o dos rayitas), y solo un 10.5% carga una vez por semana o menos. Esta frecuencia diaria, combinada con la crisis energética documentada en el párrafo siguiente, explica por qué los apagones se convierten en un problema operativo cotidiano y no en una molestia ocasional.
+La frecuencia de carga revela una dependencia eléctrica intensiva: **8 de los 20 entrevistados que respondieron (40%) cargan su vehículo a diario**, y varios de ellos condicionan explícitamente esa rutina a la disponibilidad de corriente ("diaria, cuando hay corriente", "diaria mientras haya electricidad"). Un 25% adicional lo hace según el nivel de carga (cuando baja a una o dos rayitas), un 20% en otras frecuencias variables, y solo un 10% carga una vez por semana o menos. Esta frecuencia diaria, combinada con la crisis energética documentada en el párrafo siguiente, explica por qué los apagones se convierten en un problema operativo cotidiano y no en una molestia ocasional.
 
 > *"La cargo en mi casa para que cargue al 100%. La moto se demora de 6 a 7 horas para cargar. Y trato de cargarla cuando le queda una raíz de carga."* (E15)
 
-Respecto a los fallos técnicos, **11 de los 25 entrevistados que respondieron (44.0%) reportaron al menos un problema desde la compra**, mientras que 14 (56.0%) declararon no haber tenido fallos o solo mantenimiento normal. Entre quienes reportaron fallos, las categorías más frecuentes son tres, con 3 casos cada una: problemas de batería (desbalanceo de celdas, cambio prematuro, batería dañada), fallos del sistema eléctrico/controlador (caja reguladora, pantalla, acelerador), y fallos mecánicos menores (bujías, cable de freno, pinchazos). Esta distribución es consistente con las fallas más comunes que reportan los talleres de la Sección 3.4 (desgaste de baterías, frenos y controladores), y refuerza la hipótesis de que el mantenimiento del sistema eléctrico —no el motor— es el principal costo de operación del vehículo eléctrico.
+Respecto a los fallos técnicos, **11 de los 26 entrevistados que respondieron (42.3%) reportaron al menos un problema desde la compra** , mientras que 15 (57.7%) declararon no haber tenido fallos"o solo mantenimiento normal. Entre quienes reportaron fallos, las categorías más frecuentes son tres, con 3 casos cada una: problemas de batería (desbalanceo de celdas, cambio prematuro, batería dañada), fallos del sistema eléctrico/controlador (caja reguladora, pantalla, acelerador), y fallos mecánicos menores (bujías, cable de freno, pinchazos). Esta distribución es consistente con las fallas más comunes que reportan los talleres de la Sección 3.4 (desgaste de baterías, frenos y controladores), y refuerza la hipótesis de que el mantenimiento del sistema eléctrico —no el motor— es el principal costo de operación del vehículo eléctrico.
 
 > *"El problema más grave fue cuando se me dañó la batería. Después de unos tres años y pico de uso. Y estuvo como un año detenida la moto guardada en mi casa hasta que le pude comprar otra batería. Porque la batería cuesta bastante caro."* (E18)
 
