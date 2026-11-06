@@ -19,7 +19,7 @@ def generar_top_global():
     marcas_globales = df_total.dropna(subset=['marca']).groupby('marca').size().reset_index(name='total_anuncios')
     top_global = marcas_globales.sort_values(by='total_anuncios', ascending=False).head(15)
     
-    dir_csv = os.path.join(base, 'csv_graficos/')
+    dir_csv = os.path.join(base, 'CSV/')
     top_global.to_csv(os.path.join(dir_csv, '8_top_marcas_global.csv'), index=False, encoding='utf-8-sig')
     print("✅ CSV del Top 15 global guardado.")
 

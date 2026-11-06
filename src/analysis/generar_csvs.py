@@ -3,7 +3,7 @@ import os
 
 def generar_csvs():
     base = 'data/processed/final/'
-    dir_csv = os.path.join(base, 'csv_graficos/')
+    dir_csv = os.path.join(base, 'CSV/')
     os.makedirs(dir_csv, exist_ok=True)
 
     dfs = []
@@ -27,7 +27,7 @@ def generar_csvs():
     g_muni.columns = ['municipio', 'precio_mediano', 'cantidad_anuncios']
     g_muni.to_csv(os.path.join(dir_csv, '2_mapa_municipios.csv'), index=False, encoding='utf-8-sig')
 
-    print("✅ CSVs generados en data/processed/final/csv_graficos/")
+    print("✅ CSVs generados en data/processed/final/CSV/")
 
 if __name__ == "__main__":
     generar_csvs()

@@ -22,7 +22,7 @@ def generar_datos_apilados():
     tabla['Total'] = tabla.sum(axis=1)
     tabla = tabla.sort_values(by='Total', ascending=False).head(15).reset_index()
 
-    ruta_salida = os.path.join(base, 'csv_graficos/11_marcas_apiladas.csv')
+    ruta_salida = os.path.join(base, 'CSV/11_marcas_apiladas.csv')
     tabla.to_csv(ruta_salida, index=False, encoding='utf-8-sig')
     print("✅ CSV para el gráfico de barras apiladas guardado.")
 
