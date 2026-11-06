@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 
 def clustering_combustion():
-    df = pd.read_json('data/processed/final/motos_combustion_300_enriquecido.json')
+    df = pd.read_json('data/processed/final/JSON/motos_combustion_300_enriquecido.json')
     cols = ['precio_usd', 'cilindrada_cc']
     df_clean = df.dropna(subset=cols).copy()
     

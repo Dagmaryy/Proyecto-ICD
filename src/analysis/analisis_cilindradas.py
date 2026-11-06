@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def analizar_cilindradas():
-    df = pd.read_json('data/processed/final/motos_combustion_300_enriquecido.json')
+    df = pd.read_json('data/processed/final/JSON/motos_combustion_300_enriquecido.json')
     df_clean = df.dropna(subset=['cilindrada_cc']).copy()
     
     # Redondear cilindradas para agrupar (por ejemplo, 124cc y 125cc se vuelven 125cc)

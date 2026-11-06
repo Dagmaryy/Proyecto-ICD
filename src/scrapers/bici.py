@@ -1,7 +1,7 @@
 """Descarga y procesa detalles de bicis de La Habana desde Revolico.
 
 Reutiliza `revolico.py` sin modificarlo. Toma los candidatos de
-`data/processed/final/bicis_final_limpio.json` (filtrados a La Habana),
+`data/processed/final/JSON/bicis_final_limpio.json` (filtrados a La Habana),
 descarga sus detalles en `cache_detalle/bicis/`, descarta los anuncios
 borrados/expirados/ilegibles y procesa los válidos con `procesar_detalles`.
 
@@ -34,9 +34,9 @@ MAX_VALIDOS = 300
 
 CACHE_DETALLE = BASE_DIR / "data/raw/web/revolico/cache_detalle" / CATEGORIA
 
-RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/bicis_final_limpio.json"
-RUTA_PROCESADOS = BASE_DIR / "data/processed/final/bicis_procesados.json"
-RUTA_DESCARTADOS = BASE_DIR / "data/processed/final/bicis_descartados.json"
+RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/JSON/bicis_final_limpio.json"
+RUTA_PROCESADOS = BASE_DIR / "data/processed/final/JSON/bicis_procesados.json"
+RUTA_DESCARTADOS = BASE_DIR / "data/processed/final/JSON/bicis_descartados.json"
 
 MOTIVO_BORRADO = "borrado"
 MOTIVO_EXPIRADO = "expirado"

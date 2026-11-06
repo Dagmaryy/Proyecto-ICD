@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def generar_csvs():
-    base = 'data/processed/final/'
+    base = 'data/processed/final/JSON/'
     dir_csv = os.path.join(base, 'CSV/')
     os.makedirs(dir_csv, exist_ok=True)
 

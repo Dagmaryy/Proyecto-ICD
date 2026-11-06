@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 def run_clustering():
-    ruta = 'data/processed/final/motos_electricas_300.json'
+    ruta = 'data/processed/final/JSON/motos_electricas_300.json'
     df = pd.read_json(ruta)
     cols = ['precio_usd', 'motor_w', 'autonomia_km']
     df_clean = df.dropna(subset=cols).copy()
@@ -32,10 +32,10 @@ def run_clustering():
             "autonomia_promedio_km": round(subset['autonomia_km'].mean(), 2)
         })
 
-    with open('data/processed/final/clustering_motos.json', 'w', encoding='utf-8') as f:
+    with open('data/processed/final/JSON/clustering_motos.json', 'w', encoding='utf-8') as f:
         json.dump(reporte, f, indent=2, ensure_ascii=False)
     
-    print("✅ Clustering guardado en data/processed/final/clustering_motos.json")
+    print("✅ Clustering guardado en data/processed/final/JSON/clustering_motos.json")
 
 if __name__ == "__main__":
     run_clustering()

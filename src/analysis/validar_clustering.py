@@ -5,7 +5,7 @@ from sklearn.metrics import silhouette_score
 import scipy.stats as stats
 
 def validar():
-    df = pd.read_json('data/processed/final/motos_electricas_300.json')
+    df = pd.read_json('data/processed/final/JSON/motos_electricas_300.json')
     cols = ['precio_usd', 'motor_w', 'autonomia_km']
     df_clean = df.dropna(subset=cols).copy()
     X_scaled = StandardScaler().fit_transform(df_clean[cols])

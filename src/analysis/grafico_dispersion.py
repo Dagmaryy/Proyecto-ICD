@@ -37,7 +37,7 @@ def _layout_base(fig, titulo, subtitulo, nota, altura=520):
     return fig
 
 
-df = pd.read_json(BASE / "motos_electricas_300_enriquecido.json")
+df = pd.read_json(BASE / "JSON" / "motos_electricas_300_enriquecido.json")
 
 # Detectar columnas
 col_precio = next((c for c in ["precio_usd", "precio"] if c in df.columns), None)

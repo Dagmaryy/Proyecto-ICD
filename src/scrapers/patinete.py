@@ -34,9 +34,9 @@ MAX_VALIDOS = 300
 
 CACHE_DETALLE = BASE_DIR / "data/raw/web/revolico/cache_detalle" / CATEGORIA
 
-RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/patinetes_candidatos.json"
-RUTA_PROCESADOS = BASE_DIR / "data/processed/final/patinetes_procesados.json"
-RUTA_DESCARTADOS = BASE_DIR / "data/processed/final/patinetes_descartados.json"
+RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/JSON/patinetes_candidatos.json"
+RUTA_PROCESADOS = BASE_DIR / "data/processed/final/JSON/patinetes_procesados.json"
+RUTA_DESCARTADOS = BASE_DIR / "data/processed/final/JSON/patinetes_descartados.json"
 
 MOTIVO_BORRADO = "borrado"
 MOTIVO_EXPIRADO = "expirado"

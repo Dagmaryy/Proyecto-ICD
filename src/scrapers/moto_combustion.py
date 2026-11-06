@@ -35,10 +35,10 @@ MAX_VALIDOS = 300
 
 CACHE_DETALLE = BASE_DIR / "data/raw/web/revolico/cache_detalle" / CATEGORIA
 
-RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/motos_combustion_candidatos_cache.json"
-RUTA_PROCESADOS = BASE_DIR / "data/processed/final/motos_combustion_procesadas.json"
-RUTA_DESCARTADOS = BASE_DIR / "data/processed/final/motos_combustion_descartados.json"
-RUTA_OUTLIERS = BASE_DIR / "data/processed/final/motos_combustion_outliers.json"
+RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/JSON/motos_combustion_candidatos_cache.json"
+RUTA_PROCESADOS = BASE_DIR / "data/processed/final/JSON/motos_combustion_procesadas.json"
+RUTA_DESCARTADOS = BASE_DIR / "data/processed/final/JSON/motos_combustion_descartados.json"
+RUTA_OUTLIERS = BASE_DIR / "data/processed/final/JSON/motos_combustion_outliers.json"
 RUTA_ESQUEMA_COMBUSTION = (
     BASE_DIR / "docs/schemas/esquema_moto_combustion.json"
 )

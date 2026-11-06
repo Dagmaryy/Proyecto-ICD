@@ -54,7 +54,7 @@ TERMINOS = (
 )
 
 RUTA_CANDIDATOS = (
-    BASE_DIR / "data/processed/final/motos_combustion_candidatos_cache.json"
+    BASE_DIR / "data/processed/final/JSON/motos_combustion_candidatos_cache.json"
 )
 
 

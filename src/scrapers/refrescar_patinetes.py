@@ -1,7 +1,7 @@
 """Refresca los listados de patinetes y calcula los candidatos de La Habana.
 
 Vuelve a descargar hasta 10 páginas de cada búsqueda de patinetes, une los
-anuncios con `final/patinetes_final_limpio.json` y con los patinetes elegibles
+anuncios con `final/JSON/patinetes_final_limpio.json` y con los patinetes elegibles
 de `versiones/patinetes_final_v2.json`, quita duplicados por el número final
 de la URL y filtra `provinceId == 1`.
 
@@ -37,9 +37,9 @@ TERMINOS = (
     "scooter plegable",
 )
 
-RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/patinetes_final_limpio.json"
+RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/final/JSON/patinetes_final_limpio.json"
 RUTA_V2 = BASE_DIR / "data/processed/versiones/patinetes_final_v2.json"
-RUTA_SALIDA = BASE_DIR / "data/processed/final/patinetes_candidatos.json"
+RUTA_SALIDA = BASE_DIR / "data/processed/final/JSON/patinetes_candidatos.json"
 
 
 def _url_busqueda(termino: str, pagina: int) -> str:

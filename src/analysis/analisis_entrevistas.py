@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 def generar_estadisticas_entrevistas():
-    ruta_json = 'data/processed/final/entrevistas_final.json'
+    ruta_json = 'data/processed/final/JSON/entrevistas_final.json'
     
     if not os.path.exists(ruta_json):
         print(f"❌ Error: No se encontró {ruta_json}")

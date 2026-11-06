@@ -1,7 +1,7 @@
 import json
 
 def normalizar():
-    with open('data/processed/final/entrevistas_final.json', 'r', encoding='utf-8') as f:
+    with open('data/processed/final/JSON/entrevistas_final.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     
     for e in data['entrevistas']:
@@ -21,7 +21,7 @@ def normalizar():
             elif 'tiene' in lic.lower():
                 e['legal_seguridad']['tiene_licencia_chapa'] = True
 
-    with open('data/processed/final/entrevistas_normalizadas.json', 'w', encoding='utf-8') as f:
+    with open('data/processed/final/JSON/entrevistas_normalizadas.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     print("✅ Entrevistas normalizadas guardadas.")
 
