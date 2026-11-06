@@ -192,15 +192,13 @@ La Resolución 340 establece los valores de referencia en aduana (base imponible
 *   Patineta eléctrica: **$60.00 USD**.
 *   Batería de litio: **$60.00 USD**.
 
-**Entidades autorizadas (P23):**
-La Resolución 104 del MINCEX autoriza explícitamente a 17 entidades para la importación y comercialización, destacando a **SOLIMPORT S.U.R.L.** (importación de ciclomotores) y a **DIVSE** e **IMPLUS** (del Grupo PALCO) para la comercialización en USD.
+### 3.2. Entidades autorizadas y opacidad de precios (Preguntas 23 y 24)
 
-### 3.2. El Canal Formal y la Opacidad de Precios (Pregunta 24)
+La Resolución 17/2026 del MINCIN (Gaceta Oficial No. 65) aprueba la comercialización de vehículos por **21 entidades**: 17 en su apartado primero (IMPEXPORT, MCV Comercial, MULTISERVI, CIMEX, DUNA, SASA, UNEVOL, Tiendas Caribe, TRANSIMPORT, TRADEX, PALCO, MAQUIMPORT, LOGINTER, CONSTRUIMPORT, EISA, AXESS y Agencia Importadora Caribe) y 4 adicionales en apartados específicos: SOLIMPORT (ciclomotores y motocicletas), DIVSE e IMPLUS (del Grupo PALCO, para ciclomotores, motocicletas, triciclos y cuatriciclos) y DIVEP (vehículos de motor, remolques y semirremolques).
 
-A pesar de que el Estado autoriza a 17 entidades para la importación y comercialización de vehículos, la investigación documental reveló que **el canal formal carece de transparencia de precios pública**. Las entidades autorizadas, según las resoluciones del MINCEX y el MINCIN, son: IMPEXPORT S.U.R.L., MCV Comercial S.A., MULTISERVI S.A., Corporación CIMEX S.A., DUNA, SASA (Servicios Automotores S.A.), UNEVOL, Cadena de Tiendas Caribe, TRANSMIT/TRANIMPORT, TRADEX, Empresa Importadora PALCO, MAQUIMPORT, LOGINTER, CONSTRUIMPORT, Empresa Integral de Servicios Automotores, Empresa Comercializadora AXESS y Agencia Importadora Caribe S.U.R.L. A ellas se suman SOLIMPORT AUTOMOTRIZ S.U.R.L., DIVSE e IMPLUS (estas dos del Grupo PALCO), con autorización específica para ciclomotores y motocicletas, y DIVEP para vehículos de fabricación nacional. La mayoría de estas entidades no publican catálogos web accesibles, lo que dificulta la comparación directa para el consumidor.
+A pesar de este marco legal amplio, la investigación documental reveló que **el canal formal carece de transparencia de precios pública**. La mayoría de estas entidades no publican catálogos web accesibles, lo que dificulta la comparación directa para el consumidor.
 
 La única oferta con catálogo completo, precio y ficha técnica verificable en el sitio web oficial es la de **VEDCA**. Su catálogo documenta cuando menos los modelos LT-4206 (moto eléctrica), LT-4209 (moto eléctrica), C-400 (triciclo de carga), C-800 (triciclo con cabina) y FB-618-1 (moto infantil), además de bicicletas, patinetas y cuatriciclos. Los precios verificados para 2026 son **$1,300 USD** para el modelo de entrada (4202) y **$2,115 USD** para el modelo superior (4206). Su garantía oficial es de **180 días** para batería y motor, **90 días** para frenos, componentes eléctricos y cargador, y **7 días** para ajustes generales.
-
 
 **Evidencia empírica del sobreprecio informal:**
 Para aproximarnos a la brecha real entre ambos canales, se aplicó un filtro sobre los 1,200 anuncios de Revolico para identificar aquellos que mencionaran explícitamente la marca VEDCA. Se encontraron **43 anuncios** ofertando vehículos de esta marca.

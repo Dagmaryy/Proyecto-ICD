@@ -8,21 +8,24 @@ pydantic
 pandas
 numpy
 
-# Clustering
+# Análisis
+scipy
 scikit-learn
 
 # Visualización
 matplotlib
 seaborn
 plotly
+kaleido
 
-# NLP
+# NLP y transcripción
 spacy
+faster-whisper
 
 # YAML
 pyyaml
 
-# Jupyter
+# Jupyter (desarrollo)
 jupyter
 notebook
 

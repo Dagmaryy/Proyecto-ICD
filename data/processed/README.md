@@ -22,9 +22,9 @@ Los datasets que alimentan el informe son los `*_final_limpio.json`.
 | Motos procesadas | `final/motos_procesados.json` | 326 | Detalle de motos (326 válidos). |
 | Motos completas | `final/motos_completos.json` | 83 | Subconjunto con todos los campos. |
 | Motos parciales | `final/motos_parciales.json` | 243 | Subconjunto con campos faltantes. |
-| Bicis procesadas | `final/bicis_procesados.json` | 414 | Detalle de bicis válidas (campos del esquema de bici). |
+| Bicis procesadas | `final/bicis_procesados.json` | 406 | Detalle de bicis válidas (campos del esquema de bici). |
 | Bicis descartadas | `final/bicis_descartados.json` | 184 | Bicis intentadas no válidas (`borrado`, `expirado`, `error_descarga`, `detalle_invalido`). Aditivo, sin duplicar por `id`. |
-| Patinetes procesados | `final/patinetes_procesados.json` | 335 | Detalle de patinetes válidos (campos del esquema de patinete). |
+| Patinetes procesados | `final/patinetes_procesados.json` | 331 | Detalle de patinetes válidos (campos del esquema de patinete). |
 | Patinetes descartados | `final/patinetes_descartados.json` | 110 | Patinetes intentados no válidos. Aditivo, sin duplicar por `id`. |
 | Patinetes candidatos | `final/patinetes_candidatos.json` | 482 | Candidatos de La Habana para la fase de detalle. |
 | Combustión candidatos | `final/motos_combustion_candidatos_cache.json` | 694 | Candidatos de La Habana de búsquedas específicas de combustión. |

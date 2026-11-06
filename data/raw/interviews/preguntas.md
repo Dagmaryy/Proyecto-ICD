@@ -7,17 +7,8 @@ cat > data/raw/interviews/preguntas.md << 'EOF'
 
 ---
 
-## 1. Criterios de inclusión
 
-- Mayor de 18 años.
-- Vive en La Habana.
-- Tiene, usa o compró en el último año una moto, bicicleta o patinete eléctrico (o está en proceso de compra).
-
-Si no cumple los tres, se agradece y no se continúa.
-
----
-
-## 2. Consentimiento informado (leer en voz alta antes de empezar)
+## 1. Consentimiento informado (leer en voz alta antes de empezar)
 
 > Hola, soy Dagmary, estudiante de Ciencia de Datos de la Universidad de La Habana. Estoy haciendo un trabajo de la asignatura Introducción a la Ciencia de Datos sobre el mercado de vehículos eléctricos de dos ruedas en La Habana.
 >
@@ -33,7 +24,7 @@ Si no cumple los tres, se agradece y no se continúa.
 
 ---
 
-## 3. Datos de la entrevista (los llena la entrevistadora, no se preguntan)
+## 2. Datos de la entrevista (los llena la entrevistadora, no se preguntan)
 
 | Campo | Valor |
 |---|---|
@@ -45,7 +36,7 @@ Si no cumple los tres, se agradece y no se continúa.
 
 ---
 
-## 4. Preguntas
+## 3. Preguntas
 
 ### Bloque A. Perfil *(pregunta de estudio 11)*
 
@@ -104,7 +95,7 @@ Agradecer y preguntar si conoce a alguien más que cumpla los criterios y quiera
 
 ---
 
-## 5. Notas para la entrevistadora
+## 4. Notas para la entrevistadora
 
 - No sugerir respuestas ni opinar. Si no entiende una pregunta, reformularla.
 - Anotar siempre la **moneda** de cada cifra.
@@ -114,7 +105,7 @@ Agradecer y preguntar si conoce a alguien más que cumpla los criterios y quiera
 
 ---
 
-## 6. Correspondencia con las preguntas del estudio
+## 5. Correspondencia con las preguntas del estudio
 
 | Preguntas de la guía | Pregunta del estudio |
 |---|---|

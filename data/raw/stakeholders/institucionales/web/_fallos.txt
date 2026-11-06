@@ -1,0 +1,6 @@
+https://www.aduana.gob.cu/front | HTTP 503 | 2026-11-06
+https://www.aduana.gob.cu/pagina-basica/que-puedo-y-no-puedo-importar | HTTP 503 | 2026-11-06
+https://www.aduana.gob.cu/preguntas-frecuentes | HTTP 503 | 2026-11-06
+https://www.aduana.gob.cu/pagina-basica/equipaje-no-acompanado-0 | HTTP 503 | 2026-11-06
+https://www.aduana.gob.cu/noticias/respuesta-consultas-de-las-personas | HTTP 503 | 2026-11-06
+https://www.aduana.gob.cu/noticias/nota-informativa-sobre-la-implementacion-del-decreto-119-2024 | HTTP 503 | 2026-11-06

@@ -372,10 +372,52 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 
 ## 2026-11-04 — Descarga de la evidencia PDF de fuentes oficiales
 
-**Qué hice:** Creé `src/scripts/descargar_pdfs.py`, que lee `docs/sources.md`, extrae las 38 URLs y filtra los PDF directos. Descarga con User-Agent de navegador, `verify=False`, timeout y 3 s entre peticiones, valida la cabecera `%PDF` y guarda en `data/raw/stakeholders/pdfs_oficiales/` con nombres descriptivos. Usé `httpx` (regla del repo) en lugar de `requests`.
+**Qué hice:** Creé `src/scripts/descargar_pdfs.py`, que lee `docs/sources.md`, extrae las 49 fuentes y filtra los PDF directos. Descarga con User-Agent de navegador, `verify=False`, timeout y 3 s entre peticiones, valida la cabecera `%PDF` y guarda en `data/raw/stakeholders/pdfs_oficiales/` con nombres descriptivos. Usé `httpx` (regla del repo) en lugar de `requests`.
 
 **Evidencia:** 3 PDFs detectados y descargados, 0 fallos: `gaceta_65_2026.pdf` (514 032 bytes, 21 páginas), `gaceta_83_2026.pdf` (354 625 bytes, 9 páginas) y `onei_transporte_2025.pdf` (816 168 bytes). `file` confirma que los tres son PDF válidos y no quedaron archivos `.part`.
 
 **Qué aprendí:** Además de los dos PDFs de la Gaceta, el anuario de la ONEI también es PDF directo; las páginas de la Gaceta con resoluciones son HTML y no deben descargarse como si fueran PDF. Validar la cabecera evita guardar páginas de error con extensión `.pdf`.
 
 **Próximo paso:** Si se quieren conservar también las resoluciones de la Gaceta que están en HTML, habría que abrir cada página y buscar su enlace de descarga PDF; no se hizo porque el pedido era filtrar PDFs directos.
+
+---
+
+## 2026-11-05 — Cierre del informe final y Anexo de stakeholders
+
+**Qué hice:** Cerré el informe final en 7 secciones tras desintegrar la Sección 5 (Discusión) en las secciones donde vivía cada idea. Integré 16 citas textuales de entrevistados distribuidas en 4.1, 4.2, 4.3, 4.4, 4.5 y 4.6, sin superar 2 citas por entrevistado. Resolví la numeración de preguntas del proyecto (P11–P17 y P20, eliminando P13 de 4.6 y P11/P12 de 4.5). Reescribí la sección 3.2 para integrar P23 y P24 en un solo bloque: 21 entidades autorizadas según Resolución 17/2026 del MINCIN (17 en el apartado primero + 4 con autorizaciones específicas: SOLIMPORT, DIVSE, IMPLUS, DIVEP). Eliminé las referencias a la Resolución 312/2026 (derogada) y a la 104/2026 como norma de comercialización. Añadí un Anexo A con fichas de las 21 entidades y tabla resumen (catálogo web, Telegram, precios públicos, garantía). Actualicé `docs/opencode_history.md` con las tres fases de uso de OpenCode y el párrafo forense de recuperación.
+
+**Evidencia:** `docs/final_report.md` cerrado; `docs/anexo_stakeholders.md` creado; 16 citas distribuidas (E10, E13, E15, E17, E18, E20, E22, E23); P11–P17 + P20 en títulos; `docs/opencode_history.md` con 6 secciones.
+
+**Qué aprendí:** (1) Desintegrar una sección temática en las secciones donde nace cada idea es más limpio que dejarla como cajón de sastre. (2) Las citas textuales elevan el informe de descriptivo a cualitativo, pero requieren balance: máximo 2 por entrevistado y no más de 3 por sección. (3) La numeración de preguntas del proyecto debe coincidir con el cuestionario real, no con la intuición.
+
+**Qué me costó:** Eliminar la Sección 5 sin perder la conexión explícita entre el margen del 3% y el sobreprecio del 86%. Resolver la doble aparición de E17 (4.3 canal vs 4.3 factor) sin romper el hilo argumental.
+
+**Próximo paso:** Gráficos y sitio web.
+
+---
+
+## 2026-11-06 — Auditoría de consistencia con OpenCode y recuperación forense
+
+**Qué hice:** Ejecuté una auditoría cruzada con OpenCode sobre 12 archivos de documentación. Devolvió 26 hallazgos, de los cuales apliqué 13 (los de prioridad ALTA y MEDIA). Corregí: `77.8%` → `62.7%` en `limitations.md`, `44 fuentes` → `49 fuentes` en `methodology.md`, `sección 6` → `sección 5` en `limitations.md`, `docs/limitaciones.md` → `docs/limitations.md` en README, `max_anuncios_por_tipo: 30` → `300` y `n_clusters: 6` → `3` en `config.yaml`, `Qwen 2.5b` → `qwen2.5:3b` en `decisions.md`, y el mapeo P11–P20. Reescribí `limitations.md` con las 10 limitaciones del informe (antes tenía 4), `methodology.md` con las 4 fases del pipeline, `decisions.md` con 10 decisiones, y `scope` (matriz P1-P30) con las 4 verticales, sin S como fuente activa. También recuperé parcialmente la base de datos corrupta de OpenCode (555 MB) mediante `.recover` de SQLite (20,152 líneas recuperadas, solo `lost_and_found`) y extracción binaria con `strings` + parseo JSON manual. Recuperé 11 prompts de la fase de scraping y 262 mensajes de las 7 sesiones post-colapso.
+
+**Evidencia:** `docs/limitations.md` (10 limitaciones), `docs/methodology.md` (4 fases + procesamiento de entrevistas), `docs/decisions.md` (10 decisiones), `docs/scope.md` (4 verticales), `docs/opencode_prompts_recuperados.md` (11 prompts), `docs/opencode_prompts.md` (262 prompts), `docs/opencode_history.md` (6 secciones + párrafo forense).
+
+**Qué aprendí:** (1) La auditoría cruzada detecta inconsistencias que una revisión lineal no ve: "44 fuentes" en un archivo vs "49 fuentes" en el informe, "17 entidades" vs "21 entidades", "P13" mal mapeado. (2) La recuperación de una DB SQLite corrupta requiere tres estrategias en orden: `.recover` (recupera estructura), `strings` + JSON manual (recupera contenido), y compromiso con lo que se pierde (documentar la pérdida como hallazgo forense). (3) La constancia en commits y la evidencia versionada son la trazabilidad real; sin commit, el trabajo no existe.
+
+**Qué me costó:** Aceptar que 11 de 275 prompts era la recuperación real y no inflar el número. Decidir qué tan profundamente documentar el incidente forense sin que opacara el uso de OpenCode en el resto del proyecto.
+
+**Próximo paso:** Gráficos y sitio web.
+
+---
+
+## 2026-11-07 — Gráficos, sitio web y cierre
+
+**Qué hice:** Generé los 10 gráficos del informe con plotly (`src/analysis/graficos_finales.py`), exportados como HTML interactivo + PNG en `reports/plots/`. Los 10 gráficos cubren: precio mediano por tipo, top 10 marcas por tipo (apilado), mapa coroplético de La Habana, costo por vatio vs costo por km, cilindradas, batería litio vs gel/plomo, estratificación en 3 gamas, formal vs informal, papeles en regla, preferencia eléctrica. Corregí el bug del mapa normalizando `La Habana del Este` → `Habana del Este` para que coincidiera con el GeoJSON. Complementariamente, diseñé gráficos en Datawrapper para los que requerían interactividad nativa: mapa con tooltip, barras agrupadas de marcas por tipo, histograma de precios, cajas por marca y dispersión precio vs autonomía. Generé el sitio web con OpenCode (`web/index.html`), un archivo único con CSS embebido, tipografía Inter, paleta sobria (#1F4E79 + #D97706 + grises), responsive y navegación ancla a las 7 secciones. Integré los gráficos como iframes en la sección correspondiente. Verifiqué accesibilidad del sitio en incógnito.
+
+**Evidencia:** `src/analysis/graficos_finales.py`, `reports/plots/*.html` (10) y `*.png` (10), `web/index.html`, `docs/scripts.md` (tabla de trazabilidad actualizada), commits finales.
+
+**Qué aprendí:** (1) Plotly para gráficos estándar (rápido, reproducible, HTML autocontenido) y Datawrapper para los que requieren interactividad compleja o mapas coropléticos bien resueltos. (2) El mapa de La Habana necesita normalización explícita porque el GeoJSON del DPA usa "Habana del Este" sin "La" y el CSV tenía "La Habana del Este"; sin el `replace()` el municipio más grande del este desaparece del mapa. (3) Un sitio web con tipografía Inter, max-width 850px centrado y 3 colores es suficiente para verse profesional; no hace falta animación ni dark mode.
+
+**Qué me costó:** Conciliar los gráficos de plotly con la calidad visual de Datawrapper sin duplicar trabajo. Decidir qué gráficos eran "esenciales" (los 10 del informe) y cuáles "complementarios" (los extra de cajas, histograma y dispersión en Datawrapper).
+
+**Próximo paso:** Ninguno. Proyecto cerrado y entregado.

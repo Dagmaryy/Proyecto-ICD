@@ -6,9 +6,8 @@ proyecto:
 rutas:
   raw: "data/raw"
   processed: "data/processed"
-  exports: "data/exports"
   reports: "reports"
-  graphs: "docs/graphs"
+  plots: "report/plots"
   cache_listado: "data/raw/web/revolico/cache_html"
   cache_detalle: "data/raw/web/revolico/cache_detalle"
 
@@ -25,7 +24,7 @@ economia:
   fecha_tasa: "2026-10-05"
 
 analisis:
-  max_anuncios_por_tipo: 30
+  max_anuncios_por_tipo: 300
   clustering:
-    n_clusters: 6
+    n_clusters: 3
     random_state: 42
