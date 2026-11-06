@@ -271,7 +271,7 @@ A partir del análisis de las 30 entrevistas realizadas a usuarios de vehículos
 
 ### 4.1. Perfil demográfico y ubicación (P11)
 El usuario típico de este mercado es una persona joven, con una **edad promedio de 27.1 años**, aunque el rango etario es bastante amplio, abarcando desde estudiantes de 16 años hasta profesionales de 63 años. 
-En cuanto a la distribución geográfica, la muestra se concentró principalmente en tres municipios: **Habana del Este, Arroyo Naranjo y Playa** (con 4 entrevistados cada uno), seguidos de cerca por otros como Marianao y Diez de Octubre. Predominan los estudiantes universitarios y los trabajadores por cuenta propia (barberos, cocineros, entre otros oficios), así como profesores universitarios.
+En cuanto a la distribución geográfica, la muestra se concentró principalmente en **Habana del Este (8 entrevistados)**, seguido de **Arroyo Naranjo (4) y Playa (4)**. Les siguen Diez de Octubre, Marianao y Guanabacoa, con 3 entrevistados cada uno. Predominan los estudiantes universitarios y los trabajadores por cuenta propia (barberos, cocineros, entre otros oficios), así como profesores universitarios.
 
 > *"Vendo materiales y eso de la construcción. Estudio también."* (E20)
 
@@ -333,17 +333,19 @@ Para proteger sus vehículos, los métodos más comunes son el uso de **candados
 > *"Un candado, una alarma, GPS. La alarma ya se le rompió, tengo que repararla. Pero uso un candado. GPS no uso. Le pongo una capa para proteger la lluvia. La guardo dentro de mi casa."* (E18)
 
 ### 4.6. Satisfacción y Preferencia (P20)
-A pesar de los problemas de apagones, la falta de licencia y el desgaste de las baterías, la satisfacción con la tecnología eléctrica es abrumadora. **23 de los 30 entrevistados (76%) prefieren la moto eléctrica sobre la de combustión**. La razón principal es puramente económica: la gasolina es percibida como excesivamente cara y difícil de conseguir. 
+
+A pesar de los problemas de apagones, la falta de licencia y el desgaste de las baterías, la satisfacción con la tecnología eléctrica es abrumadora. **24 de los 30 entrevistados (80%) prefieren la moto eléctrica sobre la de combustión**. La razón principal es puramente económica: la gasolina es percibida como excesivamente cara y difícil de conseguir.
 
 > *"Elegiría la eléctrica porque, aunque haya problemas energéticos, tengo familiares donde la puedo cargar."* (E15)
 
-Los pocos que prefieren la de combustión lo hacen por la durabilidad del motor, la velocidad o porque tienen la posibilidad económica de mantenerla. 
+Los pocos que prefieren la de combustión lo hacen por la durabilidad del motor, la velocidad o porque tienen la posibilidad económica de mantenerla.
 
 > *"El ideal sería tener los dos, pero si tengo que elegir una, elijo la de gasolina. La batería de la eléctrica muere al año."* (E17)
 
 En conclusión, la moto eléctrica se ha consolidado como el vehículo de movilidad por excelencia para el habanero de a pie, no por una conciencia ecológica, sino por pura supervivencia económica frente a la crisis del transporte y el combustible.
 
 > *"Si tienen plata, comprense motos o bicicletas. El transporte está malísimo."* (E23)
+
 
 ## 5. Limitaciones del Estudio
 Este estudio presenta las siguientes limitaciones metodológicas:
@@ -355,7 +357,7 @@ Este estudio presenta las siguientes limitaciones metodológicas:
 5.  **Sesgo temporal:** Los precios reflejan una "instantánea" del mercado en septiembre-octubre de 2026, no una evolución histórica a largo plazo.
 6.  **Precios pedidos vs. transacciones:** El estudio analiza los precios publicados (pedidos), no los precios de cierre finales de las negociaciones, los cuales suelen ser menores.
 7.  **Validación de Clústeres:** Aunque se aplicaron pruebas estadísticas (Silhouette y ANOVA) que validaron la separación de los grupos, el clustering se realizó sobre una muestra de 231 motos (las que tenían datos completos), lo que representa el 77% de la categoría.
-8. **Muestra de entrevistas no probabilística:** Las 30 entrevistas semiestructuradas se seleccionaron por conveniencia y bola de nieve, no mediante muestreo aleatorio. Los porcentajes reportados en la Sección 4 (por ejemplo, 76% de preferencia por la moto eléctrica, 50% con problemas de carga, 53% sin licencia) describen la composición de esta muestra específica y no deben interpretarse como prevalencias poblacionales. Con N=30, los intervalos de confianza son amplios y el margen de error estimado supera ±15 puntos porcentuales.
+8. **Muestra de entrevistas no probabilística:** Las 30 entrevistas semiestructuradas se seleccionaron por conveniencia y bola de nieve, no mediante muestreo aleatorio. Los porcentajes reportados en la Sección 4 (por ejemplo, 80% de preferencia por la moto eléctrica, 50% con problemas de carga, 53% sin licencia) describen la composición de esta muestra específica y no deben interpretarse como prevalencias poblacionales. Con N=30, los intervalos de confianza son amplios y el margen de error estimado supera ±15 puntos porcentuales.
 9. **Subrepresentación del universo importado:** Si bien la muestra de 1,200 anuncios es robusta para caracterizar el canal Revolico, representa una fracción del total de vehículos que ingresan al país. Fuentes oficiales reportan 19,443 motos eléctricas importadas, lo que da una idea de la escala del mercado que subyace a los anuncios analizados.
 10. **Canal formal sin entrevistas primarias:** Aunque el diseño original contemplaba entrevistas a stakeholders (tiendas, importadoras, talleres), el acceso a estos actores no fue posible en el marco del estudio. La caracterización del canal formal se construyó exclusivamente a partir de fuentes documentales y sitios web oficiales, lo que limita la triangulación de la información de precios y procesos internos.
 
@@ -377,6 +379,6 @@ El mercado de vehículos ligeros en La Habana se caracteriza por una alta inform
 
 A pesar de las flexibilizaciones legales del Decreto 163/2026 (que permiten importar hasta dos motos y ofrecen incentivos fiscales), el mercado informal (Revolico) sigue dominando el volumen de oferta. Los compradores asumen un sobreprecio que puede llegar al 92% frente al precio de tienda y el riesgo legal (el 62.7% de los anuncios no menciona papeles), impulsados por la inmediatez y la escasez de inventario estatal.
 
-El perfil del consumidor refuerza esta interpretación: la mayoría de los usuarios entrevistados son jóvenes (edad promedio de 27.1 años) que usan el vehículo como transporte personal, y el 76% prefiere la moto eléctrica sobre la de combustión por razones estrictamente económicas. Al mismo tiempo, el 53% opera sin licencia de conducción y el 50% ha tenido problemas para cargar sus vehículos durante los apagones, lo que evidencia que la adopción masiva de la movilidad eléctrica no responde a una conciencia ecológica, sino a una estrategia de resiliencia y supervivencia económica.
+El perfil del consumidor refuerza esta interpretación: la mayoría de los usuarios entrevistados son jóvenes (edad promedio de 27.1 años) que usan el vehículo como transporte personal, y el 80% prefiere la moto eléctrica sobre la de combustión por razones estrictamente económicas. Al mismo tiempo, el 53% opera sin licencia de conducción y el 50% ha tenido problemas para cargar sus vehículos durante los apagones, lo que evidencia que la adopción masiva de la movilidad eléctrica no responde a una conciencia ecológica, sino a una estrategia de resiliencia y supervivencia económica.
 
 Finalmente, la opacidad del propio canal formal (la mayoría de las entidades autorizadas no publica precios accesibles) y la falta de una infraestructura de carga adecuada (evidenciada por los apagones) son los principales desafíos que enfrenta este mercado en su camino hacia la formalización y la sostenibilidad.
