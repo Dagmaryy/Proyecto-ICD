@@ -3,6 +3,57 @@
   "total_entrevistas": 29,
   "entrevistas": [
     {
+      "id_entrevista": "user_001",
+      "perfil": {
+        "edad": 54,
+        "ocupacion": "Médico",
+        "municipio": "Habana del Este"
+      },
+      "uso": {
+        "uso_principal": "trabajo, transporte personal y mensajería",
+        "uso_comercial": true
+      },
+      "eleccion": {
+        "tipo_vehiculo": "eléctrico",
+        "razon_compra": "Por el precio: era más económica que la de combustión y en ese momento no llevaba licencia",
+        "factor_principal": "Precio"
+      },
+      "compra": {
+        "canal_compra": "Importadora, por mediación de su cuñado que la compró en Panamá",
+        "razon_canal": "No especificada",
+        "precio_total": 400,
+        "moneda": "USD",
+        "incluyo_extras": "No especificado"
+      },
+      "operacion": {
+        "frecuencia_carga": "La moto tiene ~8 años. Inicialmente cargaba 12 horas con batería de plomo; tras cambiar a batería de litio, carga en 6 horas",
+        "tiempo_carga_horas": 6,
+        "problemas_apagones": "No especificado",
+        "lugar_combustible": "No especificado",
+        "dificultad_obtener_combustible": "No especificado"
+      },
+      "rendimiento": {
+        "autonomia_real": "No coincide con la anunciada por el vendedor: siempre queda por debajo. La velocidad depende del modelo",
+        "ha_bajado_autonomia": "No especificado",
+        "fallos_tecnicos": "Ninguno reportado"
+      },
+      "gastos": {
+        "gasto_baterias_repuestos": 800,
+        "gasto_mantenimiento": "Incluido en los $800",
+        "destino_baterias_usadas": "Las usó hasta el final (no las vendió)",
+        "precio_reventa_estimado": 800
+      },
+      "legal_seguridad": {
+        "tiene_licencia_chapa": false,
+        "amonestaciones": "Ninguna. En ese momento no había una ley vigente que exigiera licencia",
+        "metodo_proteccion": "No especificado"
+      },
+      "preferencia": {
+        "preferencia_vehiculo": "Eléctrica",
+        "razon_preferencia": "El precio de la gasolina está muy elevado y la eléctrica sigue siendo más barata que la de combustión"
+      }
+    },
+    {
       "id_entrevista": "user_002",
       "perfil": {
         "edad": 28,
