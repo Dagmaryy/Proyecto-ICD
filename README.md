@@ -27,9 +27,11 @@ Análisis del mercado de vehículos ligeros en La Habana (motos eléctricas, mot
 
 - `src/` — Scrapers y scripts de procesamiento.
 - `data/raw/` — Datos crudos (no se versionan).
-- `data/processed/final/` — Los 4 datasets de 300 registros.
+- `data/processed/final/JSON/` — Los 4 datasets finales + entrevistas.
+- `data/processed/final/CSV/` — CSVs para gráficos.
 - `docs/` — Documentación, esquemas JSON y journal.
-- `reports/` — Informe final y gráficos.
+- `reports/plots/` — 10 gráficos del informe (HTML + PNG).
+- `web/` — Sitio web estático (`index.html`).
 - `opencode/` — Handoff para el flujo con IA.
 - `tests/` — Tests de integridad.
 
@@ -47,8 +49,18 @@ pip install -r requirements.txt
 
 ## Reproducibilidad
 
-- Para verificar la integridad: `make test`.
-- Para verificar rutas: `python src/scripts/verificar_rutas.py`.
+```bash
+# Verificar integridad
+make test
+
+# Verificar rutas
+python src/scripts/verificar_rutas.py
+
+# Regenerar CSVs y gráficos
+python src/analysis/generar_csvs.py
+python src/analysis/tabulacion_entrevistas.py
+python src/analysis/graficos_finales.py
+
 
 ---
 
@@ -60,7 +72,7 @@ Investigación mixta: cuantitativa (scraping) + cualitativa (entrevistas).
 
 1. Scraping web (Revolico).
 2. Entrevistas semiestructuradas.
-3. Análisis documental (ONCUBA, Postdata.club, Decreto 163/2026).
+3. Análisis documental (49 fuentes: Gacetas Oficiales, ONEI, Cubadebate, Granma, VEDCA, etc.).
 
 ### Técnicas de análisis
 
@@ -70,16 +82,25 @@ Investigación mixta: cuantitativa (scraping) + cualitativa (entrevistas).
 
 ---
 
-## Datasets finales
-
 | Archivo | Registros | Descripción |
 |---|---|---|
-| `motos_electricas_300.json` | 300 | Motos eléctricas |
-| `motos_combustion_300.json` | 300 | Motos de combustión |
-| `bicis_300.json` | 300 | Bicicletas eléctricas |
-| `patinetes_300.json` | 300 | Patinetes eléctricos |
+| `JSON/motos_electricas_300_enriquecido.json` | 300 | Motos eléctricas |
+| `JSON/motos_combustion_300_enriquecido.json` | 300 | Motos de combustión |
+| `JSON/bicis_300_enriquecido.json` | 300 | Bicicletas eléctricas |
+| `JSON/patinetes_300_enriquecido.json` | 300 | Patinetes eléctricos |
+| `JSON/entrevistas_final_corregido.json` | 30 | Entrevistas a usuarios |
+| `CSV/` | — | 22 CSVs para gráficos |
 
 ---
+
+## Estado del proyecto (noviembre 2026)
+
+- **Informe final:** `docs/final_report.md` (7 secciones, cerrado)
+- **Datos:** 1,200 anuncios de Revolico + 30 entrevistas
+- **Fuentes:** 49 documentos normativos y de prensa
+- **Gráficos:** 10 visualizaciones en `reports/plots/`
+- **Sitio web:** `web/index.html`
+- **Evidencia OpenCode:** `docs/opencode_history.md` + 11 prompts recuperados
 
 ## Consideraciones éticas y limitaciones
 
@@ -90,11 +111,15 @@ Investigación mixta: cuantitativa (scraping) + cualitativa (entrevistas).
 
 ## Documentación
 
-- `docs/outline.md` — Estructura del informe.
-- `docs/final_report.md` — Informe final.
-- `docs/elements.md` — Preguntas de investigación.
+- `docs/final_report.md` — Informe final (7 secciones).
+- `docs/methodology.md` — Pipeline técnico y fases.
+- `docs/limitations.md` — 10 limitaciones del estudio.
+- `docs/decisions.md` — 10 decisiones técnicas (ADR).
+- `docs/sources.md` — 49 fuentes normativas y de prensa.
+- `docs/journal.md` — Bitácora cronológica del desarrollo.
+- `docs/opencode_history.md` — Evidencia de uso de OpenCode.
+- `docs/opencode_prompts.md` — Prompts de la sesión actual.
+- `docs/opencode_prompts_recuperados.md` — Prompts recuperados del disco corrupto.
 - `docs/schemas/` — Esquemas JSON.
-- `docs/methodology.md`, `docs/decisions.md`, `docs/sources.md`, `docs/limitaciones.md` (si existen).
-- `docs/journal.md` — Bitácora de trabajo.
 
 
