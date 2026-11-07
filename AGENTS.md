@@ -52,10 +52,10 @@ Proyecto académico, no producto. Objetivo: informe de análisis de mercado.
 La trazabilidad importa más que la elegancia.
 
 ## Estructura
-- docs/: documentación del proyecto (esquemas, outline, informe, elementos, etc.).
 - src/: todos los scripts (scrapers/).
 - data/: JSON, esquemas (esquemas/) y evidencias. data/raw no se modifica
-- opencode/: journal.md y handoff.md
+- docs/: documentación del proyecto (journal.md, handoff.md está en opencode/)
+- opencode/: solo handoff.md
 
 ## Flujo con OpenCode
 1. Al empezar: leer opencode/handoff.md y la última entrada de docs/journal.md.
@@ -65,10 +65,8 @@ La trazabilidad importa más que la elegancia.
 5. No hacer commits sin que Dagmary lo pida; proponer el mensaje.
 
 ## Historia
-- Formato Markdown, en storytelling/historia.md.
-- Estructura: título y cabecera; introducción (contexto, pregunta, motivación); desarrollo por bloques; conclusión o cierre; metodología; proceso de los datos; fecha y autor.
-- Primero se propone el outline y se espera su aprobación; no redactar sin outline aprobado.
-- No interpretar ni sacar conclusiones de los datos: la interpretación la escribe Dagmary. OpenCode solo prepara datos, tablas, gráficos y outlines.
+- El informe final vive en `docs/final_report.md` (7 secciones).
+- No hay carpeta `storytelling/`; fue eliminada en la reorganización.
 
 ## Commits
 - Un commit por punto del proyecto, con formato "tipo: qué cambió".
@@ -79,3 +77,12 @@ La trazabilidad importa más que la elegancia.
 - Audios fuera del repo; transcribir con Whisper en local.
 - Transcripciones solo con códigos (user_001), sin nombres.
 - Anonimizar teléfonos de vendedores en los datos procesados.
+
+## Rutas actualizadas (noviembre 2026)
+
+- Datos JSON finales: `data/processed/final/JSON/`
+- CSVs para gráficos: `data/processed/final/CSV/`
+- Gráficos generados: `reports/plots/`
+- Informe final: `docs/final_report.md`
+- Sitio web: `web/index.html`
+- Evidencia OpenCode: `docs/opencode_prompts.md` y `docs/opencode_prompts_recuperados.md`

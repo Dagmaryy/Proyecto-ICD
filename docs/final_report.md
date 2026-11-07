@@ -1,8 +1,15 @@
 
 
-
-
 # Análisis de Mercado de Vehículos Ligeros en La Habana
+
+**Autora:** Dagmary Pérez Aguiar  
+**Institución:** Universidad de La Habana  
+**Asignatura:** Introducción a la Ciencia de Datos (ICD)  
+**Curso:** 2026-2027  
+**Fecha de entrega:** 6 de noviembre de 2026  
+**Repositorio:** [github.com/Dagmaryy/Proyecto-ICD](https://github.com/Dagmaryy/Proyecto-ICD)
+
+---
 
 ## Resumen Ejecutivo
 Este estudio presenta un análisis integral del mercado de vehículos ligeros (motos eléctricas, de combustión, bicicletas y patinetes) en La Habana, abordando tanto la oferta del mercado informal como la percepción de los usuarios y el marco regulatorio vigente. Para ello, se empleó una metodología mixta que combinó el análisis masivo de anuncios clasificados, entrevistas en profundidad a usuarios y la revisión de fuentes normativas oficiales.

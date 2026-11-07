@@ -421,3 +421,31 @@ Registro cronológico del desarrollo del proyecto (análisis del mercado de veh�
 **Qué me costó:** Conciliar los gráficos de plotly con la calidad visual de Datawrapper sin duplicar trabajo. Decidir qué gráficos eran "esenciales" (los 10 del informe) y cuáles "complementarios" (los extra de cajas, histograma y dispersión en Datawrapper).
 
 **Próximo paso:** Ninguno. Proyecto cerrado y entregado.
+
+---
+
+## 2026-11-06 — Rediseño visual final del sitio y paleta unificada
+
+**Qué hice:** Actualicé `web/index.html` con el diseño editorial final: fondo crema `#FDFBF7`, hero azul `#1F4E79`, título blanco, metadatos blancos translúcidos y borde dorado. Añadí la imagen de portada bajo el H1 y una imagen de calle de La Habana entre las secciones 2 y 3. Reemplacé el pull quote por el texto sobre movilidad eléctrica y adaptación racional, con etiqueta superior “Perfil del consumidor” y padding de 40 px. Convertí las secciones en tarjetas blancas con 40 px de padding y 60 px de separación. Reubiqué los 14 gráficos para que queden junto al párrafo que los describe: 04/06/05 en 2.4, 09 en 2.5, 08 en 3.2, 11 en 4.3 y 14/12/13/10 en 4.4–4.6. En `src/analysis/graficos_finales.py` eliminé el rojo de la paleta y dejé solo azul, azul medio y dos grises; añadí `colorway` global y cambié el degradado del mapa a gris claro–azul. Regeneré los 14 HTML de `reports/plots/`.
+
+**Evidencia:** `web/index.html` con 14 gráficos, 12 iframes locales animados y 2 Datawrapper; `src/analysis/graficos_finales.py` con `COLORES = [AZUL, AZUL_MEDIO, GRIS_OSCURO, GRIS_CLARO]`; gráficos regenerados sin `#B23A48`, `#EFF6FF` ni `#D97706`. Validado en Firefox headless: colores computados correctos, 8 secciones, 14 gráficos, imágenes cargadas (1200 px), pull quote correcto, fade-in y `chart-anim` funcionando, sin overflow horizontal en móvil.
+
+**Qué aprendí:** El intercalado de gráficos debe seguir el orden argumental del texto, no el orden numérico de los archivos: en 2.4 el texto discute costos, luego batería y después cilindradas. También que las imágenes externas pueden tardar varios segundos en cargar en headless; hay que esperar antes de concluir que fallan.
+
+**Qué me costó:** Reubicar los gráficos sin romper los wrappers ni las captions, y mantener la coherencia de la paleta en gráficos con escalas continuas y múltiples series.
+
+**Próximo paso:** Revisión visual final de Dagmary y, si aprueba, commit del rediseño.
+
+---
+
+## 2026-11-06 — Limpieza de gráficos, footer y retiro de Fancybox
+
+**Qué hice:** Reduje el sitio a 6 gráficos: conservé `02_marcas_tipo` (Datawrapper `z8FM5`), el mapa de 2.3 (Datawrapper `o7Pir/2`), `04_costo_valor`, 2.6 (Datawrapper `gCfHx`), `08_formal_informal` y `10_preferencia`. Eliminé del HTML los 8 gráficos restantes (`01_precio_tipo`, `05_cilindradas`, `06_bateria`, `09_papeles`, `11_factor_compra`, `12_frecuencia_carga`, `13_fallos_tecnicos`, `14_apagones`) junto con sus captions y las dos imágenes `<img>`. Después retiré Fancybox por completo: eliminé el CSS y el JS de jsDelivr, el script `Fancybox.bind` y todos los enlaces `data-fancybox`, dejando los 6 gráficos como `<div class="chart">` con caption e iframe. Todos los iframes quedaron con altura fija y `style="width: 100%; border: none;"`. El footer usa azul `#1F4E79`, borde superior dorado `#C89933`, texto blanco y párrafos de 11 px en mayúsculas, centrados y con `letter-spacing: 1.5px`.
+
+**Evidencia:** `web/index.html` con 6 `.chart`, 0 enlaces Fancybox, 0 referencias a `fancybox` en CSS/JS y 0 `<img>`; sin referencias a los 8 gráficos eliminados. En Firefox headless, `typeof Fancybox` es `undefined`, no existe `.fancybox__container` y al hacer clic en un gráfico no se abre ningún modal ni cambia la URL. Los 6 iframes tienen alturas 550/616/500/500/500/500 y el estilo solicitado; en 2.6 solo queda el dispersor `gCfHx` y no hay referencias a `07_clustering`. El footer computa fondo `rgb(31, 78, 121)`, borde `rgb(200, 153, 51)`, texto `rgb(255, 255, 255)` y párrafos con los estilos pedidos. `docs/journal.md` actualizado.
+
+**Qué aprendí:** Para retirar una librería de un HTML único hay que eliminar cuatro capas: CSS, JS, inicialización y marcado que la activa; si queda cualquiera, la referencia sigue presente aunque el modal ya no se use.
+
+**Qué me costó:** Verificar que los 6 gráficos quedaran sin envoltorios y con estilos homogéneos sin romper los bloques de Datawrapper que ya estaban sin Fancybox.
+
+**Próximo paso:** Revisión visual de Dagmary y, si aprueba, commit de la limpieza del sitio.
