@@ -10,7 +10,7 @@
 
 ## Objetivo
 
-Análisis del mercado de vehículos ligeros en La Habana (motos eléctricas, motos de combustión, bicicletas y patinetes) combinando scraping de Revolico, entrevistas a usuarios y datos de stakeholders. El entregable es un informe de análisis de mercado.
+Análisis del mercado de vehículos ligeros en La Habana (motos eléctricas, motos de combustión, bicicletas y patinetes) combinando scraping de Revolico, entrevistas a usuarios y datos de stakeholders.
 
 ---
 
@@ -45,8 +45,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
 ## Reproducibilidad
 
 ```bash
@@ -60,28 +58,25 @@ python src/scripts/verificar_rutas.py
 python src/analysis/generar_csvs.py
 python src/analysis/tabulacion_entrevistas.py
 python src/analysis/graficos_finales.py
+```
 
-
----
-
-## Metodología
+Metodología
 
 Investigación mixta: cuantitativa (scraping) + cualitativa (entrevistas).
 
-### Técnicas de recolección
+Técnicas de recolección
 
 1. Scraping web (Revolico).
 2. Entrevistas semiestructuradas.
 3. Análisis documental (49 fuentes: Gacetas Oficiales, ONEI, Cubadebate, Granma, VEDCA, etc.).
 
-### Técnicas de análisis
+Técnicas de análisis
 
 1. Limpieza y normalización.
 2. Estadísticas descriptivas.
 3. Triangulación de fuentes.
 
----
-
+##Datasets Finales
 | Archivo | Registros | Descripción |
 |---|---|---|
 | `JSON/motos_electricas_300_enriquecido.json` | 300 | Motos eléctricas |
@@ -89,37 +84,34 @@ Investigación mixta: cuantitativa (scraping) + cualitativa (entrevistas).
 | `JSON/bicis_300_enriquecido.json` | 300 | Bicicletas eléctricas |
 | `JSON/patinetes_300_enriquecido.json` | 300 | Patinetes eléctricos |
 | `JSON/entrevistas_final_corregido.json` | 30 | Entrevistas a usuarios |
-| `CSV/` | — | 22 CSVs para gráficos |
+| `JSON/clustering_motos.json` | — | Resultados del clustering (K-Means) |
+
+Estado del proyecto (noviembre 2026)
+
+· Informe final: docs/final_report.md (7 secciones, cerrado)
+· Datos: 1,200 anuncios de Revolico + 30 entrevistas
+· Fuentes: 49 documentos normativos y de prensa
+· Gráficos: 10 generados en reports/plots/, 6 integrados en el sitio web
+· Sitio web: web/index.html
+· Evidencia OpenCode: docs/opencode_history.md + 11 prompts recuperados
+
+Consideraciones éticas y limitaciones
+
+· Ética: consentimiento informado, User-Agent honesto, delay >=3s, máx. 150 peticiones por sesión.
+· Limitaciones: 100% La Habana, múltiples ventanas de scraping (no serie temporal continua), ~60% de anuncios sin todos los campos técnicos, canal formal con información fragmentaria.
 
 ---
 
-## Estado del proyecto (noviembre 2026)
+Documentación
 
-- **Informe final:** `docs/final_report.md` (7 secciones, cerrado)
-- **Datos:** 1,200 anuncios de Revolico + 30 entrevistas
-- **Fuentes:** 49 documentos normativos y de prensa
-- **Gráficos:** 10 visualizaciones en `reports/plots/`
-- **Sitio web:** `web/index.html`
-- **Evidencia OpenCode:** `docs/opencode_history.md` + 11 prompts recuperados
+· docs/final_report.md — Informe final (7 secciones).
+· docs/methodology.md — Pipeline técnico y fases.
+· docs/limitations.md — 10 limitaciones del estudio.
+· docs/decisions.md — 10 decisiones técnicas (ADR).
+· docs/sources.md — 49 fuentes normativas y de prensa.
+· docs/journal.md — Bitácora cronológica del desarrollo.
+· docs/opencode_history.md — Evidencia de uso de OpenCode.
 
-## Consideraciones éticas y limitaciones
 
-- **Ética:** consentimiento informado, User-Agent honesto, delay >=3s, máx. 150 peticiones por sesión.
-- **Limitaciones:** 100% La Habana, múltiples ventanas de scraping (no serie temporal continua), ~60% de anuncios sin todos los campos técnicos, canal formal con información fragmentaria.
-
----
-
-## Documentación
-
-- `docs/final_report.md` — Informe final (7 secciones).
-- `docs/methodology.md` — Pipeline técnico y fases.
-- `docs/limitations.md` — 10 limitaciones del estudio.
-- `docs/decisions.md` — 10 decisiones técnicas (ADR).
-- `docs/sources.md` — 49 fuentes normativas y de prensa.
-- `docs/journal.md` — Bitácora cronológica del desarrollo.
-- `docs/opencode_history.md` — Evidencia de uso de OpenCode.
-- `docs/opencode_prompts.md` — Prompts de la sesión actual.
-- `docs/opencode_prompts_recuperados.md` — Prompts recuperados del disco corrupto.
-- `docs/schemas/` — Esquemas JSON.
 
 
