@@ -19,10 +19,6 @@ scraping:
   max_paginas_por_url: 10
   timeout_segundos: 30
 
-economia:
-  tasa_cup_por_usd: 800
-  fecha_tasa: "2026-10-05"
-
 analisis:
   max_anuncios_por_tipo: 300
   clustering:
