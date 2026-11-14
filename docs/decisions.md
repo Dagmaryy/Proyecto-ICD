@@ -71,3 +71,10 @@ Este documento registra las decisiones clave tomadas durante el desarrollo del p
 - **Decisión:** Usar plotly para los gráficos del informe, exportados como HTML interactivo y PNG.
 - **Razón:** Plotly genera HTML autocontenido que se integra directamente en el sitio web sin depender de servicios externos, es reproducible desde scripts versionados y permite interactividad (hover, zoom) sin código adicional.
 - **Consecuencia:** Todos los gráficos son reproducibles ejecutando `src/analysis/graficos_finales.py`, y el sitio web los incrusta sin iframes de terceros.
+
+## Decisión 11: No realizar conversión de CUP a USD
+
+- **Contexto:** Algunos anuncios (específicamente un alquiler) declaraban precios en CUP, mientras que la gran mayoría lo hacía en USD.
+- **Decisión:** No convertir los precios en CUP a USD en el análisis, a pesar de tener conocimiento de la tasa informal de referencia.
+- **Razón:** La extrema volatilidad del tipo de cambio informal en Cuba y la ausencia de una tasa oficial unificada para el período de corte hacen que cualquier conversión sea una estimación altamente especulativa. Además, la muestra de precios en CUP es marginal (n=1).
+- **Consecuencia:** El estudio reporta los precios en su moneda original. La ausencia de conversión se documenta como una limitación metodológica y como un hallazgo sobre la complejidad del mercado cambiario.
