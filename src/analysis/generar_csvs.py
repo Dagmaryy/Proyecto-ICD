@@ -3,7 +3,7 @@ import os
 
 def generar_csvs():
     base = 'data/final/JSON/'
-    dir_csv = os.path.join(base, 'CSV/')
+    dir_csv = 'data/final/CSV/'
     os.makedirs(dir_csv, exist_ok=True)
 
     dfs = []
