@@ -22,9 +22,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.scrapers import revolico as rv
 
 CATEGORIAS = rv.CATEGORIAS
-FINAL_DIR = rv.BASE_DIR / "data/processed/final"
-VERSIONES_DIR = rv.BASE_DIR / "data/processed/versiones"
-REPORTE = rv.BASE_DIR / "data/processed/verificacion_limpio.json"
+FINAL_DIR = rv.BASE_DIR / "data/processed/04_procesados"
+VERSIONES_DIR = rv.BASE_DIR / "data/processed/06_versiones"
+REPORTE = rv.BASE_DIR / "data/processed/07_otros/verificacion_limpio.json"
 EXCEPCIONES = VERSIONES_DIR / "limpio_excepciones.json"
 
 PRECIO_MIN, PRECIO_MAX = 100, 5000

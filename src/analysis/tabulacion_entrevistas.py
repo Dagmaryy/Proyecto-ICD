@@ -5,7 +5,7 @@ Genera CSVs en data/final/CSV/ y reporta por consola.
 Uso:
     source venv/bin/activate && python src/analysis/tabulacion_entrevistas.py
 
-Entrada: data/processed/JSON/entrevistas_final_corregido.json
+Entrada: data/final/JSON/entrevistas_final_corregido.json
 Salida: CSVs en data/final/CSV/entrevistas_*.csv
 """
 import json
@@ -13,7 +13,7 @@ from collections import Counter
 from pathlib import Path
 import pandas as pd
 
-RUTA_JSON = Path("data/processed/JSON/entrevistas_final_corregido.json")
+RUTA_JSON = Path("data/final/JSON/entrevistas_final_corregido.json")
 SALIDA = Path("data/final/CSV")
 SALIDA.mkdir(parents=True, exist_ok=True)
 

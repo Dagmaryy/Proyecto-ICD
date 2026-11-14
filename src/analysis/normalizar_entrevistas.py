@@ -1,7 +1,7 @@
 import json
 
 def normalizar():
-    with open('data/final/JSON/entrevistas_final.json', 'r', encoding='utf-8') as f:
+    with open('data/final/JSON/entrevistas_final_corregido.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     
     for e in data['entrevistas']:

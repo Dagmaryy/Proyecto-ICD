@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 import plotly.express as px
 
-BASE = Path("data/processed/final")
+BASE = Path("data/final")
 OUT = Path("reports/plots")
 OUT.mkdir(parents=True, exist_ok=True)
 

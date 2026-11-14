@@ -9,7 +9,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-BASE = Path("data/processed/final")
+BASE = Path("data/final")
 CSV = BASE / "CSV"
 JSON_DIR = BASE / "JSON"
 OUT = Path("reports/plots")
@@ -91,7 +91,7 @@ guardar(fig, "02_marcas_tipo")
 # ---------------------------------------------------------------
 df = pd.read_csv(CSV / "datos_mapa_habana.csv")
 df["municipio"] = df["municipio"].replace({"La Habana del Este": "Habana del Este"})
-with open(CSV / "lha.geojson", encoding="utf-8") as f:
+with open(Path("data/processed/07_otros/lha.geojson"), encoding="utf-8") as f:
     gj = json.load(f)
 fig = px.choropleth(df, geojson=gj, locations="municipio", featureidkey="properties.municipality", color="total_anuncios", hover_data={"precio_mediano": ":,.0f", "total_anuncios": True, "municipio": False}, color_continuous_scale=[GRIS_CLARO, AZUL], labels={"total_anuncios": "Anuncios", "precio_mediano": "Precio mediano (USD)"})
 fig.update_geos(fitbounds="locations", visible=False, bgcolor="white", projection_type="mercator")
