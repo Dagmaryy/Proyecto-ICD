@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def generar_datos_apilados():
-    base = 'data/final/JSON/'
+    base = 'data/final/CSV/'
     archivos = {
         'Eléctricas': 'motos_electricas_300_enriquecido.json',
         'Combustión': 'motos_combustion_300_enriquecido.json',
