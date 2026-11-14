@@ -1,20 +1,20 @@
 """
 Tabulación completa de las 30 entrevistas para el informe ICD.
-Genera CSVs en data/processed/final/CSV/ y reporta por consola.
+Genera CSVs en data/final/CSV/ y reporta por consola.
 
 Uso:
     source venv/bin/activate && python src/analysis/tabulacion_entrevistas.py
 
-Entrada: data/processed/final/JSON/entrevistas_final_corregido.json
-Salida: CSVs en data/processed/final/CSV/entrevistas_*.csv
+Entrada: data/processed/JSON/entrevistas_final_corregido.json
+Salida: CSVs en data/final/CSV/entrevistas_*.csv
 """
 import json
 from collections import Counter
 from pathlib import Path
 import pandas as pd
 
-RUTA_JSON = Path("data/processed/final/JSON/entrevistas_final_corregido.json")
-SALIDA = Path("data/processed/final/CSV")
+RUTA_JSON = Path("data/processed/JSON/entrevistas_final_corregido.json")
+SALIDA = Path("data/final/CSV")
 SALIDA.mkdir(parents=True, exist_ok=True)
 
 with open(RUTA_JSON, encoding="utf-8") as f:

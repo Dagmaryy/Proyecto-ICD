@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def analizar_verticales():
-    base = 'data/processed/final/'
+    base = 'data/final/JSON/'
     
     # --- 1. ANÁLISIS DE ELÉCTRICOS (Motos, Bicis, Patinetes) ---
     electricos = {

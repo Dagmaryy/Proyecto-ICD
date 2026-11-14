@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def auditar():
-    base = 'data/processed/final/'
+    base = 'data/final/JSON/'
     archivos = ['motos_electricas_300.json', 'motos_combustion_300.json', 'bicis_300.json', 'patinetes_300.json']
     for arch in archivos:
         df = pd.read_json(os.path.join(base, arch))

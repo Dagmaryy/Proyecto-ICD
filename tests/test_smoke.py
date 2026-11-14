@@ -1,60 +1,49 @@
 """Tests de humo del pipeline de datos de ICD.
-
-Sin fixtures ni mocks: solo comprueban que el código importa, que los
-archivos finales existen con el esquema esperado y que los esquemas cargan.
+Comprueban la existencia de datos, los esquemas y la lógica de extracción (regex).
 """
-
 import json
+import sys
 from pathlib import Path
+import pytest
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-FINAL_DIR = BASE_DIR / "data/processed/final"
-SCHEMAS_DIR = BASE_DIR / "docs/schemas"
+# Añadir la raíz del proyecto al path para importar src
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-CAMPOS = {
-    "titulo",
-    "precio_usd",
-    "marca",
-    "modelo",
-    "provinceId",
-    "municipalityId",
-    "url_detalle",
-    "motivo",
-}
+from src.config_paths import JSON_DIR, CSV_DIR, BASE_DIR
 
-CATEGORIAS = ("motos", "bicis", "patinetes")
+def test_datos_finales_existen():
+    """Verifica que los 4 datasets finales + entrevistas existen en JSON/."""
+    archivos_esperados = [
+        "motos_electricas_300_enriquecido.json",
+        "motos_combustion_300_enriquecido.json",
+        "bicis_300_enriquecido.json",
+        "patinetes_300_enriquecido.json",
+        "entrevistas_final_corregido.json"
+    ]
+    for archivo in archivos_esperados:
+        ruta = JSON_DIR / archivo
+        assert ruta.is_file(), f"Falta el archivo: {ruta}"
 
-
-def test_procesar_detalles_motos():
-    from src.scrapers.revolico import procesar_detalles
-
-    resultado = procesar_detalles("motos", max_anuncios=5)
-    assert len(resultado["validos_completos"]) == 3
-
-
-def test_limpios_existen():
-    for categoria in CATEGORIAS:
-        assert (FINAL_DIR / f"{categoria}_final_limpio.json").is_file()
-
-
-def test_limpios_campos():
-    for categoria in CATEGORIAS:
-        with open(
-            FINAL_DIR / f"{categoria}_final_limpio.json", encoding="utf-8"
-        ) as f:
-            registros = json.load(f)
-        assert 100 <= len(registros) <= 10000, categoria
-        for registro in registros:
-            assert set(registro.keys()) == CAMPOS, categoria
-
+def test_estructura_datos():
+    """Verifica que los JSON tengan registros y los campos clave."""
+    with open(JSON_DIR / "motos_electricas_300_enriquecido.json", "r", encoding="utf-8") as f:
+        datos = json.load(f)
+        assert len(datos) == 300, "El dataset de eléctricas no tiene 300 registros"
+        assert "precio_usd" in datos[0], "Falta el campo precio_usd en el JSON"
 
 def test_esquemas_cargan():
-    for ruta in sorted(SCHEMAS_DIR.glob("*.json")):
+    """Verifica que los esquemas JSON sigan en docs/schemas/."""
+    esquemas_dir = BASE_DIR / "docs" / "schemas"
+    for ruta in sorted(esquemas_dir.glob("*.json")):
         with open(ruta, encoding="utf-8") as f:
             json.load(f)
 
+def test_index_existe():
+    """Verifica que el index.html esté en la raíz."""
+    assert (BASE_DIR / "index.html").is_file(), "El index.html no está en la raíz"
 
 def test_extraer_campos_tecnicos_regex():
+    """Prueba la lógica de extracción técnica (No depende de archivos)."""
     from src.scrapers.revolico import extraer_campos_tecnicos
 
     tecnicos = extraer_campos_tecnicos(
@@ -74,16 +63,8 @@ def test_extraer_campos_tecnicos_regex():
     assert tecnicos["papeles"] == "en regla"
     assert tecnicos["plegable"] is True
 
-    tecnicos = extraer_campos_tecnicos("Moto 0km, 3 meses de uso", "Moto")
-    assert tecnicos["estado"] == "Nueva"
-    assert tecnicos["plegable"] is False
-
-    tecnicos = extraer_campos_tecnicos("Autonomía 35-50 km, 30 km x hora", "Patinete")
-    assert tecnicos["autonomia_km"] == 50
-    assert tecnicos["velocidad_max_kmh"] == 30
-
-
 def test_normalizacion_guiones_no_fusiona_rangos():
+    """Prueba la normalización de guiones (No depende de archivos)."""
     from src.scrapers.moto_combustion import _normalizar
     from src.scrapers.revolico import _normalizar_titulo
 

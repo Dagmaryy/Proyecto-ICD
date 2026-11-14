@@ -3,8 +3,8 @@ import os
 import numpy as np
 
 def analizar_vendedores():
-    base = 'data/processed/final/'
-    archivos = ['motos_electricas_300.json', 'motos_combustion_300.json', 'bicis_300.json', 'patinetes_300.json']
+    base = 'data/final/JSON/'
+    archivos = ['motos_electricas_300_enriquecido.json', 'motos_combustion_300_enriquecido.json', 'bicis_300_enriquecido.json', 'patinetes_300_enriquecido.json']
     
     dfs = []
     for arch in archivos:

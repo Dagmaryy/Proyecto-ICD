@@ -3,7 +3,7 @@ import os
 import re
 
 def cargar_datos():
-    base = 'data/processed/final/'
+    base = 'data/final/JSON/'
     archivos = {
         'Eléctricas': 'motos_electricas_300_enriquecido.json',
         'Combustión': 'motos_combustion_300_enriquecido.json',

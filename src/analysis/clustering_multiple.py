@@ -6,7 +6,7 @@ from sklearn.metrics import silhouette_score
 
 def clustering_combustion():
     print("=== CLUSTERING: MOTOS DE COMBUSTIÓN ===")
-    df = pd.read_json('data/processed/final/JSON/motos_combustion_300_enriquecido.json')
+    df = pd.read_json('data/final/JSON/motos_combustion_300_enriquecido.json')
     cols = ['precio_usd', 'cilindrada_cc', 'kilometraje_km']
     df_clean = df.dropna(subset=cols).copy()
     
@@ -31,7 +31,7 @@ def clustering_combustion():
 
 def clustering_global():
     print("\n\n=== CLUSTERING GLOBAL: TODAS LAS VERTICALES (POR PRECIO) ===")
-    base = 'data/processed/final/'
+    base = 'data/final/JSON/'
     archivos = {
         'Eléctricas': 'motos_electricas_300.json', 
         'Combustión': 'motos_combustion_300.json', 

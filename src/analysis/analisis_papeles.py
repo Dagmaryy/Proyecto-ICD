@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def analizar_papeles():
-    base = 'data/processed/final/'
+    base = 'data/final/JSON/'
     archivos = {
         'Eléctricas': 'motos_electricas_300_enriquecido.json',
         'Combustión': 'motos_combustion_300_enriquecido.json',
