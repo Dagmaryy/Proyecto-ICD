@@ -33,10 +33,10 @@ def clustering_global():
     print("\n\n=== CLUSTERING GLOBAL: TODAS LAS VERTICALES (POR PRECIO) ===")
     base = 'data/final/JSON/'
     archivos = {
-        'Eléctricas': 'motos_electricas_300.json', 
-        'Combustión': 'motos_combustion_300.json', 
-        'Bicicletas': 'bicis_300.json', 
-        'Patinetes': 'patinetes_300.json'
+        'Eléctricas': 'motos_electricas_300_enriquecido.json', 
+        'Combustión': 'motos_combustion_300_enriquecido.json', 
+        'Bicicletas': 'bicis_300_enriquecido.json', 
+        'Patinetes': 'patinetes_300_enriquecido.json'
     }
     
     dfs = []

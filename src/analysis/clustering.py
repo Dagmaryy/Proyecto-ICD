@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 def run_clustering():
-    ruta = 'data/final/JSON/motos_electricas_300.json'
+    ruta = 'data/final/JSON/motos_electricas_300_enriquecido.json'
     df = pd.read_json(ruta)
     cols = ['precio_usd', 'motor_w', 'autonomia_km']
     df_clean = df.dropna(subset=cols).copy()

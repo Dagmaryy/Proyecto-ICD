@@ -1,53 +1,71 @@
 """
-Script de anonimización de datos personales.
-Busca números de teléfono cubanos (+53...) y enlaces de WhatsApp (wa.me/...)
-en todos los archivos JSON de los datos procesados y los reemplaza por
-'[TELÉFONO REDACTADO]'.
-
-Uso:
-    python src/scripts/anonimizar_telefonos.py
+Anonimiza teléfonos y correos SOLO en campos de texto (titulo, descripcion).
+Evita borrar IDs de anuncios, precios o años.
 """
 import json
 import re
 from pathlib import Path
 
-# Patrón de búsqueda:
-# 1. Opcional +53, seguido de 8 a 10 dígitos (permitiendo espacios).
-# 2. Enlaces tipo wa.me/12345678
-PATRON_TELEFONO = re.compile(r'(\+?53\s*\d{8,10})|(wa\.me/\d+)', re.IGNORECASE)
+# Regex para teléfonos: +53 seguido de 8-10 dígitos, o números de 8 dígitos que empiecen por 5, 6 o 7
+PATRON_TELEFONO = re.compile(r'(\+?53\s*\d{8,10}|\b[5-7]\d{7}\b)')
+PATRON_EMAIL = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
 
-RUTA_DATOS = Path("data/processed/final")
+# Solo limpiamos estos campos
+CAMPOS_TEXTO = ['titulo', 'descripcion', 'vendedor']
 
-def anonimizar_json(archivo: Path) -> bool:
-    """Lee un JSON, reemplaza los teléfonos y lo guarda si hubo cambios."""
+CARPETAS = [Path('data/final/JSON'), Path('data/processed')]
+
+def limpiar_texto(texto):
+    if not isinstance(texto, str):
+        return texto
+    nuevo = PATRON_TELEFONO.sub('[TELÉFONO]', texto)
+    nuevo = PATRON_EMAIL.sub('[EMAIL]', nuevo)
+    return nuevo
+
+def limpiar_json(ruta):
     try:
-        contenido_original = archivo.read_text(encoding="utf-8")
-        contenido_limpio = PATRON_TELEFONO.sub("[TELÉFONO REDACTADO]", contenido_original)
+        with open(ruta, 'r', encoding='utf-8') as f:
+            datos = json.load(f)
+    except Exception:
+        return False
 
-        if contenido_original != contenido_limpio:
-            # Validar que el JSON sigue siendo válido antes de sobrescribir
-            json.loads(contenido_limpio)
-            archivo.write_text(contenido_limpio, encoding="utf-8")
-            return True
-            
-    except json.JSONDecodeError:
-        print(f"❌ Error: El reemplazo rompería el JSON en {archivo.name}. Archivo omitido.")
-    except Exception as e:
-        print(f"⚠️ Error procesando {archivo.name}: {e}")
-        
+    modificado = False
+    # Si es una lista de registros
+    if isinstance(datos, list):
+        for registro in datos:
+            if isinstance(registro, dict):
+                for campo in CAMPOS_TEXTO:
+                    if campo in registro and registro[campo]:
+                        original = registro[campo]
+                        registro[campo] = limpiar_texto(original)
+                        if registro[campo] != original:
+                            modificado = True
+    
+    # Si es un diccionario (ej. entrevistas)
+    elif isinstance(datos, dict):
+        for clave, valor in datos.items():
+            if isinstance(valor, str) and clave in CAMPOS_TEXTO:
+                original = valor
+                datos[clave] = limpiar_texto(original)
+                if datos[clave] != original:
+                    modificado = True
+
+    if modificado:
+        with open(ruta, 'w', encoding='utf-8') as f:
+            json.dump(datos, f, ensure_ascii=False, indent=2)
+        return True
     return False
 
 def main():
-    print(f"Buscando teléfonos en: {RUTA_DATOS}...")
+    print("Iniciando anonimización quirúrgica...")
     modificados = 0
-    
-    # rglob('*.json') busca recursivamente en todas las subcarpetas
-    for archivo in RUTA_DATOS.rglob("*.json"):
-        if anonimizar_json(archivo):
-            print(f"✅ Limpiado: {archivo.relative_to(RUTA_DATOS)}")
-            modificados += 1
-            
-    print(f"\nProceso terminado. Archivos modificados: {modificados}")
+    for carpeta in CARPETAS:
+        if not carpeta.exists(): continue
+        for ruta in carpeta.rglob('*.json'):
+            if limpiar_json(ruta):
+                print(f"✅ Limpiado: {ruta.name}")
+                modificados += 1
+    print(f"\nTotal archivos modificados: {modificados}")
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

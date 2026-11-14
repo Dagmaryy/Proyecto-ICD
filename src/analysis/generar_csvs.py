@@ -7,10 +7,10 @@ def generar_csvs():
     os.makedirs(dir_csv, exist_ok=True)
 
     dfs = []
-    for arch, tipo in [('motos_electricas_300.json', 'Eléctricas'), 
-                       ('motos_combustion_300.json', 'Combustión'), 
-                       ('bicis_300.json', 'Bicis'), 
-                       ('patinetes_300.json', 'Patinetes')]:
+    for arch, tipo in [('motos_electricas_300_enriquecido.json', 'Eléctricas'), 
+                       ('motos_combustion_300_enriquecido.json', 'Combustión'), 
+                       ('bicis_300_enriquecido.json', 'Bicis'), 
+                       ('patinetes_300_enriquecido.json', 'Patinetes')]:
         df = pd.read_json(os.path.join(base, arch))
         df['tipo_vehiculo'] = tipo
         dfs.append(df[['tipo_vehiculo', 'municipio', 'precio_usd', 'transporte_incluido']])

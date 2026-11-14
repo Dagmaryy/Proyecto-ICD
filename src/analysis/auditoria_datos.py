@@ -3,7 +3,7 @@ import os
 
 def auditar():
     base = 'data/final/JSON/'
-    archivos = ['motos_electricas_300.json', 'motos_combustion_300.json', 'bicis_300.json', 'patinetes_300.json']
+    archivos = ['motos_electricas_300_enriquecido.json', 'motos_combustion_300_enriquecido.json', 'bicis_300_enriquecido.json', 'patinetes_300_enriquecido.json']
     for arch in archivos:
         df = pd.read_json(os.path.join(base, arch))
         print(f"\n=== {arch} ===")
