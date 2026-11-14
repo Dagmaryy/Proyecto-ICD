@@ -566,7 +566,7 @@ def _deduplicar(anuncios: list[dict]) -> list[dict]:
 
 def consolidar_clasificados() -> tuple[list[dict], list[dict], list[dict]]:
     """Junta los 3 clasificados por categoría, sin duplicados por url_detalle."""
-    carpeta = BASE_DIR / "data" / "processed" / "clasificados"
+    carpeta = BASE_DIR / "data" / "processed" / "02_clasificados"
     motos, bicis, patinetes = [], [], []
     for categoria in CATEGORIAS:
         with open(carpeta / f"{categoria}_clasificado.json", encoding="utf-8") as f:

@@ -10,7 +10,7 @@ from typing import Any, Callable
 import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parents[2]
-DIR_FINAL = BASE_DIR / "data" / "processed" / "final"
+DIR_FINAL = BASE_DIR / "data" / "final"
 
 ARCHIVOS = [
     "motos_electricas_300.json",
