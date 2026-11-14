@@ -32,7 +32,7 @@ Aunque se aplicaron pruebas estadísticas (Silhouette Score y ANOVA) que validar
 
 ## 8. Muestra de entrevistas no probabilística
 
-Las 30 entrevistas semiestructuradas se seleccionaron por conveniencia y bola de nieve, no mediante muestreo aleatorio. Los porcentajes reportados en la Sección 4 (por ejemplo, 76% de preferencia por la moto eléctrica, 50% con problemas de carga, 53% sin licencia) describen la composición de esta muestra específica y no deben interpretarse como prevalencias poblacionales. Con N=30, los intervalos de confianza son amplios y el margen de error estimado supera ±15 puntos porcentuales.
+Las 30 entrevistas semiestructuradas se seleccionaron por conveniencia y bola de nieve, no mediante muestreo aleatorio. Los porcentajes reportados en la Sección 4 (por ejemplo, 80% de preferencia por la moto eléctrica, 50% con problemas de carga, 53% sin licencia) describen la composición de esta muestra específica y no deben interpretarse como prevalencias poblacionales. Con N=30, los intervalos de confianza son amplios y el margen de error estimado supera ±15 puntos porcentuales.
 
 ## 9. Subrepresentación del universo importado
 

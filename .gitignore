@@ -52,3 +52,4 @@ data/processed/_backup_antes_esquema_v2/
 .opencode/
 
 tmp/
+*.aac

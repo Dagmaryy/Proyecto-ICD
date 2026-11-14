@@ -1,0 +1,23 @@
+[
+  {
+    "segmento": "Gama Económica",
+    "cantidad_anuncios": 72,
+    "precio_promedio_usd": 1322.64,
+    "potencia_promedio_w": 968.06,
+    "autonomia_promedio_km": 70.9
+  },
+  {
+    "segmento": "Gama Media",
+    "cantidad_anuncios": 127,
+    "precio_promedio_usd": 2601.73,
+    "potencia_promedio_w": 2728.35,
+    "autonomia_promedio_km": 121.3
+  },
+  {
+    "segmento": "Gama Alta",
+    "cantidad_anuncios": 32,
+    "precio_promedio_usd": 3104.69,
+    "potencia_promedio_w": 4140.62,
+    "autonomia_promedio_km": 175.94
+  }
+]
