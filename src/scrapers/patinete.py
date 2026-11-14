@@ -1,7 +1,7 @@
 """Descarga y procesa detalles de patinetes de La Habana desde Revolico.
 
 Reutiliza `revolico.py` sin modificarlo. Toma los candidatos de
-`data/processed/patinetes_candidatos.json` (filtrados a La Habana),
+`data/processed/04_procesados/patinetes_candidatos.json` (filtrados a La Habana),
 descarga sus detalles en `cache_detalle/patinetes/`, descarta los anuncios
 borrados/expirados/ilegibles y procesa los válidos con `procesar_detalles`.
 
@@ -34,9 +34,9 @@ MAX_VALIDOS = 300
 
 CACHE_DETALLE = BASE_DIR / "data/raw/web/revolico/cache_detalle" / CATEGORIA
 
-RUTA_FINAL_LIMPIO = BASE_DIR / "data/final/JSON/patinetes_candidatos.json"
-RUTA_PROCESADOS = BASE_DIR / "data/final/JSON/patinetes_procesados.json"
-RUTA_DESCARTADOS = BASE_DIR / "data/final/JSON/patinetes_descartados.json"
+RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/04_procesados/patinetes_candidatos.json"
+RUTA_PROCESADOS = BASE_DIR / "data/processed/04_procesados/patinetes_procesados.json"
+RUTA_DESCARTADOS = BASE_DIR / "data/processed/05_descartes/patinetes_descartados.json"
 
 MOTIVO_BORRADO = "borrado"
 MOTIVO_EXPIRADO = "expirado"

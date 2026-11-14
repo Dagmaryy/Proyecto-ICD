@@ -1,11 +1,11 @@
-# Versiones históricas (`data/processed/versiones/`)
+# Versiones históricas (`data/processed/06_versiones/`)
 
 Antes llamada `previos/`. Guarda las versiones intermedias del pipeline de Revolico
 (v1, v2, v3), las muestras antiguas, los descartados/extra y la tabla de excepciones
 del limpiador.
 
 > **No usar para el informe y no borrar.** Es traza histórica. Los datasets vigentes
-> están en `data/processed/final/` y se documentan en `../README.md`.
+> están en `data/final/` y se documentan en `../README.md`.
 
 ## Archivos
 

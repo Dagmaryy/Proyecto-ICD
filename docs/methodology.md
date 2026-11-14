@@ -44,6 +44,6 @@ Las 30 entrevistas de audio fueron transcritas localmente con `faster-whisper` (
 - Scripts de análisis: `src/analysis/`
 - Scripts de tabulación de entrevistas: `src/analysis/tabulacion_entrevistas.py`
 - Scripts de gráficos: `src/analysis/graficos_finales.py`
-- Datos procesados: `data/processed/final/`
+- Datos procesados: `data/final/`
 - Gráficos generados: `reports/plots/`
 - Informe final: `docs/final_report.md`

@@ -22,8 +22,8 @@ Dependencias reales de los tests:
 
 | Test | Depende de | Si falta |
 |---|---|---|
-| `test_procesar_detalles_motos` | `cache_detalle/motos/` + `data/processed/muestras/motos_muestra_350.json` | `FileNotFoundError` o 0 completos; el test espera 3 completos de los 5 primeros |
-| `test_limpios_existen` | `data/processed/final/{motos,bicis,patinetes}_final_limpio.json` | falla |
+| `test_procesar_detalles_motos` | `cache_detalle/motos/` + `data/processed/03_muestras/motos_muestra_350.json` | `FileNotFoundError` o 0 completos; el test espera 3 completos de los 5 primeros |
+| `test_limpios_existen` | `data/final/{motos,bicis,patinetes}_final_limpio.json` | falla |
 | `test_limpios_campos` | los 3 finales y sus 8 campos exactos | falla |
 | `test_esquemas_cargan` | `docs/schemas/*.json` | falla |
 
@@ -167,7 +167,7 @@ El diccionario es moto-céntrico: fuera de motos, `marca` y `modelo` no son fiab
 
 ### 10. Los 3 precios “históricos”
 
-En `data/processed/versiones/limpio_excepciones.json`, dentro de `motos`:
+En `data/processed/06_versiones/limpio_excepciones.json`, dentro de `motos`:
 
 | URL | Precio conservado | Motivo |
 |---|---:|---|
@@ -232,18 +232,18 @@ Fuentes distintas utilizables: **6 organizaciones / 12 documentos**.
 - `decreto_163_ficha.html` es duplicado de `decreto_163_2026.html`.
 - `mitrans_faq.html` falló por SSL (`CERTIFICATE_VERIFY_FAILED`) y no se reintentó; está documentado en `_fuentes.md:10`.
 - `ONCUBA.md` y `Postdata.club.md` existen pero tienen **0 bytes**: no son fuentes utilizables.
-- `data/raw/stakeholders/tiendas/`, `importadoras/` y `talleres/` están **vacíos**: 0 fichas de stakeholders.
+- `data/raw/stakeholders/`, `importadoras/` y `talleres/` están **vacíos**: 0 fichas de stakeholders.
 - `Facebook.md` tiene 1 byte (un salto de línea) y `Telegram.md` 0 bytes: no hay datos de redes.
 
 Faltantes para 30: **24 organizaciones** o **18 documentos** si se cuenta documento; y **30 fichas** si el objetivo son tiendas/importadoras/talleres. En cualquier lectura, la cobertura de stakeholders es mínima.
 
 ### 14. Entrevistas
 
-- `data/raw/interviews/registro.md`: 30 filas `user_001`…`user_030`, **0 con fecha, consentimiento, transcripción o JSON**. El control de cobertura dice 0/30 en todos los indicadores.
+- `data/raw/interviews/preguntas.md`: 30 filas `user_001`…`user_030`, **0 con fecha, consentimiento, transcripción o JSON**. El control de cobertura dice 0/30 en todos los indicadores.
 - `data/raw/interviews/usuarios/`: **no existe**.
-- `data/raw/interviews/transcripciones.md`: 14 bytes, contenido ` en otter.ai` (sin URL completa ni transcripción).
+- `data/raw/interviews/transcripciones/`: 14 bytes, contenido ` en otter.ai` (sin URL completa ni transcripción).
 - `data/raw/interviews/preguntas.md`: 5.060 bytes; es la guía, no una entrevista.
-- No existe `data/processed/entrevistas_usuarios.json`.
+- No existe `data/final/JSON/entrevistas_final_corregido.json`.
 
 Cobertura: **0/30 entrevistas**; faltan 30. El registro preveía empezar la semana del 12 de octubre de 2026 (`registro.md:4`); a 20 de octubre sigue en 0.
 
@@ -255,12 +255,12 @@ Cobertura: **0/30 entrevistas**; faltan 30. El registro preveía empezar la sema
 
 `python3 src/scripts/verificar_rutas.py` revisa 197 rutas y devuelve **6 rotas** (exit 1):
 
-1. `config.yaml:9` → `data/exports` (no existe; la carpeta real de salida no está creada).
-2. `data/raw/interviews/registro.md:16` → `data/processed/entrevistas_usuarios.json` (no existe).
-3. `opencode/journal.md:25` → `prompts/sessions.md` (ruta antigua).
-4. `opencode/journal.md:53` → `data/raw/institutional/` (nombre antiguo; la carpeta actual es `data/raw/stakeholders/institucionales/`).
-5. `opencode/journal.md:97` → `02–04` (guion largo y nombre antiguo).
-6. `opencode/journal.md:97` → `data/processed/final/motos_` (ruta truncada).
+1. `config.yaml:9` → `reports/plots` (no existe; la carpeta real de salida no está creada).
+2. `data/raw/interviews/preguntas.md` → `data/final/JSON/entrevistas_final_corregido.json` (no existe).
+3. `docs/journal.md` → `docs/journal.md` (ruta antigua).
+4. `docs/journal.md` → `data/raw/stakeholders/` (nombre antiguo; la carpeta actual es `data/raw/stakeholders/`).
+5. `docs/journal.md` → `02–04` (guion largo y nombre antiguo).
+6. `docs/journal.md` → `data/final/JSON/motos_electricas_300_enriquecido.json` (ruta truncada).
 
 ### 16. Teléfonos en JSON
 
@@ -268,11 +268,11 @@ Se escanearon los **34 JSON** de `data/` (no hay JSON en `data/raw/`). **32 arch
 
 | Carpeta | Archivos | Teléfonos |
 |---|---:|---:|
-| `data/processed/final/` | 6 | `motos_completos` 8, `motos_final_limpio` 13, `motos_parciales` 27, `motos_procesados` 35, `bicis_final_limpio` 29, `patinetes_final_limpio` 2 |
-| `data/processed/clasificados/` | 3 | motos 60, bicis 6, patinetes 2 |
-| `data/processed/listados_crudos/` | 3 | motos 60, bicis 6, patinetes 2 |
-| `data/processed/muestras/` | 3 | motos 6, bicis 7, patinetes 1 |
-| `data/processed/versiones/` | 17 | entre 1 y 32 por archivo (p. ej. `bicis_final_v2` 32, `bicis_final_v3` 32) |
+| `data/final/` | 6 | `motos_completos` 8, `motos_final_limpio` 13, `motos_parciales` 27, `motos_procesados` 35, `bicis_final_limpio` 29, `patinetes_final_limpio` 2 |
+| `data/processed/02_clasificados/` | 3 | motos 60, bicis 6, patinetes 2 |
+| `data/processed/01_listados_crudos/` | 3 | motos 60, bicis 6, patinetes 2 |
+| `data/processed/03_muestras/` | 3 | motos 6, bicis 7, patinetes 1 |
+| `data/processed/06_versiones/` | 17 | entre 1 y 32 por archivo (p. ej. `bicis_final_v2` 32, `bicis_final_v3` 32) |
 
 Los finales vigentes no están anonimizados: 13 motos, 29 bicis y 2 patinetes todavía tienen teléfonos. Esto contradice `AGENTS.md:81` (“Anonimizar teléfonos de vendedores en los datos procesados”). Los 2 JSON sin teléfonos son, previsiblemente, los de control (`limpio_excepciones.json` y `verificacion_limpio.json`).
 
@@ -283,7 +283,7 @@ Solo se usan 4 claves de `scraping` (`revolico.py:23-26`): `user_agent`, `delay_
 | Clave | ¿Se usa? | Observación |
 |---|---|---|
 | `proyecto.*` | No | Metadatos sin consumo por el código. |
-| `rutas.*` | No | Las rutas están hardcodeadas en `revolico.py`. `exports` apunta a `data/exports` (no existe); `reports` apunta a `reports/` (la real es `docs/`); `graphs` tampoco se usa. |
+| `rutas.*` | No | Las rutas están hardcodeadas en `revolico.py`. `exports` apunta a `reports/plots` (no existe); `reports` apunta a `reports/` (la real es `docs/`); `graphs` tampoco se usa. |
 | `max_paginas_por_url: 10` | No | Hay 30 páginas por listado oficial en caché. |
 | `timeout_segundos: 30` | No | El timeout está hardcodeado como `30` (`revolico.py:74`). |
 | `economia.tasa_cup_por_usd` / `fecha_tasa` | No | No hay conversión CUP/USD en el pipeline. |
@@ -307,26 +307,26 @@ La configuración describe un pipeline distinto del que existe: promete 10 pági
 | `AGENTS.md:10` | `data/raw/interviews/usuarios/` → transcripciones | El directorio no existe. |
 | `AGENTS.md:11` | `data/raw/web/` → redes sociales | `Facebook.md` 1 byte y `Telegram.md` 0 bytes. |
 | `AGENTS.md:19` | Campos compartidos: `precio`, `moneda`, `tipo_vehiculo`, `es_electrica`, `uso_principal`, `canal_compra` | El final tiene 8 campos y usa `precio_usd`; no existen `moneda`, `tipo_vehiculo`, `es_electrica`, `uso_principal` ni `canal_compra`. |
-| `AGENTS.md:55` y `:68` | `storytelling/historia.md` | No existe; hay `outline.md` y `reports/final_report.md` (0 bytes). |
+| `AGENTS.md:55` y `:68` | `storytelling/historia.md` | No existe; hay `outline.md` y `docs/final_report.md` (0 bytes). |
 | `AGENTS.md:56` | “`src/`: … y ” | Los notebooks están en `` en la raíz, no en `src/`. |
-| `AGENTS.md:57` | Esquemas en `data/esquemas/` | Están en `docs/schemas/`. |
+| `AGENTS.md:57` | Esquemas en `docs/schemas/` | Están en `docs/schemas/`. |
 | `AGENTS.md:81` | Anonimizar teléfonos en datos procesados | 32 JSON, incluidos los finales, conservan teléfonos. |
-| `data/README.md:21` | “Crudos (únicos) … 3265” | Suma 3265; unión global 3256 (9 URLs en más de una categoría). |
-| `data/README.md:23` | “Partición excluyente” con total 3265 | Cada archivo es excluyente; entre archivos hay 9 duplicados. |
-| `data/README.md:24` y `:35-36` | v2 = 4432 y “supera a crudos porque un anuncio puede entrar en varios tipos” | Unión v2 = 4431; solo 1 URL está en 2 tipos. Las 3139 URLs extra vienen de búsquedas, no de solapamiento. |
-| `data/README.md:31` | “`total_unicos` es la base de 3265” | Es la suma de únicos por archivo; la unión global es 3256. |
-| `data/README.md:33-34` | 537/176/82 son “traza” y no la partición total | Son los conteos nativos de cada archivo (motos/bicis/patinetes); la partición agregada es 538/613/149. La nota confunde más que aclara. |
+| `data/README.md` | “Crudos (únicos) … 3265” | Suma 3265; unión global 3256 (9 URLs en más de una categoría). |
+| `data/README.md` | “Partición excluyente” con total 3265 | Cada archivo es excluyente; entre archivos hay 9 duplicados. |
+| `data/README.md` y `:35-36` | v2 = 4432 y “supera a crudos porque un anuncio puede entrar en varios tipos” | Unión v2 = 4431; solo 1 URL está en 2 tipos. Las 3139 URLs extra vienen de búsquedas, no de solapamiento. |
+| `data/README.md` | “`total_unicos` es la base de 3265” | Es la suma de únicos por archivo; la unión global es 3256. |
+| `data/README.md` | 537/176/82 son “traza” y no la partición total | Son los conteos nativos de cada archivo (motos/bicis/patinetes); la partición agregada es 538/613/149. La nota confunde más que aclara. |
 
 ### 19. Archivos vacíos o solo con encabezado
 
 | Archivo | Tamaño | Estado |
 |---|---:|---|
 | `docs/final_report.md` | 0 B | vacío |
-| `data/raw/web/Telegram.md` | 0 B | vacío |
-| `data/raw/stakeholders/institucionales/ONCUBA.md` | 0 B | vacío |
-| `data/raw/stakeholders/institucionales/Postdata.club.md` | 0 B | vacío |
-| `data/raw/web/Facebook.md` | 1 B | solo un salto de línea |
-| `data/raw/interviews/transcripciones.md` | 14 B | solo ` en otter.ai` |
+| `data/raw/web/` | 0 B | vacío |
+| `data/raw/stakeholders/` | 0 B | vacío |
+| `data/raw/stakeholders/` | 0 B | vacío |
+| `data/raw/web/` | 1 B | solo un salto de línea |
+| `data/raw/interviews/transcripciones/` | 14 B | solo ` en otter.ai` |
 | `docs/decisions.md` | 162 B | título + una frase (“Aquí se registrarán…”) |
 | `docs/limitations.md` | 181 B | título + una frase |
 | `docs/methodology.md` | 193 B | título + una frase |

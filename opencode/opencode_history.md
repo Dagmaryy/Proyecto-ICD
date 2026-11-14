@@ -32,7 +32,7 @@ Los prompts recuperados documentan las siguientes tareas:
 10. Cierre de limpieza final y generación de los 4 archivos de 300 registros
 11. Limpieza de la raíz del proyecto
 
-El detalle completo de cada prompt está en `docs/opencode_prompts_recuperados.md`.
+El detalle completo de cada prompt está en `opencode/opencode_prompts_recuperados.md`.
 
 ## 4. Evidencia de las fases 2 y 3 (sesión actual)
 
@@ -53,7 +53,7 @@ Sesiones registradas:
 | Verificar columnas de datasets | 2026-11-05 23:05 | Validación de datos procesados |
 | Proyecto ICD | 2026-11-05 23:06 | Sesión de cierre |
 
-Los 7 títulos y los 262 mensajes están exportados en `docs/opencode_prompts.md`.
+Los 7 títulos y los 262 mensajes están exportados en `opencode/opencode_history.md`.
 
 ## 5. Incidente forense: corrupción y recuperación
 

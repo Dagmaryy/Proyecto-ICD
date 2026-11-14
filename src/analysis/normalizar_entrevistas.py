@@ -21,7 +21,7 @@ def normalizar():
             elif 'tiene' in lic.lower():
                 e['legal_seguridad']['tiene_licencia_chapa'] = True
 
-    with open('data/final/JSON/entrevistas_normalizadas.json', 'w', encoding='utf-8') as f:
+    with open('data/final/JSON/entrevistas_final_corregido.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     print("✅ Entrevistas normalizadas guardadas.")
 

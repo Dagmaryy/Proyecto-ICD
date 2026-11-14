@@ -1,7 +1,7 @@
 """
 Exporta los prompts de OpenCode desde la base SQLite a Markdown legible.
 Uso: python src/scripts/exportar_opencode.py
-Salida: docs/opencode_prompts.md
+Salida: opencode/opencode_history.md
 """
 import json
 import sqlite3
@@ -9,7 +9,7 @@ from datetime import datetime
 from pathlib import Path
 
 DB = Path.home() / ".local/share/opencode/opencode.db"
-OUT = Path("docs/opencode_prompts.md")
+OUT = Path("opencode/opencode_history.md")
 
 conn = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
 conn.row_factory = sqlite3.Row

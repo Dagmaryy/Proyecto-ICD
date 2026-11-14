@@ -35,7 +35,7 @@ Este documento registra las decisiones clave tomadas durante el desarrollo del p
 - **Contexto:** A mitad del proyecto, la partición raíz de Linux colapsó, dejando inaccesibles los 1,200 JSONs y el código.
 - **Decisión:** No reinstalar de inmediato. Primero, usar el Live USB para ejecutar herramientas forenses (`TestDisk`) y rescatar los datos a una partición de Windows.
 - **Razón:** Proteger el activo más valioso: los datos extraídos durante semanas.
-- **Consecuencia:** Se rescató el 100% de los datos. Se perdió la caché HTML (recuperada luego desde un respaldo) y la base de datos de OpenCode. Sobre esta última se aplicó un proceso de recuperación forense (`.recover` de SQLite + extracción binaria) que permitió rescatar 11 prompts de la fase de scraping; el resto se documentó como pérdida material en `docs/opencode_history.md`. El proyecto se reinstaló sobre una base sólida y segura.
+- **Consecuencia:** Se rescató el 100% de los datos. Se perdió la caché HTML (recuperada luego desde un respaldo) y la base de datos de OpenCode. Sobre esta última se aplicó un proceso de recuperación forense (`.recover` de SQLite + extracción binaria) que permitió rescatar 11 prompts de la fase de scraping; el resto se documentó como pérdida material en `opencode/opencode_history.md`. El proyecto se reinstaló sobre una base sólida y segura.
 
 ## Decisión 6: Anonimización de las entrevistas (E01–E30)
 

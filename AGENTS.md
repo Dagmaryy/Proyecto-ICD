@@ -80,9 +80,9 @@ La trazabilidad importa más que la elegancia.
 
 ## Rutas actualizadas (noviembre 2026)
 
-- Datos JSON finales: `data/processed/final/JSON/`
-- CSVs para gráficos: `data/processed/final/CSV/`
+- Datos JSON finales: `data/final/JSON/`
+- CSVs para gráficos: `data/final/CSV/`
 - Gráficos generados: `reports/plots/`
 - Informe final: `docs/final_report.md`
-- Sitio web: `web/index.html`
-- Evidencia OpenCode: `docs/opencode_prompts.md` y `docs/opencode_prompts_recuperados.md`
+- Sitio web: `index.html`
+- Evidencia OpenCode: `opencode/opencode_history.md` y `opencode/opencode_prompts_recuperados.md`

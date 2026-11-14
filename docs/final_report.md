@@ -36,7 +36,7 @@ Para abordar esta problemática, se empleó una metodología mixta con tres fuen
 Paralelamente, las 30 entrevistas de audio fueron transcritas de forma local utilizando el modelo `faster-whisper` (tamaño *medium*, ejecutado en CPU con precisión `int8` y calibrado para español). Posteriormente, los textos fueron procesados con modelos de lenguaje locales (Ollama, `qwen2.5:3b`) para su estructuración en un archivo JSON. Finalmente, se realizó una validación y anonimización manual de las 30 entrevistas para asegurar la fidelidad de las citas y mitigar cualquier alucinación del modelo.
 
 ### 1.4. Trazabilidad y Reproducibilidad
-Para garantizar la auditoría del estudio, todos los artefactos técnicos se encuentran versionados en el repositorio. Los scripts de extracción están en `src/scrapers/`, los scripts de análisis en `src/analysis/` y los datos finales en `data/processed/final/`. Tras un incidente de hardware, la caché HTML cruda fue recuperada desde un respaldo de seguridad y restaurada en `data/raw/web/revolico/`, lo que garantiza que el pipeline completo es 100% reproducible a partir de los datos originales.
+Para garantizar la auditoría del estudio, todos los artefactos técnicos se encuentran versionados en el repositorio. Los scripts de extracción están en `src/scrapers/`, los scripts de análisis en `src/analysis/` y los datos finales en `data/final/`. Tras un incidente de hardware, la caché HTML cruda fue recuperada desde un respaldo de seguridad y restaurada en `data/raw/web/revolico/`, lo que garantiza que el pipeline completo es 100% reproducible a partir de los datos originales.
 
 ## 2. Resultados de la Oferta (Anuncios)
 

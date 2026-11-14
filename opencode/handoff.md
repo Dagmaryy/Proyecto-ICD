@@ -17,7 +17,7 @@ Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian A
 
 - **Ruta actual:** `/home/dagmary/Desktop/Proyecto-ICD/`. La carpeta anterior `~/Proyecto-ICD/` fue eliminada.
 - **Entorno:** venv local + Ollama con `qwen2.5:3b` en `http://localhost:11434`.
-- **`src/scripts/enriquecer.py`:** fusión segura ya implementada (nunca sobrescribe un valor original no nulo). Ahora procesa las 4 muestras de 300 por categoría y guarda un `_enriquecido.json` por archivo.
+- **`src/scripts/enriquecer_masivo.py`:** fusión segura ya implementada (nunca sobrescribe un valor original no nulo). Ahora procesa las 4 muestras de 300 por categoría y guarda un `_enriquecido.json` por archivo.
 - **Campos técnicos:** eléctricas (motor, voltaje, amperaje, batería, autonomía, velocidad, carga, peso); combustión (cilindrada, tipo de motor, consumo, tanque, transmisión, arranque, año, kilometraje, velocidad, peso); bicis/patinetes (los eléctricos + tamaño de rueda). No se tocan estado, papeles, garantía, frenos ni suspensión.
 - **Entrevistas:** 30 transcripciones `.md` estandarizadas en `data/raw/interviews/transcripciones/`, listas para convertirse a JSON según `docs/schemas/esquema_entrevista.json`.
 - **Muestras de entrada** (300 cada una): `final/motos_electricas_300.json`, `final/motos_combustion_300.json`, `final/bicis_300.json`, `final/patinetes_300.json`.
@@ -29,7 +29,7 @@ Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian A
 - Activar `source venv/bin/activate`; correr siempre desde la raíz con `python -u`.
 - El código es **namespace package** (sin `__init__.py`): `from src.scrapers.revolico import procesar_detalles`.
 - `revolico.py` define raíz con `BASE_DIR = Path(__file__).resolve().parents[2]`.
-- **httpx, nunca requests.** **Nunca tocar `data/raw/`** (excepción: añadir fuentes nuevas pedidas explícitamente, p. ej. `data/raw/stakeholders/institucionales/`). Nunca versionar caché HTML ni audios.
+- **httpx, nunca requests.** **Nunca tocar `data/raw/`** (excepción: añadir fuentes nuevas pedidas explícitamente, p. ej. `data/raw/stakeholders/`). Nunca versionar caché HTML ni audios.
 - Tests: `python -m pytest tests/ -v` → 5 passed (o `make test`).
 - Diagnóstico de rutas: `python3 src/scripts/verificar_rutas.py` (o `make rutas`; devuelve `exit 1` si hay rutas rotas).
 - Limpiador: `python src/scripts/limpiar_finales.py --verificar` / `--aplicar` (o `make limpiar`).
@@ -41,11 +41,11 @@ Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian A
 - `src/scripts/verificar_rutas.py` → busca referencias de rutas rotas.
 - `src/scripts/limpiar_finales.py` → **limpiador reproducible** de los finales (ver abajo).
 - `config.yaml` → parámetros (ver abajo).
-- `docs/Elementos.md` → **las 30 preguntas del estudio** (fuentes A/E/S/D).
+- `docs/elements.md` → **las 30 preguntas del estudio** (fuentes A/E/S/D).
 - `Makefile` → `make test`, `make rutas`, `make limpiar`.
 - `.githooks/commit-msg` y `.githooks/pre-commit` → validan el asunto y bloquean caché/audios/secretos. No están activos (falta `git config core.hooksPath .githooks`).
-- `data/README.md` → mapa y embudo; `data/processed/README.md` → vigentes + flujo; `data/processed/versiones/README.md` → histórico de versiones.
-- `docs/outline.md` → outline propuesto de la historia (**sin aprobar**).
+- `data/README.md` → mapa y embudo; `data/processed/07_otros/README_processed.md` → vigentes + flujo; `data/processed/06_versiones/README.md` → histórico de versiones.
+- `docs/final_report.md` → outline propuesto de la historia (**sin aprobar**).
 - `` (01–05) → EDA y gráficos (01_eda_motos, 02_eda_listado_motos, 03_analisis_precios_motos, 04_eda_motos_final, 05_graficos_motos).
 
 ## Config que rige (config.yaml)
@@ -67,15 +67,15 @@ Trabajo académico de ICD (Introducción a la Ciencia de Datos, prof. Yudivian A
 
 Embudo, de arriba abajo:
 
-- **Listados crudos** (`data/processed/listados_crudos/`, únicos): motos **2.939** (de 3.174 brutos) · bicis **217** · patinetes **109** (de 167).
-- **Clasificados** (`data/processed/clasificados/`): partición excluyente 538 motos · 613 bicis · 149 patinetes · 1.965 descartados = 3.265. Las cifras «nativas» por categoría de origen (537/176/82) son de la 1ª pasada (traza, no cifra final). Ver `data/processed/README.md`.
-- **Muestras** (`data/processed/muestras/`): `motos_muestra_350.json` (350) · `bicis_muestra_300.json` (300) · `patinetes_muestra_300.json` (300).
+- **Listados crudos** (`data/processed/01_listados_crudos/`, únicos): motos **2.939** (de 3.174 brutos) · bicis **217** · patinetes **109** (de 167).
+- **Clasificados** (`data/processed/02_clasificados/`): partición excluyente 538 motos · 613 bicis · 149 patinetes · 1.965 descartados = 3.265. Las cifras «nativas» por categoría de origen (537/176/82) son de la 1ª pasada (traza, no cifra final). Ver `data/processed/07_otros/README_processed.md`.
+- **Muestras** (`data/processed/03_muestras/`): `motos_muestra_350.json` (350) · `bicis_muestra_300.json` (300) · `patinetes_muestra_300.json` (300).
 - **Detalles descargados**: **350 motos** (`cache_detalle/motos/detalle_*.html`). Bicis y patinetes NO tienen detalle → no tienen datos técnicos.
 - **Procesados de motos**: 326 válidos = **83 completos** + **243 parciales**; **24 descartados** (`versiones/motos_descartados.json`). En `final/`: `motos_procesados.json` (326), `motos_completos.json` (83), `motos_parciales.json` (243).
 - **Limpios finales** (`final/`, 8 campos: `titulo, precio_usd, marca, modelo, provinceId, municipalityId, url_detalle, motivo`): motos **966** · bicis **2.049** · patinetes **314**. Total 3.329; bicis+patinetes ≈ **71 %**. (10-oct: quitada la única anomalía real, bici «Alta Gama» con `precio_usd 650000` colado como USD; antigua 2.050.)
 - **`limpiar_finales.py` (elige la vía limpia, no la regla manual):**
-  - `python src/scripts/limpiar_finales.py --verificar` → reproduce v2 exacto desde caché (aborta `exit 2` si No coincide con 1198/2861/373), aplica las reglas deterministas, calibra con la tabla de excepciones y compara contra los finales actuales. Sale `exit 0` si paridad total; deja `data/processed/verificacion_limpio.json`.
-  - `--aplicar` → escribe los 3 finales (regerados) + `data/processed/versiones/limpio_excepciones.json`.
+  - `python src/scripts/limpiar_finales.py --verificar` → reproduce v2 exacto desde caché (aborta `exit 2` si No coincide con 1198/2861/373), aplica las reglas deterministas, calibra con la tabla de excepciones y compara contra los finales actuales. Sale `exit 0` si paridad total; deja `data/processed/07_otros/verificacion_limpio.json`.
+  - `--aplicar` → escribe los 3 finales (regerados) + `data/processed/06_versiones/limpio_excepciones.json`.
   - Reglas: solo USD; `100 ≤ precio ≤ 5000`; dedup por título sin emojis + precio + municipio; dedup por tokens + bucket $50 + municipio; ruido por palabras clave.
   - Excepciones (calibradas al histórico): 328 entradas (motos 86 keep/41 drop; bicis 88/97; patinetes 7/9) por `duplicado`/`ruido`/`ajuste_historico_manual` + **3 precios históricos** en motos (750→650 jmd, 2900→290, 1590→1620 vedca) conservados como `precio_historico` — el 290 parece errata a revisar a mano.
   - **El orden de los registros NO es contrato**; el script garantiza igualdad de URLs y de campos por registro. Para diffs limpios en git, los finales se han dejado = HEAD menos el cambio real (bicis 10 líneas quitadas).
@@ -118,7 +118,7 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 ## Estado de git al 2026-10-26 (histórico)
 
 - **Renombrado (staged):** `final/motos_procesados.json` → `final/motos_electricas_procesadas.json`.
-- **Modificados:** `data/processed/README.md`, `docs/journal.md`, `opencode/handoff.md`; también venían modificados `data/raw/interviews/{preguntas,registro,transcripciones}.md` y los 3 esquemas eléctricos/bici/patinete.
+- **Modificados:** `data/processed/07_otros/README_processed.md`, `docs/journal.md`, `opencode/handoff.md`; también venían modificados `data/raw/interviews/{preguntas,registro,transcripciones}.md` y los 3 esquemas eléctricos/bici/patinete.
 - **Nuevos sin trackear:** `final/{motos_combustion_procesadas,outliers,descartados,candidatos_cache}.json`, `final/{bicis,patinetes}_{procesados,descartados}.json`, `final/patinetes_candidatos.json`, `docs/schemas/esquema_moto_combustion.json`, `src/scrapers/{bici,moto_combustion,patinete,refrescar_combustion,refrescar_patinetes}.py`, `transcribir.py`, `opencode/diagnostico.md` y `data/raw/interviews/{transcripciones,usuarios}/`.
 - **Ignorados:** `venv/`, `.pytest_cache/`, `__pycache__/`, `data/raw/web/revolico/`.
 - **No se ha hecho commit.** `git status` debe quedar sin caché HTML ni audios.
@@ -130,7 +130,7 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 1. **Acordar el commit** (tipos `datos`+`codigo`+`docs`+`estructura`+`opencode`): renombrado `versiones/`, READMEs, `Makefile`, `.githooks/`, notebooks, `AGENTS.md`, `src/scripts/limpiar_finales.py`, `tests/`, fuentes institucionales.
 2. **Revisar a mano** los 3 precios de motos marcados `precio_historico` (jmd 650, el 290 sospechoso, vedca 1620).
 3. **Decidir** si se limpian las rutas rotas restantes (clave `exports` de `config.yaml`, `registro.md` futuro, notación e histórico del journal) o se dejan como traza.
-4. **Aprobar el outline** de `docs/outline.md`.
+4. **Aprobar el outline** de `docs/final_report.md`.
 5. Preparar tablas y **gráficos definitivos** con los `*_final_limpio.json`.
 6. **Ampliar `_MARCAS`/`_MODELOS`** (bicis/patinetes) y regenerar limpios con `limpiar_finales.py --aplicar`.
 7. **Entrevistas**: ejecutar 30 (semana del 12-oct), volcar a `entrevistas_usuarios.json` (en `data/processed/`).
@@ -146,6 +146,6 @@ Hallazgo metodológico que quiero recordar: **las categorías oficiales de Revol
 
 ## Fuentes y enlaces
 
-- Preguntas del estudio: `docs/Elementos.md`. Guía de entrevista: `data/raw/interviews/preguntas.md`. Registro: `data/raw/interviews/registro.md` (0/30).
+- Preguntas del estudio: `docs/elements.md`. Guía de entrevista: `data/raw/interviews/preguntas.md`. Registro: `data/raw/interviews/preguntas.md` (0/30).
 - Institucionales: 5 fuentes oficiales descargadas (`decreto_163_2026`, `resolucion_175_2026`, `aduana_portada`, `mindus_marco`, `mfp_portada`) + `_fuentes.md`; MITRANS falló por SSL (sin reintento). Antiguas vacías: `ONCUBA.md`, `Postdata.club.md`. Redes: `data/raw/web/{Telegram,Facebook}.md`.
 - `ARCHIVO`/`versiones` son histórico; el informe sale de los limpios + entrevistas + stakeholders.

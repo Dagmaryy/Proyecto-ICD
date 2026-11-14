@@ -27,8 +27,8 @@ Análisis del mercado de vehículos ligeros en La Habana (motos eléctricas, mot
 
 - `src/` — Scrapers y scripts de procesamiento.
 - `data/raw/` — Datos crudos (no se versionan).
-- `data/processed/final/JSON/` — Los 4 datasets finales + entrevistas.
-- `data/processed/final/CSV/` — CSVs para gráficos.
+- `data/final/JSON/` — Los 4 datasets finales + entrevistas.
+- `data/final/CSV/` — CSVs para gráficos.
 - `docs/` — Documentación, esquemas JSON y journal.
 - `reports/plots/` — 10 gráficos del informe (HTML + PNG).
 - `web/` — Sitio web estático (`index.html`).
@@ -92,8 +92,8 @@ Estado del proyecto (noviembre 2026)
 · Datos: 1,200 anuncios de Revolico + 30 entrevistas
 · Fuentes: 49 documentos normativos y de prensa
 · Gráficos: 10 generados en reports/plots/, 6 integrados en el sitio web
-· Sitio web: web/index.html
-· Evidencia OpenCode: docs/opencode_history.md + 11 prompts recuperados
+· Sitio web: index.html
+· Evidencia OpenCode: opencode/opencode_history.md + 11 prompts recuperados
 
 Consideraciones éticas y limitaciones
 
@@ -110,7 +110,7 @@ Documentación
 · docs/decisions.md — 10 decisiones técnicas (ADR).
 · docs/sources.md — 49 fuentes normativas y de prensa.
 · docs/journal.md — Bitácora cronológica del desarrollo.
-· docs/opencode_history.md — Evidencia de uso de OpenCode.
+· opencode/opencode_history.md — Evidencia de uso de OpenCode.
 
 
 

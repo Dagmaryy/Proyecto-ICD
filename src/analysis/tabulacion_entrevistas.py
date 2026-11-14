@@ -6,7 +6,7 @@ Uso:
     source venv/bin/activate && python src/analysis/tabulacion_entrevistas.py
 
 Entrada: data/final/JSON/entrevistas_final_corregido.json
-Salida: CSVs en data/final/CSV/entrevistas_*.csv
+Salida: CSVs en data/final/CSV/*.csv
 """
 import json
 from collections import Counter

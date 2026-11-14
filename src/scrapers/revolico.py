@@ -1228,7 +1228,7 @@ def validar_anuncio_parcial(anuncio: dict) -> tuple[bool, list]:
 def procesar_detalles(categoria: str, max_anuncios: int = None, ruta_muestra: str = None) -> dict:
     """Procesa los detalles cacheados de una muestra y los valida por categoría."""
     if ruta_muestra is None:
-        carpeta_muestras = BASE_DIR / "data/processed/muestras"
+        carpeta_muestras = BASE_DIR / "data/processed/03_muestras"
         candidatos = sorted(carpeta_muestras.glob(f"{categoria}_muestra_*.json"))
         if not candidatos:
             raise FileNotFoundError(
@@ -1239,7 +1239,7 @@ def procesar_detalles(categoria: str, max_anuncios: int = None, ruta_muestra: st
     ruta = Path(ruta_muestra)
     if not ruta.is_absolute():
         if ruta.parent == Path("."):
-            ruta = BASE_DIR / "data/processed/muestras" / ruta
+            ruta = BASE_DIR / "data/processed/03_muestras" / ruta
         else:
             ruta = BASE_DIR / ruta
     with open(ruta, encoding="utf-8") as f:

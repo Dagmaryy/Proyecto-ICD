@@ -10,9 +10,9 @@
 > 
 > ## Cambio aplicado
 > 
-> - `src/scrapers/revolico.py:367`: nueva `normalizar_guiones()` que convierte en espacio cualquier guion Unicode de categoría `Pd` (hyphen, non-breaking hyphen, figure dash, en dash, em dash, horizontal bar, fullwidth hyphen, etc.) y el signo menos `U+2212`.
+> - `src/scrapers/revolico.py`: nueva `normalizar_guiones()` que convierte en espacio cualquier guion Unicode de categoría `Pd` (hyphen, non-breaking hyphen, figure dash, en dash, em dash, horizontal bar, fullwidth hyphen, etc.) y el signo menos `U+2212`.
 > - Se aplica **antes** de `NFKD`/ASCII en `_normalizar_titulo()` (`revolico.py:377`).
-> - `src/scrapers/moto_combustion.py:196`: `_normalizar()` usa la misma función.
+> - `src/scrapers/moto_combustion.py`: `_normalizar()` usa la misma función.
 > - Test de regresión en `tests/test_smoke.py:57` con `70–80`, `6–8`, `10‑20`, `4—5`, `1‒2`, `3―4`, `5－6` y `−5`.
 > - Bicis sigue con **29 campos**: quité el `kilometraje_km` que añadía el parser actual para no cambiar el conjunto de campos s [...]
 
@@ -142,7 +142,7 @@
 > - `bicis_procesados.json`: **407** registros (antes 414; se quitaron 7).
 > - `patinetes_procesados.json`: **332** registros (antes 335; se quitaron 3).
 > 
-> Archivo creado: `data/processed/final/descartes.json` con **15 registros**: 13 con motivo `basura` y 2 con motivo `mal_clasificado`. Cada entrada conserva el registro completo, archivo de origen, título y motivo.
+> Archivo creado: `data/processed/05_descartes/descartes.json` con **15 registros**: 13 con motivo `basura` y 2 con motivo `mal_clasificado`. Cada entrada conserva el registro completo, archivo de origen, título y motivo.
 > 
 > Verificado que no se tocó ningún otro ID, que se mantienen campos y orden, y que los dudosos/falsos positivos siguen intactos. `make test` → **6 passed**. Respaldo previo en `/tmp/icd_limpieza_before/`.
 
@@ -195,7 +195,7 @@
 
 > Hecho, con una aclaración importante sobre el conteo.
 > 
-> - Los **9 outliers** se movieron a `data/processed/final/descartes.json`:
+> - Los **9 outliers** se movieron a `data/processed/05_descartes/descartes.json`:
 >   - `listado_multiple`: 4 (`56542487`, `57049769`, `58230707`, `58356620`).
 >   - `sin_precio_real`: 5 (`57302018`, `56135611`, `56412008`, `57236865`, `57248589`).
 > - `descartes.json` queda con **24 registros** en total.
