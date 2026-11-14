@@ -36,7 +36,7 @@ CACHE_DETALLE = BASE_DIR / "data/raw/web/revolico/cache_detalle" / CATEGORIA
 
 RUTA_FINAL_LIMPIO = BASE_DIR / "data/processed/06_versiones/motos_final_limpio.json"
 RUTA_PROCESADOS = BASE_DIR / "data/processed/04_procesados/motos_electricas_procesadas.json"
-RUTA_DESCARTADOS = BASE_DIR / "data/processed/05_descartes/motos_electricas_descartados.json"
+RUTA_DESCARTADOS = BASE_DIR / "data/processed/04_procesados/motos_electricas_descartados.json"
 
 MOTIVO_BORRADO = "borrado"
 MOTIVO_EXPIRADO = "expirado"
