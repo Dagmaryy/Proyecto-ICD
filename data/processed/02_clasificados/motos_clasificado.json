@@ -3500,7 +3500,7 @@
       "moneda": "USD",
       "provinceId": "1",
       "municipalityId": "35",
-      "url_detalle": "https://www.revolico.com/item/vendo-moto-electrica-nueva800usd52502624-michel-[TELÉFONO]",
+      "url_detalle": "https://www.revolico.com/item/vendo-moto-electrica-nueva800usd[TELÉFONO]-[TELÉFONO]",
       "motivo": "incluido:moto electrica"
     },
     {
@@ -3599,7 +3599,7 @@
       "moneda": null,
       "provinceId": "1",
       "municipalityId": "36",
-      "url_detalle": "https://www.revolico.com/item/wame56525031-moto-electrica-fly-racing-ee04-precio-2650-usd-motor-de-3000-watts-bateria-[TELÉFONO]",
+      "url_detalle": "https://www.revolico.com/item/wame-[TELÉFONO]-moto-electrica-fly-racing-ee04-precio-2650-usd-motor-de-3000-watts-bateria-[TELÉFONO]",
       "motivo": "incluido:moto electrica"
     },
     {
@@ -3608,7 +3608,7 @@
       "moneda": null,
       "provinceId": "1",
       "municipalityId": "36",
-      "url_detalle": "https://www.revolico.com/item/wame56525031-moto-electrica-marca-vortax-precio-1800-usd-especificaciones-motor-1200w-[TELÉFONO]",
+      "url_detalle": "https://www.revolico.com/item/wame-[TELÉFONO]-moto-electrica-marca-vortax-precio-1800-usd-especificaciones-motor-1200w-[TELÉFONO]",
       "motivo": "incluido:moto electrica"
     },
     {
@@ -4679,7 +4679,7 @@
       "moneda": null,
       "provinceId": "1",
       "municipalityId": "36",
-      "url_detalle": "https://www.revolico.com/item/wame56525031-moto-electrica-_mountai_-precio-3100-usd-caracteristicas-bateria-de-lithium72v-[TELÉFONO]",
+      "url_detalle": "https://www.revolico.com/item/wame-[TELÉFONO]-moto-electrica-_mountai_-precio-3100-usd-caracteristicas-bateria-de-lithium72v-[TELÉFONO]",
       "motivo": "incluido:moto electrica"
     },
     {
@@ -22838,7 +22838,7 @@
       "moneda": null,
       "provinceId": "1",
       "municipalityId": "39",
-      "url_detalle": "https://www.revolico.com/item/wame56525031-bicimoto-halcon-mountain-precio-1850usd-caracteristicas-motor-3000-w-[TELÉFONO]",
+      "url_detalle": "https://www.revolico.com/item/wame-[TELÉFONO]-bicimoto-halcon-mountain-precio-1850usd-caracteristicas-motor-3000-w-[TELÉFONO]",
       "motivo": "excluido:tipo_vehiculo:bicimoto"
     },
     {
@@ -22946,7 +22946,7 @@
       "moneda": null,
       "provinceId": "1",
       "municipalityId": "36",
-      "url_detalle": "https://www.revolico.com/item/wame56525031-triciclo-electrico-bryderk-topmaq-con-techo-precio-4400usd-especificaciones-[TELÉFONO]",
+      "url_detalle": "https://www.revolico.com/item/wame-[TELÉFONO]-triciclo-electrico-bryderk-topmaq-con-techo-precio-4400usd-especificaciones-[TELÉFONO]",
       "motivo": "excluido:tipo_vehiculo:triciclo"
     },
     {
