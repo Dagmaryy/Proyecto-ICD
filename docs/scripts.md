@@ -33,7 +33,7 @@ Trazabilidad de los scripts de análisis. Todos se ejecutan desde la raíz del p
 
 | Script | Qué hace | Salida |
 |---|---|---|
-| `src/analysis/normalizar_entrevistas.py` | Normaliza el JSON de entrevistas | `entrevistas_final_corregido.json` |
+| `src/analysis/normalizar_entrevistas.py.bak (en cuarentena)` | Normaliza el JSON de entrevistas | `entrevistas_final_corregido.json` |
 | `src/analysis/tabulacion_entrevistas.py` | Tabula los 11 campos del JSON y exporta CSVs | `csv_graficos/entrevistas_*.csv` |
 
 ## Generación de gráficos

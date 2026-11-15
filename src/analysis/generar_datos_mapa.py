@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def generar_mapa():
-    base = 'data/final/CSV/'
+    base = 'data/final/JSON/'
     archivos = ['motos_electricas_300_enriquecido.json', 'motos_combustion_300_enriquecido.json', 'bicis_300_enriquecido.json', 'patinetes_300_enriquecido.json']
     dfs = []
     for arch in archivos:

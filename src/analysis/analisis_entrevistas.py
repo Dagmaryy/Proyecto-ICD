@@ -50,8 +50,8 @@ def generar_estadisticas_entrevistas():
     print(df['moneda'].value_counts().to_string())
 
     print("\n=== 4. APAGONES Y AUTONOMÍA (P16, P17) ===")
-    print(f"Han tenido problemas con apagones: {df['problemas_apagones'].sum()} de {len(df)}")
-    print(f"Reportan caída de autonomía con el tiempo: {df['ha_bajado_autonomia'].sum()} de {len(df)}")
+    print(f"Han tenido problemas con apagones: {pd.to_numeric(df['problemas_apagones'], errors='coerce').sum()} de {len(df)}")
+    print(f"Reportan caída de autonomía con el tiempo: {pd.to_numeric(df['ha_bajado_autonomia'], errors='coerce').sum()} de {len(df)}")
 
     print("\n=== 5. PREFERENCIA FINAL (P20) ===")
     print(df['preferencia'].value_counts().to_string())
