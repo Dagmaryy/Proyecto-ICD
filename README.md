@@ -31,7 +31,7 @@ Análisis del mercado de vehículos ligeros en La Habana (motos eléctricas, mot
 - `data/final/CSV/` — CSVs para gráficos.
 - `docs/` — Documentación, esquemas JSON y journal.
 - `reports/plots/` — 14 gráficos del informe (HTML + PNG).
-- `web/` — Sitio web estático (`index.html`).
+- `index.html` (en la raíz) — Sitio web estático.
 - `opencode/` — Handoff para el flujo con IA.
 - `tests/` — Tests de integridad.
 
