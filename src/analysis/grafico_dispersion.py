@@ -85,9 +85,14 @@ fig.update_xaxes(showgrid=True, gridcolor="#F3F4F6")
 fig.update_yaxes(showgrid=True, gridcolor="#F3F4F6")
 fig.update_layout(coloraxis_showscale=False)
 
-fig.write_html(OUT / "12_dispersion.html",
-               include_plotlyjs="cdn",
+ruta_html = OUT / "12_dispersion.html"
+fig.write_html(ruta_html,
+               include_plotlyjs=False,
                config={"displayModeBar": False, "responsive": True})
+# Inyectar plotly local para funcionar offline
+html = ruta_html.read_text(encoding="utf-8")
+html = html.replace("<head>", "<head>\n<script src=\"js/plotly-4.1.1.min.js\"></script>", 1)
+ruta_html.write_text(html, encoding="utf-8")
 try:
     fig.write_image(OUT / "12_dispersion.png", scale=2)
 except Exception:

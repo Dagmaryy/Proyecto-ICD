@@ -47,9 +47,14 @@ def _layout_base(fig, titulo, subtitulo, nota, altura=480):
     return fig
 
 def guardar(fig, nombre):
-    fig.write_html(OUT / f"{nombre}.html",
-                   include_plotlyjs="cdn",
+    ruta_html = OUT / f"{nombre}.html"
+    fig.write_html(ruta_html,
+                   include_plotlyjs=False,
                    config={"displayModeBar": False, "responsive": True})
+    # Inyectar plotly local para funcionar offline
+    html = ruta_html.read_text(encoding="utf-8")
+    html = html.replace("<head>", "<head>\n<script src=\"js/plotly-4.1.1.min.js\"></script>", 1)
+    ruta_html.write_text(html, encoding="utf-8")
     try:
         fig.write_image(OUT / f"{nombre}.png", scale=2)
     except Exception:
