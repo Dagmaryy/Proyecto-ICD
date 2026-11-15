@@ -40,3 +40,11 @@ Es la calibración manual que permite reproducir los limpios vigentes con
 - Las versiones **no se editan a mano** ni se borran.
 - `*_final_v2.json` es la referencia que reproduce el limpiador (`--verificar`).
 - Las muestras antiguas y el `agresivo` quedan solo como evidencia del proceso.
+
+## `_historico/`
+
+Archivos de versiones antiguas, conservados por trazabilidad pero **no usados por el pipeline activo**. Se conservan para que el revisor pueda ver la evolución del filtrado. Los archivos que sí usa el pipeline son:
+
+- `{motos,bicis,patinetes}_final_limpio.json` — input de los scrapers de refresco.
+- `{motos,bicis,patinetes}_final_v2.json` — input de `limpiar_finales.py`.
+- `limpio_excepciones.json` — input de `limpiar_finales.py`.
