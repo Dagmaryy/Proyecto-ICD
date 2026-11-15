@@ -9,6 +9,14 @@ def generar_mapa():
         dfs.append(pd.read_json(os.path.join(base, arch)))
     
     df_total = pd.concat(dfs, ignore_index=True)
+
+    # Normalizar nombres de municipio a la nomenclatura oficial
+    mapa_nombres = {
+        'Habana Vieja': 'La Habana Vieja',
+        'Habana del Este': 'La Habana del Este',
+        'Plaza': 'Plaza de la Revolución',
+    }
+    df_total['municipio'] = df_total['municipio'].replace(mapa_nombres)
     
     resumen = df_total.groupby('municipio').agg(
         total_anuncios=('id_anuncio', 'count'),
