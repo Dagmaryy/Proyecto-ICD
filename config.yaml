@@ -7,7 +7,7 @@ rutas:
   raw: "data/raw"
   processed: "data/processed"
   reports: "reports"
-  plots: "report/plots"
+  plots: "reportS/plots"
   cache_listado: "data/raw/web/revolico/cache_html"
   cache_detalle: "data/raw/web/revolico/cache_detalle"
 
