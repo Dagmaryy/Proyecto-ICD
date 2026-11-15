@@ -57,3 +57,10 @@ python src/analysis/tabulacion_entrevistas.py
 
 # 4. Generar todos los gráficos
 python src/analysis/graficos_finales.py
+
+## Nota sobre regeneración de gráficos
+
+`src/analysis/graficos_finales.py` y `src/analysis/grafico_dispersion.py` generan
+HTML con UUIDs aleatorios internos de Plotly. Regenerarlos produce diffs cosméticos
+en `reports/plots/*.html` aunque el gráfico sea idéntico. Los HTML commiteados son
+la versión de referencia; regenerar solo si cambian los datos.
