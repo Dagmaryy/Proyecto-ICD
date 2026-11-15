@@ -42,7 +42,8 @@ Análisis del mercado de vehículos ligeros en La Habana (motos eléctricas, mot
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt           # instalación estándar
+pip install -r requirements-dev.txt      # opcional: transcripción (faster-whisper), NLP (spacy), notebooks (jupyter)
 ```
 
 ## Reproducibilidad

@@ -1,0 +1,8 @@
+# Dependencias opcionales / pesadas
+# Solo necesarias para: transcripción de audios (faster-whisper),
+# notebooks de exploración (jupyter) y NLP avanzado (spacy).
+
+faster-whisper
+spacy
+jupyter
+notebook

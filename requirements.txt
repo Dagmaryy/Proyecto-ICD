@@ -18,16 +18,10 @@ seaborn
 plotly==7.1.0  # HTML actuales usan 4.1.1 (js/plotly-4.1.1.min.js); regenerar con 7.x produce HTML distinto
 # kaleido  # solo necesario para exportar PNG de plotly (no instalado en el venv)
 
-# NLP y transcripción
-spacy
-faster-whisper
 
 # YAML
 pyyaml
 
-# Jupyter (desarrollo)
-jupyter
-notebook
 
 # Tests
 pytest
