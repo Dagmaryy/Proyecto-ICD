@@ -33,7 +33,7 @@ Trazabilidad de los scripts de análisis. Todos se ejecutan desde la raíz del p
 
 | Script | Qué hace | Salida |
 |---|---|---|
-> Nota: `normalizar_entrevistas.py` está en cuarentena. No se versiona por su riesgo de corromper datos. Ver `archive/` para el histórico.
+> Nota: `normalizar_entrevistas.py` está en cuarentena y no se versiona por su riesgo de corromper datos del pipeline.
 | `src/analysis/tabulacion_entrevistas.py` | Tabula los 11 campos del JSON y exporta CSVs | `csv_graficos/entrevistas_*.csv` |
 
 ## Generación de gráficos

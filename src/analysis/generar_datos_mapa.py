@@ -25,7 +25,7 @@ def generar_mapa():
     resumen_final = pd.merge(resumen_completo, resumen, on='municipio', how='left').fillna(0)
     resumen_final['total_anuncios'] = resumen_final['total_anuncios'].astype(int)
     
-    resumen_final.to_csv(os.path.join(base, 'datos_mapa_habana.csv'), index=False, encoding='utf-8-sig')
+    resumen_final.to_csv('data/final/CSV/datos_mapa_habana.csv', index=False, encoding='utf-8-sig')
     print("✅ Datos del mapa generados.")
 
 if __name__ == "__main__":
