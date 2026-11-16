@@ -120,8 +120,20 @@ footer p { margin: 4px 0; color: rgba(255, 255, 255, 0.8); font-size: 11px; lett
   .chart, table, blockquote { break-inside: avoid; }
   .hero, .pull-quote, footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+/* Forzar tooltips blancos y elegantes en TODOS los gráficos de Plotly */
+.hoverlayer .hovertext > path {
+  fill: #FFFFFF !important;
+  stroke: #E5E7EB !important;
+  stroke-width: 2px !important;
+}
+.hoverlayer .hovertext > text {
+  fill: #1A1A1A !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
 </style>
-<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<script src="reports/plots/js/plotly-4.1.1.min.js"></script>
 </head>
 <body><a aria-label="Volver arriba" class="back-to-top" href="#" id="backToTop">↑</a><div class="progress-bar"></div>
 <header class="hero">
@@ -152,110 +164,6 @@ footer p { margin: 4px 0; color: rgba(255, 255, 255, 0.8); font-size: 11px; lett
 <p class="pq-source">Perfil del consumidor</p>
 <p class="pq-text">La preferencia por la movilidad eléctrica no responde a un criterio ambiental, sino a una adaptación racional frente al colapso del transporte público y el costo del combustible.</p>
 </div>
-
-<div class="chart" style="background: #FFFFFF; padding: 30px; border: 2px solid var(--azul-profundo); border-radius: 12px;">
-  <p class="chart-caption">Herramienta interactiva: ¿Te están cobrando de más?</p>
-
-  <p style="font-family: var(--sans); font-size: 15px; color: var(--gris-label); margin-bottom: 20px;">
-    Introduce el precio que te piden por un vehículo y compáralo al instante con la mediana real del mercado informal extraída de los 1,200 anuncios.
-  </p>
-
-  <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;">
-    <div style="flex: 1; min-width: 200px;">
-      <label for="dp-vehiculo" style="font-family: var(--sans); font-weight: 600; font-size: 14px; color: var(--azul-profundo); display: block; margin-bottom: 8px;">Tipo de vehículo:</label>
-      <select id="dp-vehiculo" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background-color: #fff; cursor: pointer;">
-        <option value="electricas">Moto eléctrica (Mediana: $2,500)</option>
-        <option value="combustion">Moto de combustión (Mediana: $2,100)</option>
-        <option value="bicis">Bicicleta eléctrica (Mediana: $600)</option>
-        <option value="patinetes">Patinete eléctrico (Mediana: $595)</option>
-      </select>
-    </div>
-    <div style="flex: 1; min-width: 200px;">
-      <label for="dp-precio" style="font-family: var(--sans); font-weight: 600; font-size: 14px; color: var(--azul-profundo); display: block; margin-bottom: 8px;">El precio que te piden (USD):</label>
-      <input type="number" id="dp-precio" value="2500" step="50" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px;">
-    </div>
-  </div>
-
-  <!-- Panel de Resultado Dinámico -->
-  <div id="dp-resultado" style="text-align: center; padding: 25px; border-radius: 8px; background: #F3F4F6; border-left: 6px solid #9CA3AF; transition: all 0.3s;">
-    <p id="dp-veredicto" style="margin: 0; font-family: var(--sans); font-size: 20px; font-weight: 700; color: #374151;">
-      Esperando precio...
-    </p>
-    <p id="dp-detalle" style="margin: 8px 0 0; font-family: var(--sans); font-size: 15px; color: var(--gris-label);">
-      Introduce un precio para ver el análisis.
-    </p>
-  </div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var selectVeh = document.getElementById("dp-vehiculo");
-  var inputPrecio = document.getElementById("dp-precio");
-  var resPanel = document.getElementById("dp-resultado");
-  var resVeredicto = document.getElementById("dp-veredicto");
-  var resDetalle = document.getElementById("dp-detalle");
-
-  var medianas = {
-    electricas: 2500,
-    combustion: 2100,
-    bicis: 600,
-    patinetes: 595
-  };
-
-  function evaluarPrecio() {
-    var tipo = selectVeh.value;
-    var mediana = medianas[tipo];
-    var precio = parseFloat(inputPrecio.value);
-
-    if (isNaN(precio) || precio <= 0) {
-      resVeredicto.textContent = "Esperando precio...";
-      resDetalle.textContent = "Introduce un precio válido.";
-      resPanel.style.background = "#F3F4F6";
-      resPanel.style.borderLeftColor = "#9CA3AF";
-      return;
-    }
-
-    var diferencia = precio - mediana;
-    var porcentaje = (diferencia / mediana) * 100;
-
-    if (porcentaje > 20) {
-      // Muy caro
-      resVeredicto.textContent = "🔴 Estás pagando de más";
-      resDetalle.textContent = "Te piden un " + porcentaje.toFixed(0) + "% por encima de la mediana del mercado.";
-      resPanel.style.background = "#FEE2E2"; // Fondo rojo claro
-      resPanel.style.borderLeftColor = "#EF4444"; // Borde rojo
-      resVeredicto.style.color = "#991B1B";
-    } else if (porcentaje > 10) {
-      // Algo caro
-      resVeredicto.textContent = "🟡 Precio ligeramente alto";
-      resDetalle.textContent = "Está un " + porcentaje.toFixed(0) + "% por encima de la mediana. Intenta negociar.";
-      resPanel.style.background = "#FEF3C7"; // Fondo amarillo claro
-      resPanel.style.borderLeftColor = "#F59E0B"; // Borde amarillo
-      resVeredicto.style.color = "#92400E";
-    } else if (porcentaje >= -10) {
-      // Justo
-      resVeredicto.textContent = "🟢 Precio justo";
-      resDetalle.textContent = "Está en línea con la mediana del mercado (" + diferencia.toFixed(0) + " USD de diferencia).";
-      resPanel.style.background = "#D1FAE5"; // Fondo verde claro
-      resPanel.style.borderLeftColor = "#10B981"; // Borde verde
-      resVeredicto.style.color = "#065F46";
-    } else {
-      // Ganga
-      resVeredicto.textContent = "🔵 Es una ganga";
-      resDetalle.textContent = "Está un " + Math.abs(porcentaje).toFixed(0) + "% por debajo de la mediana. Revisa bien el estado del vehículo.";
-      resPanel.style.background = "#DBEAFE"; // Fondo azul claro
-      resPanel.style.borderLeftColor = "#3B82F6"; // Borde azul
-      resVeredicto.style.color = "#1E3A8A";
-    }
-  }
-
-  selectVeh.addEventListener("change", evaluarPrecio);
-  inputPrecio.addEventListener("input", evaluarPrecio);
-
-  evaluarPrecio(); // Ejecutar al inicio
-});
-</script>
-
 
 <section class="fade-section" id="resumen-ejecutivo"><h2>Resumen Ejecutivo</h2>
 <p>Este estudio presenta un análisis integral del mercado de vehículos ligeros (motos eléctricas, de combustión, bicicletas y patinetes) en La Habana, abordando tanto la oferta del mercado informal como la percepción de los usuarios y el marco regulatorio vigente. Para ello, se empleó una metodología mixta que combinó el análisis masivo de anuncios clasificados, entrevistas en profundidad a usuarios y la revisión de fuentes normativas oficiales. La evidencia empírica se apoya en 1,200 anuncios clasificados, 30 entrevistas en profundidad y 49 fuentes documentales.</p>
@@ -288,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Es importante destacar que <strong>estos precios del mercado informal contrastan fuertemente con el canal formal</strong>. Mientras que una moto eléctrica en Revolico cuesta en mediana $2,500 USD, en la tienda estatal VEDCA el modelo de entrada se consigue por <strong>$1,300 USD</strong>. Este diferencial de casi el doble (que se profundizará en la Sección 3.2) demuestra que el mercado informal no es un espacio de "ahorro", sino un espacio de <strong>inmediatez</strong>, donde el comprador paga una prima significativa por no someterse a las listas de espera o la falta de stock del Estado.</p>
 
 <div class="chart" style="background: #FFFFFF; padding: 30px; border: 2px solid var(--azul-profundo); border-radius: 12px;">
-  <p class="chart-caption">Herramienta interactiva: ¿Es un precio justo?</p>
+  <p class="chart-caption">¿Es un precio justo?</p>
   <div style="margin-bottom: 25px;">
     <label for="select-vehiculo" style="font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--azul-profundo); display: block; margin-bottom: 8px;">
       Elige el tipo de vehículo:
@@ -379,10 +287,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-  var medianasCombustion = {
-    50: 650, 75: 1200, 100: 1500, 125: 1950, 150: 1979,
-    175: 2550, 200: 2500, 225: 2550, 250: 2600
-  };
+  var medianasCombustion = { 50:{p:650,n:2}, 125:{p:1950,n:109}, 150:{p:1979,n:63}, 175:{p:2550,n:10}, 200:{p:2500,n:60}, 250:{p:2600,n:28} };
+...
+} else if (tipo === "combustion") {
+  var claves = Object.keys(medianasCombustion).map(Number);
+  var cc = claves.reduce(function(a, b){ return Math.abs(b - v1) < Math.abs(a - v1) ? b : a; });
+  if (Math.abs(cc - v1) > 12) {
+    resPrecio.textContent = "—";
+    nota.textContent = "No hay anuncios de ~" + v1 + " cc en la muestra.";
+    return;
+  }
+  precioFinal = medianasCombustion[cc].p;
+  nota.textContent = "Mediana de " + medianasCombustion[cc].n + " anuncios de ~" + cc + " cc.";
+};
 
   function actualizarUI() {
     var tipo = selectVehiculo.value;
@@ -1062,7 +979,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <section class="fade-section" id="seccion-4"><h2>4. Perfil del Usuario y Entrevistas (Preguntas 11 a 17 y 20)</h2>
 
 <div class="chart" style="background: #FFFFFF; padding: 30px; border: 2px solid var(--azul-profundo); border-radius: 12px; margin-top: 40px;">
-  <p class="chart-caption">Herramienta interactiva: El ADN del comprador habanero</p>
+  <p class="chart-caption">El ADN del comprador habanero</p>
 
   <p style="font-family: var(--sans); font-size: 15px; color: var(--gris-label); margin-bottom: 20px;">
     Compara tus decisiones con los datos reales de las 30 entrevistas de este estudio. El test evalúa 10 variables del perfil del comprador.
@@ -1444,27 +1361,25 @@ window.addEventListener("load", function() {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    function gestionarConexion() {
-        const iframes = document.querySelectorAll('.dw-iframe');
-        const fallbacks = document.querySelectorAll('.dw-fallback');
-
-        // Si el navegador detecta que no hay red, muestra las imágenes
-        if (!navigator.onLine) {
-            iframes.forEach(el => el.style.display = 'none');
-            fallbacks.forEach(el => el.style.display = 'block');
-        } else {
-            iframes.forEach(el => el.style.display = 'block');
-            fallbacks.forEach(el => el.style.display = 'none');
-        }
-    }
-
-    // Ejecutar al cargar
-    gestionarConexion();
-
-    // Escuchar cambios en la red
-    window.addEventListener('online', gestionarConexion);
-    window.addEventListener('offline', gestionarConexion);
+document.addEventListener("DOMContentLoaded", function () {
+  var cajas = document.querySelectorAll(".dw-container");
+  function mostrar(usarIframe) {
+    cajas.forEach(function (c) {
+      c.querySelector(".dw-iframe").style.display = usarIframe ? "block" : "none";
+      c.querySelector(".dw-fallback").style.display = usarIframe ? "none" : "block";
+    });
+  }
+  function probar() {
+    if (!navigator.onLine) { mostrar(false); return; }
+    var ctrl = new AbortController();
+    var t = setTimeout(function () { ctrl.abort(); }, 4000);
+    fetch("https://datawrapper.dwcdn.net/Bumdn/1/", { mode: "no-cors", cache: "no-store", signal: ctrl.signal })
+      .then(function () { clearTimeout(t); mostrar(true); })
+      .catch(function () { mostrar(false); });
+  }
+  probar();
+  window.addEventListener("online", probar);
+  window.addEventListener("offline", probar);
 });
 </script>
 </body>
