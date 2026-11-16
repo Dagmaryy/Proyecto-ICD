@@ -286,81 +286,73 @@ document.addEventListener("DOMContentLoaded", function() {
       nota: "Datos de 130 anuncios con datos técnicos. Mercado muy atomizado."
     }
   };
+var medianasCombustion = { 50:{p:650,n:2}, 125:{p:1950,n:109}, 150:{p:1979,n:63}, 175:{p:2550,n:10}, 200:{p:2500,n:60}, 250:{p:2600,n:28} };
 
-  var medianasCombustion = { 50:{p:650,n:2}, 125:{p:1950,n:109}, 150:{p:1979,n:63}, 175:{p:2550,n:10}, 200:{p:2500,n:60}, 250:{p:2600,n:28} };
-...
-} else if (tipo === "combustion") {
-  var claves = Object.keys(medianasCombustion).map(Number);
-  var cc = claves.reduce(function(a, b){ return Math.abs(b - v1) < Math.abs(a - v1) ? b : a; });
-  if (Math.abs(cc - v1) > 12) {
-    resPrecio.textContent = "—";
-    nota.textContent = "No hay anuncios de ~" + v1 + " cc en la muestra.";
-    return;
+function actualizarUI() {
+  var tipo = selectVehiculo.value;
+  var c = config[tipo];
+
+  label1.textContent = c.var1.label;
+  slider1.min = c.var1.min;
+  slider1.max = c.var1.max;
+  slider1.step = c.var1.step;
+  slider1.value = c.var1.val;
+  val1.textContent = c.var1.val + " " + c.var1.sufijo;
+
+  if (c.modo === "predictor") {
+    contenedorVar2.style.display = "block";
+    label2.textContent = c.var2.label;
+    slider2.min = c.var2.min;
+    slider2.max = c.var2.max;
+    slider2.step = c.var2.step;
+    slider2.value = c.var2.val;
+    val2.textContent = c.var2.val + " " + c.var2.sufijo;
+  } else {
+    contenedorVar2.style.display = "none";
   }
-  precioFinal = medianasCombustion[cc].p;
-  nota.textContent = "Mediana de " + medianasCombustion[cc].n + " anuncios de ~" + cc + " cc.";
-};
 
-  function actualizarUI() {
-    var tipo = selectVehiculo.value;
-    var c = config[tipo];
+  resTitulo.textContent = c.titulo;
+  nota.textContent = c.nota;
+  calcular();
+}
 
-    label1.textContent = c.var1.label;
-    slider1.min = c.var1.min;
-    slider1.max = c.var1.max;
-    slider1.step = c.var1.step;
-    slider1.value = c.var1.val;
-    val1.textContent = c.var1.val + " " + c.var1.sufijo;
+function calcular() {
+  var tipo = selectVehiculo.value;
+  var c = config[tipo];
+  var v1 = parseFloat(slider1.value);
+  val1.textContent = v1 + " " + c.var1.sufijo;
 
-    if (c.modo === "predictor") {
-      contenedorVar2.style.display = "block";
-      label2.textContent = c.var2.label;
-      slider2.min = c.var2.min;
-      slider2.max = c.var2.max;
-      slider2.step = c.var2.step;
-      slider2.value = c.var2.val;
-      val2.textContent = c.var2.val + " " + c.var2.sufijo;
-    } else {
-      contenedorVar2.style.display = "none";
+  var precioFinal = 0;
+
+  if (tipo === "electricas" || tipo === "patinetes") {
+    var v2 = parseFloat(slider2.value);
+    val2.textContent = v2 + " " + c.var2.sufijo;
+    var ajuste1 = (v1 - c.var1.base) * c.var1.factor;
+    var ajuste2 = (v2 - c.var2.base) * c.var2.factor;
+    precioFinal = c.precioBase + ajuste1 + ajuste2;
+    if (precioFinal < 200) precioFinal = 200;
+  } else if (tipo === "combustion") {
+    var claves = Object.keys(medianasCombustion).map(Number);
+    var cc = claves.reduce(function(a, b){ return Math.abs(b - v1) < Math.abs(a - v1) ? b : a; });
+    if (Math.abs(cc - v1) > 12) {
+      resPrecio.textContent = "—";
+      nota.textContent = "No hay anuncios de ~" + v1 + " cc en la muestra.";
+      return;
     }
-
-    resTitulo.textContent = c.titulo;
-    nota.textContent = c.nota;
-    calcular();
+    precioFinal = medianasCombustion[cc].p;
+    nota.textContent = "Mediana de " + medianasCombustion[cc].n + " anuncios de ~" + cc + " cc.";
+  } else if (tipo === "bicis") {
+    precioFinal = 600 + ((v1 - 750) * 0.15);
+    if (precioFinal < 430) precioFinal = 430;
   }
 
-  function calcular() {
-    var tipo = selectVehiculo.value;
-    var c = config[tipo];
-    var v1 = parseFloat(slider1.value);
-    val1.textContent = v1 + " " + c.var1.sufijo;
+  resPrecio.textContent = "$" + Math.round(precioFinal).toLocaleString("en-US");
+}
 
-    var precioFinal = 0;
-
-    if (tipo === "electricas" || tipo === "patinetes") {
-      var v2 = parseFloat(slider2.value);
-      val2.textContent = v2 + " " + c.var2.sufijo;
-      var ajuste1 = (v1 - c.var1.base) * c.var1.factor;
-      var ajuste2 = (v2 - c.var2.base) * c.var2.factor;
-      precioFinal = c.precioBase + ajuste1 + ajuste2;
-      if (precioFinal < 200) precioFinal = 200;
-    } else if (tipo === "combustion") {
-      var ccCercano = Object.keys(medianasCombustion).reduce(function(prev, curr) {
-        return Math.abs(curr - v1) < Math.abs(prev - v1) ? curr : prev;
-      });
-      precioFinal = medianasCombustion[ccCercano];
-    } else if (tipo === "bicis") {
-      precioFinal = 600 + ((v1 - 750) * 0.15);
-      if (precioFinal < 430) precioFinal = 430;
-    }
-
-    resPrecio.textContent = "$" + Math.round(precioFinal).toLocaleString("en-US");
-  }
-
-  selectVehiculo.addEventListener("change", actualizarUI);
-  slider1.addEventListener("input", calcular);
-  slider2.addEventListener("input", calcular);
-  actualizarUI();
+selectVehiculo.addEventListener("change", actualizarUI);
+slider1.addEventListener("input", calcular);
+slider2.addEventListener("input", calcular);
+actualizarUI();
 });
 </script>
 
@@ -549,10 +541,10 @@ document.addEventListener("DOMContentLoaded", function() {
           line: { color: '#E5E7EB', width: 2, dash: 'dash' }, hoverinfo: 'skip'
         },
         {
-          x: [0, 10, 20, 30, 41, 50, 59, 70, 80, 90, 100],
-          y: [0, 3, 7, 12, 20, 50, 80, 87, 92, 96, 100],
+         x: [0, 10, 20, 30, 41, 50, 60, 70, 80, 90, 95, 100],
+         y: [0, 4.9, 9.7, 14.6, 19.9, 24.3, 29.1, 34.3, 44.0, 57.9, 69.7, 100],
           mode: 'lines', name: 'Curva de Lorenz',
-          line: { color: '#186faf', width: 4, shape: 'spline' },
+          line: { color: '#186faf', width: 4 },
           fill: 'tozeroy', fillcolor: 'rgba(24, 111, 175, 0.1)',
           hovertemplate: 'Vendedores acumulados: %{x}%<br>Anuncios acumulados: %{y}%<extra></extra>'
         }
@@ -1180,21 +1172,21 @@ document.addEventListener("DOMContentLoaded", function() {
   <p class="chart-caption">¿Qué factor pesó más en la decisión de compra?</p>
   <div id="chart-compra" style="height:400px; width:100%;"></div>
   <script>
-    (function() {
+      (function() {
       Plotly.newPlot("chart-compra", [{
-        labels: ['Precio', 'Autonomía', 'Motor / Potencia', 'Marca / Confiabilidad'],
-        values: [17, 12, 3, 2],
-        type: "pie",
-        marker: { colors: ["#186faf", "#5689c0", "#69b2e1", "#E5E7EB"], line: {color: "white", width: 2} },
-        textinfo: "percent",
-        textposition: "inside",
-        textfont: { size: 14, family: "Inter, sans-serif", color: "white" },
-        hovertemplate: '<b>%{label}</b><br>Porcentaje: %{percent}<br>Menciones: %{value}<extra></extra>'
+        y: ['Marca / Confiabilidad', 'Motor / Potencia', 'Autonomía', 'Precio'],
+        x: [7.4, 11.1, 44.4, 63.0],
+        type: "bar",
+        orientation: "h",
+        text: ['7.4%', '11.1%', '44.4%', '63.0%'],
+        textposition: "outside",
+        marker: { color: ["#E5E7EB", "#69b2e1", "#5689c0", "#186faf"] },
+        hovertemplate: '<b>%{y}</b><br>Menciones: %{x}%<extra></extra>'
       }], {
         paper_bgcolor: "#FFFFFF", plot_bgcolor: "#FFFFFF",
         font: { family: "Inter, sans-serif", color: "#333333" },
-        margin: { l: 20, r: 20, t: 40, b: 40 }, height: 400, showlegend: true,
-        legend: { orientation: 'h', y: -0.1, x: 0.5, xanchor: 'center' }
+        margin: { l: 150, r: 50, t: 20, b: 40 }, height: 400, showlegend: false,
+        xaxis: { range: [0, 80], ticksuffix: '%', gridcolor: '#E5E7EB' }
       }, { displayModeBar: false, responsive: true });
     })();
   </script>
@@ -1361,25 +1353,19 @@ window.addEventListener("load", function() {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  var cajas = document.querySelectorAll(".dw-container");
-  function mostrar(usarIframe) {
-    cajas.forEach(function (c) {
-      c.querySelector(".dw-iframe").style.display = usarIframe ? "block" : "none";
-      c.querySelector(".dw-fallback").style.display = usarIframe ? "none" : "block";
+window.addEventListener("load", function() {
+    var graficos = document.querySelectorAll('.js-plotly-plot'); // <--- Cambia esto
+    graficos.forEach(function(div) {
+        Plotly.relayout(div, {
+            'title.text': '',
+            'margin.t': 40,
+            'hoverlabel.bgcolor': '#FFFFFF',
+            'hoverlabel.bordercolor': '#E5E7EB',
+            'hoverlabel.font.color': '#1A1A1A',
+            'hoverlabel.font.family': 'Inter, sans-serif',
+            'hoverlabel.font.size': 14
+        });
     });
-  }
-  function probar() {
-    if (!navigator.onLine) { mostrar(false); return; }
-    var ctrl = new AbortController();
-    var t = setTimeout(function () { ctrl.abort(); }, 4000);
-    fetch("https://datawrapper.dwcdn.net/Bumdn/1/", { mode: "no-cors", cache: "no-store", signal: ctrl.signal })
-      .then(function () { clearTimeout(t); mostrar(true); })
-      .catch(function () { mostrar(false); });
-  }
-  probar();
-  window.addEventListener("online", probar);
-  window.addEventListener("offline", probar);
 });
 </script>
 </body>
