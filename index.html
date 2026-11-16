@@ -48,7 +48,21 @@ nav a.active { color: var(--azul-profundo); border-bottom-color: var(--dorado); 
 a:focus-visible, .back-to-top:focus-visible { outline: 2px solid var(--dorado); outline-offset: 3px; border-radius: 2px; }
 main.container { padding-bottom: 40px; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 56px 0; }
-.stat-card { padding: 20px 10px; text-align: center; border-top: 3px solid var(--azul-profundo); font-family: var(--sans); }
+.stat-card {
+  padding: 24px 14px;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid var(--borde);
+  border-top: 3px solid var(--azul-profundo);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(31, 78, 121, 0.06);
+  font-family: var(--sans);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(31, 78, 121, 0.10);
+}
 .stat-card:nth-child(4) { border-top-color: var(--dorado); }
 .stat-label { margin: 0 0 12px; color: var(--gris-label); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
 .stat-value { margin: 0 0 6px; color: var(--azul-profundo); font-family: var(--serif); font-size: 44px; font-weight: 700; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
@@ -162,7 +176,7 @@ footer p { margin: 4px 0; color: rgba(255, 255, 255, 0.8); font-size: 11px; lett
 </div>
 <div class="pull-quote">
 <p class="pq-source">Perfil del consumidor</p>
-<p class="pq-text">La preferencia por la movilidad eléctrica no responde a un criterio ambiental, sino a una adaptación racional frente al colapso del transporte público y el costo del combustible.</p>
+<p class="pq-text" id="pq-typewriter" data-texto="La preferencia por la movilidad eléctrica no responde a un criterio ambiental, sino a una adaptación racional frente al colapso del transporte público y el costo del combustible."></p>
 </div>
 
 <section class="fade-section" id="resumen-ejecutivo"><h2>Resumen Ejecutivo</h2>
@@ -202,10 +216,10 @@ footer p { margin: 4px 0; color: rgba(255, 255, 255, 0.8); font-size: 11px; lett
       Elige el tipo de vehículo:
     </label>
     <select id="select-vehiculo" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 16px; color: var(--texto); background-color: #fff;">
-      <option value="electricas">Moto eléctrica (Predictor de precio)</option>
-      <option value="patinetes">Patinete eléctrico (Predictor de precio)</option>
-      <option value="combustion">Moto de combustión (Comparador de oferta)</option>
-      <option value="bicis">Bicicleta eléctrica (Comparador de oferta)</option>
+      <option value="electricas">Moto eléctrica</option>
+      <option value="patinetes">Patinete eléctrico</option>
+      <option value="combustion">Moto de combustión</option>
+      <option value="bicis">Bicicleta eléctrica</option>
     </select>
   </div>
 
@@ -236,7 +250,7 @@ footer p { margin: 4px 0; color: rgba(255, 255, 255, 0.8); font-size: 11px; lett
       $2,500
     </p>
     <p id="nota-modelo" style="margin: 10px 0 0; font-family: var(--sans); font-size: 12px; color: var(--gris-label);">
-      Basado en Random Forest (231 anuncios). Margen de error: ±$159.
+      Estimación lineal ilustrativa calibrada con la mediana de 231 anuncios. No es el modelo del informe (MAE ≈ $255 en validación cruzada).
     </p>
   </div>
 </div>
@@ -263,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var2: { label: "Autonomía:", min: 40, max: 200, step: 5, val: 120, sufijo: "km", base: 120, factor: 8.5 },
       precioBase: 2500,
       titulo: "Precio estimado por el modelo",
-      nota: "Basado en Random Forest (231 anuncios). Margen de error: ±$159."
+      nota: "Estimación lineal ilustrativa calibrada con la mediana de 231 anuncios. No es el modelo del informe (MAE ≈ $255 en validación cruzada)."
     },
     patinetes: {
       modo: "predictor",
@@ -271,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var2: { label: "Autonomía:", min: 15, max: 80, step: 5, val: 48, sufijo: "km", base: 48, factor: 4.5 },
       precioBase: 595,
       titulo: "Precio estimado por el modelo",
-      nota: "Basado en Random Forest (200 anuncios). Margen de error: ±$70."
+      nota: "Estimación lineal ilustrativa a partir de la mediana de patinetes. Úsala solo como orientación."
     },
     combustion: {
       modo: "comparador",
@@ -283,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function() {
       modo: "comparador",
       var1: { label: "Potencia del motor:", min: 250, max: 2000, step: 50, val: 750, sufijo: "W" },
       titulo: "Precio mediano del mercado",
-      nota: "Datos de 130 anuncios con datos técnicos. Mercado muy atomizado."
+      nota: "Estimación lineal ilustrativa. El mercado de bicis está muy atomizado."
     }
   };
 var medianasCombustion = { 50:{p:650,n:2}, 125:{p:1950,n:109}, 150:{p:1979,n:63}, 175:{p:2550,n:10}, 200:{p:2500,n:60}, 250:{p:2600,n:28} };
@@ -492,7 +506,7 @@ actualizarUI();
   </script>
 </div>
 
-<p>Como muestra el gráfico, el mercado se concentra abrumadoramente en motores pequeños y medianos: las cilindradas de 125 cc y 150 cc representan por sí solas casi dos tercios de la oferta (63.3%). A mayor cilindrada, el precio mediano escala, superando los $2,500 USD en los modelos de 200 cc y 250 cc.</p>
+<p>Como muestra el gráfico, el mercado se concentra abrumadoramente en motores pequeños y medianos: las cilindradas de 125 cc y 150 cc representan por sí solas casi dos tercios de la oferta (63.2%). A mayor cilindrada, el precio mediano escala, superando los $2,500 USD en los modelos de 200 cc y 250 cc.</p>
 <p>Las características medianas generales son:</p>
 <ul>
 <li><strong>Año de Fabricación Mediano:</strong> 2026 (lo que indica una gran presencia de vehículos nuevos o muy recientes).</li>
@@ -557,16 +571,17 @@ actualizarUI();
         xaxis: { gridcolor: "#E5E7EB", title: "Porcentaje acumulado de vendedores", range: [0, 100], ticksuffix: '%' },
         yaxis: { gridcolor: "#E5E7EB", title: "Porcentaje acumulado de anuncios", range: [0, 105], ticksuffix: '%' },
         annotations: [
-          {
-            x: 59, y: 80, text: "<b>59% de los vendedores<br>concentra el 80% de la oferta</b>",
-            showarrow: true, arrowhead: 2, arrowcolor: "#186faf", ax: -60, ay: -40,
-            font: { color: "#186faf", size: 13 }, bgcolor: "#FFFFFF", bordercolor: "#186faf", borderwidth: 1, borderpad: 4
-          },
-          {
-            x: 50, y: 100, text: "<i>Índice de Gini: 0.439</i>", showarrow: false,
-            font: { color: "#6B7280", size: 12 }, xref: "paper", yref: "paper"
-          }
-        ]
+  {
+    x: 41, y: 19.9, text: "<b>El 41% con menos anuncios<br>publica solo el 20%</b>",
+    showarrow: true, arrowhead: 2, arrowcolor: "#186faf", ax: -50, ay: 50,
+    font: { color: "#186faf", size: 13 }, bgcolor: "#FFFFFF", bordercolor: "#186faf", borderwidth: 1, borderpad: 4
+  },
+  {
+    x: 0.03, y: 0.97, xref: "paper", yref: "paper", xanchor: "left",
+    text: "<i>Índice de Gini: 0.439</i>", showarrow: false,
+    font: { color: "#6B7280", size: 12 }
+  }
+]
       };
       Plotly.newPlot("chart-lorenz", data, layout, { displayModeBar: false, responsive: true });
     })();
@@ -575,61 +590,6 @@ actualizarUI();
 
 <p><strong>Análisis de la Garantía y los Accesorios:</strong> Contrario a la creencia de que el mercado informal no ofrece ningún respaldo, el <strong>39.5% de los anuncios (474 de 1,200) menciona explícitamente una garantía</strong>. Sin embargo, la mediana de esta garantía es de apenas <strong>15 días</strong>, un periodo insignificante si se compara con los <strong>180 días</strong> que ofrece VEDCA en el canal formal. Las marcas que más ofrecen garantía son Topmaq (37 anuncios), Maf (26) y JMD (26), lo que evidencia que los revendedores de estas marcas intentan generar confianza en un entorno de alta desconfianza.</p>
 <p>Por otro lado, la mención de <strong>accesorios</strong> (como alarma o casco) está fuertemente correlacionada con el precio. Los 256 anuncios que mencionan "alarma" tienen un precio mediano de $2,490 USD (frente a los $850 USD del resto). Esto no significa que la alarma añada ese valor, sino que <strong>la alarma es un indicador de que se trata de una moto eléctrica de alta gama</strong>, mientras que el resto del mercado lo componen vehículos de micromovilidad más económicos.</p>
-
-<style>
-  /* Estilos para los interruptores (Toggle) */
-  .ga-switch {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--borde);
-    cursor: pointer;
-    font-family: var(--sans);
-    font-size: 15px;
-    color: var(--texto);
-  }
-  .ga-switch:last-child {
-    border-bottom: none;
-  }
-  .ga-switch input {
-    display: none; /* Ocultamos el checkbox feo */
-  }
-  .ga-slider {
-    position: relative;
-    width: 46px;
-    height: 24px;
-    background-color: #E5E7EB;
-    border-radius: 24px;
-    transition: background-color 0.3s;
-    flex-shrink: 0;
-  }
-  .ga-slider::before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: white;
-    top: 3px;
-    left: 3px;
-    transition: transform 0.3s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  }
-  .ga-switch input:checked + .ga-slider {
-    background-color: var(--azul-profundo);
-  }
-  .ga-switch input:checked + .ga-slider::before {
-    transform: translateX(22px);
-  }
-  .ga-switch-text {
-    margin-right: 15px;
-    line-height: 1.4;
-  }
-  .ga-switch strong {
-    color: var(--azul-profundo);
-  }
-</style>
 
 <h3>2.6. Segmentación de la Oferta mediante Clustering (Pregunta 10)</h3>
 <p>Para comprender la estructura del mercado, se aplicó el algoritmo de agrupamiento (K-Means) en tres enfoques distintos: uno para motos eléctricas, uno para motos de combustión, y uno global para todos los vehículos. Los datos fueron estandarizados con <code>StandardScaler</code> y se utilizó una semilla aleatoria (<code>random_state=42</code>) para garantizar la reproducibilidad.</p>
@@ -772,10 +732,10 @@ actualizarUI();
       ¿Qué vehículo quieres importar?
     </label>
     <select id="calc-vehiculo" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 16px; color: var(--texto); background-color: #fff; cursor: pointer;">
-      <option value="electricas">Moto eléctrica (Arancel: $200)</option>
-      <option value="combustion">Moto de combustión (Arancel: $850)</option>
-      <option value="bicis">Bicicleta eléctrica (Arancel: $100)</option>
-      <option value="patinetes">Patinete eléctrico (Arancel: $60)</option>
+      <option value="electricas">Moto eléctrica</option>
+      <option value="combustion">Moto de combustión</option>
+      <option value="bicis">Bicicleta eléctrica</option>
+      <option value="patinetes">Patinete eléctrico</option>
     </select>
   </div>
 
@@ -844,14 +804,15 @@ document.addEventListener("DOMContentLoaded", function() {
     resTotal.textContent = "$" + costoTotal.toLocaleString("en-US");
     resRevolico.textContent = "$" + config.revolico.toLocaleString("en-US");
 
-    if (ahorro > 0) {
-      resAhorro.textContent = "$" + ahorro.toLocaleString("en-US");
-      resAhorro.style.color = "#186faf";
-    } else {
-      resAhorro.textContent = "Pierdes dinero";
-      resAhorro.style.fontSize = "24px";
-      resAhorro.style.color = "#C0392B"; // Rojo
-    }
+    resAhorro.style.fontSize = "";
+if (ahorro >= 0) {
+  resAhorro.textContent = "$" + ahorro.toLocaleString("en-US");
+  resAhorro.style.color = "#186faf";
+} else {
+  resAhorro.textContent = "Pierdes $" + Math.abs(ahorro).toLocaleString("en-US");
+  resAhorro.style.fontSize = "24px";
+  resAhorro.style.color = "#C0392B";
+}
   }
 
   selectVeh.addEventListener("change", calcular);
@@ -994,16 +955,18 @@ document.addEventListener("DOMContentLoaded", function() {
     <!-- 3. LICENCIA Y 4. PREFERENCIA -->
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">3. ¿Tienes licencia?</label>
+       <label for="esp-licencia" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">3. ¿Tienes licencia?</label>
         <select id="esp-licencia" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
-          <option value="no">No (53%)</option>
+          <option value="">—</option>
+          <option value="no">No</option>
           <option value="si">Sí</option>
         </select>
       </div>
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">4. ¿Qué prefieres?</label>
+       <label for="esp-preferencia" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">4. ¿Qué prefieres?</label>
         <select id="esp-preferencia" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
-          <option value="electrica">Eléctrica (80%)</option>
+          <option value="">—</option>
+          <option value="electrica">Eléctrica</option>
           <option value="combustion">Combustión</option>
         </select>
       </div>
@@ -1012,19 +975,21 @@ document.addEventListener("DOMContentLoaded", function() {
     <!-- 5. USO Y 6. FACTOR DECISIVO -->
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">5. ¿Para qué lo usarás?</label>
+     <label for="esp-uso" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">5. ¿Para qué lo usarás?</label>
         <select id="esp-uso" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
-          <option value="personal">Personal (86%)</option>
+          <option value="">—</option>
+          <option value="personal">Personal</option>
           <option value="trabajo">Mensajería / Trabajo</option>
         </select>
       </div>
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">6. Factor decisivo:</label>
+        <label for="esp-factor" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">6. Factor decisivo:</label>
         <select id="esp-factor" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
-          <option value="precio">Precio (63%)</option>
-          <option value="autonomia">Autonomía (44%)</option>
-          <option value="motor">Motor (11%)</option>
-          <option value="marca">Marca (7%)</option>
+          <option value="">—</option>
+          <option value="precio">Precio</option>
+          <option value="autonomia">Autonomía</option>
+          <option value="motor">Motor</option>
+          <option value="marca">Marca</option>
         </select>
       </div>
     </div>
@@ -1032,18 +997,20 @@ document.addEventListener("DOMContentLoaded", function() {
     <!-- 7. RAZÓN MERCANDO INFORMAL Y 8. APAGONES -->
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">7. ¿Por qué mercado informal?</label>
+        <label for="esp-razon" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">7. ¿Por qué mercado informal?</label>
         <select id="esp-razon" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
-          <option value="precio">Precio más barato (29%)</option>
-          <option value="confianza">Confianza / Recomendación (24%)</option>
-          <option value="disponibilidad">Disponibilidad inmediata (24%)</option>
-          <option value="conocidos">Conocidos que venden (18%)</option>
+          <option value="">—</option>
+          <option value="precio">Precio más barato</option>
+          <option value="confianza">Confianza / Recomendación</option>
+          <option value="disponibilidad">Disponibilidad inmediata</option>
+          <option value="conocidos">Conocidos que venden</option>
         </select>
       </div>
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">8. ¿Has tenido apagones?</label>
+        <label for="esp-apagon" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">8. ¿Has tenido apagones?</label>
         <select id="esp-apagon" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
-          <option value="si">Sí, problemas de carga (50%)</option>
+          <option value="">—</option>
+          <option value="si">Sí, problemas de carga</option>
           <option value="no">No</option>
         </select>
       </div>
@@ -1052,15 +1019,17 @@ document.addEventListener("DOMContentLoaded", function() {
     <!-- 9. FRECUENCIA Y 10. CANAL -->
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">9. Frecuencia de carga:</label>
+        <label for="esp-carga" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">9. Frecuencia de carga:</label>
         <select id="esp-carga" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
-          <option value="diario">A diario (40%)</option>
+          <option value="">—</option>
+          <option value="diario">A diario</option>
           <option value="semanal">Una vez por semana</option>
         </select>
       </div>
       <div>
-        <label style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">10. ¿Dónde lo comprarías?</label>
+        <label for="esp-canal" style="font-weight: 600; color: var(--azul-profundo); display: block; margin-bottom: 5px;">10. ¿Dónde lo comprarías?</label>
         <select id="esp-canal" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--borde); font-family: var(--sans); font-size: 15px; background: #fff; cursor: pointer;">
+          <option value="">—</option>
           <option value="informal">Importador / Conocido</option>
           <option value="formal">Tienda estatal</option>
         </select>
@@ -1072,13 +1041,13 @@ document.addEventListener("DOMContentLoaded", function() {
   <!-- Resultado -->
   <div style="text-align: center; padding: 25px; background: var(--crema); border-radius: 8px; border: 1px solid var(--borde);">
     <p style="margin: 0; font-family: var(--sans); font-size: 13px; color: var(--gris-label); text-transform: uppercase; letter-spacing: 0.05em;">
-      Coincidencia con la muestra real (10 variables)
+      Coincidencia con la muestra real
     </p>
-    <p id="esp-resultado-porcentaje" style="margin: 10px 0 0; font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--azul-profundo); line-height: 1;">
-      100%
+   <p id="esp-resultado-porcentaje" style="margin: 10px 0 0; font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--azul-profundo); line-height: 1;">
+       —
     </p>
     <p id="esp-resultado-detalle" style="margin: 10px 0 0; font-family: var(--sans); font-size: 14px; color: var(--gris-label); max-width: 550px; margin-left: auto; margin-right: auto;">
-      Analizando tu perfil...
+      Responde las 10 preguntas para ver tu coincidencia con la muestra.
     </p>
   </div>
 </div>
@@ -1092,63 +1061,79 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var valEdad = document.getElementById("esp-val-edad");
   var valPrecio = document.getElementById("esp-val-precio");
-  var resPorcentaje = document.getElementById("esp-resultado-porcentaje");
-  var resDetalle = document.getElementById("esp-resultado-detalle");
+ var resPorcentaje = document.getElementById("esp-resultado-porcentaje");
+var resDetalle = document.getElementById("esp-resultado-detalle");
 
-  function calcularEspejo() {
-    var edad = parseInt(document.getElementById("esp-edad").value);
-    var precio = parseInt(document.getElementById("esp-precio").value);
+var activo = false;
 
-    valEdad.textContent = edad;
-    valPrecio.textContent = "$" + precio.toLocaleString("en-US");
-
-    var match = 0;
-    var comentarios = [];
-
-    // 1. Edad
-    if (edad >= 22 && edad <= 32) { match += 10; comentarios.push("tu edad"); }
-    // 2. Presupuesto
-    if (precio >= 1000 && precio <= 1800) { match += 10; comentarios.push("tu presupuesto"); }
-    // 3. Licencia
-    if (document.getElementById("esp-licencia").value === "no") { match += 10; comentarios.push("la falta de licencia"); }
-    // 4. Preferencia
-    if (document.getElementById("esp-preferencia").value === "electrica") { match += 10; comentarios.push("tu preferencia eléctrica"); }
-    // 5. Uso
-    if (document.getElementById("esp-uso").value === "personal") { match += 10; comentarios.push("el uso personal"); }
-    // 6. Factor
-    if (["precio", "autonomia"].includes(document.getElementById("esp-factor").value)) { match += 10; comentarios.push("tus prioridades de compra"); }
-    // 7. Razón Mercado Informal (Precio o Confianza suman el 52.9% de la muestra)
-    if (["precio", "confianza"].includes(document.getElementById("esp-razon").value)) { match += 10; comentarios.push("tu razón para elegir el canal informal"); }
-    // 8. Apagones
-    if (document.getElementById("esp-apagon").value === "si") { match += 10; comentarios.push("los problemas por apagón"); }
-    // 9. Frecuencia
-    if (document.getElementById("esp-carga").value === "diario") { match += 10; comentarios.push("la carga diaria"); }
-    // 10. Canal
-    if (document.getElementById("esp-canal").value === "informal") { match += 10; comentarios.push("el canal informal"); }
-
-    resPorcentaje.textContent = match + "%";
-
-    if (match >= 80) resPorcentaje.style.color = "#186faf";
-    else if (match >= 50) resPorcentaje.style.color = "#C89933";
-    else resPorcentaje.style.color = "#991B1B";
-
-    if (match === 100) {
-      resDetalle.innerHTML = "¡Eres el comprador promedio perfecto! Coincides en absolutamente todo con la muestra.";
-    } else if (match >= 70) {
-      resDetalle.innerHTML = "Tienes un perfil muy similar al habanero típico. Coincides en: <strong>" + comentarios.join(", ") + "</strong>.";
-    } else if (match >= 40) {
-      resDetalle.innerHTML = "Tienes un perfil mixto. Coincides en: <strong>" + comentarios.join(", ") + "</strong>.";
-    } else {
-      resDetalle.innerHTML = "Tus decisiones se alejan bastante de la media. Eres un comprador atípico.";
-    }
+function calcularEspejo() {
+  if (!activo) {
+    resPorcentaje.textContent = "—";
+    resPorcentaje.style.color = "#6B7280";
+    resDetalle.textContent = "Responde las 10 preguntas para ver tu coincidencia con la muestra.";
+    return;
   }
 
-  inputs.forEach(function(input) {
-    input.addEventListener("input", calcularEspejo);
-    input.addEventListener("change", calcularEspejo);
-  });
+  var edad = parseInt(document.getElementById("esp-edad").value);
+  var precio = parseInt(document.getElementById("esp-precio").value);
 
-  calcularEspejo();
+  valEdad.textContent = edad;
+  valPrecio.textContent = "$" + precio.toLocaleString("en-US");
+
+  var match = 0;
+  var respondidas = 2; // los 2 sliders siempre cuentan
+  var comentarios = [];
+
+  // 1. Edad
+  if (edad >= 22 && edad <= 32) { match += 10; comentarios.push("tu edad"); }
+  // 2. Presupuesto
+  if (precio >= 1000 && precio <= 1800) { match += 10; comentarios.push("tu presupuesto"); }
+
+  function chequear(id, valorBuscado, etiqueta) {
+    var v = document.getElementById(id).value;
+    if (v === "") return;
+    respondidas++;
+    var ok = Array.isArray(valorBuscado) ? valorBuscado.indexOf(v) !== -1 : v === valorBuscado;
+    if (ok) { match += 10; comentarios.push(etiqueta); }
+  }
+
+  chequear("esp-licencia", "no", "la falta de licencia");
+  chequear("esp-preferencia", "electrica", "tu preferencia eléctrica");
+  chequear("esp-uso", "personal", "el uso personal");
+  chequear("esp-factor", ["precio", "autonomia"], "tus prioridades de compra");
+  chequear("esp-razon", ["precio", "confianza"], "tu razón para elegir el canal informal");
+  chequear("esp-apagon", "si", "los problemas por apagón");
+  chequear("esp-carga", "diario", "la carga diaria");
+  chequear("esp-canal", "informal", "el canal informal");
+
+  resPorcentaje.textContent = match + "%";
+
+  if (match >= 80) resPorcentaje.style.color = "#186faf";
+  else if (match >= 50) resPorcentaje.style.color = "#C89933";
+  else resPorcentaje.style.color = "#991B1B";
+
+  var faltan = 10 - respondidas;
+
+  if (match === 100) {
+    resDetalle.innerHTML = "¡Eres el comprador promedio perfecto! Coincides en absolutamente todo con la muestra.";
+  } else if (faltan > 0) {
+    var lista = comentarios.length ? comentarios.join(", ") : "ninguna todavía";
+    resDetalle.innerHTML = "Has respondido <strong>" + respondidas + " de 10</strong> variables. Coincides en: <strong>" + lista + "</strong>. Te faltan " + faltan + " por responder.";
+  } else if (match >= 70) {
+    resDetalle.innerHTML = "Tienes un perfil muy similar al habanero típico. Coincides en: <strong>" + comentarios.join(", ") + "</strong>.";
+  } else if (match >= 40) {
+    resDetalle.innerHTML = "Tienes un perfil mixto. Coincides en: <strong>" + comentarios.join(", ") + "</strong>.";
+  } else {
+    resDetalle.innerHTML = "Tus decisiones se alejan bastante de la media. Eres un comprador atípico.";
+  }
+}
+
+inputs.forEach(function(input) {
+  input.addEventListener("input", function() { activo = true; calcularEspejo(); });
+  input.addEventListener("change", function() { activo = true; calcularEspejo(); });
+});
+
+calcularEspejo();
 });
 </script>
 <p>A partir del análisis de las 30 entrevistas realizadas a usuarios de vehículos ligeros en La Habana, se construyó el siguiente perfil.</p>
@@ -1302,7 +1287,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <section class="fade-section" id="seccion-7"><h2>7. Conclusiones</h2>
 <p>El mercado de vehículos ligeros en La Habana se caracteriza por una alta informalidad, una fuerte concentración geográfica en los municipios de Centro Habana y Playa, y un sobreprecio significativo en el canal informal frente al formal. El análisis de clustering validó estadísticamente una estratificación del mercado en tres gamas bien diferenciadas: una gama baja de micromovilidad (649 anuncios, ~$650 USD de media), una gama media dominada por motos de combustión (263 anuncios, ~$1,841 USD) y una gama alta de motos eléctricas y de combustión (288 anuncios, ~$2,711 USD). Esta estratificación confirma que el mercado informal no es homogéneo, sino que opera en ecosistemas de precios claramente separados.</p>
-<p>A pesar de las flexibilizaciones legales del Decreto 163/2026 (que permiten importar hasta dos motos y ofrecen incentivos fiscales), el mercado informal (Revolico) sigue dominando el volumen de oferta. Los compradores asumen un sobreprecio que puede llegar al 92% frente al precio de tienda y el riesgo legal (el 62.7% de los anuncios no menciona papeles), impulsados por la inmediatez y la escasez de inventario estatal.</p>
+<p>A pesar de las flexibilizaciones legales del Decreto 163/2026 (que permiten importar hasta dos motos y ofrecen incentivos fiscales), el mercado informal (Revolico) sigue dominando el volumen de oferta. Los compradores asumen un sobreprecio que puede llegar al 86% frente al precio de tienda y el riesgo legal (el 62.7% de los anuncios no menciona papeles), impulsados por la inmediatez y la escasez de inventario estatal.</p>
 <p>El perfil del consumidor refuerza esta interpretación: la mayoría de los usuarios entrevistados son jóvenes (edad promedio de 27 años) que usan el vehículo como transporte personal, y el 80% prefiere la moto eléctrica sobre la de combustión por razones estrictamente económicas. Al mismo tiempo, el 53% opera sin licencia de conducción y el 50% ha tenido problemas para cargar sus vehículos durante los apagones, lo que evidencia que la adopción masiva de la movilidad eléctrica no responde a una conciencia ecológica, sino a una estrategia de resiliencia y supervivencia económica.</p>
 <p>Finalmente, la opacidad del propio canal formal (la mayoría de las entidades autorizadas no publica precios accesibles) y la falta de una infraestructura de carga adecuada (evidenciada por los apagones) son los principales desafíos que enfrenta este mercado en su camino hacia la formalización y la sostenibilidad.</p>
 </section>
@@ -1366,6 +1351,52 @@ window.addEventListener("load", function() {
             'hoverlabel.font.size': 14
         });
     });
+});
+</script>
+<script>
+(function(){
+  var el = document.getElementById("pq-typewriter");
+  if (!el) return;
+  var texto = el.getAttribute("data-texto");
+  var reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducir) { el.textContent = texto; return; }
+  var i = 0;
+  function tipear() {
+    el.textContent = texto.slice(0, i);
+    i++;
+    if (i <= texto.length) setTimeout(tipear, 20);
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { obs.disconnect(); tipear(); }
+    });
+  }, { threshold: 0.4 });
+  obs.observe(el);
+})();
+</script>
+<script>
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    if (!window.Plotly) return;
+    document.querySelectorAll(".js-plotly-plot").forEach(function (div) {
+      try {
+        Plotly.relayout(div, {
+          dragmode: false,
+          "xaxis.fixedrange": true,
+          "yaxis.fixedrange": true
+        });
+      } catch (e) {}
+    });
+  }, 150);
+});
+</script>
+<script>
+window.addEventListener("load", function () {
+  document.querySelectorAll('.chart [id^="chart-"]').forEach(function (d) {
+    var cap = d.parentNode.querySelector(".chart-caption");
+    d.setAttribute("role", "img");
+    d.setAttribute("aria-label", cap ? cap.textContent.trim() : "Gráfico");
+  });
 });
 </script>
 </body>
